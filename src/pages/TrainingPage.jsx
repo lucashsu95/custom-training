@@ -14,21 +14,37 @@ import { useMemo, useContext, useState } from 'react'
 import Question from '@/classes/Question'
 
 export default function TrainingPage() {
+  const { questions } = useContext(DataContext)
   const [status, setStatus] = useState({
     pageIndex: 0,
     currentTag: '全部',
-    questionNumber: 3
+    questionNumber: 0
   })
+  const questionsLength = useMemo(
+    () =>
+      status.currentTag === '全部'
+        ? questions.length
+        : questions.filter((x) => x.tag === status.currentTag).length,
+    [questions, status.currentTag]
+  )
 
   const handleChange = (e) => {
     const { name, value } = e.target
+    if (name === 'questionNumber' && (value > questionsLength || value < 0)) {
+      return
+    }
+    if (name === 'currentTag') {
+      setStatus((prevStatus) => ({
+        ...prevStatus,
+        questionNumber: 0
+      }))
+    }
     setStatus((prevStatus) => ({
       ...prevStatus,
       [name]: value
     }))
   }
 
-  const { questions } = useContext(DataContext)
   const tags = useMemo(() => {
     const tags = new Set()
     tags.add('全部')
@@ -85,7 +101,7 @@ export default function TrainingPage() {
       {status.pageIndex === 0 ? (
         <article>
           <h1 className="mb-2 text-xl font-bold">開始練習-設定</h1>
-          <p className="text-gray-500">共有 {questions.length} 題</p>
+          <p className="text-gray-500">共有 {questionsLength} 題</p>
           <form onSubmit={startTraining} className="space-y-3">
             <div>
               <Label htmlFor="current-tag">標籤</Label>
@@ -116,6 +132,7 @@ export default function TrainingPage() {
                 onChange={handleChange}
                 className="w-full max-w-[280px]"
                 min="0"
+                max={questionsLength}
               />
             </div>
 
@@ -127,7 +144,7 @@ export default function TrainingPage() {
           <h1 className="mb-2 text-xl font-bold">練習中</h1>
           <p>共有 {problems.length} 題</p>
           <p>標籤：{status.currentTag}</p>
-          <form className="my-5 space-y-12" onSubmit={handleSubmit}>
+          <form className="my-5 space-y-12 md:p-6 md:shadow-lg" onSubmit={handleSubmit}>
             {problems.map((problem, i) => (
               <div key={i}>
                 <h2>

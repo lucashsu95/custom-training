@@ -29,27 +29,30 @@ export function useIndexedDB(storeName) {
     [api]
   )
 
-  const addItem = (questions) => {
-    if (!api) {
-      console.error('API is not initialized')
-      return
-    }
-    if (Array.isArray(questions)) {
-      questions.forEach((question) => {
-        api.add(question)
-      })
-    } else {
-      console.error('questions is not an array')
-    }
-  }
+  const addItem = useCallback(
+    (questions) => {
+      if (!api) {
+        console.error('API is not initialized')
+        return
+      }
+      if (Array.isArray(questions)) {
+        questions.forEach((question) => {
+          api.add(question)
+        })
+      } else {
+        console.error('questions is not an array')
+      }
+    },
+    [api]
+  )
 
-  const clearItem = () => {
+  const clearItem = useCallback(() => {
     if (!api) {
       console.error('API is not initialized')
       return
     }
     api.clear()
-  }
+  }, [api])
   // const updateItem = (id, updatedData) => {
   //   if (!api) {
   //     console.error('API is not initialized')
