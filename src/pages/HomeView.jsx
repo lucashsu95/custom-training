@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function HomeView() {
   return (
     <section className="p-6">
-      <Link to="/practice">
+      <Link to="/training">
         <Alert className="custom-alert">
           <MdNotStarted className="h-4 w-4" />
           <AlertTitle className="text-base font-bold">開始練習</AlertTitle>

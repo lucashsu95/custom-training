@@ -24,11 +24,11 @@ function App() {
 
   return (
     <DataContext.Provider value={{ questions, setQuestions }}>
-      <Router basename="custom-training">
+      <Router>
         <TheNavbar />
         <Routes>
           <Route path="/" element={<HomeView />} />
-          <Route path="/practice" element={<TrainingPage />} />
+          <Route path="/training" element={<TrainingPage />} />
           <Route path="/upload" element={<QuestionsTable />} />
         </Routes>
       </Router>
