@@ -1,29 +1,38 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { useEffect } from 'react'
-import { useIndexedDB } from './hooks/useIndexedDB'
 import TheNavbar from './components/Navbar'
 import TrainingPage from './pages/TrainingPage'
-import QuestionsTable from './pages/QuestionsTable'
+import QuestionsTable from './pages/ManageQuestions'
 import HomeView from './pages/HomeView'
+import { useEffect, useState, useCallback, createContext } from 'react'
+import { useIndexedDB } from '@/hooks/useIndexedDB'
+
+export const DataContext = createContext()
 
 function App() {
-  const { getAllItem } = useIndexedDB('customTrainingDB', 'questions')
+  const { getAllItem } = useIndexedDB('questions')
+  const [questions, setQuestions] = useState([])
 
-  useEffect(() => {
-    getAllItem((questions) => {
-      console.log(questions)
+  const getAll = useCallback(() => {
+    getAllItem((items) => {
+      setQuestions(items)
     })
   }, [getAllItem])
 
+  useEffect(() => {
+    getAll()
+  }, [getAll])
+
   return (
-    <Router basename="custom-training">
-      <TheNavbar />
-      <Routes>
-        <Route path="/" element={<HomeView />} />
-        <Route path="/questions" element={<QuestionsTable />} />
-        <Route path="/training" element={<TrainingPage />} />
-      </Routes>
-    </Router>
+    <DataContext.Provider value={{ questions, setQuestions }}>
+      <Router basename="custom-training">
+        <TheNavbar />
+        <Routes>
+          <Route path="/" element={<HomeView />} />
+          <Route path="/practice" element={<TrainingPage />} />
+          <Route path="/upload" element={<QuestionsTable />} />
+        </Routes>
+      </Router>
+    </DataContext.Provider>
   )
 }
 

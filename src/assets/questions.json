@@ -1,34 +1,80 @@
 [
   {
-    "name": "One What is the capital of France?",
-    "options": ["London@Paris@New York@Madrid"],
-    "correct": "D",
+    "name": "Chocolate may be ____________ romantic—it contains chemicals that cause you to feel like you’re in love.",
+    "options": {
+      "A": "conventional",
+      "B": "revolution",
+      "C": "diminish",
+      "D": "inherent"
+    },
+    "answer": "D",
     "tag": "Unit2",
-    "remark":"This is a remark",
+    "remark": "",
     "due": 0
   },
   {
-    "name": "Two What is the capital of France?",
-    "options": ["London@Paris@Madrid"],
-    "correct": "C",
+    "name": "However, chocolate, which may cause feelings of love in some people, can ____________ severe headaches for others.",
+    "options": {
+      "A": "diminish",
+      "B": "inclination",
+      "C": "trigger",
+      "D": "abundant"
+    },
+    "answer": "C",
     "tag": "Unit2",
-    "remark":"This is a remark",
+    "remark": "",
     "due": 0
   },
   {
-    "name": "Three What is the capital of France?",
-    "options": ["New York@Madrid"],
-    "correct": "B",
+    "name": "By exchanging gifts, a person in love sometimes discovers that the love is ____________ and that his or her feelings are returned",
+    "options": {
+      "A": "chance",
+      "B": "mutual",
+      "C": "diminish",
+      "D": "trigger"
+    },
+    "answer": "B",
     "tag": "Unit2",
-    "remark":"This is a remark",
+    "remark": "",
     "due": 0
   },
   {
-    "name": "Four What is the capital of France?",
-    "options": ["London@Paris@"],
-    "correct": "A",
+    "name": "According to a recent scientific study, women with large chins have a greater ____________ to cheat in relationships",
+    "options": {
+      "A": "conventional",
+      "B": "abundant",
+      "C": "diminish",
+      "D": "inclination"
+    },
+    "answer": "D",
     "tag": "Unit2",
-    "remark":"This is a remark",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "A(n) ____________ of certain chemicals in the brain causes the racing heart, blushing, and sweaty palms of someone in love.",
+    "options": {
+      "A": "abundant",
+      "B": "revolution",
+      "C": "mutual",
+      "D": "chance"
+    },
+    "answer": "A",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "In the natural world, there is an element of ____________ in winning a mate",
+    "options": {
+      "A": "chance",
+      "B": "revolution",
+      "C": "inherent",
+      "D": "abundant"
+    },
+    "answer": "A",
+    "tag": "Unit2",
+    "remark": "",
     "due": 0
   }
 ]

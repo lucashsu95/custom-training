@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useContext } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -11,32 +11,38 @@ import {
   DialogDescription
 } from '@/components/ui/dialog'
 import { useDropzone } from 'react-dropzone'
-import { useIndexedDB } from '@/hooks/useIndexedDB';
+import { useIndexedDB } from '@/hooks/useIndexedDB'
+import { DataContext } from '@/App'
 
 export default function FileUploader() {
   const [isOpen, setIsOpen] = useState(false)
   const [file, setFile] = useState(null)
-  const { addItem } = useIndexedDB('customTrainingDB', 'questions');
+  const { addItem } = useIndexedDB('questions')
+  const { setQuestions } = useContext(DataContext)
 
-  const onDrop = useCallback((acceptedFiles) => {
-    const uploadedFile = acceptedFiles[0]
-    if (uploadedFile && uploadedFile.name.endsWith('.json')) {
-      setFile(uploadedFile)
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        try {
-          const questions = JSON.parse(event.target.result);
-          addItem(questions);
-        } catch (error) {
-          console.error('Error parsing JSON:', error);
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      const uploadedFile = acceptedFiles[0]
+      if (uploadedFile && uploadedFile.name.endsWith('.json')) {
+        setFile(uploadedFile)
+        const reader = new FileReader()
+        reader.onload = (event) => {
+          try {
+            const questions = JSON.parse(event.target.result)
+            addItem(questions)
+            setQuestions(questions)
+          } catch (error) {
+            console.error('Error parsing JSON:', error)
+          }
         }
-      };
-      reader.readAsText(uploadedFile);
-      setIsOpen(false)
-    } else {
-      alert('Please upload a .json file')
-    }
-  }, [addItem])
+        reader.readAsText(uploadedFile)
+        setIsOpen(false)
+      } else {
+        alert('Please upload a .json file')
+      }
+    },
+    [addItem, setQuestions]
+  )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -49,7 +55,7 @@ export default function FileUploader() {
     <div>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Button>新增 題目/標籤</Button>
+          <Button className="my-2">新增 題目/標籤</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
