@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import TheNavbar from './components/Navbar'
-import TrainingPage from './pages/TrainingPage'
-import QuestionsTable from './pages/ManageQuestions'
-import HomeView from './pages/HomeView'
+import TheNavbar from '@/components/Navbar'
+import TrainingPage from '@/pages/TrainingPage'
+import QuestionsTable from '@/pages/ManageQuestions'
+import HomeView from '@/pages/HomeView'
 import { useEffect, useState, useCallback, createContext } from 'react'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 

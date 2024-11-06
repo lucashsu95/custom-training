@@ -13,17 +13,11 @@ import {
 
 import React, { useContext, useMemo } from 'react'
 import { DataContext } from '@/App'
-import Question from '@/classes/Question'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)
   const { clearItem } = useIndexedDB('questions')
-
-  const displayedQuestions = useMemo(
-    () => questions.map((question) => Question.create(question)),
-    [questions]
-  )
 
   const handeClearItem = () => {
     clearItem()
@@ -41,16 +35,13 @@ export default function ManageQuestions() {
         </Button>
       </section>
 
-      {questions.length > 0 ? (
-        <QuestionsTable questions={displayedQuestions} />
-      ) : (
-        '目前沒有任何題目'
-      )}
+      {questions.length > 0 ? <QuestionsTable /> : '目前沒有任何題目'}
     </div>
   )
 }
 
-function QuestionsTable({ questions }) {
+function QuestionsTable() {
+  const { questions } = useContext(DataContext)
   const totalCount = useMemo(() => questions.length, [questions])
 
   return (
@@ -64,29 +55,42 @@ function QuestionsTable({ questions }) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {questions.map((question, index) => (
-            <React.Fragment key={index}>
-              <TableRow>
-                <TableCell>
-                  <div className="w-max rounded-md bg-sky-200 px-1 py-0.5">{question.tag}</div>
-                </TableCell>
-                <TableCell colSpan={2}>
-                  {question.remark !== '' && '備註：' + question.remark}
-                </TableCell>
-              </TableRow>
-              <TableRow className="bg-gray-100">
-                <TableCell className="w-2/3 font-medium">{question.name}</TableCell>
-                <TableCell className="text-xs">
-                  {Object.keys(question.options).map((optionKey) => (
-                    <div key={`${index}-${optionKey}`}>
-                      {optionKey}. {question.options[optionKey]}
-                    </div>
-                  ))}
-                </TableCell>
-                <TableCell className="w-5">{question.answer}</TableCell>
-              </TableRow>
-            </React.Fragment>
-          ))}
+          {questions.map((question, index) => {
+            return (
+              <React.Fragment key={index}>
+                <TableRow>
+                  <TableCell>
+                    <div className="w-max rounded-md bg-sky-200 px-1 py-0.5">{question.tag}</div>
+                  </TableCell>
+                  <TableCell>類型：{question.type}</TableCell>
+                  <TableCell>{question.remark !== '' && '備註：' + question.remark}</TableCell>
+                </TableRow>
+                <TableRow className="bg-gray-100">
+                  <TableCell className="w-2/3 font-medium">{question.name}</TableCell>
+                  {question.type === '選擇題' ? (
+                    <>
+                      <TableCell className="text-xs">
+                        {Object.keys(question.options).map((optionKey) => (
+                          <div key={`${index}-${optionKey}`}>
+                            {optionKey}. {question.options[optionKey]}
+                          </div>
+                        ))}
+                      </TableCell>
+                      <TableCell className="w-5">{question.answer}</TableCell>
+                    </>
+                  ) : question.type === '填空題' ? (
+                    <TableCell className="text-xs" colSpan={2}>
+                      {question.options.map((option) => (
+                        <div key={option}>{option}</div>
+                      ))}
+                    </TableCell>
+                  ) : (
+                    '無'
+                  )}
+                </TableRow>
+              </React.Fragment>
+            )
+          })}
         </TableBody>
         <TableFooter>
           <TableRow>

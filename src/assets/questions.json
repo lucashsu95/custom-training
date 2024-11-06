@@ -1,5 +1,6 @@
 [
   {
+    "type": "選擇題",
     "name": "Chocolate may be ____________ romantic—it contains chemicals that cause you to feel like you’re in love.",
     "options": {
       "A": "conventional",
@@ -13,6 +14,23 @@
     "due": 0
   },
   {
+    "type": "填空題",
+    "name": "According to a study, Chinese farmers growing rice that has been genetically 1. @@ to enhance insect resistance reduced their pesticide use by 80 percent. In addition, the genetically modified (GM) rice seed boosted crop production by almost 10 percent. There has been resistance to using GM grains as food crops— but some think this news from China may signal an important and possibly 2. @@ change.For the study, two types of rice were genetically altered to resist two common insect 3. @@, which usually require heavy use of pesticides to control. During the study, the amount of pesticide used by farmers 4. @@ because they saw less need for it.However, there are still many 5. @@ who don’t trust GM foods. They worry that there could be unexpected and possibly life-threatening 6. @@ reactions to them in humans. Such fears and concerns 7. @@, proven examples of problems with GM foods have been quite rare.",
+    "options": [
+      "modified",
+      "revolutionary",
+      "pests",
+      "diminished",
+      "skeptics",
+      "allergic",
+      "notwithstanding"
+    ],
+    "tag": "Unit3",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
     "name": "However, chocolate, which may cause feelings of love in some people, can ____________ severe headaches for others.",
     "options": {
       "A": "diminish",
@@ -26,6 +44,7 @@
     "due": 0
   },
   {
+    "type": "選擇題",
     "name": "By exchanging gifts, a person in love sometimes discovers that the love is ____________ and that his or her feelings are returned",
     "options": {
       "A": "chance",
@@ -39,6 +58,7 @@
     "due": 0
   },
   {
+    "type": "選擇題",
     "name": "According to a recent scientific study, women with large chins have a greater ____________ to cheat in relationships",
     "options": {
       "A": "conventional",
@@ -52,6 +72,7 @@
     "due": 0
   },
   {
+    "type": "選擇題",
     "name": "A(n) ____________ of certain chemicals in the brain causes the racing heart, blushing, and sweaty palms of someone in love.",
     "options": {
       "A": "abundant",
@@ -65,6 +86,7 @@
     "due": 0
   },
   {
+    "type": "選擇題",
     "name": "In the natural world, there is an element of ____________ in winning a mate",
     "options": {
       "A": "chance",

@@ -11,7 +11,15 @@ import { Label } from '@/components/ui/label'
 
 import { DataContext } from '@/App'
 import { useMemo, useContext, useState } from 'react'
-import Question from '@/classes/Question'
+import {
+  FillInTheBlankQuestion,
+  getQuestionByNumber,
+  getQuestionByTag,
+  MultipleChoiceQuestion,
+  shuffleAry
+} from '@/classes/Question'
+import MultipleChoiceItem from '@/components/traiing/MultipleChoiceItem'
+import FillInTheBlankItem from '@/components/traiing/FillInTheBlankItem'
 
 export default function TrainingPage() {
   const { questions } = useContext(DataContext)
@@ -29,19 +37,9 @@ export default function TrainingPage() {
   )
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    if (name === 'questionNumber' && (value > questionsLength || value < 0)) {
-      return
-    }
-    if (name === 'currentTag') {
-      setStatus((prevStatus) => ({
-        ...prevStatus,
-        questionNumber: 0
-      }))
-    }
     setStatus((prevStatus) => ({
       ...prevStatus,
-      [name]: value
+      [e.target.name]: e.target.value
     }))
   }
 
@@ -54,46 +52,60 @@ export default function TrainingPage() {
     return Array.from(tags)
   }, [questions])
 
-  const shuffleAry = (ary) => {
-    return ary.sort(() => Math.random() - 0.5)
-  }
   const [problems, setProblems] = useState([])
 
   const startTraining = (e) => {
     e.preventDefault()
-
-    const selectedQuestions = questions.filter((question) => {
-      if (status.currentTag === '全部') {
-        return true
-      }
-      return question.tag === status.currentTag
-    })
+    const selectedQuestions = getQuestionByTag(questions, status.currentTag)
     const shuffledQuestions = shuffleAry(selectedQuestions)
-    const problems = shuffledQuestions.slice(0, status.questionNumber)
-
-    const displayedProblems = problems
-      .map((problem) => Question.create(problem))
-      .map((question) => {
-        question.options = shuffleAry(Object.values(question.options))
-        return question
-      })
+    const correctProblems = getQuestionByNumber(shuffledQuestions, status.questionNumber)
+    const displayedProblems = correctProblems.map((problem) =>
+      problem.type === '選擇題'
+        ? MultipleChoiceQuestion.create(problem)
+        : FillInTheBlankQuestion.create(problem)
+    )
     setProblems(displayedProblems)
     setStatus((prev) => ({ ...prev, pageIndex: 1 }))
   }
 
   const [selectedOption, setSelectedOption] = useState(new Map())
+  const [result, setResult] = useState({
+    score: -1,
+    correctCount: 0,
+    wrongCount: 0
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const score = problems.reduce((acc, problem, i) => {
+    const correctCount = problems.reduce((acc, problem, i) => {
       const selected = selectedOption.get(i)
-      if (selected === problem.answerStr) {
-        return acc + 1
+      if (problem.type === '選擇題') {
+        return acc + (selected === problem.answerStr ? 1 : 0)
+      }
+      if (problem.type === '填空題') {
+        return (
+          acc +
+          problem.options.reduce(
+            (acc, option, j) => (selected.get(`${i}-${j}`) === option ? acc + 1 : acc),
+            0
+          )
+        )
       }
       return acc
     }, 0)
-    alert(`得分：${score}/${problems.length}`)
+    const problemsLength = problems.reduce(
+      (acc, problem) => acc + (problem.type === '選擇題' ? 1 : problem.options.length),
+      0
+    )
+    const score = Math.round((correctCount / problemsLength) * 100)
+    setResult({
+      score,
+      correctCount,
+      wrongCount: problemsLength - correctCount
+    })
     setStatus((prev) => ({ ...prev, pageIndex: 2 }))
+    window.scrollTo(0, 0)
+    window.document.body.style.height = '1px'
   }
 
   return (
@@ -144,50 +156,53 @@ export default function TrainingPage() {
           <h1 className="mb-2 text-xl font-bold">練習中</h1>
           <p>共有 {problems.length} 題</p>
           <p>標籤：{status.currentTag}</p>
-          <form className="my-5 space-y-12 md:p-6 md:shadow-lg" onSubmit={handleSubmit}>
-            {problems.map((problem, i) => (
-              <div key={i}>
-                <h2>
-                  {i + 1}. {problem.name}
-                </h2>
-                {problem.options.map((option, j) => {
-                  const id = `${i}-${j}`
-                  const isCorrect = problem.answerStr === option && selectedOption.get(i) === option
-                  const isWrong = selectedOption.get(i) === option && !isCorrect
-                  const inWrongCorrect = problem.answerStr === option && !isCorrect
-                  const optionClass = isCorrect
-                    ? 'bg-green-200'
-                    : isWrong
-                      ? 'bg-red-200'
-                      : inWrongCorrect
-                        ? 'bg-yellow-200'
-                        : ''
-                  const selectOption = () => {
-                    setSelectedOption((prev) => {
-                      prev.set(i, option)
-                      return prev
-                    })
-                  }
-                  return (
-                    <div key={id} className="mt-2 space-y-2">
-                      <input
-                        type="radio"
-                        name={`problem-${i}`}
-                        id={id}
-                        value={id}
-                        className="peer mr-2"
-                      />
-                      <Label
-                        className={`cursor-pointer rounded-md px-2 py-1 transition-colors hover:bg-gray-300 ${status.pageIndex === 1 && 'peer-checked:bg-sky-200'} ${status.pageIndex === 2 && optionClass}`}
-                        htmlFor={id}
-                        onClick={selectOption}
-                      >{`${String.fromCharCode(j + 65)}. ${option}`}</Label>
-                    </div>
-                  )
-                })}
+          {result.score > -1 && (
+            <>
+              <div className="my-2 rounded-md bg-purple-200 p-3">
+                <div
+                  className={`${
+                    result.score >= 85
+                      ? 'font-bold text-green-500'
+                      : result.score >= 60
+                        ? ''
+                        : 'font-bold text-red-500'
+                  } text-lg`}
+                >
+                  {result.score}分
+                </div>
+                <div className="text-xs">答對：{result.correctCount} </div>
+                <div className="text-xs">答錯：{result.wrongCount}</div>
               </div>
+            </>
+          )}
+          <form
+            className="my-5 space-y-6 md:space-y-12 md:p-6 md:shadow-lg"
+            onSubmit={handleSubmit}
+          >
+            {problems.map((problem, i) => (
+              <section key={i} className="">
+                {problem.type === '選擇題' ? (
+                  <MultipleChoiceItem
+                    key={i}
+                    i={i}
+                    problem={problem}
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                    pageIndex={status.pageIndex}
+                  />
+                ) : (
+                  <FillInTheBlankItem
+                    key={i}
+                    i={i}
+                    problem={problem}
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                    pageIndex={status.pageIndex}
+                  />
+                )}
+              </section>
             ))}
-            <Button>送出答案</Button>
+            {result.score < 0 && <Button>送出答案</Button>}
           </form>
         </article>
       )}
