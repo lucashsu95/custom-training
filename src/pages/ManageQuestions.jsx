@@ -13,7 +13,6 @@ import {
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator
@@ -22,6 +21,7 @@ import {
 import React, { useContext, useMemo } from 'react'
 import { DataContext } from '@/App'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
+import { Link } from 'react-router-dom'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)
@@ -39,7 +39,7 @@ export default function ManageQuestions() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">首頁</BreadcrumbLink>
+              <Link to="/">首頁</Link>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>

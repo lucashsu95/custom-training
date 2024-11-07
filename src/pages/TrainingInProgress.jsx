@@ -1,7 +1,6 @@
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator
@@ -13,6 +12,7 @@ import { Button } from '@/components/ui/button'
 import { DataContext } from '@/App'
 import { useContext, useState, useMemo } from 'react'
 import { getTags } from '@/classes/Question'
+import { Link } from 'react-router-dom'
 
 function TrainingInProgress() {
   const { problems } = useContext(DataContext)
@@ -65,11 +65,11 @@ function TrainingInProgress() {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">首頁</BreadcrumbLink>
+            <Link to="/">首頁</Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/training/setting">練習設定頁面</BreadcrumbLink>
+            <Link to="/training/setting">練習設定頁面</Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>

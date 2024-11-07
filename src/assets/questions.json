@@ -1,6 +1,146 @@
 [
   {
     "type": "選擇題",
+    "name": "荒謬的",
+    "options": {
+      "A": "rituals",
+      "B": "skeptic",
+      "C": "absurd",
+      "D": "breed"
+    },
+    "answer": "C",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "evoke",
+    "options": {
+      "A": "繁殖",
+      "B": "喚起",
+      "C": "傳統的",
+      "D": "儀式"
+    },
+    "answer": "B",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "勤奮地",
+    "options": {
+      "A": "optimistic",
+      "B": "diligently",
+      "C": "integral",
+      "D": "feasible"
+    },
+    "answer": "B",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "inherent",
+    "options": {
+      "A": "儘管",
+      "B": "固有",
+      "C": "招募",
+      "D": "挑戰"
+    },
+    "answer": "B",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "nationwide",
+    "options": {
+      "A": "消化",
+      "B": "全國",
+      "C": "汙染",
+      "D": "劇毒"
+    },
+    "answer": "B",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "revolution",
+    "options": {
+      "A": "挑戰",
+      "B": "傳統的",
+      "C": "革命",
+      "D": "儀式"
+    },
+    "answer": "C",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "可行的",
+    "options": {
+      "A": "inclination",
+      "B": "feasible",
+      "C": "nutritional",
+      "D": "commences"
+    },
+    "answer": "B",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "allergic",
+    "options": {
+      "A": "強制性的",
+      "B": "過敏的",
+      "C": "樂觀的",
+      "D": "固有"
+    },
+    "answer": "B",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "diminish",
+    "options": {
+      "A": "減少",
+      "B": "豐富",
+      "C": "儘管",
+      "D": "修改"
+    },
+    "answer": "A",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "mutual",
+    "options": {
+      "A": "維持",
+      "B": "挑戰",
+      "C": "浪漫",
+      "D": "固有"
+    },
+    "answer": "A",
+    "tag": "Unit2",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
     "name": "Chocolate may be ____________ romantic—it contains chemicals that cause you to feel like you’re in love.",
     "options": {
       "A": "conventional",
@@ -208,14 +348,7 @@
   {
     "type": "填空題",
     "name": "In Malaysian Borneo, hotels are involved in a battle with guests over a very smelly fruit called the durian. The smell of the durian is hard to describe, and has been compared to rotten fish or a garbage dump. This is why it is 1. @@ for durians to be kept outside the hotel. Hotel staff must 2. @@ keep watch for this food because guests often try to smuggle it in. When the fruit is in season, hotel managers in Kuching must work harder to keep it out. A hotel that smells of durian will find that the number of guests visiting it quickly 3. @@. But since it’s not 4. @@ to check every single guest entering the hotel, a certain number of durians inevitably get through. ",
-    "options": [
-      "compulsory",
-      "diligently",
-      "diminishes",
-      "feasible",
-      "contaminated",
-      "notwithstanding"
-    ],
+    "options": ["compulsory", "diligently", "diminishes", "feasible"],
     "tag": "Unit3",
     "remark": "49",
     "due": 0

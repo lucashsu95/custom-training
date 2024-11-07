@@ -1,7 +1,6 @@
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator
@@ -23,6 +22,7 @@ import {
 import { DataContext } from '@/App'
 import { useMemo, useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function TrainingSettings() {
   const { questions, setProblems } = useContext(DataContext)
@@ -89,7 +89,7 @@ function TrainingSettings() {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">首頁</BreadcrumbLink>
+            <Link to="/">首頁</Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
