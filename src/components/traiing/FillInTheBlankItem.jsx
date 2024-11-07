@@ -3,15 +3,7 @@ import PropTypes from 'prop-types'
 import { useMemo } from 'react'
 import { Input } from '@/components/ui/input'
 
-export default function FillInTheBlankItem({
-  i,
-  problem,
-  setSelectedOption,
-  selectedOption,
-  pageIndex
-}) {
-  console.log('problem:', problem)
-
+export default function FillInTheBlankItem({ i, problem, setSelectedOption, selectedOption, mod }) {
   const options = useMemo(() => {
     // Object
     const newOptions = {}
@@ -49,13 +41,12 @@ export default function FillInTheBlankItem({
               prev.set(i, subSelectedOption)
               return prev
             })
-            console.log(selectedOption)
           }
 
           return (
             <span key={j} className="text-sm md:text-base">
               <span>{part}</span>
-              {pageIndex === 2 ? (
+              {mod === 'completed' ? (
                 <>
                   {!isCorrect && (
                     <span
@@ -91,5 +82,5 @@ FillInTheBlankItem.propTypes = {
   problem: PropTypes.instanceOf(FillInTheBlankQuestion).isRequired,
   setSelectedOption: PropTypes.func.isRequired,
   selectedOption: PropTypes.instanceOf(Map).isRequired,
-  pageIndex: PropTypes.number.isRequired
+  mod: PropTypes.string.isRequired
 }

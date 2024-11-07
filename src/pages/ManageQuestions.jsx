@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import FileUploader from '@/components/FileUploader'
 import { Button } from '@/components/ui/button'
 import {
@@ -10,6 +9,15 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table'
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator
+} from '@/components/ui/breadcrumb'
 
 import React, { useContext, useMemo } from 'react'
 import { DataContext } from '@/App'
@@ -28,7 +36,18 @@ export default function ManageQuestions() {
   return (
     <div>
       <section className="p-6">
-        <h1 className="mb-2 text-xl font-bold">題庫列表</h1>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">首頁</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>題庫列表</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h1 className="my-2 text-xl font-bold">題庫列表</h1>
         <FileUploader />
         <Button variant="destructive" onClick={handeClearItem}>
           清空題庫

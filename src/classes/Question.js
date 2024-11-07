@@ -5,10 +5,11 @@ export function shuffleAry(ary) {
 
 // 根據標籤取得題目
 export function getQuestionByTag(questions, tag) {
-  if (tag === '全部') {
+  // tag type is Set
+  if (tag.has('全部')) {
     return questions
   }
-  return questions.filter((question) => question.tag === tag)
+  return questions.filter((question) => tag.has(question.tag))
 }
 
 // 根據數量取得題目
@@ -18,6 +19,14 @@ export function getQuestionByNumber(questions, number) {
     throw new Error('Index out of range')
   }
   return questions.slice(0, number)
+}
+
+export function getTags(questions) {
+  const tags = new Set()
+  questions.forEach((question) => {
+    tags.add(question.tag)
+  })
+  return Array.from(tags)
 }
 
 // 抽象類別

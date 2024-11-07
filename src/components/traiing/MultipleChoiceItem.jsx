@@ -2,13 +2,7 @@ import PropTypes from 'prop-types'
 import { Label } from '@/components/ui/label'
 import { MultipleChoiceQuestion } from '@/classes/Question'
 
-export default function MultipleChoiceItem({
-  i,
-  problem,
-  setSelectedOption,
-  selectedOption,
-  pageIndex
-}) {
+export default function MultipleChoiceItem({ i, problem, setSelectedOption, selectedOption, mod }) {
   return (
     <>
       <h2 className="text-lg">
@@ -44,7 +38,7 @@ export default function MultipleChoiceItem({
                 required
               />
               <Label
-                className={`cursor-pointer rounded px-3 py-1.5 transition-colors hover:bg-gray-300 ${pageIndex === 1 && 'peer-checked:bg-sky-200'} ${pageIndex === 2 && optionClass}`}
+                className={`cursor-pointer rounded px-3 py-1.5 transition-colors hover:bg-gray-300 ${mod === 'progress' && 'peer-checked:bg-sky-200'} ${mod === 'completed' && optionClass}`}
                 htmlFor={id}
                 onClick={handleChange}
               >{`${String.fromCharCode(j + 65)}. ${option}`}</Label>
@@ -61,5 +55,5 @@ MultipleChoiceItem.propTypes = {
   problem: PropTypes.instanceOf(MultipleChoiceQuestion).isRequired,
   setSelectedOption: PropTypes.func.isRequired,
   selectedOption: PropTypes.instanceOf(Map).isRequired,
-  pageIndex: PropTypes.number.isRequired
+  mod: PropTypes.string.isRequired
 }
