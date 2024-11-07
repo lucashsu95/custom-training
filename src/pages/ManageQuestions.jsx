@@ -22,6 +22,7 @@ import React, { useContext, useMemo } from 'react'
 import { DataContext } from '@/App'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import { Link } from 'react-router-dom'
+import QuestiopnJsonFile from '@/assets/questions.json'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)
@@ -31,6 +32,16 @@ export default function ManageQuestions() {
     clearItem()
     setQuestions([])
     alert('已清空題庫')
+  }
+
+  const handleDownloadFile = () => {
+    const element = document.createElement('a')
+    const file = new Blob([JSON.stringify(QuestiopnJsonFile)], { type: 'application/json' })
+    element.href = URL.createObjectURL(file)
+    element.download = 'questions.json'
+    document.body.appendChild(element)
+    element.click()
+    document.body.removeChild(element)
   }
 
   return (
@@ -48,6 +59,9 @@ export default function ManageQuestions() {
           </BreadcrumbList>
         </Breadcrumb>
         <h1 className="my-2 text-xl font-bold">題庫列表</h1>
+        <button className="text-sky-500 hover:underline" onClick={handleDownloadFile}>
+          沒有題庫嗎?從這下載一個範例.json檔吧
+        </button>
         <FileUploader />
         <Button variant="destructive" onClick={handeClearItem}>
           清空題庫

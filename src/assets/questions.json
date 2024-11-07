@@ -1,6 +1,132 @@
 [
   {
     "type": "選擇題",
+    "name": "Recruited",
+    "options": {
+      "A": "儀式",
+      "B": "固有",
+      "C": "招募",
+      "D": "傾向"
+    },
+    "answer": "C",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "rituals",
+    "options": {
+      "A": "儀式",
+      "B": "固有",
+      "C": "招募",
+      "D": "傾向"
+    },
+    "answer": "A",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "inclination",
+    "options": {
+      "A": "儀式",
+      "B": "固有",
+      "C": "招募",
+      "D": "傾向"
+    },
+    "answer": "D",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "inherent",
+    "options": {
+      "A": "高貴",
+      "B": "固有",
+      "C": "招募",
+      "D": "傾向"
+    },
+    "answer": "B",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "固有",
+    "options": {
+      "A": "inclination",
+      "B": "inherent",
+      "C": "undergone",
+      "D": "noble"
+    },
+    "answer": "B",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "傾向",
+    "options": {
+      "A": "inclination",
+      "B": "inherent",
+      "C": "undergone",
+      "D": "noble"
+    },
+    "answer": "A",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "招募",
+    "options": {
+      "A": "rituals",
+      "B": "recruited",
+      "C": "romance",
+      "D": "undergone"
+    },
+    "answer": "B",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "儀式",
+    "options": {
+      "A": "rituals",
+      "B": "recruited",
+      "C": "romance",
+      "D": "undergone"
+    },
+    "answer": "A",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "浪漫",
+    "options": {
+      "A": "rituals",
+      "B": "recruited",
+      "C": "romance",
+      "D": "absurd"
+    },
+    "answer": "C",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
     "name": "荒謬的",
     "options": {
       "A": "rituals",
@@ -9,7 +135,7 @@
       "D": "breed"
     },
     "answer": "C",
-    "tag": "Unit2",
+    "tag": "Unit2-單字",
     "remark": "",
     "due": 0
   },
@@ -23,21 +149,7 @@
       "D": "儀式"
     },
     "answer": "B",
-    "tag": "Unit2",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "勤奮地",
-    "options": {
-      "A": "optimistic",
-      "B": "diligently",
-      "C": "integral",
-      "D": "feasible"
-    },
-    "answer": "B",
-    "tag": "Unit2",
+    "tag": "Unit2-單字",
     "remark": "",
     "due": 0
   },
@@ -51,63 +163,7 @@
       "D": "挑戰"
     },
     "answer": "B",
-    "tag": "Unit2",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "nationwide",
-    "options": {
-      "A": "消化",
-      "B": "全國",
-      "C": "汙染",
-      "D": "劇毒"
-    },
-    "answer": "B",
-    "tag": "Unit2",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "revolution",
-    "options": {
-      "A": "挑戰",
-      "B": "傳統的",
-      "C": "革命",
-      "D": "儀式"
-    },
-    "answer": "C",
-    "tag": "Unit2",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "可行的",
-    "options": {
-      "A": "inclination",
-      "B": "feasible",
-      "C": "nutritional",
-      "D": "commences"
-    },
-    "answer": "B",
-    "tag": "Unit2",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "allergic",
-    "options": {
-      "A": "強制性的",
-      "B": "過敏的",
-      "C": "樂觀的",
-      "D": "固有"
-    },
-    "answer": "B",
-    "tag": "Unit2",
+    "tag": "Unit2-單字",
     "remark": "",
     "due": 0
   },
@@ -121,7 +177,7 @@
       "D": "修改"
     },
     "answer": "A",
-    "tag": "Unit2",
+    "tag": "Unit2-單字",
     "remark": "",
     "due": 0
   },
@@ -135,7 +191,105 @@
       "D": "固有"
     },
     "answer": "A",
-    "tag": "Unit2",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "compulsory",
+    "options": {
+      "A": "強制性的",
+      "B": "限制",
+      "C": "汙染",
+      "D": "劇毒"
+    },
+    "answer": "A",
+    "tag": "Unit3-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "confine",
+    "options": {
+      "A": "強制性的",
+      "B": "限制",
+      "C": "汙染",
+      "D": "劇毒"
+    },
+    "answer": "B",
+    "tag": "Unit3-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "contaminate",
+    "options": {
+      "A": "強制性的",
+      "B": "全國",
+      "C": "汙染",
+      "D": "劇毒"
+    },
+    "answer": "C",
+    "tag": "Unit3-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "nationwide",
+    "options": {
+      "A": "消化",
+      "B": "全國",
+      "C": "汙染",
+      "D": "劇毒"
+    },
+    "answer": "B",
+    "tag": "Unit3-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "勤奮地",
+    "options": {
+      "A": "optimistic",
+      "B": "diligently",
+      "C": "integral",
+      "D": "feasible"
+    },
+    "answer": "B",
+    "tag": "Unit3-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "revolution",
+    "options": {
+      "A": "挑戰",
+      "B": "傳統的",
+      "C": "革命",
+      "D": "儀式"
+    },
+    "answer": "C",
+    "tag": "Unit3-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "可行的",
+    "options": {
+      "A": "inclination",
+      "B": "feasible",
+      "C": "nutritional",
+      "D": "commences"
+    },
+    "answer": "B",
+    "tag": "Unit3-單字",
     "remark": "",
     "due": 0
   },
@@ -149,7 +303,7 @@
       "D": "inherent"
     },
     "answer": "D",
-    "tag": "Unit2",
+    "tag": "Unit2-單字-句型",
     "remark": "24-1",
     "due": 0
   },
@@ -163,7 +317,7 @@
       "D": "abundant"
     },
     "answer": "C",
-    "tag": "Unit2",
+    "tag": "Unit2-單字-句型",
     "remark": "24-2",
     "due": 0
   },
@@ -177,7 +331,7 @@
       "D": "trigger"
     },
     "answer": "B",
-    "tag": "Unit2",
+    "tag": "Unit2-單字-句型",
     "remark": "24-3",
     "due": 0
   },
@@ -191,7 +345,7 @@
       "D": "inclination"
     },
     "answer": "D",
-    "tag": "Unit2",
+    "tag": "Unit2-單字-句型",
     "remark": "24-4",
     "due": 0
   },
@@ -205,7 +359,7 @@
       "D": "chance"
     },
     "answer": "A",
-    "tag": "Unit2",
+    "tag": "Unit2-單字-句型",
     "remark": "24-5",
     "due": 0
   },
@@ -219,7 +373,7 @@
       "D": "abundant"
     },
     "answer": "A",
-    "tag": "Unit2",
+    "tag": "Unit2-單字-句型",
     "remark": "24-6",
     "due": 0
   },
