@@ -42,7 +42,7 @@ class Question {
   toPayload() {}
 }
 
-// 選擇題類別
+// 選擇題
 export class MultipleChoiceQuestion extends Question {
   constructor(question) {
     super(question)
@@ -56,14 +56,28 @@ export class MultipleChoiceQuestion extends Question {
   }
 }
 
+// 填空題
 export class FillInTheBlankQuestion extends Question {
   constructor(question) {
     super(question)
     this.options = question.options
     this.shuffledOptions = shuffleAry(question.options)
   }
-
+  
   static create(question) {
     return new FillInTheBlankQuestion(question)
+  }
+}
+// 配對題
+export class MatchingQuestion extends Question {
+  constructor(question) {
+    super(question)
+    this.shuffledName = shuffleAry(question.name)
+    this.options = question.options
+    this.shuffledOptions = shuffleAry(question.options)
+  }
+  
+  static create(question) {
+    return new MatchingQuestion(question)
   }
 }

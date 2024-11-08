@@ -8,6 +8,7 @@ import { getTags } from '@/classes/Question'
 import { Link } from 'react-router-dom'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+import MatchingItem from '@/components/traiing/MatchingItem'
 
 function TrainingInProgress() {
   const { problems } = useContext(DataContext)
@@ -34,6 +35,15 @@ function TrainingInProgress() {
           acc +
           problem.options.reduce(
             (acc, option, j) => (selected.get(`${i}-${j}`) === option ? acc + 1 : acc),
+            0
+          )
+        )
+      }
+      if(problem.type === '配對題') {
+        return (
+          acc +
+          problem.shuffledName.reduce(
+            (acc, name, j) => (selected.get(`${i}-${j}`) === problem.options[problem.name.indexOf(name)] ? acc + 1 : acc),
             0
           )
         )
@@ -108,8 +118,17 @@ function TrainingInProgress() {
                   setSelectedOption={setSelectedOption}
                   mod={mod}
                 />
-              ) : (
+              ) : problem.type === '填空題' ? (
                 <FillInTheBlankItem
+                  key={i}
+                  i={i}
+                  problem={problem}
+                  selectedOption={selectedOption}
+                  setSelectedOption={setSelectedOption}
+                  mod={mod}
+                />
+              ) : (
+                <MatchingItem
                   key={i}
                   i={i}
                   problem={problem}

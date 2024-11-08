@@ -1,510 +1,92 @@
 [
   {
-    "type": "選擇題",
-    "name": "Recruited",
-    "options": {
-      "A": "儀式",
-      "B": "固有",
-      "C": "招募",
-      "D": "傾向"
-    },
-    "answer": "C",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "rituals",
-    "options": {
-      "A": "儀式",
-      "B": "固有",
-      "C": "招募",
-      "D": "傾向"
-    },
-    "answer": "A",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "inclination",
-    "options": {
-      "A": "儀式",
-      "B": "固有",
-      "C": "招募",
-      "D": "傾向"
-    },
-    "answer": "D",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "inherent",
-    "options": {
-      "A": "高貴",
-      "B": "固有",
-      "C": "招募",
-      "D": "傾向"
-    },
-    "answer": "B",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "固有",
-    "options": {
-      "A": "inclination",
-      "B": "inherent",
-      "C": "undergone",
-      "D": "noble"
-    },
-    "answer": "B",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "傾向",
-    "options": {
-      "A": "inclination",
-      "B": "inherent",
-      "C": "undergone",
-      "D": "noble"
-    },
-    "answer": "A",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "招募",
-    "options": {
-      "A": "rituals",
-      "B": "recruited",
-      "C": "romance",
-      "D": "undergone"
-    },
-    "answer": "B",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "儀式",
-    "options": {
-      "A": "rituals",
-      "B": "recruited",
-      "C": "romance",
-      "D": "undergone"
-    },
-    "answer": "A",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "浪漫",
-    "options": {
-      "A": "rituals",
-      "B": "recruited",
-      "C": "romance",
-      "D": "absurd"
-    },
-    "answer": "C",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "荒謬的",
-    "options": {
-      "A": "rituals",
-      "B": "skeptic",
-      "C": "absurd",
-      "D": "breed"
-    },
-    "answer": "C",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "evoke",
-    "options": {
-      "A": "繁殖",
-      "B": "喚起",
-      "C": "傳統的",
-      "D": "儀式"
-    },
-    "answer": "B",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "inherent",
-    "options": {
-      "A": "儘管",
-      "B": "固有",
-      "C": "招募",
-      "D": "挑戰"
-    },
-    "answer": "B",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "diminish",
-    "options": {
-      "A": "減少",
-      "B": "豐富",
-      "C": "儘管",
-      "D": "修改"
-    },
-    "answer": "A",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "mutual",
-    "options": {
-      "A": "維持",
-      "B": "挑戰",
-      "C": "浪漫",
-      "D": "固有"
-    },
-    "answer": "A",
-    "tag": "Unit2-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "compulsory",
-    "options": {
-      "A": "強制性的",
-      "B": "限制",
-      "C": "汙染",
-      "D": "劇毒"
-    },
-    "answer": "A",
-    "tag": "Unit3-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "confine",
-    "options": {
-      "A": "強制性的",
-      "B": "限制",
-      "C": "汙染",
-      "D": "劇毒"
-    },
-    "answer": "B",
-    "tag": "Unit3-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "contaminate",
-    "options": {
-      "A": "強制性的",
-      "B": "全國",
-      "C": "汙染",
-      "D": "劇毒"
-    },
-    "answer": "C",
-    "tag": "Unit3-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "nationwide",
-    "options": {
-      "A": "消化",
-      "B": "全國",
-      "C": "汙染",
-      "D": "劇毒"
-    },
-    "answer": "B",
-    "tag": "Unit3-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "勤奮地",
-    "options": {
-      "A": "optimistic",
-      "B": "diligently",
-      "C": "integral",
-      "D": "feasible"
-    },
-    "answer": "B",
-    "tag": "Unit3-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "revolution",
-    "options": {
-      "A": "挑戰",
-      "B": "傳統的",
-      "C": "革命",
-      "D": "儀式"
-    },
-    "answer": "C",
-    "tag": "Unit3-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "可行的",
-    "options": {
-      "A": "inclination",
-      "B": "feasible",
-      "C": "nutritional",
-      "D": "commences"
-    },
-    "answer": "B",
-    "tag": "Unit3-單字",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "Chocolate may be ____________ romantic—it contains chemicals that cause you to feel like you’re in love.",
-    "options": {
-      "A": "conventional",
-      "B": "revolution",
-      "C": "diminish",
-      "D": "inherent"
-    },
-    "answer": "D",
-    "tag": "Unit2-單字-句型",
-    "remark": "24-1",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "However, chocolate, which may cause feelings of love in some people, can ____________ severe headaches for others.",
-    "options": {
-      "A": "diminish",
-      "B": "inclination",
-      "C": "trigger",
-      "D": "abundant"
-    },
-    "answer": "C",
-    "tag": "Unit2-單字-句型",
-    "remark": "24-2",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "By exchanging gifts, a person in love sometimes discovers that the love is ____________ and that his or her feelings are returned",
-    "options": {
-      "A": "chance",
-      "B": "mutual",
-      "C": "diminish",
-      "D": "trigger"
-    },
-    "answer": "B",
-    "tag": "Unit2-單字-句型",
-    "remark": "24-3",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "According to a recent scientific study, women with large chins have a greater ____________ to cheat in relationships",
-    "options": {
-      "A": "conventional",
-      "B": "abundant",
-      "C": "diminish",
-      "D": "inclination"
-    },
-    "answer": "D",
-    "tag": "Unit2-單字-句型",
-    "remark": "24-4",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "A(n) ____________ of certain chemicals in the brain causes the racing heart, blushing, and sweaty palms of someone in love.",
-    "options": {
-      "A": "abundant",
-      "B": "revolution",
-      "C": "mutual",
-      "D": "chance"
-    },
-    "answer": "A",
-    "tag": "Unit2-單字-句型",
-    "remark": "24-5",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "In the natural world, there is an element of ____________ in winning a mate",
-    "options": {
-      "A": "chance",
-      "B": "revolution",
-      "C": "inherent",
-      "D": "abundant"
-    },
-    "answer": "A",
-    "tag": "Unit2-單字-句型",
-    "remark": "24-6",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "Another title for this reading could be _____.",
-    "options": {
-      "A": "Science Can Conquer Passion",
-      "B": "The Right Way to Choose a Mate",
-      "C": "Explaining Why We Fall in Love",
-      "D": "The Case for Arranged Marriage"
-    },
-    "answer": "C",
-    "tag": "Unit2-reading",
-    "remark": "15-1",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "How do the Fulbe people of Cameroon feel about love?",
-    "options": {
-      "A": "Everyone falls in love in the same way.",
-      "B": "The men’s wives don’t want them around.",
-      "C": "It is shameful to be controlled by love.",
-      "D": "Men can fall in love, but women cannot."
-    },
-    "answer": "C",
-    "tag": "Unit2-reading",
-    "remark": "15-2",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "Which choice best expresses the meaning of this theory in line 42?",
-    "options": {
-      "A": "Marriage is too important to leave to chance.",
-      "B": "Without the approval of family, romantic love rarely succeeds.",
-      "C": "Romantic love is based on pleasant memories that we try to find again.",
-      "D": "Memories of comfort and affection can satisfy our need for romantic love."
-    },
-    "answer": "C",
-    "tag": "Unit2-reading",
-    "remark": "15-3",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "According to evolutionary psychology, why would a woman choose a man with rugged features?",
-    "options": {
-      "A": "to improve her immune system",
-      "B": "to have healthier children",
-      "C": "to protect her from animals and other threats",
-      "D": "because he is more likely to have a 70 percent waist-to-hip ratio"
-    },
-    "answer": "B",
-    "tag": "Unit2-reading",
-    "remark": "16-4",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "Why did Marazziti probably choose to study similarities between love and OCD?",
-    "options": {
-      "A": "She wanted to better understand her own experiences.",
-      "B": "She had naturally low serotonin levels.",
-      "C": "Other researchers felt it was an important area to study.",
-      "D": "She suffered from a mental illness."
-    },
-    "answer": "B",
-    "tag": "Unit2-reading",
-    "remark": "16-5",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "According to researchers, which chemical is most closely related to successful long-term relationships?",
-    "options": {
-      "A": "dopamine",
-      "B": "She had naturally low serotonin levels.oxytocin",
-      "C": "serotonin",
-      "D": "none of the above"
-    },
-    "answer": "B",
-    "tag": "Unit2-reading",
-    "remark": "16-6",
-    "due": 0
-  },
-  {
-    "type": "選擇題",
-    "name": "What advice would Helen Fisher probably give to couples who want a long-term relationship?",
-    "options": {
-      "A": "Hug each other often.",
-      "B": "Avoid having children.",
-      "C": "Keep your partner’s photo in your wallet.",
-      "D": "Spend time apart so you appreciate each other when you’re together."
-    },
-    "answer": "B",
-    "tag": "Unit2-reading",
-    "remark": "16-7",
-    "due": 0
-  },
-  {
-    "type": "填空題",
-    "name": "Jennifer Holland’s favorite species of bird of paradise is Carola’s parotia. Its dance 1. @@ includes motions such as bowing, flapping, and 2. @@ to move the heavy and 3. @@ wirelike feathers on its head, in hopes of winning one of the watching females. “Its mating dance is so 4. @@ that I could hardly keep from laughing.”For a couple of nights, Holland stayed in a tiny village with a local family. It is the custom of the local people to build a fire pit in the center of the room. Because she was not accustomed to the smoke, it was very 5. @@ on her eyes and lungs. “My eyes watered constantly, I coughed like a new smoker, and I had to step outside regularly to get fresh air—much to the delight of the local kids who sat on the steps waiting for us to emerge.”",
-    "options": ["ritual", "bouncing", "prominent", "absurd", "harsh"],
-    "tag": "Unit2",
-    "remark": "",
-    "due": 0
-  },
-  {
-    "type": "填空題",
-    "name": "According to a study, Chinese farmers growing rice that has been genetically 1. @@ to enhance insect resistance reduced their pesticide use by 80 percent. In addition, the genetically modified (GM) rice seed boosted crop production by almost 10 percent. There has been resistance to using GM grains as food crops— but some think this news from China may signal an important and possibly 2. @@ change.For the study, two types of rice were genetically altered to resist two common insect 3. @@, which usually require heavy use of pesticides to control. During the study, the amount of pesticide used by farmers 4. @@ because they saw less need for it.However, there are still many 5. @@ who don’t trust GM foods. They worry that there could be unexpected and possibly life-threatening 6. @@ reactions to them in humans. Such fears and concerns 7. @@, proven examples of problems with GM foods have been quite rare.",
-    "options": [
-      "modified",
-      "revolutionary",
-      "pests",
-      "diminished",
-      "skeptics",
-      "allergic",
-      "notwithstanding"
+    "type": "配對題",
+    "name": [
+      "(n.) a strong attachment or involvement between people in love",
+      "(n.) a refusal to obey something or someone",
+      "(n.) the possibility that something will happen",
+      "(n.) a feeling that makes you want to act in a particular way",
+      "(adj.) basic, part of the very nature of something",
+      "(n.) the feeling of wanting something",
+      "(v.) to select people and persuade them to join you in some activity or to help you",
+      "(adj.) having the same feelings toward each other",
+      "(adj.) present in large quantities",
+      "(n.) something that causes something else to happen"
     ],
-    "tag": "Unit3",
-    "remark": "43",
+    "options": [
+      "romance",
+      "defiance",
+      "chance",
+      "inclination",
+      "inherent",
+      "desire",
+      "recruit",
+      "mutual",
+      "abundant",
+      "trigger"
+    ],
+    "tag": "Unit2-2A",
+    "remark": "52",
     "due": 0
   },
   {
-    "type": "填空題",
-    "name": "In Malaysian Borneo, hotels are involved in a battle with guests over a very smelly fruit called the durian. The smell of the durian is hard to describe, and has been compared to rotten fish or a garbage dump. This is why it is 1. @@ for durians to be kept outside the hotel. Hotel staff must 2. @@ keep watch for this food because guests often try to smuggle it in. When the fruit is in season, hotel managers in Kuching must work harder to keep it out. A hotel that smells of durian will find that the number of guests visiting it quickly 3. @@. But since it’s not 4. @@ to check every single guest entering the hotel, a certain number of durians inevitably get through. ",
-    "options": ["compulsory", "diligently", "diminishes", "feasible"],
-    "tag": "Unit3",
-    "remark": "49",
+    "type": "配對題",
+    "name": [
+      "(adj.) grand or impressive in appearance",
+      "(v.) to start something",
+      "(v.) to swing or move up and down",
+      "(adj.) ridiculous or not making sense",
+      "(adv.) easily seen, obviously",
+      "(adj.) unpleasantly or harmfully hard or rough",
+      "(v.) to have something necessary or unpleasant happen to you",
+      "(n.) a series of actions that people regularly carry out in a particular situation",
+      "(v.) to cause a particular memory, idea, or emotion to occur",
+      "(v.) to produce young animals, offspring"
+    ],
+    "options": [
+      "noble",
+      "commence",
+      "bounce",
+      "absurd",
+      "prominently",
+      "harsh",
+      "undergo",
+      "ritual",
+      "evoke",
+      "breed"
+    ],
+    "tag": "Unit2-2B",
+    "remark": "53",
+    "due": 0
+  },
+  {
+    "type": "配對題",
+    "name": [
+      "(adj.) dirty or impure because something harmful or undesirable has been added",
+      "(adj.) extremely dangerous and deadly and usually spreading very quickly",
+      "(adj.) necessary because it is an essential part of something",
+      "(n.) the process of the body taking nutrients from food",
+      "(v.) to keep something within a certain area",
+      "(adj.) happening or existing in all parts of a country",
+      "(adj.) necessary because someone in authority says you must",
+      "(adj.) hopeful about the future or the success of something",
+      "(adj.) hard-working in a careful and thorough way",
+      "(adj.) possible, able to be done"
+    ],
+    "options": [
+      "contaminate",
+      "virulent",
+      "integral",
+      "digestion",
+      "confine",
+      "nationwide",
+      "compulsory",
+      "optimistic",
+      "diligently",
+      "feasible"
+    ],
+    "tag": "Unit3-2A",
+    "remark": "53",
     "due": 0
   }
 ]

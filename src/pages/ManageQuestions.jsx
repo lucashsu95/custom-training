@@ -93,7 +93,11 @@ function QuestionsTable() {
                 <TableCell>{question.remark !== '' && '備註：' + question.remark}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="w-2/3 font-medium">{question.name}</TableCell>
+                <TableCell className="w-2/3 font-medium">
+                  {question.type === '配對題'
+                    ? question.name.map((part, j) => <li key={j}>{part}</li>)
+                    : question.name}
+                </TableCell>
                 {question.type === '選擇題' ? (
                   <>
                     <TableCell className="text-xs">
@@ -105,7 +109,7 @@ function QuestionsTable() {
                     </TableCell>
                     <TableCell className="w-5">{question.answer}</TableCell>
                   </>
-                ) : question.type === '填空題' ? (
+                ) : question.type === '填空題' || question.type === '配對題' ? (
                   <TableCell className="text-xs" colSpan={2}>
                     {question.options.map((option) => (
                       <div key={option}>{option}</div>

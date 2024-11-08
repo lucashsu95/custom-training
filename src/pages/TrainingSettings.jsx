@@ -9,6 +9,7 @@ import {
   getQuestionByNumber,
   getQuestionByTag,
   getTags,
+  MatchingQuestion,
   MultipleChoiceQuestion,
   shuffleAry
 } from '@/classes/Question'
@@ -72,7 +73,9 @@ function TrainingSettings() {
     const displayedProblems = correctProblems.map((problem) =>
       problem.type === '選擇題'
         ? MultipleChoiceQuestion.create(problem)
-        : FillInTheBlankQuestion.create(problem)
+        : problem.type === '填空題'
+          ? FillInTheBlankQuestion.create(problem)
+          : MatchingQuestion.create(problem)
     )
     setProblems(displayedProblems)
     navigate('/training/in-progress')
