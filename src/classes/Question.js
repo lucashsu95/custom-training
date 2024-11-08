@@ -63,7 +63,7 @@ export class FillInTheBlankQuestion extends Question {
     this.options = question.options
     this.shuffledOptions = shuffleAry(question.options)
   }
-  
+
   static create(question) {
     return new FillInTheBlankQuestion(question)
   }
@@ -76,7 +76,7 @@ export class MatchingQuestion extends Question {
     this.options = question.options
     this.shuffledOptions = shuffleAry(question.options)
   }
-  
+
   static create(question) {
     return new MatchingQuestion(question)
   }

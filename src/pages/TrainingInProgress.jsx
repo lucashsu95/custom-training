@@ -39,11 +39,14 @@ function TrainingInProgress() {
           )
         )
       }
-      if(problem.type === '配對題') {
+      if (problem.type === '配對題') {
         return (
           acc +
           problem.shuffledName.reduce(
-            (acc, name, j) => (selected.get(`${i}-${j}`) === problem.options[problem.name.indexOf(name)] ? acc + 1 : acc),
+            (acc, name, j) =>
+              selected.get(`${i}-${j}`) === problem.options[problem.name.indexOf(name)]
+                ? acc + 1
+                : acc,
             0
           )
         )

@@ -43,7 +43,7 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
           return (
             <span
               key={j}
-              className="grid w-max grid-cols-[max-content_auto] items-center gap-x-3 border-b last:border-b-0 mt-2 pb-3 text-sm sm:w-full sm:text-base"
+              className="mt-2 grid w-max grid-cols-[max-content_auto] items-center gap-x-3 border-b pb-3 text-sm last:border-b-0 sm:w-full sm:text-base"
             >
               {mod === 'completed' ? (
                 <div>
