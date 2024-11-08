@@ -50,7 +50,7 @@ export default function ManageQuestions() {
         <h1 className="my-2 text-xl font-bold">題庫列表</h1>
         <button className="text-sky-500 hover:underline" onClick={handleDownloadFile}>
           沒有題庫嗎?從這下載一個範例
-          <span className="mx-1 rounded bg-gray-200 px-1 py-0.5 text-gray-600 hover:text-gray-200 dark:bg-gray-600">
+          <span className="mx-1 rounded bg-gray-200 px-1 py-0.5 text-gray-600 dark:text-gray-200 dark:bg-gray-600">
             .json
           </span>
           檔吧
