@@ -6,6 +6,7 @@ import { useEffect, useState, useCallback, createContext } from 'react'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
+import { ThemeProvider } from './components/theme-provider'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const DataContext = createContext()
@@ -26,7 +27,9 @@ function App() {
   }, [getAll])
 
   return (
+    
     <DataContext.Provider value={{ questions, setQuestions, problems, setProblems }}>
+      <ThemeProvider>
       <Router>
         <TheNavbar />
         <Routes>
@@ -36,6 +39,7 @@ function App() {
           <Route path="/training/in-progress" element={<TrainingInProgress />} />
         </Routes>
       </Router>
+    </ThemeProvider>
     </DataContext.Provider>
   )
 }

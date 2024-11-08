@@ -93,12 +93,12 @@ function QuestionsTable() {
               <React.Fragment key={index}>
                 <TableRow>
                   <TableCell>
-                    <div className="w-max rounded-md bg-sky-200 px-1 py-0.5">{question.tag}</div>
+                    <div className="w-max rounded-md bg-sky-200 text-gray-800 px-1 py-0.5">{question.tag}</div>
                   </TableCell>
                   <TableCell>類型：{question.type}</TableCell>
                   <TableCell>{question.remark !== '' && '備註：' + question.remark}</TableCell>
                 </TableRow>
-                <TableRow className="bg-gray-100">
+                <TableRow>
                   <TableCell className="w-2/3 font-medium">{question.name}</TableCell>
                   {question.type === '選擇題' ? (
                     <>
