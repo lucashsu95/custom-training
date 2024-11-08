@@ -10,19 +10,13 @@ import {
   TableRow
 } from '@/components/ui/table'
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '@/components/ui/breadcrumb'
+import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
 
 import React, { useContext, useMemo } from 'react'
 import { DataContext } from '@/App'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
-import { Link } from 'react-router-dom'
 import QuestiopnJsonFile from '@/assets/questions.json'
+import TheBreadcrumb from '@/components/TheBreadcrumb'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)
@@ -47,20 +41,19 @@ export default function ManageQuestions() {
   return (
     <div>
       <section className="p-6">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <Link to="/">首頁</Link>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>題庫列表</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <TheBreadcrumb>
+          <BreadcrumbItem>
+            <BreadcrumbPage>題庫列表</BreadcrumbPage>
+          </BreadcrumbItem>
+        </TheBreadcrumb>
+
         <h1 className="my-2 text-xl font-bold">題庫列表</h1>
         <button className="text-sky-500 hover:underline" onClick={handleDownloadFile}>
-          沒有題庫嗎?從這下載一個範例.json檔吧
+          沒有題庫嗎?從這下載一個範例
+          <span className="mx-1 rounded bg-gray-200 px-1 py-0.5 text-gray-600 hover:text-gray-200 dark:bg-gray-600">
+            .json
+          </span>
+          檔吧
         </button>
         <FileUploader />
         <Button variant="destructive" onClick={handeClearItem}>
@@ -88,42 +81,42 @@ function QuestionsTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {questions.map((question, index) => {
-            return (
-              <React.Fragment key={index}>
-                <TableRow>
-                  <TableCell>
-                    <div className="w-max rounded-md bg-sky-200 text-gray-800 px-1 py-0.5">{question.tag}</div>
-                  </TableCell>
-                  <TableCell>類型：{question.type}</TableCell>
-                  <TableCell>{question.remark !== '' && '備註：' + question.remark}</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="w-2/3 font-medium">{question.name}</TableCell>
-                  {question.type === '選擇題' ? (
-                    <>
-                      <TableCell className="text-xs">
-                        {Object.keys(question.options).map((optionKey) => (
-                          <div key={`${index}-${optionKey}`}>
-                            {optionKey}. {question.options[optionKey]}
-                          </div>
-                        ))}
-                      </TableCell>
-                      <TableCell className="w-5">{question.answer}</TableCell>
-                    </>
-                  ) : question.type === '填空題' ? (
-                    <TableCell className="text-xs" colSpan={2}>
-                      {question.options.map((option) => (
-                        <div key={option}>{option}</div>
+          {questions.map((question, index) => (
+            <React.Fragment key={index}>
+              <TableRow>
+                <TableCell>
+                  <div className="w-max rounded-md bg-sky-200 px-1 py-0.5 dark:bg-sky-700">
+                    {question.tag}
+                  </div>
+                </TableCell>
+                <TableCell>類型：{question.type}</TableCell>
+                <TableCell>{question.remark !== '' && '備註：' + question.remark}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="w-2/3 font-medium">{question.name}</TableCell>
+                {question.type === '選擇題' ? (
+                  <>
+                    <TableCell className="text-xs">
+                      {Object.keys(question.options).map((optionKey) => (
+                        <div key={`${index}-${optionKey}`}>
+                          {optionKey}. {question.options[optionKey]}
+                        </div>
                       ))}
                     </TableCell>
-                  ) : (
-                    '無'
-                  )}
-                </TableRow>
-              </React.Fragment>
-            )
-          })}
+                    <TableCell className="w-5">{question.answer}</TableCell>
+                  </>
+                ) : question.type === '填空題' ? (
+                  <TableCell className="text-xs" colSpan={2}>
+                    {question.options.map((option) => (
+                      <div key={option}>{option}</div>
+                    ))}
+                  </TableCell>
+                ) : (
+                  '無'
+                )}
+              </TableRow>
+            </React.Fragment>
+          ))}
         </TableBody>
         <TableFooter>
           <TableRow>

@@ -27,19 +27,18 @@ function App() {
   }, [getAll])
 
   return (
-    
     <DataContext.Provider value={{ questions, setQuestions, problems, setProblems }}>
       <ThemeProvider>
-      <Router>
-        <TheNavbar />
-        <Routes>
-          <Route path="/" element={<HomeView />} />
-          <Route path="/upload" element={<QuestionsTable />} />
-          <Route path="/training/setting" element={<TrainingSettings />} />
-          <Route path="/training/in-progress" element={<TrainingInProgress />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+        <Router>
+          <TheNavbar />
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route path="/upload" element={<QuestionsTable />} />
+            <Route path="/training/setting" element={<TrainingSettings />} />
+            <Route path="/training/in-progress" element={<TrainingInProgress />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
     </DataContext.Provider>
   )
 }

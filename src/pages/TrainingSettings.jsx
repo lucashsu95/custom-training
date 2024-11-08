@@ -1,10 +1,4 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '@/components/ui/breadcrumb'
+import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -22,7 +16,7 @@ import {
 import { DataContext } from '@/App'
 import { useMemo, useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import TheBreadcrumb from '@/components/TheBreadcrumb'
 
 function TrainingSettings() {
   const { questions, setProblems } = useContext(DataContext)
@@ -86,17 +80,11 @@ function TrainingSettings() {
 
   return (
     <section className="p-6">
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <Link to="/">首頁</Link>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>練習設定頁面</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+      <TheBreadcrumb>
+        <BreadcrumbItem>
+          <BreadcrumbPage>練習設定頁面</BreadcrumbPage>
+        </BreadcrumbItem>
+      </TheBreadcrumb>
       <article className="mx-auto mt-3 max-w-96 rounded-md border p-5">
         <h1 className="my-2 text-xl font-bold">練習設定頁面</h1>
         <form onSubmit={startTraining} className="space-y-5">

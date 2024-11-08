@@ -1,10 +1,3 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '@/components/ui/breadcrumb'
 import MultipleChoiceItem from '@/components/traiing/MultipleChoiceItem'
 import FillInTheBlankItem from '@/components/traiing/FillInTheBlankItem'
 import { Button } from '@/components/ui/button'
@@ -13,6 +6,8 @@ import { DataContext } from '@/App'
 import { useContext, useState, useMemo } from 'react'
 import { getTags } from '@/classes/Question'
 import { Link } from 'react-router-dom'
+import TheBreadcrumb from '@/components/TheBreadcrumb'
+import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 
 function TrainingInProgress() {
   const { problems } = useContext(DataContext)
@@ -62,21 +57,15 @@ function TrainingInProgress() {
 
   return (
     <section className="p-6">
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <Link to="/">首頁</Link>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <Link to="/training/setting">練習設定頁面</Link>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>練習中</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+      <TheBreadcrumb>
+        <BreadcrumbItem>
+          <Link to="/training/setting">練習設定頁面</Link>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>練習中</BreadcrumbPage>
+        </BreadcrumbItem>
+      </TheBreadcrumb>
       <article>
         <h1 className="my-2 text-xl font-bold">練習中</h1>
         <p>共有 {problems.length} 題</p>

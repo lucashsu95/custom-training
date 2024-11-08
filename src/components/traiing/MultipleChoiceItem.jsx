@@ -27,6 +27,9 @@ export default function MultipleChoiceItem({ i, problem, setSelectedOption, sele
               return prev
             })
           }
+          const Isprogress =
+            mod === 'progress' && 'peer-checked:bg-sky-200 dark:peer-checked:bg-sky-500'
+
           return (
             <div key={id}>
               <input
@@ -34,11 +37,11 @@ export default function MultipleChoiceItem({ i, problem, setSelectedOption, sele
                 name={`problem-${i}`}
                 id={id}
                 value={id}
-                className="peer mr-2"
+                className="peer mr-2 hidden"
                 required
               />
               <Label
-                className={`cursor-pointer rounded px-3 py-1.5 transition-colors hover:bg-gray-300 ${mod === 'progress' && 'peer-checked:bg-sky-200'} ${mod === 'completed' && optionClass}`}
+                className={`w-full cursor-pointer rounded px-3 py-1.5 transition-colors hover:bg-gray-300 dark:hover:bg-gray-700 ${Isprogress} ${mod === 'completed' && optionClass}`}
                 htmlFor={id}
                 onClick={handleChange}
               >{`${String.fromCharCode(j + 65)}. ${option}`}</Label>
