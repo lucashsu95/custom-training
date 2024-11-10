@@ -50,7 +50,7 @@ export default function ManageQuestions() {
         <h1 className="my-2 text-xl font-bold">題庫列表</h1>
         <button className="text-sky-500 hover:underline" onClick={handleDownloadFile}>
           沒有題庫嗎?從這下載一個範例
-          <span className="mx-1 rounded bg-gray-200 px-1 py-0.5 text-gray-600 dark:text-gray-200 dark:bg-gray-600">
+          <span className="mx-1 rounded bg-gray-200 px-1 py-0.5 text-gray-600 dark:bg-gray-600 dark:text-gray-200">
             .json
           </span>
           檔吧
@@ -75,9 +75,8 @@ function QuestionsTable() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">題目</TableHead>
-            <TableHead>選項</TableHead>
-            <TableHead>答案</TableHead>
+            <TableHead>類型/題目</TableHead>
+            <TableHead>標籤/選項</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -85,46 +84,44 @@ function QuestionsTable() {
             <React.Fragment key={index}>
               <TableRow>
                 <TableCell>
-                  <div className="w-max rounded-md bg-sky-200 px-1 py-0.5 dark:bg-sky-700">
-                    {question.tag}
+                    <div>類型：{question.type}</div>
+                    {question.remark !== '' && <div>備註：{question.remark}</div>}
+                </TableCell>
+                <TableCell>
+                  <div className="flex justify-around">
+                    <div className="w-max rounded-md bg-sky-200 px-1 py-0.5 dark:bg-sky-700">
+                      {question.tag}
+                    </div>
                   </div>
                 </TableCell>
-                <TableCell>類型：{question.type}</TableCell>
-                <TableCell>{question.remark !== '' && '備註：' + question.remark}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="w-2/3 font-medium">
+                <TableCell>
                   {question.type === '配對題'
-                    ? question.name.map((part, j) => <li key={j}>{part}</li>)
+                    ? question.name.map((part, j) => <div key={j}>{part}</div>)
                     : question.name}
                 </TableCell>
-                {question.type === '選擇題' ? (
-                  <>
-                    <TableCell className="text-xs">
-                      {Object.keys(question.options).map((optionKey) => (
-                        <div key={`${index}-${optionKey}`}>
+                <TableCell>
+                  {question.type === '選擇題'
+                    ? Object.keys(question.options).map((optionKey) => (
+                        <div
+                          key={`${index}-${optionKey}`}
+                          className={`rounded px-2 py-0.5 w-max ${question.answer === optionKey && 'bg-sky-200'}`}
+                        >
                           {optionKey}. {question.options[optionKey]}
                         </div>
-                      ))}
-                    </TableCell>
-                    <TableCell className="w-5">{question.answer}</TableCell>
-                  </>
-                ) : question.type === '填空題' || question.type === '配對題' ? (
-                  <TableCell className="text-xs" colSpan={2}>
-                    {question.options.map((option) => (
-                      <div key={option}>{option}</div>
-                    ))}
-                  </TableCell>
-                ) : (
-                  '無'
-                )}
+                      ))
+                    : question.type === '填空題' || question.type === '配對題'
+                      ? question.options.map((option) => <div key={option}>{option}</div>)
+                      : '無'}
+                </TableCell>
               </TableRow>
             </React.Fragment>
           ))}
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={2}>題目數量</TableCell>
+            <TableCell>題目數量</TableCell>
             <TableCell className="text-right">{totalCount}</TableCell>
           </TableRow>
         </TableFooter>
