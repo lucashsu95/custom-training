@@ -97,16 +97,14 @@ function QuestionsTable() {
               </TableRow>
               <TableRow>
                 <TableCell>
-                  {question.type === '配對題'
-                    ? question.name.map((part, j) => <div key={j}>{part}</div>)
-                    : question.name}
+                    {question.name}
                 </TableCell>
                 <TableCell>
                   {question.type === '選擇題'
                     ? Object.keys(question.options).map((optionKey) => (
                         <div
                           key={`${index}-${optionKey}`}
-                          className={`rounded px-2 py-0.5 w-max ${question.answer === optionKey && 'bg-sky-200'}`}
+                          className={`rounded px-2 py-0.5 ${question.answer === optionKey && 'bg-sky-200 dark:bg-sky-600'}`}
                         >
                           {optionKey}. {question.options[optionKey]}
                         </div>
