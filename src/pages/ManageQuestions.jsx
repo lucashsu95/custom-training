@@ -84,8 +84,8 @@ function QuestionsTable() {
             <React.Fragment key={index}>
               <TableRow>
                 <TableCell>
-                    <div>類型：{question.type}</div>
-                    {question.remark !== '' && <div>備註：{question.remark}</div>}
+                  <div>類型：{question.type}</div>
+                  {question.remark !== '' && <div>備註：{question.remark}</div>}
                 </TableCell>
                 <TableCell>
                   <div className="flex justify-around">
@@ -97,7 +97,9 @@ function QuestionsTable() {
               </TableRow>
               <TableRow>
                 <TableCell>
-                    {question.name}
+                  {question.type === '配對題'
+                    ? question.name.map((part, j) => <div key={j}>{part}</div>)
+                    : question.name}
                 </TableCell>
                 <TableCell>
                   {question.type === '選擇題'
