@@ -92,7 +92,7 @@ function TrainingInProgress() {
         </p>
         {result.score > -1 && (
           <>
-            <div className="my-2 rounded-md bg-purple-200 p-3">
+            <div className="my-2 rounded-md bg-purple-200 dark:bg-purple-400 p-3">
               <div
                 className={`${
                   result.score >= 80

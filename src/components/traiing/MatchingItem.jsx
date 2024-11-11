@@ -48,12 +48,12 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
               {mod === 'completed' ? (
                 <div>
                   {!isCorrect && (
-                    <span className={`h-8 rounded px-2 py-1 ${!isCorrect && 'bg-red-200'}`}>
+                    <span className={`h-8 rounded px-2 py-1 ${!isCorrect && 'bg-red-200 dark:bg-red-500'}`}>
                       {option}
                     </span>
                   )}
                   <span
-                    className={`h-8 rounded px-2 py-1 ${!isCorrect && 'ml-2'} ${isCorrect ? 'bg-green-200' : 'bg-yellow-200'}`}
+                    className={`h-8 rounded px-2 py-1 ${!isCorrect && 'ml-2'} ${isCorrect ? 'bg-green-200 dark:bg-emerald-700' : 'bg-yellow-200 dark:bg-yellow-600'}`}
                   >
                     {answer}
                   </span>

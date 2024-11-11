@@ -98,7 +98,7 @@ function QuestionsTable() {
               <TableRow>
                 <TableCell>
                   {question.type === '配對題'
-                    ? question.name.map((part, j) => <div key={j}>{part}</div>)
+                    ? question.name.map((part, j) => <li key={j}>{part}</li>)
                     : question.name}
                 </TableCell>
                 <TableCell>
