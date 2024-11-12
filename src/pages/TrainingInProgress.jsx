@@ -9,7 +9,7 @@ import { DataContext } from '@/App'
 import { useContext, useState, useMemo } from 'react'
 import { getTags } from '@/classes/Question'
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import { Toggle } from '@/components/ui/toggle'
 
 function TrainingInProgress() {
@@ -18,44 +18,44 @@ function TrainingInProgress() {
   const [mod, setMod] = useState('progress')
 
   const tags = useMemo(() => getTags(problems), [problems])
-  const [isActive, setIsActive] = useState(true)
-  const [time, setTime] = useState(0)
+  // const [isActive, setIsActive] = useState(true)
+  // const [time, setTime] = useState(0)
 
   // Timer
-  useEffect(() => {
-    let interval = null
-    if (isActive) {
-      interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 1)
-      }, 1000)
-    } else if (!isActive && time !== 0) {
-      clearInterval(interval)
-    }
-    return () => clearInterval(interval)
-  }, [isActive, time])
+  // useEffect(() => {
+  //   let interval = null
+  //   if (isActive) {
+  //     interval = setInterval(() => {
+  //       setTime((prevTime) => prevTime + 1)
+  //     }, 1000)
+  //   } else if (!isActive && time !== 0) {
+  //     clearInterval(interval)
+  //   }
+  //   return () => clearInterval(interval)
+  // }, [isActive, time])
 
-  const startTimer = () => {
-    setIsActive(true)
-  }
+  // const startTimer = () => {
+  //   setIsActive(true)
+  // }
 
-  const stopTimer = () => {
-    setIsActive(false)
-  }
+  // const stopTimer = () => {
+  //   setIsActive(false)
+  // }
 
   // const resetTimer = () => {
   //   setTime(0)
   //   setIsActive(false)
   // }
 
-  useEffect(() => {
-    startTimer()
-  }, [])
+  // useEffect(() => {
+  //   startTimer()
+  // }, [])
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`
-  }
+  // const formatTime = (seconds) => {
+  //   const minutes = Math.floor(seconds / 60)
+  //   const remainingSeconds = seconds % 60
+  //   return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`
+  // }
 
   const [result, setResult] = useState({
     score: -1,
@@ -103,7 +103,7 @@ function TrainingInProgress() {
       correctCount,
       wrongCount: problemsLength - correctCount
     })
-    stopTimer()
+    // stopTimer()
     setMod('completed')
     window.scrollTo(0, 0)
     window.document.body.style.height = '1px'
@@ -135,10 +135,10 @@ function TrainingInProgress() {
                 ))}
               </div>
             </li>
-            <li>
+            {/* <li>
               <b>時間：</b>
               {formatTime(time)}{' '}
-            </li>
+            </li> */}
           </ul>
         </section>
         {result.score > -1 && (
