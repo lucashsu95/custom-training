@@ -1,14 +1,16 @@
 import MultipleChoiceItem from '@/components/traiing/MultipleChoiceItem'
 import FillInTheBlankItem from '@/components/traiing/FillInTheBlankItem'
 import { Button } from '@/components/ui/button'
+import TheBreadcrumb from '@/components/TheBreadcrumb'
+import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+import MatchingItem from '@/components/traiing/MatchingItem'
 
 import { DataContext } from '@/App'
 import { useContext, useState, useMemo } from 'react'
 import { getTags } from '@/classes/Question'
 import { Link } from 'react-router-dom'
-import TheBreadcrumb from '@/components/TheBreadcrumb'
-import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
-import MatchingItem from '@/components/traiing/MatchingItem'
+import { useEffect } from 'react'
+import { Toggle } from '@/components/ui/toggle'
 
 function TrainingInProgress() {
   const { problems } = useContext(DataContext)
@@ -16,6 +18,44 @@ function TrainingInProgress() {
   const [mod, setMod] = useState('progress')
 
   const tags = useMemo(() => getTags(problems), [problems])
+  const [isActive, setIsActive] = useState(true)
+  const [time, setTime] = useState(0)
+
+  // Timer
+  useEffect(() => {
+    let interval = null
+    if (isActive) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 1)
+      }, 1000)
+    } else if (!isActive && time !== 0) {
+      clearInterval(interval)
+    }
+    return () => clearInterval(interval)
+  }, [isActive, time])
+
+  const startTimer = () => {
+    setIsActive(true)
+  }
+
+  const stopTimer = () => {
+    setIsActive(false)
+  }
+
+  // const resetTimer = () => {
+  //   setTime(0)
+  //   setIsActive(false)
+  // }
+
+  useEffect(() => {
+    startTimer()
+  }, [])
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`
+  }
 
   const [result, setResult] = useState({
     score: -1,
@@ -63,6 +103,7 @@ function TrainingInProgress() {
       correctCount,
       wrongCount: problemsLength - correctCount
     })
+    stopTimer()
     setMod('completed')
     window.scrollTo(0, 0)
     window.document.body.style.height = '1px'
@@ -79,27 +120,37 @@ function TrainingInProgress() {
           <BreadcrumbPage>練習中</BreadcrumbPage>
         </BreadcrumbItem>
       </TheBreadcrumb>
-      <article>
-        <h1 className="my-2 text-xl font-bold">練習中</h1>
-        <p>共有 {problems.length} 題</p>
-        <p>
-          標籤：
-          {tags.map((tag, index) => (
-            <span className="w-max rounded border px-2 py-1" key={index}>
-              {tag}
-            </span>
-          ))}
-        </p>
+      <div>
+        <section className="my-2 space-y-3 rounded-lg border p-4 shadow">
+          <h1 className="text-xl font-bold">練習中</h1>
+          <ul className="ml-5 list-outside list-disc leading-7">
+            <li>共有 {problems.length} 題</li>
+            <li>
+              標籤：
+              <div className="flex flex-wrap items-center gap-2">
+                {tags.map((tag, index) => (
+                  <Toggle variant="outline" key={index} disabled>
+                    {tag}
+                  </Toggle>
+                ))}
+              </div>
+            </li>
+            <li>
+              <b>時間：</b>
+              {formatTime(time)}{' '}
+            </li>
+          </ul>
+        </section>
         {result.score > -1 && (
           <>
-            <div className="my-2 rounded-md bg-purple-200 dark:bg-purple-400 p-3">
+            <div className="my-2 rounded-md bg-purple-200 p-3 dark:bg-purple-400">
               <div
                 className={`${
                   result.score >= 80
-                    ? 'font-bold text-green-500'
+                    ? 'font-bold text-green-500 dark:text-green-300'
                     : result.score >= 60
                       ? ''
-                      : 'font-bold text-red-500'
+                      : 'font-bold text-red-500 dark:text-red-300'
                 } text-lg`}
               >
                 {result.score}分
@@ -111,7 +162,7 @@ function TrainingInProgress() {
         )}
         <form className="my-5 space-y-6 md:space-y-12 md:p-6 md:shadow-lg" onSubmit={handleSubmit}>
           {problems.map((problem, i) => (
-            <section key={i} className="">
+            <section key={i}>
               {problem.type === '選擇題' ? (
                 <MultipleChoiceItem
                   key={i}
@@ -142,9 +193,16 @@ function TrainingInProgress() {
               )}
             </section>
           ))}
-          {result.score < 0 && <Button>送出答案</Button>}
+          {result.score < 0 && (
+            <>
+              <Button>送出答案</Button>
+              <Button type="reset" className="ml-2" variant="secondary">
+                重設
+              </Button>
+            </>
+          )}
         </form>
-      </article>
+      </div>
     </section>
   )
 }
