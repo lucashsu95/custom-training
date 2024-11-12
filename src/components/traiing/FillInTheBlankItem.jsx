@@ -5,10 +5,9 @@ import { Input } from '@/components/ui/input'
 
 export default function FillInTheBlankItem({ i, problem, setSelectedOption, selectedOption, mod }) {
   const options = useMemo(() => {
-    // Object
-    const newOptions = {}
+    const newOptions = new Map()
     problem.shuffledOptions.forEach((option, j) => {
-      newOptions[String.fromCharCode(j + 65)] = option
+      newOptions.set(String.fromCharCode(j + 65), option)
     })
     return newOptions
   }, [problem.shuffledOptions])
@@ -19,14 +18,17 @@ export default function FillInTheBlankItem({ i, problem, setSelectedOption, sele
   return (
     <>
       <h2 className="text-lg">{i + 1} 填空題. 請把對應代號填入正確的輸入框內</h2>
-      <div className="my-2 flex flex-wrap justify-center gap-3 rounded-md border p-3 text-sm shadow">
-        {Object.keys(options).map((optionKey) => (
+      <div
+        style={{ backgroundColor: `hsl(var(--background))` }}
+        className="sticky top-0 my-2 flex flex-wrap justify-center gap-3 rounded-md border p-3 text-sm shadow"
+      >
+        {[...options.keys()].map((optionKey) => (
           <div key={optionKey} className="flex">
-            {optionKey}. {options[optionKey]}
+            {optionKey}. {options.get(optionKey)}
           </div>
         ))}
       </div>
-      <h3 className="leading-10">
+      <article className="leading-10">
         {problemName.map((part, j) => {
           if (j === problemName.length - 1) {
             return <span key={j}>{part}</span>
@@ -37,7 +39,7 @@ export default function FillInTheBlankItem({ i, problem, setSelectedOption, sele
           const isCorrect = answer === option
 
           const handleChange = (e) => {
-            subSelectedOption.set(`${i}-${j}`, options[e.target.value.trim().toUpperCase()])
+            subSelectedOption.set(`${i}-${j}`, options.get(e.target.value.trim().toUpperCase()))
             setSelectedOption((prev) => {
               prev.set(i, subSelectedOption)
               return prev
@@ -51,13 +53,13 @@ export default function FillInTheBlankItem({ i, problem, setSelectedOption, sele
                 <>
                   {!isCorrect && (
                     <span
-                      className={`inline h-8 w-28 rounded px-2 py-1 ${!isCorrect && 'bg-red-200'}`}
+                      className={`inline h-8 w-28 rounded px-2 py-1 ${!isCorrect && 'bg-red-200 dark:bg-red-500'}`}
                     >
                       {option}
                     </span>
                   )}
                   <span
-                    className={`inline h-8 w-28 rounded px-2 py-1 ${isCorrect ? 'bg-green-200' : 'bg-yellow-200'}`}
+                    className={`inline h-8 w-28 rounded px-2 py-1 ${isCorrect ? 'bg-green-200 dark:bg-emerald-700' : 'bg-yellow-200 dark:bg-yellow-600'}`}
                   >
                     {answer}
                   </span>
@@ -74,7 +76,7 @@ export default function FillInTheBlankItem({ i, problem, setSelectedOption, sele
             </span>
           )
         })}
-      </h3>
+      </article>
     </>
   )
 }

@@ -3,6 +3,7 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
+import TheBreadcrumb from '@/components/TheBreadcrumb'
 
 import {
   FillInTheBlankQuestion,
@@ -17,14 +18,13 @@ import {
 import { DataContext } from '@/App'
 import { useMemo, useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import TheBreadcrumb from '@/components/TheBreadcrumb'
 
 function TrainingSettings() {
   const { questions, setProblems } = useContext(DataContext)
   const navigate = useNavigate()
 
   const [status, setStatus] = useState({
-    currentTags: new Set(['全部']),
+    currentTags: new Set(),
     questionNumber: 0
   })
 
@@ -33,26 +33,46 @@ function TrainingSettings() {
     [questions, status.currentTags]
   )
 
+  const handleTagChange = (value) => {
+    const updatedTags = new Set(status.currentTags)
+    if (updatedTags.has(value)) {
+      updatedTags.delete(value)
+    } else {
+      updatedTags.add(value)
+    }
+    return updatedTags
+  }
+
   const handleChange = (e) => {
     const { name, value } = e.target
     if (name === 'tag') {
-      const value = e.target.dataset.value
-      if (status.currentTags.has(value)) {
-        status.currentTags.delete(value)
-      } else {
-        status.currentTags.add(value)
-      }
+      const tagValue = e.target.dataset.value
+      const updatedTags = handleTagChange(tagValue)
       setStatus((prevStatus) => ({
         ...prevStatus,
-        currentTags: new Set(status.currentTags),
-        questionNumber: getQuestionByTag(questions, status.currentTags).length
+        currentTags: updatedTags,
+        questionNumber: getQuestionByTag(questions, updatedTags).length
       }))
-      return
+    } else {
+      setStatus((prevStatus) => ({
+        ...prevStatus,
+        [name]: value
+      }))
     }
-    setStatus((prevStatus) => ({
-      ...prevStatus,
-      [name]: value
-    }))
+  }
+
+  const handleSelectAll = () => {
+    setStatus({
+      currentTags: new Set(getTags(questions)),
+      questionNumber: questions.length
+    })
+  }
+
+  const handleClearAll = () => {
+    setStatus({
+      currentTags: new Set(),
+      questionNumber: 0
+    })
   }
 
   const tags = useMemo(() => {
@@ -130,7 +150,15 @@ function TrainingSettings() {
             <p className="ml-1 text-sm text-gray-500">共有 {questionsLength} 題</p>
           </div>
 
-          <Button>開始練習</Button>
+          <section className="flex flex-col gap-2 md:flex-row">
+            <Button>開始練習</Button>
+            <Button onClick={handleSelectAll} variant="outline">
+              全選
+            </Button>
+            <Button onClick={handleClearAll} variant="destructive">
+              全部取消
+            </Button>
+          </section>
         </form>
       </article>
     </section>

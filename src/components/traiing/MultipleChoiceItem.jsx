@@ -15,11 +15,11 @@ export default function MultipleChoiceItem({ i, problem, setSelectedOption, sele
           const isWrong = selectedOption.get(i) === option && !isCorrect
           const inWrongCorrect = problem.answerStr === option && !isCorrect
           const optionClass = isCorrect
-            ? 'bg-green-200'
+            ? 'bg-green-200 dark:bg-emerald-700'
             : isWrong
-              ? 'bg-red-200'
+              ? 'bg-red-200 dark:bg-red-500'
               : inWrongCorrect
-                ? 'bg-yellow-200'
+                ? 'bg-yellow-200 dark:bg-yellow-600'
                 : ''
           const handleChange = () => {
             setSelectedOption((prev) => {

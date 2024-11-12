@@ -4,11 +4,10 @@ import { useMemo } from 'react'
 import { Input } from '@/components/ui/input'
 
 export default function MatchingItem({ i, problem, setSelectedOption, selectedOption, mod }) {
-  // Object
   const options = useMemo(() => {
-    const newOptions = {}
+    const newOptions = new Map()
     problem.shuffledOptions.forEach((option, j) => {
-      newOptions[String.fromCharCode(j + 65)] = option
+      newOptions.set(String.fromCharCode(j + 65), option)
     })
     return newOptions
   }, [problem.shuffledOptions])
@@ -18,14 +17,17 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
   return (
     <>
       <h2 className="text-lg">{i + 1} 配對題. 請把對應的代號填入正確的輸入框內</h2>
-      <div className="my-2 flex flex-wrap justify-center gap-3 rounded-sm border p-3 text-sm shadow">
-        {Object.keys(options).map((optionKey) => (
+      <div
+        style={{ backgroundColor: `hsl(var(--background))` }}
+        className="sticky top-0 my-2 flex flex-wrap justify-center gap-3 rounded-sm border p-3 text-sm shadow"
+      >
+        {[...options.keys()].map((optionKey) => (
           <div key={optionKey} className="flex">
-            {optionKey}. {options[optionKey]}
+            {optionKey}. {options.get(optionKey)}
           </div>
         ))}
       </div>
-      <div className="mt-5 space-y-4 overflow-x-auto leading-10">
+      <article className="mt-5 space-y-4 overflow-x-auto leading-10">
         {problem.shuffledName.map((part, j) => {
           const idx = problem.name.indexOf(part)
           const answer = problem.options[idx]
@@ -33,7 +35,7 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
           const isCorrect = answer === option
 
           const handleChange = (e) => {
-            subSelectedOption.set(`${i}-${j}`, options[e.target.value.trim().toUpperCase()])
+            subSelectedOption.set(`${i}-${j}`, options.get(e.target.value.trim().toUpperCase()))
             setSelectedOption((prev) => {
               prev.set(i, subSelectedOption)
               return prev
@@ -43,12 +45,14 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
           return (
             <span
               key={j}
-              className="mt-2 grid w-max grid-cols-[max-content_auto] items-center gap-x-3 border-b pb-3 text-sm last:border-b-0 sm:w-full sm:text-base"
+              className="mt-2 grid w-full grid-cols-[max-content_auto] items-center gap-x-3 border-b pb-3 text-sm last:border-b-0 sm:w-full sm:text-base"
             >
               {mod === 'completed' ? (
                 <div>
                   {!isCorrect && (
-                    <span className={`h-8 rounded px-2 py-1 ${!isCorrect && 'bg-red-200 dark:bg-red-500'}`}>
+                    <span
+                      className={`h-8 rounded px-2 py-1 ${!isCorrect && 'bg-red-200 dark:bg-red-500'}`}
+                    >
                       {option}
                     </span>
                   )}
@@ -63,7 +67,7 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
                   type="text"
                   key={j}
                   onChange={handleChange}
-                  className="inline h-8 w-14"
+                  className="inline h-8 w-10"
                   required
                 />
               )}
@@ -71,7 +75,7 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
             </span>
           )
         })}
-      </div>
+      </article>
     </>
   )
 }
