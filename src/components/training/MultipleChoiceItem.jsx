@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import { Label } from '@/components/ui/label'
 import { MultipleChoiceQuestion } from '@/classes/Question'
 
 export default function MultipleChoiceItem({ i, problem, setSelectedOption, selectedOption, mod }) {
@@ -8,7 +7,7 @@ export default function MultipleChoiceItem({ i, problem, setSelectedOption, sele
       <h2 className="text-lg">
         {i + 1}. {problem.name}
       </h2>
-      <article className="mt-3 space-y-2">
+      <article className="ml-5 mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
         {problem.shuffledOptions.map((option, j) => {
           const id = `${i}-${j}`
           const isCorrect = problem.answerStr === option && selectedOption.get(i) === option
@@ -28,23 +27,26 @@ export default function MultipleChoiceItem({ i, problem, setSelectedOption, sele
             })
           }
           const Isprogress =
-            mod === 'progress' && 'peer-checked:bg-sky-200 dark:peer-checked:bg-sky-500'
+            mod === 'progress' && 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
 
           return (
-            <div key={id}>
+            <div
+              key={id}
+              className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${mod === 'completed' && optionClass}`}
+            >
               <input
                 type="radio"
                 name={`problem-${i}`}
                 id={id}
                 value={id}
-                className="peer mr-2 hidden"
+                className="from-radio h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
                 required
               />
-              <Label
-                className={`w-full cursor-pointer rounded px-3 py-1.5 transition-colors hover:bg-gray-300 dark:hover:bg-gray-700 ${Isprogress} ${mod === 'completed' && optionClass}`}
+              <label
                 htmlFor={id}
                 onClick={handleChange}
-              >{`${String.fromCharCode(j + 65)}. ${option}`}</Label>
+                className={`ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300 ${Isprogress}`}
+              >{`${String.fromCharCode(j + 65)}. ${option}`}</label>
             </div>
           )
         })}

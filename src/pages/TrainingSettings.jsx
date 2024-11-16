@@ -5,19 +5,16 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 
-import {
-  FillInTheBlankQuestion,
-  getQuestionByNumber,
-  getQuestionByTag,
-  getTags,
-  MatchingQuestion,
-  MultipleChoiceQuestion,
-  shuffleAry
-} from '@/classes/Question'
-
 import { DataContext } from '@/App'
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import {
+  getQuestionByNumber,
+  getQuestionByTag,
+  getTags,
+  getProblemType,
+  shuffleAry
+} from '@/lib/functions'
 
 function TrainingSettings() {
   // init state
@@ -88,13 +85,7 @@ function TrainingSettings() {
     const selectedQuestions = getQuestionByTag(questions, status.currentTags)
     const shuffledQuestions = shuffleAry(selectedQuestions)
     const correctProblems = getQuestionByNumber(shuffledQuestions, status.questionNumber)
-    const displayedProblems = correctProblems.map((problem) =>
-      problem.type === '選擇題'
-        ? MultipleChoiceQuestion.create(problem)
-        : problem.type === '填空題'
-          ? FillInTheBlankQuestion.create(problem)
-          : MatchingQuestion.create(problem)
-    )
+    const displayedProblems = correctProblems.map((problem) => getProblemType(problem))
     setProblems(displayedProblems)
     navigate('/training/in-progress')
   }

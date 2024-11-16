@@ -1,33 +1,4 @@
-// 打亂陣列
-export function shuffleAry(ary) {
-  return [...ary].sort(() => Math.random() - 0.5)
-}
-
-// 根據標籤取得題目
-export function getQuestionByTag(questions, tag) {
-  // tag type is Set
-  if (tag.has('全部')) {
-    return questions
-  }
-  return questions.filter((question) => tag.has(question.tag))
-}
-
-// 根據數量取得題目
-export function getQuestionByNumber(questions, number) {
-  if (questions.length < number) {
-    alert('題目數量不足')
-    throw new Error('Index out of range')
-  }
-  return questions.slice(0, number)
-}
-
-export function getTags(questions) {
-  const tags = new Set()
-  questions.forEach((question) => {
-    tags.add(question.tag)
-  })
-  return Array.from(tags)
-}
+import { shuffleAry } from '@/lib/functions'
 
 // 抽象類別
 class Question {
@@ -67,6 +38,13 @@ export class FillInTheBlankQuestion extends Question {
   static create(question) {
     return new FillInTheBlankQuestion(question)
   }
+
+  static getCorrectCount(problem, selected, i) {
+    return problem.options.reduce(
+      (acc, option, j) => (selected.get(`${i}-${j}`) === option ? acc + 1 : acc),
+      0
+    )
+  }
 }
 // 配對題
 export class MatchingQuestion extends Question {
@@ -80,4 +58,20 @@ export class MatchingQuestion extends Question {
   static create(question) {
     return new MatchingQuestion(question)
   }
+
+  static getCorrectCount(problem, selected, i) {
+    return problem.shuffledName.reduce(
+      (acc, name, j) =>
+        selected.get(`${i}-${j}`) === problem.options[problem.name.indexOf(name)]
+          ? acc + 1
+          : acc,
+      0
+    )
+  }
+}
+
+export const questionType = {
+  選擇題: MultipleChoiceQuestion,
+  填空題: FillInTheBlankQuestion,
+  配對題: MatchingQuestion
 }

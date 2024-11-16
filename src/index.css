@@ -65,6 +65,8 @@
   }
 }
 
-.custom-alert {
-  @apply cursor-pointer transition-transform hover:scale-105;
+@css {
+  .custom-alert {
+    @apply cursor-pointer transition-transform hover:scale-105;
+  }
 }
