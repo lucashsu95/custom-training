@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types'
 import { MultipleChoiceQuestion } from '@/classes/Question'
+import { DataContext } from '@/App'
+import { useContext } from 'react'
 
-export default function MultipleChoiceItem({ i, problem, setSelectedOption, selectedOption, mod }) {
+export default function MultipleChoiceItem({ i, problem, mod }) {
+  const { setProblems } = useContext(DataContext)
+  const selected = problem.selected
+
   return (
     <>
       <h2 className="text-lg">
         {i + 1}. {problem.name}
       </h2>
-      <article className="ml-5 mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
+      <article className="ml-3 mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
         {problem.shuffledOptions.map((option, j) => {
           const id = `${i}-${j}`
-          const isCorrect = problem.answerStr === option && selectedOption.get(i) === option
-          const isWrong = selectedOption.get(i) === option && !isCorrect
+          const isCorrect = problem.answerStr === option && selected === option
+          const isWrong = selected === option && !isCorrect
           const inWrongCorrect = problem.answerStr === option && !isCorrect
           const optionClass = isCorrect
             ? 'bg-green-200 dark:bg-emerald-700'
@@ -21,8 +26,8 @@ export default function MultipleChoiceItem({ i, problem, setSelectedOption, sele
                 ? 'bg-yellow-200 dark:bg-yellow-600'
                 : ''
           const handleChange = () => {
-            setSelectedOption((prev) => {
-              prev.set(i, option)
+            setProblems((prev) => {
+              prev[i].selected = option
               return prev
             })
           }
@@ -58,7 +63,5 @@ export default function MultipleChoiceItem({ i, problem, setSelectedOption, sele
 MultipleChoiceItem.propTypes = {
   i: PropTypes.number.isRequired,
   problem: PropTypes.instanceOf(MultipleChoiceQuestion).isRequired,
-  setSelectedOption: PropTypes.func.isRequired,
-  selectedOption: PropTypes.instanceOf(Map).isRequired,
   mod: PropTypes.string.isRequired
 }

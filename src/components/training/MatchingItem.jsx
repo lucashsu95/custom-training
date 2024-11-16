@@ -1,18 +1,18 @@
 import { MatchingQuestion } from '@/classes/Question'
 import PropTypes from 'prop-types'
-import { useMemo } from 'react'
 import { Input } from '@/components/ui/input'
+import { DataContext } from '@/App'
+import { useContext } from 'react'
 
-export default function MatchingItem({ i, problem, setSelectedOption, selectedOption, mod }) {
-  const options = useMemo(() => {
-    const newOptions = new Map()
-    problem.shuffledOptions.forEach((option, j) => {
-      newOptions.set(String.fromCharCode(j + 65), option)
-    })
-    return newOptions
-  }, [problem.shuffledOptions])
+export default function MatchingItem({ i, problem, mod }) {
+  const { setProblems } = useContext(DataContext)
 
-  const subSelectedOption = new Map()
+  const options = new Map()
+  problem.shuffledOptions.forEach((option, j) => {
+    options.set(String.fromCharCode(j + 65), option)
+  })
+
+  const selected = problem.selected // type is Map()
 
   return (
     <>
@@ -31,13 +31,13 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
         {problem.shuffledName.map((part, j) => {
           const idx = problem.name.indexOf(part)
           const answer = problem.options[idx]
-          const option = selectedOption.get(i)?.get(`${i}-${j}`)
+          const option = selected.get(j)
           const isCorrect = answer === option
 
           const handleChange = (e) => {
-            subSelectedOption.set(`${i}-${j}`, options.get(e.target.value.trim().toUpperCase()))
-            setSelectedOption((prev) => {
-              prev.set(i, subSelectedOption)
+            selected.set(j, options.get(e.target.value.trim().toUpperCase()))
+            setProblems((prev) => {
+              prev[i].selected = selected
               return prev
             })
           }
@@ -67,7 +67,7 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
                   type="text"
                   key={j}
                   onChange={handleChange}
-                  className="inline h-8 w-10"
+                  className="inline h-8 w-10 ml-1"
                   required
                 />
               )}
@@ -82,7 +82,5 @@ export default function MatchingItem({ i, problem, setSelectedOption, selectedOp
 MatchingItem.propTypes = {
   i: PropTypes.number.isRequired,
   problem: PropTypes.instanceOf(MatchingQuestion).isRequired,
-  setSelectedOption: PropTypes.func.isRequired,
-  selectedOption: PropTypes.instanceOf(Map).isRequired,
   mod: PropTypes.string.isRequired
 }

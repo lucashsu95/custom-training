@@ -1,4 +1,4 @@
-import { questionType } from '@/classes/Question'
+import { getQuestionClassByType } from '@/classes/Question'
 
 // 打亂陣列
 export function shuffleAry(ary) {
@@ -31,6 +31,6 @@ export function getTags(questions) {
   return Array.from(tags)
 }
 
-export function getProblemType(problem) {
-  return questionType[problem.type].create(problem)
+export const createQuestion = (question) => {
+  return getQuestionClassByType[question.type].create(question)
 }

@@ -7,7 +7,7 @@ import QuestionsTable from '@/components/manage/QuestionsTable'
 import { useContext } from 'react'
 import { DataContext } from '@/App'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
-import QuestiopnJsonFile from '/public/example.json'
+import QuestiopnJsonFile from '@/assets/example.json'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)

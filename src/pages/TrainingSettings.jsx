@@ -12,7 +12,7 @@ import {
   getQuestionByNumber,
   getQuestionByTag,
   getTags,
-  getProblemType,
+  createQuestion,
   shuffleAry
 } from '@/lib/functions'
 
@@ -85,7 +85,7 @@ function TrainingSettings() {
     const selectedQuestions = getQuestionByTag(questions, status.currentTags)
     const shuffledQuestions = shuffleAry(selectedQuestions)
     const correctProblems = getQuestionByNumber(shuffledQuestions, status.questionNumber)
-    const displayedProblems = correctProblems.map((problem) => getProblemType(problem))
+    const displayedProblems = correctProblems.map((problem) => createQuestion(problem))
     setProblems(displayedProblems)
     navigate('/training/in-progress')
   }

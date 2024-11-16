@@ -1,18 +1,18 @@
 import { FillInTheBlankQuestion } from '@/classes/Question'
 import PropTypes from 'prop-types'
-import { useMemo } from 'react'
 import { Input } from '@/components/ui/input'
+import { DataContext } from '@/App'
+import { useContext } from 'react'
 
-export default function FillInTheBlankItem({ i, problem, setSelectedOption, selectedOption, mod }) {
-  const options = useMemo(() => {
-    const newOptions = new Map()
-    problem.shuffledOptions.forEach((option, j) => {
-      newOptions.set(String.fromCharCode(j + 65), option)
-    })
-    return newOptions
-  }, [problem.shuffledOptions])
+export default function FillInTheBlankItem({ i, problem, mod }) {
+  const { setProblems } = useContext(DataContext)
 
-  const subSelectedOption = new Map()
+  const options = new Map()
+  problem.shuffledOptions.forEach((option, j) => {
+    options.set(String.fromCharCode(j + 65), option)
+  })
+
+  const selected = problem.selected // type is Map()
   const problemName = problem.name.split('@@')
 
   return (
@@ -34,14 +34,14 @@ export default function FillInTheBlankItem({ i, problem, setSelectedOption, sele
             return <span key={j}>{part}</span>
           }
 
-          const option = selectedOption.get(i)?.get(`${i}-${j}`)
+          const option = selected.get(j)
           const answer = problem.options[j]
           const isCorrect = answer === option
 
           const handleChange = (e) => {
-            subSelectedOption.set(`${i}-${j}`, options.get(e.target.value.trim().toUpperCase()))
-            setSelectedOption((prev) => {
-              prev.set(i, subSelectedOption)
+            selected.set(j, options.get(e.target.value.trim().toUpperCase()))
+            setProblems((prev) => {
+              prev[i].selected = selected
               return prev
             })
           }
@@ -83,7 +83,5 @@ export default function FillInTheBlankItem({ i, problem, setSelectedOption, sele
 FillInTheBlankItem.propTypes = {
   i: PropTypes.number.isRequired,
   problem: PropTypes.instanceOf(FillInTheBlankQuestion).isRequired,
-  setSelectedOption: PropTypes.func.isRequired,
-  selectedOption: PropTypes.instanceOf(Map).isRequired,
   mod: PropTypes.string.isRequired
 }
