@@ -1,3 +1,15 @@
+// ui component
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from '@/components/ui/alert-dialog'
 import FileUploader from '@/components/manage/FileUploader'
 import { Button } from '@/components/ui/button'
 import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
@@ -8,16 +20,38 @@ import { useContext } from 'react'
 import { DataContext } from '@/App'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import QuestiopnJsonFile from '@/assets/example.json'
+import { useState } from 'react'
+import { toast } from 'sonner'
+import { useCallback } from 'react'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)
+  const [recordQuestions, setRecordQuestions] = useState([...questions])
   const { clearItem } = useIndexedDB('questions')
+  const [open, setOpen] = useState(false)
 
   const handeClearItem = () => {
+    setRecordQuestions([...questions])
     clearItem()
     setQuestions([])
-    alert('已清空題庫')
+
+    toast('已清空題庫', {
+      description: '已成功清空所有題目',
+      action: {
+        label: '復原',
+        onClick: undoClear
+      }
+    })
+    setOpen(false)
   }
+
+  const undoClear = useCallback(() => {
+    recordQuestions
+    toast('已取消清空', {
+      description: '已取消清空所有題目'
+    })
+    setOpen(false)
+  }, [recordQuestions])
 
   const handleDownloadFile = () => {
     const element = document.createElement('a')
@@ -47,9 +81,22 @@ export default function ManageQuestions() {
           檔吧
         </button>
         <FileUploader />
-        <Button variant="destructive" onClick={handeClearItem}>
-          清空題庫
-        </Button>
+
+        <AlertDialog open={open} onOpenChange={setOpen}>
+          <AlertDialogTrigger asChild>
+            <Button variant="destructive">清空題庫</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>確定要清空所有題目嗎？</AlertDialogTitle>
+              <AlertDialogDescription>刪除後將無法復原，請謹慎操作。</AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>取消</AlertDialogCancel>
+              <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </section>
 
       {questions.length > 0 ? <QuestionsTable /> : '目前沒有任何題目'}

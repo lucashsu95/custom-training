@@ -13,12 +13,14 @@ import {
 import { useDropzone } from 'react-dropzone'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import { DataContext } from '@/App'
+import { toast } from 'sonner'
 
 export default function FileUploader() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [file, setFile] = useState(null)
   const { addItem } = useIndexedDB('questions')
   const { setQuestions } = useContext(DataContext)
+
+  const [isOpen, setIsOpen] = useState(false)
+  const [file, setFile] = useState(null)
 
   const onDrop = useCallback(
     (acceptedFiles) => {
@@ -30,7 +32,10 @@ export default function FileUploader() {
           try {
             const questions = JSON.parse(event.target.result)
             addItem(questions)
-            setQuestions(questions)
+            setQuestions((prev) => [...prev, ...questions])
+            toast('✅新增成功！', {
+              description: '已成功上傳檔案'
+            })
           } catch (error) {
             console.error('Error parsing JSON:', error)
           }
@@ -38,7 +43,9 @@ export default function FileUploader() {
         reader.readAsText(uploadedFile)
         setIsOpen(false)
       } else {
-        alert('Please upload a .json file')
+        toast('⚠️新增失敗！', {
+          description: '請上傳 JSON 檔案'
+        })
       }
     },
     [addItem, setQuestions]

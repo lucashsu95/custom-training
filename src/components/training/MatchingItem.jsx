@@ -67,7 +67,7 @@ export default function MatchingItem({ i, problem, mod }) {
                   type="text"
                   key={j}
                   onChange={handleChange}
-                  className="inline h-8 w-10 ml-1"
+                  className="ml-1 inline h-8 w-10"
                   required
                 />
               )}

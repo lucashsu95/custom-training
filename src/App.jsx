@@ -2,29 +2,30 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import TheNavbar from '@/components/Navbar'
 import QuestionsTable from '@/pages/ManageQuestions'
 import HomeView from '@/pages/HomeView'
-import { useEffect, useState, useCallback, createContext } from 'react'
+import { useEffect, useState, createContext } from 'react'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
 import { ThemeProvider } from './components/theme-provider'
+import { Toaster } from '@/components/ui/sonner'
+import JsonFile from '@/assets/example.json'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const DataContext = createContext()
 
 function App() {
-  const { getAllItem } = useIndexedDB('questions')
+  const { addItem, getAllItem } = useIndexedDB('questions')
   const [questions, setQuestions] = useState([])
   const [problems, setProblems] = useState([])
 
-  const getAll = useCallback(() => {
-    getAllItem((items) => {
-      setQuestions(items)
-    })
-  }, [getAllItem])
-
   useEffect(() => {
-    getAll()
-  }, [getAll])
+    getAllItem((allItems) => {
+      if (allItems.length === 0) {
+        addItem(JsonFile)
+      }
+      setQuestions(allItems)
+    })
+  }, [addItem, getAllItem])
 
   return (
     <DataContext.Provider value={{ questions, setQuestions, problems, setProblems }}>
@@ -38,6 +39,7 @@ function App() {
             <Route path="/training/in-progress" element={<TrainingInProgress />} />
           </Routes>
         </Router>
+        <Toaster />
       </ThemeProvider>
     </DataContext.Provider>
   )

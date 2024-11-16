@@ -4,7 +4,6 @@ import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 
 // question component
-
 import { DataContext } from '@/App'
 import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -71,7 +70,7 @@ function TrainingInProgress() {
       <div>
         {/* 顯示資訊 */}
         <StateBoard mod={mod} />
-        
+
         {/* 顯示成績 */}
         {result.score > -1 && (
           <>
@@ -79,12 +78,12 @@ function TrainingInProgress() {
               <div
                 className={`${
                   result.score >= 80
-                  ? 'font-bold text-green-500 dark:text-green-300'
-                  : result.score >= 60
-                  ? ''
-                  : 'font-bold text-red-500 dark:text-red-300'
+                    ? 'font-bold text-green-500 dark:text-green-300'
+                    : result.score >= 60
+                      ? ''
+                      : 'font-bold text-red-500 dark:text-red-300'
                 } text-lg`}
-                >
+              >
                 {result.score}分
               </div>
               <div className="text-xs">答對：{result.correctCount} </div>
