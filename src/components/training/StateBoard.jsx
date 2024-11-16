@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import { getTags } from '@/lib/functions'
 import { useEffect, useState, useContext } from 'react'
-import { DataContext } from '@/App'
+import { DataContext } from '@/context/DataContext'
 
 export default function StateBoard({ mod }) {
   const { problems } = useContext(DataContext)

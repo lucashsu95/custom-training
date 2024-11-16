@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/dialog'
 import { useDropzone } from 'react-dropzone'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
-import { DataContext } from '@/App'
+import { DataContext } from '@/context/DataContext'
 import { toast } from 'sonner'
 
 export default function FileUploader() {

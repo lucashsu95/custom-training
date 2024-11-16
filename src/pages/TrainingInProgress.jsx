@@ -4,7 +4,7 @@ import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 
 // question component
-import { DataContext } from '@/App'
+import { DataContext } from '@/context/DataContext'
 import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import StateBoard from '@/components/training/StateBoard'

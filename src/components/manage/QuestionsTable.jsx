@@ -8,7 +8,7 @@ import {
   TableRow
 } from '@/components/ui/table'
 import React, { useContext, useMemo } from 'react'
-import { DataContext } from '@/App'
+import { DataContext } from '@/context/DataContext'
 
 export default function QuestionsTable() {
   const { questions } = useContext(DataContext)

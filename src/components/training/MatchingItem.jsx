@@ -1,7 +1,7 @@
 import { MatchingQuestion } from '@/classes/Question'
 import PropTypes from 'prop-types'
 import { Input } from '@/components/ui/input'
-import { DataContext } from '@/App'
+import { DataContext } from '@/context/DataContext'
 import { useContext } from 'react'
 
 export default function MatchingItem({ i, problem, mod }) {

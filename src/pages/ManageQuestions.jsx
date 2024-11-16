@@ -17,7 +17,7 @@ import TheBreadcrumb from '@/components/TheBreadcrumb'
 import QuestionsTable from '@/components/manage/QuestionsTable'
 
 import { useContext } from 'react'
-import { DataContext } from '@/App'
+import { DataContext } from '@/context/DataContext'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import QuestiopnJsonFile from '@/assets/example.json'
 import { useState } from 'react'

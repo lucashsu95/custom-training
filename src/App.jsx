@@ -12,7 +12,7 @@ import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
 
 // 導入 DataContext
-import { DataContext } from './DataContext'
+import { DataContext } from '@/context/DataContext'
 
 // components
 import { Toaster } from '@/components/ui/sonner'
