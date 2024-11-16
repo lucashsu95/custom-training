@@ -1,52 +1,54 @@
 import { Toggle } from '@/components/ui/toggle'
 
-import { getTags } from '@/lib/functions'
-import { DataContext } from '@/App'
-import { useContext } from 'react'
 import PropTypes from 'prop-types'
+
+import { getTags } from '@/lib/functions'
+import { useEffect, useState, useContext } from 'react'
+import { DataContext } from '@/App'
 
 export default function StateBoard({ mod }) {
   const { problems } = useContext(DataContext)
   const tags = getTags(problems)
 
-  // const [isActive, setIsActive] = useState(true)
-  // const [time, setTime] = useState(0)
+  const [isActive, setIsActive] = useState(true)
+  const [time, setTime] = useState(0)
 
   // Timer
-  // useEffect(() => {
-  //   let interval = null
-  //   if (isActive) {
-  //     interval = setInterval(() => {
-  //       setTime((prevTime) => prevTime + 1)
-  //     }, 1000)
-  //   } else if (!isActive && time !== 0) {
-  //     clearInterval(interval)
-  //   }
-  //   return () => clearInterval(interval)
-  // }, [isActive, time])
+  useEffect(() => {
+    let interval = null
+    if (isActive) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 1)
+      }, 1000)
+    } else if (!isActive && time !== 0) {
+      clearInterval(interval)
+    }
+    return () => clearInterval(interval)
+  }, [isActive, time])
 
-  // const startTimer = () => {
-  //   setIsActive(true)
-  // }
+  const startTimer = () => {
+    setIsActive(true)
+  }
 
-  // const stopTimer = () => {
-  //   setIsActive(false)
-  // }
+  const stopTimer = () => {
+    setIsActive(false)
+  }
 
-  // const resetTimer = () => {
-  //   setTime(0)
-  //   setIsActive(false)
-  // }
+  useEffect(() => {
+    startTimer()
+  }, [])
 
-  // useEffect(() => {
-  //   startTimer()
-  // }, [])
+  useEffect(() => {
+    if (mod === 'completed') {
+      stopTimer()
+    }
+  }, [mod])
 
-  // const formatTime = (seconds) => {
-  //   const minutes = Math.floor(seconds / 60)
-  //   const remainingSeconds = seconds % 60
-  //   return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`
-  // }
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`
+  }
 
   return (
     <section className="my-2 space-y-3 rounded-lg border p-4 shadow">
@@ -63,10 +65,10 @@ export default function StateBoard({ mod }) {
             ))}
           </div>
         </li>
-        {/* <li>
-              <b>時間：</b>
-              {formatTime(time)}{' '}
-            </li> */}
+        <li>
+          <b>時間：</b>
+          {formatTime(time)}
+        </li>
       </ul>
     </section>
   )
