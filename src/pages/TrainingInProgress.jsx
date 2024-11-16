@@ -1,15 +1,17 @@
-import MultipleChoiceItem from '@/components/traiing/MultipleChoiceItem'
-import FillInTheBlankItem from '@/components/traiing/FillInTheBlankItem'
+// ui component
 import { Button } from '@/components/ui/button'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
-import MatchingItem from '@/components/traiing/MatchingItem'
+
+// question component
+import MultipleChoiceItem from '@/components/training/MultipleChoiceItem'
+import FillInTheBlankItem from '@/components/training/FillInTheBlankItem'
+import MatchingItem from '@/components/training/MatchingItem'
 
 import { DataContext } from '@/App'
-import { useContext, useState, useMemo } from 'react'
+import { useContext, useState } from 'react'
 import { getTags } from '@/classes/Question'
 import { Link } from 'react-router-dom'
-// import { useEffect } from 'react'
 import { Toggle } from '@/components/ui/toggle'
 
 function TrainingInProgress() {
@@ -17,7 +19,7 @@ function TrainingInProgress() {
   const [selectedOption, setSelectedOption] = useState(new Map())
   const [mod, setMod] = useState('progress')
 
-  const tags = useMemo(() => getTags(problems), [problems])
+  const tags = getTags(problems)
   // const [isActive, setIsActive] = useState(true)
   // const [time, setTime] = useState(0)
 
@@ -108,6 +110,7 @@ function TrainingInProgress() {
     window.scrollTo(0, 0)
     window.document.body.style.height = '1px'
   }
+  
 
   return (
     <section className="p-6">

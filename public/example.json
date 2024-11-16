@@ -1,0 +1,180 @@
+[
+  {
+    "type": "選擇題",
+    "name": "招募",
+    "options": {
+      "A": "rituals",
+      "B": "recruited",
+      "C": "romance",
+      "D": "undergone"
+    },
+    "answer": "B",
+    "tag": "Unit2-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "可行的",
+    "options": {
+      "A": "inclination",
+      "B": "feasible",
+      "C": "nutritional",
+      "D": "commences"
+    },
+    "answer": "B",
+    "tag": "Unit3-單字",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "According to researchers, which chemical is most closely related to successful long-term relationships?",
+    "options": {
+      "A": "dopamine",
+      "B": "She had naturally low serotonin levels.oxytocin",
+      "C": "serotonin",
+      "D": "none of the above"
+    },
+    "answer": "B",
+    "tag": "Unit2-reading",
+    "remark": "16-6",
+    "due": 0
+  },
+  {
+    "type": "選擇題",
+    "name": "What advice would Helen Fisher probably give to couples who want a long-term relationship?",
+    "options": {
+      "A": "Hug each other often.",
+      "B": "Avoid having children.",
+      "C": "Keep your partner’s photo in your wallet.",
+      "D": "Spend time apart so you appreciate each other when you’re together."
+    },
+    "answer": "A",
+    "tag": "Unit2-reading",
+    "remark": "16-7",
+    "due": 0
+  },
+  {
+    "type": "填空題",
+    "name": "Jennifer Holland’s favorite species of bird of paradise is Carola’s parotia. Its dance 1. @@ includes motions such as bowing, flapping, and 2. @@ to move the heavy and 3. @@ wirelike feathers on its head, in hopes of winning one of the watching females. “Its mating dance is so 4. @@ that I could hardly keep from laughing.”For a couple of nights, Holland stayed in a tiny village with a local family. It is the custom of the local people to build a fire pit in the center of the room. Because she was not accustomed to the smoke, it was very 5. @@ on her eyes and lungs. “My eyes watered constantly, I coughed like a new smoker, and I had to step outside regularly to get fresh air—much to the delight of the local kids who sat on the steps waiting for us to emerge.”",
+    "options": ["ritual", "bouncing", "prominent", "absurd", "harsh"],
+    "tag": "Unit2-填空題",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "type": "填空題",
+    "name": "According to a study, Chinese farmers growing rice that has been genetically 1. @@ to enhance insect resistance reduced their pesticide use by 80 percent. In addition, the genetically modified (GM) rice seed boosted crop production by almost 10 percent. There has been resistance to using GM grains as food crops— but some think this news from China may signal an important and possibly 2. @@ change.For the study, two types of rice were genetically altered to resist two common insect 3. @@, which usually require heavy use of pesticides to control. During the study, the amount of pesticide used by farmers 4. @@ because they saw less need for it.However, there are still many 5. @@ who don’t trust GM foods. They worry that there could be unexpected and possibly life-threatening 6. @@ reactions to them in humans. Such fears and concerns 7. @@, proven examples of problems with GM foods have been quite rare.",
+    "options": [
+      "modified",
+      "revolutionary",
+      "pests",
+      "diminished",
+      "skeptics",
+      "allergic",
+      "notwithstanding"
+    ],
+    "tag": "Unit3-填空題",
+    "remark": "43",
+    "due": 0
+  },
+  {
+    "type": "填空題",
+    "name": "In Malaysian Borneo, hotels are involved in a battle with guests over a very smelly fruit called the durian. The smell of the durian is hard to describe, and has been compared to rotten fish or a garbage dump. This is why it is 1. @@ for durians to be kept outside the hotel. Hotel staff must 2. @@ keep watch for this food because guests often try to smuggle it in. When the fruit is in season, hotel managers in Kuching must work harder to keep it out. A hotel that smells of durian will find that the number of guests visiting it quickly 3. @@. But since it’s not 4. @@ to check every single guest entering the hotel, a certain number of durians inevitably get through. ",
+    "options": ["compulsory", "diligently", "diminishes", "feasible"],
+    "tag": "Unit3-填空題",
+    "remark": "49",
+    "due": 0
+  },
+  {
+    "type": "配對題",
+    "name": [
+      "(n.) a strong attachment or involvement between people in love",
+      "(n.) a refusal to obey something or someone",
+      "(n.) the possibility that something will happen",
+      "(n.) a feeling that makes you want to act in a particular way",
+      "(adj.) basic, part of the very nature of something",
+      "(n.) the feeling of wanting something",
+      "(v.) to select people and persuade them to join you in some activity or to help you",
+      "(adj.) having the same feelings toward each other",
+      "(adj.) present in large quantities",
+      "(n.) something that causes something else to happen"
+    ],
+    "options": [
+      "romance",
+      "defiance",
+      "chance",
+      "inclination",
+      "inherent",
+      "desire",
+      "recruit",
+      "mutual",
+      "abundant",
+      "trigger"
+    ],
+    "tag": "Unit2-2A",
+    "remark": "52",
+    "due": 0
+  },
+  {
+    "type": "配對題",
+    "name": [
+      "(adj.) grand or impressive in appearance",
+      "(v.) to start something",
+      "(v.) to swing or move up and down",
+      "(adj.) ridiculous or not making sense",
+      "(adv.) easily seen, obviously",
+      "(adj.) unpleasantly or harmfully hard or rough",
+      "(v.) to have something necessary or unpleasant happen to you",
+      "(n.) a series of actions that people regularly carry out in a particular situation",
+      "(v.) to cause a particular memory, idea, or emotion to occur",
+      "(v.) to produce young animals, offspring"
+    ],
+    "options": [
+      "noble",
+      "commence",
+      "bounce",
+      "absurd",
+      "prominently",
+      "harsh",
+      "undergo",
+      "ritual",
+      "evoke",
+      "breed"
+    ],
+    "tag": "Unit2-2B",
+    "remark": "53",
+    "due": 0
+  },
+  {
+    "type": "配對題",
+    "name": [
+      "(adj.) dirty or impure because something harmful or undesirable has been added",
+      "(adj.) extremely dangerous and deadly and usually spreading very quickly",
+      "(adj.) necessary because it is an essential part of something",
+      "(n.) the process of the body taking nutrients from food",
+      "(v.) to keep something within a certain area",
+      "(adj.) happening or existing in all parts of a country",
+      "(adj.) necessary because someone in authority says you must",
+      "(adj.) hopeful about the future or the success of something",
+      "(adj.) hard-working in a careful and thorough way",
+      "(adj.) possible, able to be done"
+    ],
+    "options": [
+      "contaminate",
+      "virulent",
+      "integral",
+      "digestion",
+      "confine",
+      "nationwide",
+      "compulsory",
+      "optimistic",
+      "diligently",
+      "feasible"
+    ],
+    "tag": "Unit3-2A",
+    "remark": "53",
+    "due": 0
+  }
+]

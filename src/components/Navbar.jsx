@@ -48,9 +48,9 @@ export default function TheNavbar() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme('light')}>淺色 Light</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme('dark')}>深色 Dark</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme('system')}>跟隋系統 System</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 

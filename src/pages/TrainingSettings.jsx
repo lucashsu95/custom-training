@@ -16,10 +16,11 @@ import {
 } from '@/classes/Question'
 
 import { DataContext } from '@/App'
-import { useMemo, useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function TrainingSettings() {
+  // init state
   const { questions, setProblems } = useContext(DataContext)
   const navigate = useNavigate()
 
@@ -28,11 +29,9 @@ function TrainingSettings() {
     questionNumber: 0
   })
 
-  const questionsLength = useMemo(
-    () => getQuestionByTag(questions, status.currentTags).length,
-    [questions, status.currentTags]
-  )
+  const questionsLength = getQuestionByTag(questions, status.currentTags).length
 
+  // handle Start
   const handleTagChange = (value) => {
     const updatedTags = new Set(status.currentTags)
     if (updatedTags.has(value)) {
@@ -75,11 +74,10 @@ function TrainingSettings() {
     })
   }
 
-  const tags = useMemo(() => {
-    const ary = getTags(questions)
-    ary.unshift('全部')
-    return ary
-  }, [questions])
+  // handle End
+
+  const tags = getTags(questions)
+  tags.unshift('全部')
 
   const startTraining = (e) => {
     e.preventDefault()
@@ -111,7 +109,8 @@ function TrainingSettings() {
       <article className="mx-auto mt-3 max-w-96 rounded-md border p-5">
         <h1 className="my-2 text-xl font-bold">練習設定頁面</h1>
         <form onSubmit={startTraining} className="space-y-5">
-          <div>
+          {/* 選擇標籤 */}
+          <section>
             <Label className="text-base" htmlFor="current-tag">
               標籤：
             </Label>
@@ -130,9 +129,10 @@ function TrainingSettings() {
                 </ToggleGroupItem>
               ))}
             </ToggleGroup>
-          </div>
+          </section>
 
-          <div>
+          {/* 選擇題數 */}
+          <section>
             <Label className="text-base" htmlFor="question-number">
               題數：
             </Label>
@@ -148,14 +148,14 @@ function TrainingSettings() {
               required
             />
             <p className="ml-1 text-sm text-gray-500">共有 {questionsLength} 題</p>
-          </div>
+          </section>
 
           <section className="flex flex-col gap-2 md:flex-row">
             <Button>開始練習</Button>
-            <Button onClick={handleSelectAll} variant="outline">
+            <Button type="button" onClick={handleSelectAll} variant="outline">
               全選
             </Button>
-            <Button onClick={handleClearAll} variant="destructive">
+            <Button type="button" onClick={handleClearAll} variant="destructive">
               全部取消
             </Button>
           </section>
