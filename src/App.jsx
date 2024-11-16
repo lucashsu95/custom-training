@@ -1,17 +1,24 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import TheNavbar from '@/components/Navbar'
-import QuestionsTable from '@/pages/ManageQuestions'
-import HomeView from '@/pages/HomeView'
-import { useEffect, useState, createContext } from 'react'
+// tools
+import { useEffect, useState } from 'react'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { ThemeProvider } from './components/theme-provider'
+
+// pages
+import HomeView from '@/pages/HomeView'
+import TheNavbar from '@/components/Navbar'
+import ManageQuestions from '@/pages/ManageQuestions'
 import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
-import { ThemeProvider } from './components/theme-provider'
-import { Toaster } from '@/components/ui/sonner'
-import JsonFile from '@/assets/example.json'
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const DataContext = createContext()
+// 導入 DataContext
+import { DataContext } from './DataContext'
+
+// components
+import { Toaster } from '@/components/ui/sonner'
+
+// assets
+import JsonFile from '@/assets/example.json'
 
 function App() {
   const { addItem, getAllItem } = useIndexedDB('questions')
@@ -34,7 +41,7 @@ function App() {
           <TheNavbar />
           <Routes>
             <Route path="/" element={<HomeView />} />
-            <Route path="/upload" element={<QuestionsTable />} />
+            <Route path="/upload" element={<ManageQuestions />} />
             <Route path="/training/setting" element={<TrainingSettings />} />
             <Route path="/training/in-progress" element={<TrainingInProgress />} />
           </Routes>
