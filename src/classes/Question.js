@@ -76,8 +76,40 @@ export class MatchingQuestion extends Question {
   }
 }
 
+// 單字題
+export class VocabularyQuestion extends Question {
+  constructor(question) {
+    super(question)
+    this.answer = question.answer
+    this.optionsLength = question.optionsLength ?? 3
+    this.selected = ''
+  }
+
+  static create(question) {
+    return new VocabularyQuestion(question)
+  }
+
+  getOptions(names, answers) {
+    if (Math.round(Math.random())) {
+      const filteredNames = names.filter((x) => x !== this.name)
+      ;[this.name, this.answer] = [this.answer, this.name]
+      const options = [...shuffleAry(filteredNames).slice(0, this.optionsLength - 1), this.answer]
+      this.shuffledOptions = shuffleAry(options)
+    } else {
+      const filteredAnswers = answers.filter((x) => x !== this.answer)
+      const options = [...shuffleAry(filteredAnswers).slice(0, this.optionsLength - 1), this.answer]
+      this.shuffledOptions = shuffleAry(options)
+    }
+  }
+
+  getCorrectCount() {
+    return this.selected === this.answer ? 1 : 0
+  }
+}
+
 export const getQuestionClassByType = {
   選擇題: MultipleChoiceQuestion,
   填空題: FillInTheBlankQuestion,
-  配對題: MatchingQuestion
+  配對題: MatchingQuestion,
+  單字題: VocabularyQuestion
 }

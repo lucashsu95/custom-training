@@ -10,11 +10,12 @@ import { DataContext } from '@/context/DataContext'
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  getQuestionByNumber,
   getQuestionByTag,
   getTags,
   createQuestion,
-  shuffleAry
+  shuffleAry,
+  getLimitedQuestions,
+  getVocabularyShuffled
 } from '@/lib/functions'
 
 function TrainingSettings() {
@@ -85,8 +86,10 @@ function TrainingSettings() {
     }
     const selectedQuestions = getQuestionByTag(questions, status.currentTags)
     const shuffledQuestions = shuffleAry(selectedQuestions)
-    const correctProblems = getQuestionByNumber(shuffledQuestions, status.questionNumber)
-    const displayedProblems = correctProblems.map((problem) => createQuestion(problem))
+    const correctProblems = getLimitedQuestions(shuffledQuestions, status.questionNumber)
+
+    const problems = correctProblems.map((problem) => createQuestion(problem))
+    const displayedProblems = getVocabularyShuffled(problems) // 顯示單字題
     setProblems(displayedProblems)
     navigate('/training/in-progress')
   }

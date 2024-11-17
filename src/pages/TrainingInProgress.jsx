@@ -11,6 +11,7 @@ import StateBoard from '@/components/training/StateBoard'
 import MultipleChoiceItem from '@/components/training/MultipleChoiceItem'
 import FillInTheBlankItem from '@/components/training/FillInTheBlankItem'
 import MatchingItem from '@/components/training/MatchingItem'
+import VocabularyItem from '@/components/training/VocabularyItem'
 
 function TrainingInProgress() {
   const { problems } = useContext(DataContext)
@@ -32,6 +33,8 @@ function TrainingInProgress() {
         return <FillInTheBlankItem {...state} />
       case '配對題':
         return <MatchingItem {...state} />
+      case '單字題':
+        return <VocabularyItem {...state} />
     }
   }
 
@@ -39,8 +42,12 @@ function TrainingInProgress() {
     e.preventDefault()
     // 計算題目數
     const problemsLength = problems.reduce((acc, problem) => {
-      return acc + (problem.type === '選擇題' ? 1 : problem.options.length)
+      if (Array.isArray(problem?.options)) {
+        return acc + problem.options.length
+      }
+      return acc + 1
     }, 0)
+
     // 計算分數
     const correctCount = problems.reduce((acc, problem) => {
       return acc + problem.getCorrectCount()

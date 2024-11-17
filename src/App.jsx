@@ -25,7 +25,9 @@ function App() {
 
   useEffect(() => {
     getAllItem((allItems) => {
-      if (allItems.length === 0) {
+      const isVisited = localStorage.getItem('visited')
+      if (allItems.length === 0 && !isVisited) {
+        localStorage.setItem('visited', 'true')
         addItem(JsonFile)
         setQuestions(JsonFile)
       } else {

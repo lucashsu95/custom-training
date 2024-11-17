@@ -15,7 +15,7 @@ export function getQuestionByTag(questions, tag) {
 }
 
 // 根據數量取得題目
-export function getQuestionByNumber(questions, number) {
+export function getLimitedQuestions(questions, number) {
   if (questions.length < number) {
     alert('題目數量不足')
     throw new Error('Index out of range')
@@ -33,4 +33,31 @@ export function getTags(questions) {
 
 export const createQuestion = (question) => {
   return getQuestionClassByType[question.type].create(question)
+}
+
+export const getQuestionByType = (questions, type) => {
+  return questions.filter((question) => question.type === type)
+}
+
+export const getVocabularyShuffled = (problems) => {
+  const vocabulary = getQuestionByType(problems, '單字題')
+  if (vocabulary.length === 0) {
+    return problems
+  }
+  const [names, answers] = vocabulary.reduce(
+    (acc, problem) => {
+      acc[0].push(problem.name)
+      acc[1].push(problem.answer)
+      return acc
+    },
+    [[], []]
+  )
+  console.log(names, answers)
+
+  return problems.map((p) => {
+    if (p.type === '單字題') {
+      p.getOptions(names, answers)
+    }
+    return p
+  })
 }
