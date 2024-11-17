@@ -3,18 +3,16 @@ import { useEffect, useState } from 'react'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { ThemeProvider } from './components/theme-provider'
+import { DataContext } from '@/context/DataContext'
 
 // pages
 import HomeView from '@/pages/HomeView'
-import TheNavbar from '@/components/Navbar'
 import ManageQuestions from '@/pages/ManageQuestions'
 import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
 
-// 導入 DataContext
-import { DataContext } from '@/context/DataContext'
-
 // components
+import TheNavbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 
 // assets
@@ -29,8 +27,10 @@ function App() {
     getAllItem((allItems) => {
       if (allItems.length === 0) {
         addItem(JsonFile)
+        setQuestions(JsonFile)
+      } else {
+        setQuestions(allItems)
       }
-      setQuestions(allItems)
     })
   }, [addItem, getAllItem])
 

@@ -22,36 +22,35 @@ import { useIndexedDB } from '@/hooks/useIndexedDB'
 import QuestiopnJsonFile from '@/assets/example.json'
 import { useState } from 'react'
 import { toast } from 'sonner'
-import { useCallback } from 'react'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)
-  const [recordQuestions, setRecordQuestions] = useState([...questions])
-  const { clearItem } = useIndexedDB('questions')
+  const { clearItem, addItem } = useIndexedDB('questions')
   const [open, setOpen] = useState(false)
 
   const handeClearItem = () => {
-    setRecordQuestions([...questions])
     clearItem()
-    setQuestions([])
 
     toast('已清空題庫', {
       description: '已成功清空所有題目',
       action: {
         label: '復原',
-        onClick: undoClear
+        onClick: () => undoClear(questions)
       }
     })
     setOpen(false)
+    setQuestions([])
   }
 
-  const undoClear = useCallback(() => {
-    recordQuestions
+  const undoClear = (recordQuestions) => {
+    setQuestions(recordQuestions)
+    addItem(recordQuestions)
+
     toast('已取消清空', {
       description: '已取消清空所有題目'
     })
     setOpen(false)
-  }, [recordQuestions])
+  }
 
   const handleDownloadFile = () => {
     const element = document.createElement('a')
