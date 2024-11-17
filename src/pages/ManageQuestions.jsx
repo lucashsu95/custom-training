@@ -62,6 +62,16 @@ export default function ManageQuestions() {
     document.body.removeChild(element)
   }
 
+  const handleExportJsonFile = () => {
+    const element = document.createElement('a')
+    const file = new Blob([JSON.stringify(questions)], { type: 'application/json' })
+    element.href = URL.createObjectURL(file)
+    element.download = 'questions.json'
+    document.body.appendChild(element)
+    element.click()
+    document.body.removeChild(element)
+  }
+
   return (
     <div>
       <section className="p-6">
@@ -79,7 +89,12 @@ export default function ManageQuestions() {
           </span>
           檔吧
         </button>
+
         <FileUploader />
+
+        <Button className="mb-2 block" variant="outline" onClick={handleExportJsonFile}>
+          匯出題庫
+        </Button>
 
         <AlertDialog open={open} onOpenChange={setOpen}>
           <AlertDialogTrigger asChild>

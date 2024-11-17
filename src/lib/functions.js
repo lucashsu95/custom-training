@@ -52,8 +52,6 @@ export const getVocabularyShuffled = (problems) => {
     },
     [[], []]
   )
-  console.log(names, answers)
-
   return problems.map((p) => {
     if (p.type === '單字題') {
       p.getOptions(names, answers)

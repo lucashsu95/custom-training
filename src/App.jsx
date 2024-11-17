@@ -16,7 +16,7 @@ import TheNavbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 
 // assets
-import JsonFile from '@/assets/example.json'
+import JsonFile2 from '@/assets/unit4&5.json'
 
 function App() {
   const { addItem, getAllItem } = useIndexedDB('questions')
@@ -26,10 +26,11 @@ function App() {
   useEffect(() => {
     getAllItem((allItems) => {
       const isVisited = localStorage.getItem('visited')
-      if (allItems.length === 0 && !isVisited) {
-        localStorage.setItem('visited', 'true')
-        addItem(JsonFile)
-        setQuestions(JsonFile)
+      if (allItems.length === 0 && isVisited !== '2024-11-17') {
+        localStorage.setItem('visited', '2024-11-17')
+        const seederData = [...JsonFile2]
+        addItem(seederData)
+        setQuestions(seederData)
       } else {
         setQuestions(allItems)
       }

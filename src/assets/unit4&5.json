@@ -1,0 +1,322 @@
+[
+  {
+    "name": "vital",
+    "answer": "必不可少的",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "riddle",
+    "answer": "謎語",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "device",
+    "answer": "裝置",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "insight",
+    "answer": "洞察力",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "gap",
+    "answer": "差距",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "vertical",
+    "answer": "垂直的",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "military",
+    "answer": "軍隊",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "reproduce",
+    "answer": "複製",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "nonetheless",
+    "answer": "儘管如此",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "gradually",
+    "answer": "逐步地",
+    "type": "單字題",
+    "tag": "Unit4-4A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "suspend",
+    "answer": "暫停",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "fantasy",
+    "answer": "幻想",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "reality",
+    "answer": "現實",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "forthcoming",
+    "answer": "即將推出",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "thereby",
+    "answer": "從而",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "portable",
+    "answer": "便攜的",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "fraction",
+    "answer": "分數",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "rigid",
+    "answer": "死板的",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "gravity",
+    "answer": "重力",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "foresee",
+    "answer": "預見",
+    "type": "單字題",
+    "tag": "Unit4-4B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "descendant",
+    "answer": "後裔",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "conquest",
+    "answer": "征服",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "proof",
+    "answer": "證明",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "scatter",
+    "answer": "分散",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "identical",
+    "answer": "完全相同的",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "bulk",
+    "answer": "大部分",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "trace",
+    "answer": "痕跡",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "roughly",
+    "answer": "大致",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "immense",
+    "answer": "巨大",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "mainland",
+    "answer": "大陸",
+    "type": "單字題",
+    "tag": "Unit5-5A",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "revered",
+    "answer": "受人尊敬",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "navigation",
+    "answer": "導航",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "stretch",
+    "answer": "拉緊",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "interval",
+    "answer": "間隔",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "outdo",
+    "answer": "超越",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "stubborn",
+    "answer": "固執的",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "analogous",
+    "answer": "類似的",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "intact",
+    "answer": "完好無損的",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "conceivable",
+    "answer": "可以想的",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  },
+  {
+    "name": "disrupt",
+    "answer": "擾亂",
+    "type": "單字題",
+    "tag": "Unit5-5B",
+    "remark": "",
+    "due": 0
+  }
+]

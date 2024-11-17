@@ -57,7 +57,9 @@ export default function QuestionsTable() {
                       ))
                     : question.type === '填空題' || question.type === '配對題'
                       ? question.options.map((option) => <div key={option}>{option}</div>)
-                      : '無'}
+                      : question.type === '單字題'
+                        ? question.answer
+                        : '未知題型'}
                 </TableCell>
               </TableRow>
             </React.Fragment>
