@@ -12,10 +12,12 @@ import MultipleChoiceItem from '@/components/training/MultipleChoiceItem'
 import FillInTheBlankItem from '@/components/training/FillInTheBlankItem'
 import MatchingItem from '@/components/training/MatchingItem'
 import VocabularyItem from '@/components/training/VocabularyItem'
+import { useIndexedDB } from '@/hooks/useIndexedDB'
 
 function TrainingInProgress() {
-  const { problems } = useContext(DataContext)
+  const { problems, setQuestions } = useContext(DataContext)
   const [mod, setMod] = useState('progress')
+  const { updateItem } = useIndexedDB('questions')
 
   const [result, setResult] = useState({
     score: -1,
@@ -35,23 +37,46 @@ function TrainingInProgress() {
         return <MatchingItem {...state} />
       case '單字題':
         return <VocabularyItem {...state} />
+      default:
+        return null
     }
+  }
+
+  const getProblemLength = (problem) => {
+    if (Array.isArray(problem?.options)) {
+      return problem.options.length
+    }
+    return 1
+  }
+
+  const updateState = (id, due) => {
+    updateItem(id, { due })
+    setQuestions((prev) => {
+      for (const p of prev) {
+        if (p.id === id) {
+          p.due = due
+        }
+      }
+      return prev
+    })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // 計算題目數
-    const problemsLength = problems.reduce((acc, problem) => {
-      if (Array.isArray(problem?.options)) {
-        return acc + problem.options.length
-      }
-      return acc + 1
-    }, 0)
+    let problemsLength = 0
+    let correctCount = 0
+
+    // 計算題目數量 & 更新 due
+    problems.forEach((problem) => {
+      const count = problem.getCorrectCount()
+      const len = getProblemLength(problem)
+      problem.due += Math.max(count === len ? 1 : -1, -3)
+      updateState(problem.id, problem.due)
+      correctCount += count
+      problemsLength += len
+    })
 
     // 計算分數
-    const correctCount = problems.reduce((acc, problem) => {
-      return acc + problem.getCorrectCount()
-    }, 0)
     const score = Math.round((correctCount / problemsLength) * 100)
     setResult({
       score,

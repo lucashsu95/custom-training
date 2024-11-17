@@ -5,6 +5,21 @@ export function shuffleAry(ary) {
   return [...ary].sort(() => Math.random() - 0.5)
 }
 
+// 依照 due 排序 並分組 打亂組內順序
+export function shuffleAryByDue(ary) {
+  return [...ary]
+    .sort((a, b) => a.due - b.due)
+    .reduce((acc, item, index, array) => {
+      if (index === 0 || item.due !== array[index - 1].due) {
+        acc.push([item])
+      } else {
+        acc[acc.length - 1].push(item)
+      }
+      return acc
+    }, [])
+    .flatMap((group) => group.sort(() => Math.random() - 0.5))
+}
+
 // 根據標籤取得題目
 export function getQuestionByTag(questions, tag) {
   // tag type is Set
@@ -44,6 +59,8 @@ export const getVocabularyShuffled = (problems) => {
   if (vocabulary.length === 0) {
     return problems
   }
+
+  // 取得所有單字題的 name & answer
   const [names, answers] = vocabulary.reduce(
     (acc, problem) => {
       acc[0].push(problem.name)
@@ -52,9 +69,13 @@ export const getVocabularyShuffled = (problems) => {
     },
     [[], []]
   )
+
+  // 將單字題的選項打亂
   return problems.map((p) => {
     if (p.type === '單字題') {
-      p.getOptions(names, answers)
+      const p2 = createQuestion(p)
+      p2.getOptions(names, answers)
+      return p2
     }
     return p
   })

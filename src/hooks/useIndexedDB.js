@@ -53,19 +53,23 @@ export function useIndexedDB(storeName) {
     }
     api.clear()
   }, [api])
-  // const updateItem = (id, updatedData) => {
-  //   if (!api) {
-  //     console.error('API is not initialized')
-  //     return
-  //   }
-  //   api.get().then((items) => {
-  //     const item = items.find((item) => item.id === id)
-  //     if (item) {
-  //       Object.assign(item, updatedData)
-  //       api.put(item)
-  //     }
-  //   })
-  // }
+
+  const updateItem = useCallback(
+    (id, newItem) => {
+      if (!api) {
+        console.error('API is not initialized')
+        return
+      }
+      api.get().then((items) => {
+        const item = items.find((item) => item.id === id)
+        if (item) {
+          Object.assign(item, newItem)
+          api.put(item)
+        }
+      })
+    },
+    [api]
+  )
 
   // const getItem = (id, callback) => {
   //   if (!api) {
@@ -78,5 +82,5 @@ export function useIndexedDB(storeName) {
   //   })
   // }
 
-  return { addItem, getAllItem, clearItem }
+  return { addItem, getAllItem, clearItem, updateItem }
 }

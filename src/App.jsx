@@ -4,6 +4,7 @@ import { useIndexedDB } from '@/hooks/useIndexedDB'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { ThemeProvider } from './components/theme-provider'
 import { DataContext } from '@/context/DataContext'
+import { v4 as uuidv4 } from 'uuid'
 
 // pages
 import HomeView from '@/pages/HomeView'
@@ -17,25 +18,38 @@ import { Toaster } from '@/components/ui/sonner'
 
 // assets
 import JsonFile2 from '@/assets/unit4&5.json'
+import { createQuestion } from './lib/functions'
+import { useCallback } from 'react'
 
 function App() {
-  const { addItem, getAllItem } = useIndexedDB('questions')
+  const { addItem, getAllItem, clearItem } = useIndexedDB('questions')
   const [questions, setQuestions] = useState([])
   const [problems, setProblems] = useState([])
+
+  const seeder = useCallback(() => {
+    // console.log('seeder')
+
+    const seederData = [...JsonFile2]
+    seederData.forEach((question) => (question.id = uuidv4()))
+    addItem(seederData)
+    setQuestions(seederData.map((question) => createQuestion(question)))
+  }, [addItem])
 
   useEffect(() => {
     getAllItem((allItems) => {
       const isVisited = localStorage.getItem('visited')
+      if (isVisited !== '2024-11-17') {
+        clearItem()
+        allItems.length = 0
+      }
       if (allItems.length === 0 && isVisited !== '2024-11-17') {
         localStorage.setItem('visited', '2024-11-17')
-        const seederData = [...JsonFile2]
-        addItem(seederData)
-        setQuestions(seederData)
+        seeder()
       } else {
-        setQuestions(allItems)
+        setQuestions(allItems.map((question) => createQuestion(question)))
       }
     })
-  }, [addItem, getAllItem])
+  }, [clearItem, getAllItem, seeder])
 
   return (
     <DataContext.Provider value={{ questions, setQuestions, problems, setProblems }}>

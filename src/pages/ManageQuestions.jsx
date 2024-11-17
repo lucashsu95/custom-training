@@ -77,11 +77,11 @@ export default function ManageQuestions() {
       <section className="p-6">
         <TheBreadcrumb>
           <BreadcrumbItem>
-            <BreadcrumbPage>題庫列表</BreadcrumbPage>
+            <BreadcrumbPage>題庫管理</BreadcrumbPage>
           </BreadcrumbItem>
         </TheBreadcrumb>
 
-        <h1 className="my-2 text-xl font-bold">題庫列表</h1>
+        <h2 className="my-2 text-xl font-bold">題庫操作</h2>
         <button className="text-sky-500 hover:underline" onClick={handleDownloadFile}>
           沒有題庫嗎?從這下載一個範例
           <span className="mx-1 rounded bg-gray-200 px-1 py-0.5 text-gray-600 dark:bg-gray-600 dark:text-gray-200">

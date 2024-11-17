@@ -12,10 +12,9 @@ import { useNavigate } from 'react-router-dom'
 import {
   getQuestionByTag,
   getTags,
-  createQuestion,
-  shuffleAry,
   getLimitedQuestions,
-  getVocabularyShuffled
+  getVocabularyShuffled,
+  shuffleAryByDue
 } from '@/lib/functions'
 
 function TrainingSettings() {
@@ -76,7 +75,6 @@ function TrainingSettings() {
   // handle End
 
   const tags = getTags(questions)
-  tags.unshift('全部')
 
   const startTraining = (e) => {
     e.preventDefault()
@@ -85,11 +83,10 @@ function TrainingSettings() {
       return
     }
     const selectedQuestions = getQuestionByTag(questions, status.currentTags)
-    const shuffledQuestions = shuffleAry(selectedQuestions)
+    const shuffledQuestions = shuffleAryByDue(selectedQuestions)
     const correctProblems = getLimitedQuestions(shuffledQuestions, status.questionNumber)
 
-    const problems = correctProblems.map((problem) => createQuestion(problem))
-    const displayedProblems = getVocabularyShuffled(problems) // 顯示單字題
+    const displayedProblems = getVocabularyShuffled(correctProblems) // 顯示單字題
     setProblems(displayedProblems)
     navigate('/training/in-progress')
   }
@@ -110,7 +107,7 @@ function TrainingSettings() {
               標籤：
             </Label>
             <ToggleGroup type="multiple" variant="outline" className="flex-wrap">
-              {tags.map((tag) => (
+              {tags.sort().map((tag) => (
                 <ToggleGroupItem
                   value={tag}
                   key={tag}

@@ -14,6 +14,8 @@ import { useDropzone } from 'react-dropzone'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import { DataContext } from '@/context/DataContext'
 import { toast } from 'sonner'
+import { v4 as uuidv4 } from 'uuid'
+import { createQuestion } from '@/lib/functions'
 
 export default function FileUploader() {
   const { addItem } = useIndexedDB('questions')
@@ -22,24 +24,31 @@ export default function FileUploader() {
   const [isOpen, setIsOpen] = useState(false)
   const [file, setFile] = useState(null)
 
+  const handleFileRead = useCallback(
+    (event) => {
+      try {
+        const questions = JSON.parse(event.target.result)
+        questions.forEach((question) => (question.id = uuidv4()))
+        addItem(questions)
+
+        setQuestions((prev) => [...prev, ...questions.map((question) => createQuestion(question))])
+        toast('✅新增成功！', {
+          description: '已成功上傳檔案'
+        })
+      } catch (error) {
+        console.error('Error parsing JSON:', error)
+      }
+    },
+    [addItem, setQuestions]
+  )
+
   const onDrop = useCallback(
     (acceptedFiles) => {
       const uploadedFile = acceptedFiles[0]
       if (uploadedFile && uploadedFile.name.endsWith('.json')) {
         setFile(uploadedFile)
         const reader = new FileReader()
-        reader.onload = (event) => {
-          try {
-            const questions = JSON.parse(event.target.result)
-            addItem(questions)
-            setQuestions((prev) => [...prev, ...questions])
-            toast('✅新增成功！', {
-              description: '已成功上傳檔案'
-            })
-          } catch (error) {
-            console.error('Error parsing JSON:', error)
-          }
-        }
+        reader.onload = handleFileRead
         reader.readAsText(uploadedFile)
         setIsOpen(false)
       } else {
@@ -48,7 +57,7 @@ export default function FileUploader() {
         })
       }
     },
-    [addItem, setQuestions]
+    [handleFileRead]
   )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({

@@ -3,10 +3,11 @@ import { shuffleAry } from '@/lib/functions'
 // 抽象類別
 class Question {
   constructor(question) {
+    this.id = question.id
     this.name = question.name
     this.tag = question.tag
     this.remark = question.remark
-    this.due = parseInt(question.due)
+    this.due = parseInt(question.due) ?? 0
     this.type = question.type
     this.selected
   }
@@ -90,7 +91,8 @@ export class VocabularyQuestion extends Question {
   }
 
   getOptions(names, answers) {
-    if (Math.round(Math.random())) {
+    const symbol = Math.round(Math.random())
+    if (symbol) {
       const filteredNames = names.filter((x) => x !== this.name)
       ;[this.name, this.answer] = [this.answer, this.name]
       const options = [...shuffleAry(filteredNames).slice(0, this.optionsLength - 1), this.answer]
