@@ -22,6 +22,7 @@ import { useIndexedDB } from '@/hooks/useIndexedDB'
 import QuestiopnJsonFile from '@/assets/example.json'
 import { useState } from 'react'
 import { toast } from 'sonner'
+import PreventRefresh from '@/components/PreventRefresh'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)
@@ -74,6 +75,7 @@ export default function ManageQuestions() {
 
   return (
     <div>
+      <PreventRefresh />
       <section className="p-6">
         <TheBreadcrumb>
           <BreadcrumbItem>

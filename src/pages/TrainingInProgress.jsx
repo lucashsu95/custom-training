@@ -13,6 +13,7 @@ import FillInTheBlankItem from '@/components/training/FillInTheBlankItem'
 import MatchingItem from '@/components/training/MatchingItem'
 import VocabularyItem from '@/components/training/VocabularyItem'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
+import PreventRefresh from '@/components/PreventRefresh'
 
 function TrainingInProgress() {
   const { problems, setQuestions } = useContext(DataContext)
@@ -70,6 +71,7 @@ function TrainingInProgress() {
     problems.forEach((problem) => {
       const count = problem.getCorrectCount()
       const len = getProblemLength(problem)
+      problem.due = problem.due === null ? 0 : problem.due
       problem.due += Math.max(count === len ? 1 : -1, -3)
       updateState(problem.id, problem.due)
       correctCount += count
@@ -90,6 +92,8 @@ function TrainingInProgress() {
 
   return (
     <section className="p-6">
+      <PreventRefresh />
+
       <TheBreadcrumb>
         <BreadcrumbItem>
           <Link to="/training/setting">練習設定頁面</Link>

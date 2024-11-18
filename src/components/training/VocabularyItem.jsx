@@ -38,6 +38,7 @@ export default function VocabularyItem({ i, problem, mod }) {
             <div
               key={id}
               className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${mod === 'completed' && optionClass}`}
+              onClick={handleChange}
             >
               <input
                 type="radio"
@@ -49,7 +50,6 @@ export default function VocabularyItem({ i, problem, mod }) {
               />
               <label
                 htmlFor={id}
-                onClick={handleChange}
                 className={`ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300 ${Isprogress}`}
               >{`${String.fromCharCode(j + 65)}. ${option}`}</label>
             </div>

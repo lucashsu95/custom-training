@@ -46,9 +46,11 @@ export default function QuestionsTable() {
                       <TableCell>{question.type}</TableCell>
                       <TableCell>
                         {question.due > 2 && <span className="text-green-500">熟練</span>}
-                        {question.due < 3 && question.due > 0 && <span>普通</span>}
+                        {question.due < 3 && question.due >= 0 && question.due !== null && (
+                          <span>普通</span>
+                        )}
                         {question.due < 0 && <span className="text-red-400">不熟練</span>}
-                        {question.due === 0 && (
+                        {question.due === null && (
                           <span className="text-gray-500/70 dark:text-gray-300/70">未作答</span>
                         )}
                       </TableCell>

@@ -16,6 +16,7 @@ import {
   getVocabularyShuffled,
   shuffleAryByDue
 } from '@/lib/functions'
+import PreventRefresh from '@/components/PreventRefresh'
 
 function TrainingSettings() {
   // init state
@@ -93,6 +94,7 @@ function TrainingSettings() {
 
   return (
     <section className="p-6">
+      <PreventRefresh />
       <TheBreadcrumb>
         <BreadcrumbItem>
           <BreadcrumbPage>練習設定頁面</BreadcrumbPage>

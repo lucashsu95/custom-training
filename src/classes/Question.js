@@ -7,7 +7,7 @@ class Question {
     this.name = question.name
     this.tag = question.tag
     this.remark = question.remark
-    this.due = parseInt(question.due) ?? 0
+    this.due = question.due
     this.type = question.type
     this.selected
   }
