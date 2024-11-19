@@ -9,8 +9,9 @@ import {
 } from '@/components/ui/table'
 import React, { useContext, useMemo } from 'react'
 import { DataContext } from '@/context/DataContext'
+import { formatDate } from '@/lib/functions'
 
-export default function QuestionsTable() {
+export function QuestionsTable() {
   const { questions } = useContext(DataContext)
   const totalCount = useMemo(() => questions.length, [questions])
   const displayQuestions = Object.groupBy(questions, (question) => question.tag)
@@ -25,6 +26,7 @@ export default function QuestionsTable() {
             <TableHead>熟練度</TableHead>
             <TableHead>題目</TableHead>
             <TableHead>選項/答案</TableHead>
+            <TableHead>上次做答時間</TableHead>
             <TableHead>備註</TableHead>
           </TableRow>
         </TableHeader>
@@ -37,7 +39,7 @@ export default function QuestionsTable() {
               return (
                 <React.Fragment key={index}>
                   <TableRow>
-                    <TableCell colSpan={5} className="bg-gray-200 dark:bg-gray-800">
+                    <TableCell colSpan={6} className="bg-gray-200 dark:bg-gray-800">
                       {key}
                     </TableCell>
                   </TableRow>
@@ -78,6 +80,9 @@ export default function QuestionsTable() {
                               ? question.answer
                               : '未知題型'}
                       </TableCell>
+                      <TableCell>
+                        {question.last_answered_time === null ? '無' : formatDate(question.last_answered_time)}
+                      </TableCell>
                       <TableCell>{question.remark}</TableCell>
                     </TableRow>
                   ))}
@@ -87,7 +92,7 @@ export default function QuestionsTable() {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={3}>題目數量</TableCell>
+            <TableCell colSpan={4}>題目數量</TableCell>
             <TableCell className="text-right">{totalCount}</TableCell>
           </TableRow>
         </TableFooter>

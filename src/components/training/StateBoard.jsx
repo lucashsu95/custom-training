@@ -2,7 +2,7 @@ import { Toggle } from '@/components/ui/toggle'
 
 import PropTypes from 'prop-types'
 
-import { getTags } from '@/lib/functions'
+import { formatTime, getTags } from '@/lib/functions'
 import { useEffect, useState, useContext } from 'react'
 import { DataContext } from '@/context/DataContext'
 
@@ -43,12 +43,6 @@ export default function StateBoard({ mod }) {
       stopTimer()
     }
   }, [mod])
-
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`
-  }
 
   return (
     <section className="my-2 space-y-3 rounded-lg border p-4 shadow">

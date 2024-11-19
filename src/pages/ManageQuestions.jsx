@@ -14,7 +14,7 @@ import FileUploader from '@/components/manage/FileUploader'
 import { Button } from '@/components/ui/button'
 import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
-import QuestionsTable from '@/components/manage/QuestionsTable'
+import { QuestionsTable } from '@/components/manage/QuestionsTable'
 
 import { useContext } from 'react'
 import { DataContext } from '@/context/DataContext'

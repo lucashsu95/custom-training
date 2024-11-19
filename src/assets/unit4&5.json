@@ -5,7 +5,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "riddle",
@@ -13,7 +14,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "device",
@@ -21,7 +23,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "insight",
@@ -29,7 +32,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "gap",
@@ -37,7 +41,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "vertical",
@@ -45,7 +50,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "military",
@@ -53,7 +59,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "reproduce",
@@ -61,7 +68,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "nonetheless",
@@ -69,7 +77,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "gradually",
@@ -77,7 +86,8 @@
     "type": "單字題",
     "tag": "Unit4-4A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "suspend",
@@ -85,7 +95,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "fantasy",
@@ -93,7 +104,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "reality",
@@ -101,7 +113,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "forthcoming",
@@ -109,7 +122,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "thereby",
@@ -117,7 +131,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "portable",
@@ -125,7 +140,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "fraction",
@@ -133,7 +149,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "rigid",
@@ -141,7 +158,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "gravity",
@@ -149,7 +167,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "foresee",
@@ -157,7 +176,8 @@
     "type": "單字題",
     "tag": "Unit4-4B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "descendant",
@@ -165,7 +185,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "conquest",
@@ -173,7 +194,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "proof",
@@ -181,7 +203,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "scatter",
@@ -189,7 +212,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "identical",
@@ -197,7 +221,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "bulk",
@@ -205,7 +230,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "trace",
@@ -213,7 +239,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "roughly",
@@ -221,7 +248,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "immense",
@@ -229,7 +257,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "mainland",
@@ -237,7 +266,8 @@
     "type": "單字題",
     "tag": "Unit5-5A",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "revered",
@@ -245,7 +275,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "navigation",
@@ -253,7 +284,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "stretch",
@@ -261,7 +293,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "interval",
@@ -269,7 +302,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "outdo",
@@ -277,7 +311,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "stubborn",
@@ -285,7 +320,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "analogous",
@@ -293,7 +329,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "intact",
@@ -301,7 +338,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "conceivable",
@@ -309,7 +347,8 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   },
   {
     "name": "disrupt",
@@ -317,6 +356,7 @@
     "type": "單字題",
     "tag": "Unit5-5B",
     "remark": "",
-    "due": null
+    "due": null,
+    "last_correct_time":null
   }
 ]

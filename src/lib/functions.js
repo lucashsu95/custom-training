@@ -80,3 +80,18 @@ export const getVocabularyShuffled = (problems) => {
     return p
   })
 }
+
+export const formatTime = (seconds) => {
+  const minutes = Math.floor(seconds / 60)
+  const remainingSeconds = seconds % 60
+  return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`
+}
+
+export const formatDate = (seconds) => {
+  const date = new Date(seconds)
+  return date.toLocaleDateString('zh-TW', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  })
+}

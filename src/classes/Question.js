@@ -9,6 +9,7 @@ class Question {
     this.remark = question.remark
     this.due = question.due
     this.type = question.type
+    this.last_answered_time = question.last_answered_time ?? null
     this.selected
   }
 
