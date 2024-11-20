@@ -88,8 +88,7 @@ export const formatTime = (seconds) => {
 }
 
 export const formatDate = (seconds) => {
-  const date = new Date(seconds)
-  return date.toLocaleDateString('zh-TW', {
+  return new Date(seconds).toLocaleDateString('zh-TW', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit'

@@ -10,6 +10,7 @@ class Question {
     this.due = question.due
     this.type = question.type
     this.last_answered_time = question.last_answered_time ?? null
+    this.enabled = question.enabled
     this.selected
   }
 

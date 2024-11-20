@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
+import { Switch } from '@/components/ui/switch'
 
 import { DataContext } from '@/context/DataContext'
 import { useContext, useState } from 'react'
@@ -27,6 +28,7 @@ function TrainingSettings() {
     currentTags: new Set(),
     questionNumber: 0
   })
+  const [isTech, setIsTech] = useState(false)
 
   const questionsLength = getQuestionByTag(questions, status.currentTags).length
 
@@ -86,6 +88,7 @@ function TrainingSettings() {
     const selectedQuestions = getQuestionByTag(questions, status.currentTags)
     const shuffledQuestions = shuffleAryByDue(selectedQuestions)
     const correctProblems = getLimitedQuestions(shuffledQuestions, status.questionNumber)
+    // TODO isTech
 
     const displayedProblems = getVocabularyShuffled(correctProblems) // 顯示單字題
     setProblems(displayedProblems)
@@ -106,7 +109,7 @@ function TrainingSettings() {
           {/* 選擇標籤 */}
           <section>
             <Label className="text-base" htmlFor="current-tag">
-              標籤：
+              1. 標籤：
             </Label>
             <ToggleGroup type="multiple" variant="outline" className="flex-wrap">
               {tags.sort().map((tag) => (
@@ -128,7 +131,7 @@ function TrainingSettings() {
           {/* 選擇題數 */}
           <section>
             <Label className="text-base" htmlFor="question-number">
-              題數：
+              2. 題數：
             </Label>
             <Input
               name="questionNumber"
@@ -142,6 +145,11 @@ function TrainingSettings() {
               required
             />
             <p className="ml-1 text-sm text-gray-500">共有 {questionsLength} 題</p>
+          </section>
+
+          <section className='flex gap-4 items-center'>
+            3. 是否產生教學題目
+            <Switch onClick={() => setIsTech(!isTech)} />
           </section>
 
           <section className="flex flex-col gap-2 md:flex-row">
