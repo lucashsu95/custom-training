@@ -17,7 +17,7 @@ export default function FillInTheBlankItem({ i, problem, mod }) {
 
   return (
     <>
-      <h2 className="text-lg">{i + 1} 填空題. 請把對應代號填入正確的輸入框內</h2>
+      <h2 className="text-lg">{i + 1}. 填空題. 請把對應代號填入正確的輸入框內</h2>
       <div
         style={{ backgroundColor: `hsl(var(--background))` }}
         className="sticky top-0 my-2 flex flex-wrap justify-center gap-3 rounded-md border p-3 text-sm shadow"

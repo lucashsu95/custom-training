@@ -12,14 +12,15 @@ import ManageQuestions from '@/pages/ManageQuestions'
 import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
 
-// components
-import TheNavbar from '@/components/Navbar'
-import { Toaster } from '@/components/ui/sonner'
-
 // assets
 import JsonFile2 from '@/assets/unit4&5.json'
 import { createQuestion } from './lib/functions'
 import { useCallback } from 'react'
+
+// components
+import TheNavbar from '@/components/Navbar'
+import { Toaster } from '@/components/ui/sonner'
+import AutoTraining from './components/training/AutoTraining'
 
 function App() {
   const { addItem, getAllItem, clearItem } = useIndexedDB('questions')
@@ -38,12 +39,12 @@ function App() {
   useEffect(() => {
     getAllItem((allItems) => {
       const isVisited = localStorage.getItem('visited')
-      if (isVisited !== '2024-11-19') {
+      if (isVisited !== '2024-11-20') {
         clearItem()
         allItems.length = 0
       }
-      if (allItems.length === 0 && isVisited !== '2024-11-19') {
-        localStorage.setItem('visited', '2024-11-19')
+      if (allItems.length === 0 && isVisited !== '2024-11-20') {
+        localStorage.setItem('visited', '2024-11-20')
         seeder()
       } else {
         setQuestions(allItems.map((question) => createQuestion(question)))
@@ -58,6 +59,7 @@ function App() {
           <TheNavbar />
           <Routes>
             <Route path="/" element={<HomeView />} />
+            <Route path="/training/auto" element={<AutoTraining />} />
             <Route path="/upload" element={<ManageQuestions />} />
             <Route path="/training/setting" element={<TrainingSettings />} />
             <Route path="/training/in-progress" element={<TrainingInProgress />} />

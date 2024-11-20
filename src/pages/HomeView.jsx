@@ -5,21 +5,41 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { BsFillQuestionSquareFill } from 'react-icons/bs'
 import { MdNotStarted } from 'react-icons/md'
 import { FaBook } from 'react-icons/fa'
-import { SiDwavesystems } from "react-icons/si";
+import { SiDwavesystems } from 'react-icons/si'
 
 // react
 import { Link } from 'react-router-dom'
+import {
+  filterByTime,
+  getLimitedQuestions,
+  getVocabularyShuffled,
+  productTech,
+  shuffleAryByDue
+} from '@/lib/functions'
+import { DataContext } from '@/context/DataContext'
+import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function HomeView() {
+  const { questions, setProblems } = useContext(DataContext)
+  const navigate = useNavigate()
+
+  const startTraining = () => {
+    const filteredQuestions = filterByTime(questions)
+    const shuffledQuestions = shuffleAryByDue(filteredQuestions)
+    const correctProblems = getLimitedQuestions(shuffledQuestions)
+    const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
+    const problems = productTech(displayedProblems)
+    setProblems(problems)
+    navigate('/training/auto')
+  }
   return (
     <section className="w-100 grid gap-5 p-6 md:grid-cols-2 lg:grid-cols-3">
-      <Link to="/training/start">
-        <Alert className="custom-alert">
-          <SiDwavesystems className="h-5 w-5" />
-          <AlertTitle className="text-base font-bold">直接練習</AlertTitle>
-          <AlertDescription>一切由系統安排，只要負責背即可!</AlertDescription>
-        </Alert>
-      </Link>
+      <Alert className="custom-alert" onClick={startTraining}>
+        <SiDwavesystems className="h-5 w-5" />
+        <AlertTitle className="text-base font-bold">直接練習</AlertTitle>
+        <AlertDescription>一切由系統安排，只要負責背即可!</AlertDescription>
+      </Alert>
 
       <Link to="/training/setting">
         <Alert className="custom-alert">

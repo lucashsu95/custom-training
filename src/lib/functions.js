@@ -1,14 +1,50 @@
 import { getQuestionClassByType } from '@/classes/Question'
+import { toast } from 'sonner'
 
 // 打亂陣列
 export function shuffleAry(ary) {
   return [...ary].sort(() => Math.random() - 0.5)
 }
 
+// 題目等級 -> 時間
+const dueLevel = {
+  '-1': 0.01, // 1 分鐘
+  0: 0.5, // 12 小時
+  1: 1, // 1 天
+  2: 3,
+  3: 5,
+  4: 7
+}
+
+// 過濾 練習時間還沒到的的題目
+export function filterByTime(questions) {
+  const currentDate = new Date().getTime()
+  return questions.filter((question) => {
+    if (question.due > 4) {
+      return false
+    }
+    if (questions.last_answered_time === null || question.due === null) {
+      return true
+    }
+    const prevDay = currentDate - question.last_answered_time
+    const nextDay = questions.due <= 0 ? 0 : dueLevel[question.due] * 86400
+    // console.log(prevDay, nextDay)
+    // console.log(new Date(prevDay).getDate(), new Date(nextDay).getDate())
+    return prevDay >= nextDay
+  })
+}
+
 // 依照 due 排序 並分組 打亂組內順序
 export function shuffleAryByDue(ary) {
   return [...ary]
-    .sort((a, b) => a.due - b.due)
+    .sort((a, b) => {
+      if (a.due === null) return -1
+      if (b.due === null) return 1
+      if (a.due !== b.due) {
+        return a.due - b.due
+      }
+      return a.last_answered_time - b.last_answered_time
+    })
     .reduce((acc, item, index, array) => {
       if (index === 0 || item.due !== array[index - 1].due) {
         acc.push([item])
@@ -30,9 +66,14 @@ export function getQuestionByTag(questions, tag) {
 }
 
 // 根據數量取得題目
-export function getLimitedQuestions(questions, number) {
+export function getLimitedQuestions(questions, number = false) {
+  if (!number) {
+    return questions
+  }
   if (questions.length < number) {
-    alert('題目數量不足')
+    toast('⚠️題目數量不足!', {
+      description: '請回到首頁重新操作或反饋問題給我們'
+    })
     throw new Error('Index out of range')
   }
   return questions.slice(0, number)

@@ -81,7 +81,9 @@ export function QuestionsTable() {
                               : '未知題型'}
                       </TableCell>
                       <TableCell>
-                        {question.last_answered_time === null ? '無' : formatDate(question.last_answered_time)}
+                        {question.last_answered_time === null
+                          ? '無'
+                          : formatDate(question.last_answered_time)}
                       </TableCell>
                       <TableCell>{question.remark}</TableCell>
                     </TableRow>

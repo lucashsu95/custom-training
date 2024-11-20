@@ -2,26 +2,30 @@ import PropTypes from 'prop-types'
 import { VocabularyQuestion } from '@/classes/Question'
 import { DataContext } from '@/context/DataContext'
 import { useContext } from 'react'
+import { useState } from 'react'
 
-export default function VocabularyItem({ i, problem, mod }) {
+export default function VocabularyItem({ i, problem, mod, setState, setResult }) {
   const { setProblems } = useContext(DataContext)
-  const selected = problem.selected
+  const [hasSelected, setHasSelected] = useState(false)
 
   return (
     <>
+      {problem.type2 === '教學' && (
+        <div className="text-gray-500/70 dark:text-gray-100/60">新單字</div>
+      )}
       <h2 className="text-lg">
         {i + 1}. {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
-        <article className="ml-3 mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
+        <article className="mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
           {problem.answer}
         </article>
       ) : (
         <article className="ml-3 mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
           {problem.shuffledOptions.map((option, j) => {
             const id = `${i}-${j}`
-            const isCorrect = problem.answer === option && selected === option
-            const isWrong = selected === option && !isCorrect
+            const isCorrect = problem.answer === option && problem.selected === option
+            const isWrong = problem.selected === option && !isCorrect
             const inWrongCorrect = problem.answer === option && !isCorrect
             const optionClass = isCorrect
               ? 'bg-green-200 dark:bg-emerald-700'
@@ -35,14 +39,34 @@ export default function VocabularyItem({ i, problem, mod }) {
                 prev[i].selected = option
                 return prev
               })
+
+              if (mod === 'one-problem-mod') {
+                const isCorrect = problem.answer === problem.selected
+                if (hasSelected === false) {
+                  setResult((prev) => ({
+                    ...prev,
+                    correctCount: prev.correctCount + (isCorrect ? 1 : 0),
+                    wrongCount: prev.wrongCount + (isCorrect ? 0 : 1)
+                  }))
+                  if (!isCorrect) {
+                    const problem2 = VocabularyQuestion.create({ ...problem })
+                    setProblems((prev) => [...prev, problem2])
+                  }
+                }
+                setHasSelected(true)
+                if (isCorrect) {
+                  setState((prev) => ({ ...prev, currentProblem: prev.currentProblem + 1 }))
+                }
+              }
             }
+
             const Isprogress =
               mod === 'progress' && 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
 
             return (
               <div
                 key={id}
-                className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${mod === 'completed' && optionClass}`}
+                className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${(mod === 'completed' || hasSelected) && optionClass}`}
                 onClick={handleChange}
               >
                 <input
@@ -69,5 +93,7 @@ export default function VocabularyItem({ i, problem, mod }) {
 VocabularyItem.propTypes = {
   i: PropTypes.number.isRequired,
   problem: PropTypes.instanceOf(VocabularyQuestion).isRequired,
-  mod: PropTypes.string.isRequired
+  mod: PropTypes.string.isRequired,
+  setState: PropTypes.func,
+  setResult: PropTypes.func
 }

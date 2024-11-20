@@ -11,16 +11,12 @@ import MatchingItem from '@/components/training/item/MatchingItem'
 import VocabularyItem from '@/components/training/item/VocabularyItem'
 
 // react
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { DataContext } from '@/context/DataContext'
-import { useIndexedDB } from '@/hooks/useIndexedDB'
 import CustomTraining from '@/components/training/CustomTraining'
 
 function TrainingInProgress() {
-  const { setQuestions } = useContext(DataContext)
   const [mod, setMod] = useState('progress')
-  const { updateItem } = useIndexedDB('questions')
 
   const [result, setResult] = useState({
     score: -1,
@@ -45,19 +41,6 @@ function TrainingInProgress() {
     }
   }
 
-  const updateState = (id, due) => {
-    const second = new Date().getTime()
-    updateItem(id, { due, last_answered_time: second })
-    setQuestions((prev) => {
-      for (const p of prev) {
-        if (p.id === id) {
-          p.due = due
-          p.last_answered_time = second
-        }
-      }
-      return prev
-    })
-  }
   return (
     <section className="p-6">
       <PreventRefresh />
@@ -101,12 +84,10 @@ function TrainingInProgress() {
           result={result}
           setMod={setMod}
           createComponent={createComponent}
-          updateState={updateState}
           setResult={setResult}
         />
       </div>
     </section>
   )
 }
-
 export default TrainingInProgress

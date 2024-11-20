@@ -87,7 +87,8 @@ export class VocabularyQuestion extends Question {
     this.answer = question.answer
     this.optionsLength = question.optionsLength ?? 3
     this.selected = ''
-    this.isRotate = false
+    this.isRotate = question.isRotate ?? false
+    this.shuffledOptions = question.shuffledOptions ?? []
   }
 
   static create(question) {

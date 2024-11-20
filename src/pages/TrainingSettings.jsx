@@ -29,7 +29,7 @@ function TrainingSettings() {
     currentTags: new Set(),
     questionNumber: 0,
     hasTech: true,
-    hasName: true,
+    hasName: true
   })
 
   const questionsLength = getQuestionByTag(questions, state.currentTags).length
@@ -91,9 +91,7 @@ function TrainingSettings() {
     const shuffledQuestions = shuffleAryByDue(selectedQuestions)
     const correctProblems = getLimitedQuestions(shuffledQuestions, state.questionNumber)
     const displayedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
-    console.log('displayedProblems:',displayedProblems);
     const problems = state.hasTech ? productTech(displayedProblems) : displayedProblems
-    console.log('problems:',problems);
     setProblems(problems)
     navigate('/training/in-progress')
   }

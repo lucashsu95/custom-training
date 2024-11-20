@@ -1,17 +1,15 @@
-import { useContext } from 'react'
-import { DataContext } from '@/context/DataContext'
 import { Button } from '@/components/ui/button'
+
+// react
+import { DataContext } from '@/context/DataContext'
+import { useContext } from 'react'
 import { getProblemLength } from '@/lib/functions'
 import PropTypes from 'prop-types'
+import { useQuestion } from '@/hooks/useQuestion'
 
-export default function CustomTraining({
-  result,
-  createComponent,
-  updateState,
-  setResult,
-  setMod
-}) {
+export default function CustomTraining({ result, createComponent, setResult, setMod }) {
   const { problems } = useContext(DataContext)
+  const { updateState } = useQuestion()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -67,7 +65,6 @@ export default function CustomTraining({
 }
 
 CustomTraining.propTypes = {
-  updateState: PropTypes.func,
   setResult: PropTypes.func,
   setMod: PropTypes.func,
   createComponent: PropTypes.func,
