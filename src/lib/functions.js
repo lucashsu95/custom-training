@@ -120,3 +120,10 @@ export const productTech = (problems) => {
   }
   return newProblems
 }
+
+export const getProblemLength = (problem) => {
+  if (Array.isArray(problem?.options)) {
+    return problem.options.length
+  }
+  return 1
+}

@@ -1,24 +1,24 @@
 // ui component
-import { Button } from '@/components/ui/button'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 import StateBoard from '@/components/training/StateBoard'
 import PreventRefresh from '@/components/PreventRefresh'
 
 // question component
-import MultipleChoiceItem from '@/components/training/MultipleChoiceItem'
-import FillInTheBlankItem from '@/components/training/FillInTheBlankItem'
-import MatchingItem from '@/components/training/MatchingItem'
-import VocabularyItem from '@/components/training/VocabularyItem'
+import MultipleChoiceItem from '@/components/training/item/MultipleChoiceItem'
+import FillInTheBlankItem from '@/components/training/item/FillInTheBlankItem'
+import MatchingItem from '@/components/training/item/MatchingItem'
+import VocabularyItem from '@/components/training/item/VocabularyItem'
 
 // react
 import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { DataContext } from '@/context/DataContext'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
+import CustomTraining from '@/components/training/CustomTraining'
 
 function TrainingInProgress() {
-  const { problems, setQuestions } = useContext(DataContext)
+  const { setQuestions } = useContext(DataContext)
   const [mod, setMod] = useState('progress')
   const { updateItem } = useIndexedDB('questions')
 
@@ -45,13 +45,6 @@ function TrainingInProgress() {
     }
   }
 
-  const getProblemLength = (problem) => {
-    if (Array.isArray(problem?.options)) {
-      return problem.options.length
-    }
-    return 1
-  }
-
   const updateState = (id, due) => {
     const second = new Date().getTime()
     updateItem(id, { due, last_answered_time: second })
@@ -65,35 +58,6 @@ function TrainingInProgress() {
       return prev
     })
   }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    let problemsLength = 0
-    let correctCount = 0
-
-    // 計算題目數量 & 更新 due
-    problems.forEach((problem) => {
-      const count = problem.getCorrectCount()
-      const len = getProblemLength(problem)
-      problem.due = problem.due === null ? 0 : problem.due
-      problem.due += Math.max(count === len ? 1 : -1, -3)
-      updateState(problem.id, problem.due)
-      correctCount += count
-      problemsLength += len
-    })
-
-    // 計算分數
-    const score = Math.round((correctCount / problemsLength) * 100)
-    setResult({
-      score,
-      correctCount,
-      wrongCount: problemsLength - correctCount
-    })
-    setMod('completed')
-    window.scrollTo(0, 0)
-    window.document.body.style.height = '1px'
-  }
-
   return (
     <section className="p-6">
       <PreventRefresh />
@@ -133,24 +97,13 @@ function TrainingInProgress() {
         )}
 
         {/* 題目作答 */}
-        <form className="my-5 space-y-6 md:space-y-12 md:p-6 md:shadow-lg" onSubmit={handleSubmit}>
-          {problems.map((problem, i) => (
-            <section key={i}>
-              {createComponent(problem.type, {
-                i,
-                problem
-              })}
-            </section>
-          ))}
-          {result.score < 0 && (
-            <>
-              <Button>送出答案</Button>
-              <Button type="reset" className="ml-2" variant="secondary">
-                重設
-              </Button>
-            </>
-          )}
-        </form>
+        <CustomTraining
+          result={result}
+          setMod={setMod}
+          createComponent={createComponent}
+          updateState={updateState}
+          setResult={setResult}
+        />
       </div>
     </section>
   )

@@ -11,7 +11,6 @@ import HomeView from '@/pages/HomeView'
 import ManageQuestions from '@/pages/ManageQuestions'
 import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
-import TrainingAuto from './pages/TrainingAuto'
 
 // components
 import TheNavbar from '@/components/Navbar'
@@ -59,7 +58,6 @@ function App() {
           <TheNavbar />
           <Routes>
             <Route path="/" element={<HomeView />} />
-            <Route path="/start" element={<TrainingAuto />} />
             <Route path="/upload" element={<ManageQuestions />} />
             <Route path="/training/setting" element={<TrainingSettings />} />
             <Route path="/training/in-progress" element={<TrainingInProgress />} />
