@@ -54,7 +54,7 @@ export const getQuestionByType = (questions, type) => {
   return questions.filter((question) => question.type === type)
 }
 
-export const getVocabularyShuffled = (problems) => {
+export const getVocabularyShuffled = (problems, hasName) => {
   const vocabulary = getQuestionByType(problems, '單字題')
   if (vocabulary.length === 0) {
     return problems
@@ -71,14 +71,18 @@ export const getVocabularyShuffled = (problems) => {
   )
 
   // 將單字題的選項打亂
-  return problems.map((p) => {
+  return problems.reduce((acc, p) => {
     if (p.type === '單字題') {
-      const p2 = createQuestion(p)
-      p2.getOptions(names, answers)
-      return p2
+      const p2 = createQuestion({ ...p })
+      p.getAnswerOptions(answers)
+      if (hasName) {
+        p2.getNameOptions(names)
+        acc.push(p2)
+      }
     }
-    return p
-  })
+    acc.push(p)
+    return acc
+  }, [])
 }
 
 export const formatTime = (seconds) => {

@@ -24,17 +24,18 @@ function TrainingSettings() {
   const { questions, setProblems } = useContext(DataContext)
   const navigate = useNavigate()
 
-  const [status, setStatus] = useState({
+  const [state, setState] = useState({
     currentTags: new Set(),
-    questionNumber: 0
+    questionNumber: 0,
+    isTech: true,
+    hasName: true,
   })
-  const [isTech, setIsTech] = useState(false)
 
-  const questionsLength = getQuestionByTag(questions, status.currentTags).length
+  const questionsLength = getQuestionByTag(questions, state.currentTags).length
 
   // handle Start
   const handleTagChange = (value) => {
-    const updatedTags = new Set(status.currentTags)
+    const updatedTags = new Set(state.currentTags)
     if (updatedTags.has(value)) {
       updatedTags.delete(value)
     } else {
@@ -48,30 +49,30 @@ function TrainingSettings() {
     if (name === 'tag') {
       const tagValue = e.target.dataset.value
       const updatedTags = handleTagChange(tagValue)
-      setStatus((prevStatus) => ({
-        ...prevStatus,
+      setState((prevstate) => ({
+        ...prevstate,
         currentTags: updatedTags,
         questionNumber: getQuestionByTag(questions, updatedTags).length
       }))
     } else {
-      setStatus((prevStatus) => ({
-        ...prevStatus,
+      setState((prevstate) => ({
+        ...prevstate,
         [name]: value
       }))
     }
   }
 
   const handleSelectAll = () => {
-    setStatus({
-      currentTags: new Set(getTags(questions)),
-      questionNumber: questions.length
+    setState((prev) => {
+      ;(prev.currentTags = new Set(getTags(questions))), (prev.questionNumber = questions.length)
+      return prev
     })
   }
 
   const handleClearAll = () => {
-    setStatus({
-      currentTags: new Set(),
-      questionNumber: 0
+    setState((prev) => {
+      ;(prev.currentTags = new Set()), (prev.questionNumber = 0)
+      return prev
     })
   }
 
@@ -81,16 +82,16 @@ function TrainingSettings() {
 
   const startTraining = (e) => {
     e.preventDefault()
-    if (status.currentTags.length < 1) {
+    if (state.currentTags.length < 1) {
       alert('請選擇標籤')
       return
     }
-    const selectedQuestions = getQuestionByTag(questions, status.currentTags)
+    const selectedQuestions = getQuestionByTag(questions, state.currentTags)
     const shuffledQuestions = shuffleAryByDue(selectedQuestions)
-    const correctProblems = getLimitedQuestions(shuffledQuestions, status.questionNumber)
+    const correctProblems = getLimitedQuestions(shuffledQuestions, state.questionNumber)
     // TODO isTech
 
-    const displayedProblems = getVocabularyShuffled(correctProblems) // 顯示單字題
+    const displayedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
     setProblems(displayedProblems)
     navigate('/training/in-progress')
   }
@@ -118,10 +119,10 @@ function TrainingSettings() {
                   key={tag}
                   data-value={tag}
                   name="tag"
-                  data-state={status.currentTags.has(tag) ? 'on' : 'off'}
+                  data-state={state.currentTags.has(tag) ? 'on' : 'off'}
                   onClick={handleChange}
                 >
-                  {status.currentTags.has(tag) && <span>✔</span>}
+                  {state.currentTags.has(tag) && <span>✔</span>}
                   {tag}
                 </ToggleGroupItem>
               ))}
@@ -137,7 +138,7 @@ function TrainingSettings() {
               name="questionNumber"
               type="number"
               id="question-number"
-              value={status.questionNumber}
+              value={state.questionNumber}
               onChange={handleChange}
               className="w-full max-w-[280px]"
               min="0"
@@ -147,9 +148,21 @@ function TrainingSettings() {
             <p className="ml-1 text-sm text-gray-500">共有 {questionsLength} 題</p>
           </section>
 
-          <section className='flex gap-4 items-center'>
-            3. 是否產生教學題目
-            <Switch onClick={() => setIsTech(!isTech)} />
+          <section className="flex flex-col gap-2 [&>*]:flex [&>*]:items-center [&>*]:gap-2">
+            <div>
+              3. 產生教學
+              <Switch
+                checked={state.isTech}
+                onClick={() => setState((prev) => ({ ...prev, isTech: !prev.isTech }))}
+              />
+            </div>
+            <div>
+              4. 包含題目
+              <Switch
+                checked={state.hasName}
+                onClick={() => setState((prev) => ({ ...prev, hasName: !prev.hasName }))}
+              />
+            </div>
           </section>
 
           <section className="flex flex-col gap-2 md:flex-row">

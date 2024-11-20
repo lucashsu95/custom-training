@@ -2,18 +2,20 @@
 import { Button } from '@/components/ui/button'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+import StateBoard from '@/components/training/StateBoard'
+import PreventRefresh from '@/components/PreventRefresh'
 
 // question component
-import { DataContext } from '@/context/DataContext'
-import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
-import StateBoard from '@/components/training/StateBoard'
 import MultipleChoiceItem from '@/components/training/MultipleChoiceItem'
 import FillInTheBlankItem from '@/components/training/FillInTheBlankItem'
 import MatchingItem from '@/components/training/MatchingItem'
 import VocabularyItem from '@/components/training/VocabularyItem'
+
+// react
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { DataContext } from '@/context/DataContext'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
-import PreventRefresh from '@/components/PreventRefresh'
 
 function TrainingInProgress() {
   const { problems, setQuestions } = useContext(DataContext)

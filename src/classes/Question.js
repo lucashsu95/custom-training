@@ -92,18 +92,17 @@ export class VocabularyQuestion extends Question {
     return new VocabularyQuestion(question)
   }
 
-  getOptions(names, answers) {
-    const symbol = Math.round(Math.random())
-    if (symbol) {
-      const filteredNames = names.filter((x) => x !== this.name)
-      ;[this.name, this.answer] = [this.answer, this.name]
-      const options = [...shuffleAry(filteredNames).slice(0, this.optionsLength - 1), this.answer]
-      this.shuffledOptions = shuffleAry(options)
-    } else {
-      const filteredAnswers = answers.filter((x) => x !== this.answer)
-      const options = [...shuffleAry(filteredAnswers).slice(0, this.optionsLength - 1), this.answer]
-      this.shuffledOptions = shuffleAry(options)
-    }
+  getNameOptions(names) {
+    const filteredNames = names.filter((x) => x !== this.name)
+    ;[this.name, this.answer] = [this.answer, this.name]
+    const options = [...shuffleAry(filteredNames).slice(0, this.optionsLength - 1), this.answer]
+    this.shuffledOptions = shuffleAry(options)
+  }
+
+  getAnswerOptions(answers) {
+    const filteredAnswers = answers.filter((x) => x !== this.answer)
+    const options = [...shuffleAry(filteredAnswers).slice(0, this.optionsLength - 1), this.answer]
+    this.shuffledOptions = shuffleAry(options)
   }
 
   getCorrectCount() {
