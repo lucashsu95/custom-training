@@ -71,18 +71,21 @@ export const getVocabularyShuffled = (problems, hasName) => {
   )
 
   // 將單字題的選項打亂
-  return problems.reduce((acc, p) => {
+  // 如果有 hasName 將 name 也打亂
+  const result = []
+  const temp = []
+  for (const p of problems) {
     if (p.type === '單字題') {
-      const p2 = createQuestion({ ...p })
       p.getAnswerOptions(answers)
       if (hasName) {
+        const p2 = createQuestion({ ...p })
         p2.getNameOptions(names)
-        acc.push(p2)
+        temp.push(p2)
       }
     }
-    acc.push(p)
-    return acc
-  }, [])
+    result.push(p)
+  }
+  return [...result, ...temp]
 }
 
 export const formatTime = (seconds) => {
@@ -97,4 +100,23 @@ export const formatDate = (seconds) => {
     month: '2-digit',
     day: '2-digit'
   })
+}
+
+export const productTech = (problems) => {
+  const newProblems = [...problems]
+  for (let i = 0; i < problems.length; i++) {
+    const problem = problems[i]
+    if (problem.due !== null || problem.isRotate === true) {
+      continue
+    }
+
+    const techProblem = createQuestion({ ...problem, type2: '教學' })
+    const index = newProblems.indexOf(problem)
+    if (index === 0) {
+      newProblems.unshift(techProblem)
+    } else {
+      newProblems.splice(index, 0, techProblem)
+    }
+  }
+  return newProblems
 }

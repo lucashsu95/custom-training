@@ -15,7 +15,8 @@ import {
   getTags,
   getLimitedQuestions,
   getVocabularyShuffled,
-  shuffleAryByDue
+  shuffleAryByDue,
+  productTech
 } from '@/lib/functions'
 import PreventRefresh from '@/components/PreventRefresh'
 
@@ -27,7 +28,7 @@ function TrainingSettings() {
   const [state, setState] = useState({
     currentTags: new Set(),
     questionNumber: 0,
-    isTech: true,
+    hasTech: true,
     hasName: true,
   })
 
@@ -89,10 +90,11 @@ function TrainingSettings() {
     const selectedQuestions = getQuestionByTag(questions, state.currentTags)
     const shuffledQuestions = shuffleAryByDue(selectedQuestions)
     const correctProblems = getLimitedQuestions(shuffledQuestions, state.questionNumber)
-    // TODO isTech
-
     const displayedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
-    setProblems(displayedProblems)
+    console.log('displayedProblems:',displayedProblems);
+    const problems = state.hasTech ? productTech(displayedProblems) : displayedProblems
+    console.log('problems:',problems);
+    setProblems(problems)
     navigate('/training/in-progress')
   }
 
@@ -152,8 +154,8 @@ function TrainingSettings() {
             <div>
               3. 產生教學
               <Switch
-                checked={state.isTech}
-                onClick={() => setState((prev) => ({ ...prev, isTech: !prev.isTech }))}
+                checked={state.hasTech}
+                onClick={() => setState((prev) => ({ ...prev, hasTech: !prev.hasTech }))}
               />
             </div>
             <div>

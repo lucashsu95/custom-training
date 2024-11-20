@@ -54,7 +54,7 @@ function TrainingInProgress() {
 
   const updateState = (id, due) => {
     const second = new Date().getTime()
-    updateItem(id, { due,last_answered_time: second })
+    updateItem(id, { due, last_answered_time: second })
     setQuestions((prev) => {
       for (const p of prev) {
         if (p.id === id) {
