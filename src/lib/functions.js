@@ -66,10 +66,7 @@ export function getQuestionByTag(questions, tag) {
 }
 
 // 根據數量取得題目
-export function getLimitedQuestions(questions, number = false) {
-  if (!number) {
-    return questions
-  }
+export function getLimitedQuestions(questions, number) {
   if (questions.length < number) {
     toast('⚠️題目數量不足!', {
       description: '請回到首頁重新操作或反饋問題給我們'

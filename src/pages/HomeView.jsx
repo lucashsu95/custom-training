@@ -27,10 +27,14 @@ export default function HomeView() {
   const startTraining = () => {
     const filteredQuestions = filterByTime(questions)
     const shuffledQuestions = shuffleAryByDue(filteredQuestions)
-    const correctProblems = getLimitedQuestions(shuffledQuestions)
+    const correctProblems = getLimitedQuestions(shuffledQuestions, Math.min(10, questions.length))
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
+    console.log(displayedProblems)
+
     const problems = productTech(displayedProblems)
     setProblems(problems)
+    console.log(problems)
+
     navigate('/training/auto')
   }
   return (
