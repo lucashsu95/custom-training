@@ -33,8 +33,6 @@ export default function HomeView() {
 
     const problems = productTech(displayedProblems)
     setProblems(problems)
-    console.log(problems)
-
     navigate('/training/auto')
   }
   return (

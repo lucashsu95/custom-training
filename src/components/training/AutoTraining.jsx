@@ -115,17 +115,15 @@ function AutoTraining() {
             return (
               <div
                 key={problem.id}
-                className="mx-auto my-2 flex w-full flex-col items-center sm:w-[80%] md:w-[70%]"
+                className="mx-auto my-2 flex w-full flex-col items-center sm:items-start"
               >
-                <div className="w-full px-5">
-                  {createComponent(problem.type, {
-                    i,
-                    problem,
-                    mod: 'one-problem-mod',
-                    setState,
-                    setResult
-                  })}
-                </div>
+                {createComponent(problem.type, {
+                  i,
+                  problem,
+                  mod: 'one-problem-mod',
+                  setState,
+                  setResult
+                })}
                 {problem.type2 === '教學' && (
                   <Button
                     className="mt-5 w-full"

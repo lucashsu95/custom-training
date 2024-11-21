@@ -11,17 +11,17 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
   return (
     <>
       {problem.type2 === '教學' && (
-        <div className="text-gray-500/70 dark:text-gray-100/60">新單字</div>
+        <div className="mt-3 text-gray-500/70 dark:text-green-300/60">New 新單字 !</div>
       )}
-      <h2 className="text-lg">
+      <h2 className="my-4 text-lg sm:my-3 md:my-2">
         {i + 1}. {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
-        <article className="mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
+        <article className="flex flex-col place-items-stretch gap-4 sm:ml-5">
           {problem.answer}
         </article>
       ) : (
-        <article className="ml-3 mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
+        <article className="ml-3 flex w-full flex-col place-items-stretch gap-4">
           {problem.shuffledOptions.map((option, j) => {
             const id = `${i}-${j}`
             const isCorrect = problem.answer === option && problem.selected === option
