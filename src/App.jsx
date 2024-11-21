@@ -29,8 +29,6 @@ function App() {
   const [problems, setProblems] = useState([])
 
   const seeder = useCallback(() => {
-    // console.log('seeder')
-
     const seederData = [...JsonFile2]
     seederData.forEach((question) => (question.id = uuidv4()))
     addItem(seederData)

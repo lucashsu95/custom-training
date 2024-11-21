@@ -31,7 +31,6 @@ function AutoTraining() {
   })
 
   const problemsLength = problems.filter((x) => x.type2 !== '教學').length
-  console.log(problems)
 
   const progressBar = useMemo(() => {
     return Math.floor(((result.correctCount + result.wrongCount) / problemsLength) * 100)
@@ -114,7 +113,7 @@ function AutoTraining() {
             return (
               state.currentProblem === i && (
                 <div
-                  key={problem.id + problem.type2 ? '0' : '1'}
+                  key={`${problem.id}-${i}`}
                   className="mx-auto my-2 flex w-full flex-col items-center sm:items-start"
                 >
                   {createComponent(problem.type, {

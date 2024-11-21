@@ -7,8 +7,6 @@ import { useState } from 'react'
 export default function VocabularyItem({ i, problem, mod, setState, setResult }) {
   const { setProblems } = useContext(DataContext)
   const [hasSelected, setHasSelected] = useState(false)
-  console.log(hasSelected, problem.selected, i)
-
   return (
     <>
       {problem.type2 === '教學' && (
