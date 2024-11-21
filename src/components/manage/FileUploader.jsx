@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useContext } from 'react'
+// ui component
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -10,12 +10,17 @@ import {
   DialogTrigger,
   DialogDescription
 } from '@/components/ui/dialog'
+import { RiAddCircleFill } from 'react-icons/ri'
+import { Tooltip, TooltipTrigger, TooltipContent } from '../ui/tooltip'
+import { toast } from 'sonner'
+
+// react
 import { useDropzone } from 'react-dropzone'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import { DataContext } from '@/context/DataContext'
-import { toast } from 'sonner'
 import { v4 as uuidv4 } from 'uuid'
 import { createQuestion } from '@/lib/functions'
+import { useState, useCallback, useContext } from 'react'
 
 export default function FileUploader() {
   const { addItem } = useIndexedDB('questions')
@@ -71,7 +76,16 @@ export default function FileUploader() {
     <div>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Button className="my-2">新增 題目/標籤</Button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="outline" size="icon">
+                <RiAddCircleFill />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>上傳.json檔以新增題目</p>
+            </TooltipContent>
+          </Tooltip>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>

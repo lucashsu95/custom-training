@@ -58,7 +58,7 @@ export default function StateBoard({ mod }) {
           ))}
         </li>
         <li>
-          <b>時間：</b>
+          時間：
           {formatTime(time)}
         </li>
       </ul>

@@ -1,27 +1,20 @@
-// import {
-//   Sheet,
-//   SheetTrigger,
-//   SheetHeader,
-//   SheetTitle,
-//   SheetDescription,
-//   SheetContent
-// } from '@/components/ui/sheet'
-// import { Button } from '@/components/ui/button'
-// import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+// ui component
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-
-import { Link } from 'react-router-dom'
-import { FaGithub } from 'react-icons/fa'
-import Logo from '/52-local-logo.jpg'
-import { useTheme } from './theme-provider'
 import { Button } from './ui/button'
-import { Sun } from 'lucide-react'
-import { Moon } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
+import { FaGithub } from 'react-icons/fa'
+
+// img
+import Logo from '/52-local-logo.jpg'
+
+// react
+import { useTheme } from './theme-provider'
+import { Link } from 'react-router-dom'
 
 export default function TheNavbar() {
   const { setTheme } = useTheme()
@@ -50,7 +43,7 @@ export default function TheNavbar() {
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setTheme('light')}>淺色 Light</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme('dark')}>深色 Dark</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme('system')}>跟隋系統 System</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme('system')}>跟隨系統 System</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 

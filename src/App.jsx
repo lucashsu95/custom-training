@@ -21,6 +21,7 @@ import { useCallback } from 'react'
 import TheNavbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import AutoTraining from './components/training/AutoTraining'
+import { TooltipProvider } from './components/ui/tooltip'
 
 function App() {
   const { addItem, getAllItem, clearItem } = useIndexedDB('questions')
@@ -54,19 +55,21 @@ function App() {
 
   return (
     <DataContext.Provider value={{ questions, setQuestions, problems, setProblems }}>
-      <ThemeProvider>
-        <Router>
-          <TheNavbar />
-          <Routes>
-            <Route path="/" element={<HomeView />} />
-            <Route path="/training/auto" element={<AutoTraining />} />
-            <Route path="/upload" element={<ManageQuestions />} />
-            <Route path="/training/setting" element={<TrainingSettings />} />
-            <Route path="/training/in-progress" element={<TrainingInProgress />} />
-          </Routes>
-        </Router>
-        <Toaster />
-      </ThemeProvider>
+      <TooltipProvider>
+        <ThemeProvider>
+          <Router>
+            <TheNavbar />
+            <Routes>
+              <Route path="/" element={<HomeView />} />
+              <Route path="/training/auto" element={<AutoTraining />} />
+              <Route path="/upload" element={<ManageQuestions />} />
+              <Route path="/training/setting" element={<TrainingSettings />} />
+              <Route path="/training/in-progress" element={<TrainingInProgress />} />
+            </Routes>
+          </Router>
+          <Toaster />
+        </ThemeProvider>
+      </TooltipProvider>
     </DataContext.Provider>
   )
 }

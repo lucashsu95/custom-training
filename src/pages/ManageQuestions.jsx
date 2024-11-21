@@ -1,4 +1,5 @@
 // ui component
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -15,14 +16,15 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { QuestionsTable } from '@/components/manage/QuestionsTable'
+import PreventRefresh from '@/components/PreventRefresh'
+import { FaDownload, FaTrashAlt } from 'react-icons/fa'
 
-import { useContext } from 'react'
+// react
+import { useState, useContext } from 'react'
 import { DataContext } from '@/context/DataContext'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import QuestiopnJsonFile from '@/assets/example.json'
-import { useState } from 'react'
 import { toast } from 'sonner'
-import PreventRefresh from '@/components/PreventRefresh'
 
 export default function ManageQuestions() {
   const { questions, setQuestions } = useContext(DataContext)
@@ -92,27 +94,45 @@ export default function ManageQuestions() {
           檔吧
         </button>
 
-        <FileUploader />
+        <div className="my-2 flex gap-2">
+          <FileUploader />
 
-        <Button className="mb-2 block" variant="outline" onClick={handleExportJsonFile}>
-          匯出題庫
-        </Button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button size="icon" variant="outline" onClick={handleExportJsonFile}>
+                <FaDownload />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>匯出.json檔</p>
+            </TooltipContent>
+          </Tooltip>
 
-        <AlertDialog open={open} onOpenChange={setOpen}>
-          <AlertDialogTrigger asChild>
-            <Button variant="destructive">清空題庫</Button>
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>確定要清空所有題目嗎？</AlertDialogTitle>
-              <AlertDialogDescription>刪除後將無法復原，請謹慎操作。</AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>取消</AlertDialogCancel>
-              <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+          <AlertDialog open={open} onOpenChange={setOpen}>
+            <AlertDialogTrigger asChild>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <FaTrashAlt />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>清空現有題庫</p>
+                </TooltipContent>
+              </Tooltip>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>確定要清空所有題目嗎？</AlertDialogTitle>
+                <AlertDialogDescription>刪除後將無法復原，請謹慎操作。</AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>取消</AlertDialogCancel>
+                <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        </div>
       </section>
 
       {questions.length > 0 ? <QuestionsTable /> : '目前沒有任何題目'}
