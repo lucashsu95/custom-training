@@ -31,6 +31,8 @@ function AutoTraining() {
   })
 
   const problemsLength = problems.filter((x) => x.type2 !== '教學').length
+  console.log(problems)
+
   const progressBar = useMemo(() => {
     return Math.floor(((result.correctCount + result.wrongCount) / problemsLength) * 100)
   }, [problemsLength, result.correctCount, result.wrongCount])
@@ -109,35 +111,35 @@ function AutoTraining() {
       <div>
         {problems.length > 0 &&
           problems.map((problem, i) => {
-            if (state.currentProblem !== i) {
-              return
-            }
             return (
-              <div
-                key={problem.id}
-                className="mx-auto my-2 flex w-full flex-col items-center sm:items-start"
-              >
-                {createComponent(problem.type, {
-                  i,
-                  problem,
-                  mod: 'one-problem-mod',
-                  setState,
-                  setResult
-                })}
-                {problem.type2 === '教學' && (
-                  <Button
-                    className="mt-5 w-full"
-                    onClick={() => {
-                      setState((prev) => ({
-                        ...prev,
-                        currentProblem: state.currentProblem + 1
-                      }))
-                    }}
-                  >
-                    確認
-                  </Button>
-                )}
-              </div>
+              state.currentProblem === i && (
+                <div
+                  key={problem.id + problem.type2 ? '0' : '1'}
+                  className="mx-auto my-2 flex w-full flex-col items-center sm:items-start"
+                >
+                  {createComponent(problem.type, {
+                    i,
+                    problem,
+                    mod: 'one-problem-mod',
+                    setState,
+                    setResult
+                  })}
+                  {problem.type2 === '教學' && (
+                    <Button
+                      size="lg"
+                      className="mt-5 w-full"
+                      onClick={() => {
+                        setState((prev) => ({
+                          ...prev,
+                          currentProblem: state.currentProblem + 1
+                        }))
+                      }}
+                    >
+                      確認
+                    </Button>
+                  )}
+                </div>
+              )
             )
           })}
       </div>

@@ -8,7 +8,6 @@ export function shuffleAry(ary) {
 
 // 題目等級 -> 時間
 const dueLevel = {
-  '-1': 0.01, // 1 分鐘
   0: 0.5, // 12 小時
   1: 1, // 1 天
   2: 3,
@@ -16,7 +15,7 @@ const dueLevel = {
   4: 7
 }
 
-// 過濾 練習時間還沒到的的題目
+// 過濾 練習時間還沒到的題目
 export function filterByTime(questions) {
   const currentDate = new Date().getTime()
   return questions.filter((question) => {
@@ -28,8 +27,6 @@ export function filterByTime(questions) {
     }
     const prevDay = currentDate - question.last_answered_time
     const nextDay = questions.due <= 0 ? 0 : dueLevel[question.due] * 86400
-    // console.log(prevDay, nextDay)
-    // console.log(new Date(prevDay).getDate(), new Date(nextDay).getDate())
     return prevDay >= nextDay
   })
 }
@@ -38,10 +35,11 @@ export function filterByTime(questions) {
 export function shuffleAryByDue(ary) {
   return [...ary]
     .sort((a, b) => {
-      if (a.due === null) return -1
-      if (b.due === null) return 1
+      if ((a.due === null || a.due === 0) && (b.due === null || b.due === 0)) {
+        return Math.random() - 0.5
+      }
       if (a.due !== b.due) {
-        return a.due - b.due
+        return b.due - a.due
       }
       return a.last_answered_time - b.last_answered_time
     })

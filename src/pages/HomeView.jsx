@@ -28,15 +28,14 @@ export default function HomeView() {
     const shuffledQuestions = shuffleAryByDue(filteredQuestions)
     const correctProblems = getLimitedQuestions(shuffledQuestions, Math.min(10, questions.length))
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
-    console.log(displayedProblems)
-
-    const problems = productTech(displayedProblems)
-    setProblems(problems)
+    // const problems = productTech(displayedProblems)
+    // setProblems(problems)
+    setProblems(displayedProblems)
     navigate('/training/auto')
   }
   return (
     <section className="w-100 grid gap-5 p-6 md:grid-cols-2 lg:grid-cols-3">
-      <Alert className="custom-alert" onClick={startTraining}>
+      <Alert className="custom-alert cursor-pointer" onClick={startTraining}>
         <MdNotStarted className="h-5 w-5" />
         <AlertTitle className="text-base font-bold">直接練習</AlertTitle>
         <AlertDescription>一切由系統安排，只要負責背即可!</AlertDescription>
