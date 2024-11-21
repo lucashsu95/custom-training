@@ -12,7 +12,7 @@ export default function MultipleChoiceItem({ i, problem, mod }) {
       <h2 className="text-lg">
         {i + 1}. {problem.name}
       </h2>
-      <article className="ml-3 mt-3 flex max-w-[400px] flex-col place-items-stretch gap-4">
+      <article className="ml-3 flex w-full flex-col place-items-stretch gap-4">
         {problem.shuffledOptions.map((option, j) => {
           const id = `${i}-${j}`
           const isCorrect = problem.answerStr === option && selected === option

@@ -74,39 +74,39 @@ export default function FileUploader() {
 
   return (
     <div>
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger asChild>
-          <Tooltip>
-            <TooltipTrigger asChild>
+      <Tooltip>
+        <TooltipTrigger>
+          <Dialog asChild open={isOpen} onOpenChange={setIsOpen}>
+            <DialogTrigger asChild>
               <Button variant="outline" size="icon">
                 <RiAddCircleFill />
               </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>上傳.json檔以新增題目</p>
-            </TooltipContent>
-          </Tooltip>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>新增 題目/標籤</DialogTitle>
-          </DialogHeader>
-          <DialogDescription>請上傳 JSON 檔以繼續</DialogDescription>
-          <div
-            {...getRootProps()}
-            className={`cursor-pointer rounded-lg border-2 border-dashed p-10 text-center transition-colors ${
-              isDragActive ? 'border-primary bg-primary/10' : 'border-gray-300'
-            }`}
-          >
-            <input {...getInputProps()} />
-            {isDragActive ? (
-              <p>將 JSON 檔拖放到此處，或按下以選擇檔 ...</p>
-            ) : (
-              <p>將 JSON 檔案拖放到此處，或按一下選擇一個文件</p>
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>新增 題目/標籤</DialogTitle>
+              </DialogHeader>
+              <DialogDescription>請上傳 JSON 檔以繼續</DialogDescription>
+              <div
+                {...getRootProps()}
+                className={`cursor-pointer rounded-lg border-2 border-dashed p-10 text-center transition-colors ${
+                  isDragActive ? 'border-primary bg-primary/10' : 'border-gray-300'
+                }`}
+              >
+                <input {...getInputProps()} />
+                {isDragActive ? (
+                  <p>將 JSON 檔拖放到此處，或按下以選擇檔 ...</p>
+                ) : (
+                  <p>將 JSON 檔案拖放到此處，或按一下選擇一個文件</p>
+                )}
+              </div>
+            </DialogContent>
+          </Dialog>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>上傳.json檔以新增題目</p>
+        </TooltipContent>
+      </Tooltip>
       {file && <p className="mt-4 text-green-600">File uploaded: {file.name}</p>}
     </div>
   )

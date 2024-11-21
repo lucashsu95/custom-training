@@ -16,7 +16,6 @@ import { useContext, useState } from 'react'
 import { DataContext } from '@/context/DataContext'
 import { Progress } from '../ui/progress'
 import { useMemo } from 'react'
-import { useEffect } from 'react'
 
 function AutoTraining() {
   const { problems } = useContext(DataContext)
@@ -25,34 +24,16 @@ function AutoTraining() {
   })
 
   const [result, setResult] = useState({
-    score: -1,
     correctCount: 0,
     wrongCount: 0
   })
 
   const problemsLength = problems.filter((x) => x.type2 !== '教學').length
-
-  const progressBar = useMemo(() => {
-    return Math.floor(((result.correctCount + result.wrongCount) / problemsLength) * 100)
+  const score = useMemo(() => {
+    return Math.round(
+      ((result.correctCount - result.wrongCount) / (problemsLength - result.wrongCount)) * 100
+    )
   }, [problemsLength, result.correctCount, result.wrongCount])
-
-  useEffect(() => {
-    if (state.currentProblem === problems.length) {
-      setResult((prev) => ({
-        ...prev,
-        score: Math.round((result.correctCount / (problemsLength - result.wrongCount)) * 100)
-      }))
-
-      window.scrollTo(0, 0)
-      window.document.body.style.height = '1px'
-    }
-  }, [
-    problems.length,
-    problemsLength,
-    result.correctCount,
-    result.wrongCount,
-    state.currentProblem
-  ])
 
   const createComponent = (type, state) => {
     // state = { i, problem ,mod,setState,setResult }
@@ -83,21 +64,21 @@ function AutoTraining() {
         {/* 顯示資訊 */}
         <StateBoard mod={state.currentProblem === problems.length ? 'completed' : 'progress'} />
         {/* 進度條 */}
-        <Progress value={progressBar} />
+        <Progress value={Math.floor((result.correctCount + result.wrongCount) / problemsLength * 100)} />
         {/* 顯示成績 */}
-        {result.score > -1 && (
+        {(result.correctCount + result.wrongCount) === problemsLength && (
           <>
             <div className="my-2 rounded-md bg-purple-200 p-3 dark:bg-purple-400">
               <div
                 className={`${
-                  result.score >= 80
+                  score >= 80
                     ? 'font-bold text-green-500 dark:text-green-300'
-                    : result.score >= 60
+                    : score >= 60
                       ? ''
                       : 'font-bold text-red-500 dark:text-red-300'
                 } text-lg`}
               >
-                {result.score}分
+                {score}分
               </div>
               <div className="text-xs">答對：{result.correctCount} </div>
               <div className="text-xs">答錯：{result.wrongCount}</div>

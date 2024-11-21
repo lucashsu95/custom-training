@@ -108,30 +108,30 @@ export default function ManageQuestions() {
             </TooltipContent>
           </Tooltip>
 
-          <AlertDialog open={open} onOpenChange={setOpen}>
-            <AlertDialogTrigger asChild>
-              <Tooltip>
-                <TooltipTrigger asChild>
+          <Tooltip>
+            <TooltipTrigger>
+              <AlertDialog asChild open={open} onOpenChange={setOpen}>
+                <AlertDialogTrigger asChild>
                   <Button variant="outline" size="icon">
                     <FaTrashAlt />
                   </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>清空現有題庫</p>
-                </TooltipContent>
-              </Tooltip>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>確定要清空所有題目嗎？</AlertDialogTitle>
-                <AlertDialogDescription>刪除後將無法復原，請謹慎操作。</AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>取消</AlertDialogCancel>
-                <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>確定要清空所有題目嗎？</AlertDialogTitle>
+                    <AlertDialogDescription>刪除後將無法復原，請謹慎操作。</AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>取消</AlertDialogCancel>
+                    <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>清空現有題庫</p>
+            </TooltipContent>
+          </Tooltip>
         </div>
       </section>
 

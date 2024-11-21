@@ -43,7 +43,7 @@ export default function TheNavbar() {
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setTheme('light')}>淺色 Light</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme('dark')}>深色 Dark</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme('system')}>跟隨系統 System</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme('system')}>系統 System</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 

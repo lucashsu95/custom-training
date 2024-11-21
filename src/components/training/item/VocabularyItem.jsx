@@ -3,10 +3,13 @@ import { VocabularyQuestion } from '@/classes/Question'
 import { DataContext } from '@/context/DataContext'
 import { useContext } from 'react'
 import { useState } from 'react'
+import { useQuestion } from '@/hooks/useQuestion'
 
 export default function VocabularyItem({ i, problem, mod, setState, setResult }) {
   const { setProblems } = useContext(DataContext)
   const [hasSelected, setHasSelected] = useState(false)
+  const { updateState } = useQuestion()
+
   return (
     <>
       {problem.type2 === '教學' && (
@@ -51,6 +54,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                     const problem2 = VocabularyQuestion.create({ ...problem })
                     setProblems((prev) => [...prev, problem2])
                   }
+                  updateState(problem.id, problem.due + (isCorrect ? 1 : -1))
                 }
                 setHasSelected(true)
                 if (isCorrect) {

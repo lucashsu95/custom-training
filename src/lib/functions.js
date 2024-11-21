@@ -39,7 +39,7 @@ export function shuffleAryByDue(ary) {
         return Math.random() - 0.5
       }
       if (a.due !== b.due) {
-        return b.due - a.due
+        return a.due - b.due
       }
       return a.last_answered_time - b.last_answered_time
     })
@@ -69,7 +69,6 @@ export function getLimitedQuestions(questions, number) {
     toast('⚠️題目數量不足!', {
       description: '請回到首頁重新操作或反饋問題給我們'
     })
-    throw new Error('Index out of range')
   }
   return questions.slice(0, number)
 }
