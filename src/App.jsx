@@ -21,7 +21,6 @@ import { useCallback } from 'react'
 import TheNavbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import AutoTraining from './components/training/AutoTraining'
-import { TooltipProvider } from './components/ui/tooltip'
 
 function App() {
   const { addItem, getAllItem, clearItem } = useIndexedDB('questions')
@@ -38,12 +37,12 @@ function App() {
   useEffect(() => {
     getAllItem((allItems) => {
       const isVisited = localStorage.getItem('visited')
-      if (isVisited !== '2024-11-20') {
+      if (isVisited !== '2024-11-23') {
         clearItem()
         allItems.length = 0
       }
-      if (allItems.length === 0 && isVisited !== '2024-11-20') {
-        localStorage.setItem('visited', '2024-11-20')
+      if (allItems.length === 0 && isVisited !== '2024-11-23') {
+        localStorage.setItem('visited', '2024-11-23')
         seeder()
       } else {
         setQuestions(allItems.map((question) => createQuestion(question)))
@@ -53,21 +52,19 @@ function App() {
 
   return (
     <DataContext.Provider value={{ questions, setQuestions, problems, setProblems }}>
-      <TooltipProvider>
-        <ThemeProvider>
-          <Router>
-            <TheNavbar />
-            <Routes>
-              <Route path="/" element={<HomeView />} />
-              <Route path="/training/auto" element={<AutoTraining />} />
-              <Route path="/upload" element={<ManageQuestions />} />
-              <Route path="/training/setting" element={<TrainingSettings />} />
-              <Route path="/training/in-progress" element={<TrainingInProgress />} />
-            </Routes>
-          </Router>
-          <Toaster />
-        </ThemeProvider>
-      </TooltipProvider>
+      <ThemeProvider>
+        <Router>
+          <TheNavbar />
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route path="/training/auto" element={<AutoTraining />} />
+            <Route path="/upload" element={<ManageQuestions />} />
+            <Route path="/training/setting" element={<TrainingSettings />} />
+            <Route path="/training/in-progress" element={<TrainingInProgress />} />
+          </Routes>
+        </Router>
+        <Toaster />
+      </ThemeProvider>
     </DataContext.Provider>
   )
 }

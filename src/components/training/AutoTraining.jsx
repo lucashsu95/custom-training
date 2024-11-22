@@ -64,9 +64,11 @@ function AutoTraining() {
         {/* 顯示資訊 */}
         <StateBoard mod={state.currentProblem === problems.length ? 'completed' : 'progress'} />
         {/* 進度條 */}
-        <Progress value={Math.floor((result.correctCount + result.wrongCount) / problemsLength * 100)} />
+        <Progress
+          value={Math.floor(((result.correctCount + result.wrongCount) / problemsLength) * 100)}
+        />
         {/* 顯示成績 */}
-        {(result.correctCount + result.wrongCount) === problemsLength && (
+        {result.correctCount + result.wrongCount === problemsLength && (
           <>
             <div className="my-2 rounded-md bg-purple-200 p-3 dark:bg-purple-400">
               <div

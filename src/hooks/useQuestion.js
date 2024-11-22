@@ -7,22 +7,31 @@ export function useQuestion() {
   const { setQuestions } = useContext(DataContext)
   const { updateItem } = useIndexedDB('questions')
 
-  const updateState = useCallback(
+  const updateDue = useCallback(
     (id, due) => {
       const second = new Date().getTime()
-      updateItem(id, { due, last_answered_time: second })
+      updateItem(id, { due, lastAnsweredTime: second })
+
       setQuestions((prev) => {
-        for (const p of prev) {
-          if (p.id === id) {
-            p.due = due
-            p.last_answered_time = second
-          }
-        }
-        return prev
+        const updatedQuestions = prev.map((p) =>
+          p.id === id ? { ...p, due, lastAnsweredTime: second } : p
+        )
+        return updatedQuestions
       })
     },
     [setQuestions, updateItem]
   )
 
-  return { updateState }
+  const updateEnabled = useCallback(
+    (id, isEnabled) => {
+      updateItem(id, { isEnabled })
+      setQuestions((prev) => {
+        const updatedQuestions = prev.map((p) => (p.id === id ? { ...p, isEnabled } : p))
+        return updatedQuestions
+      })
+    },
+    [setQuestions, updateItem]
+  )
+
+  return { updateDue, updateEnabled }
 }

@@ -11,17 +11,10 @@ const PreventRefresh = () => {
         })
       }
     }
-    window.onbeforeunload = function (e) {
-      e.preventDefault()
-      toast('⚠️當前頁面不能刷新！', {
-        description: '請使用頁面上的按鈕來進行操作'
-      })
-    }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
-      window.onbeforeunload = null
     }
   }, [])
 
