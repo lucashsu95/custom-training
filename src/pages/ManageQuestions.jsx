@@ -1,5 +1,4 @@
 // ui component
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -97,41 +96,27 @@ export default function ManageQuestions() {
         <div className="my-2 flex gap-2">
           <FileUploader />
 
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button size="icon" variant="outline" onClick={handleExportJsonFile}>
-                <FaDownload />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>匯出.json檔</p>
-            </TooltipContent>
-          </Tooltip>
+          <Button size="icon" variant="outline" onClick={handleExportJsonFile}>
+            <FaDownload />
+          </Button>
 
-          <Tooltip>
-            <TooltipTrigger>
-              <AlertDialog asChild open={open} onOpenChange={setOpen}>
-                <AlertDialogTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <FaTrashAlt />
-                  </Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>確定要清空所有題目嗎？</AlertDialogTitle>
-                    <AlertDialogDescription>刪除後將無法復原，請謹慎操作。</AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>取消</AlertDialogCancel>
-                    <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>清空現有題庫</p>
-            </TooltipContent>
-          </Tooltip>
+          <AlertDialog asChild open={open} onOpenChange={setOpen}>
+            <AlertDialogTrigger asChild>
+              <Button variant="outline" size="icon">
+                <FaTrashAlt />
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>確定要清空所有題目嗎？</AlertDialogTitle>
+                <AlertDialogDescription>刪除後將無法復原，請謹慎操作。</AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>取消</AlertDialogCancel>
+                <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </section>
 
