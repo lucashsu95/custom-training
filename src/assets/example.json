@@ -11,7 +11,9 @@
     "answer": "B",
     "tag": "Unit2-單字",
     "remark": "",
-    "due": 0
+    "due": null,
+    "last_correct_time":null,
+    "isEnabled":true
   },
   {
     "type": "填空題",
@@ -19,7 +21,9 @@
     "options": ["ritual", "bouncing", "prominent", "absurd", "harsh"],
     "tag": "Unit2-填空題",
     "remark": "",
-    "due": 0
+    "due": null,
+    "last_correct_time":null,
+    "isEnabled":true
   },
   {
     "type": "配對題",
@@ -49,6 +53,8 @@
     ],
     "tag": "Unit2-2A",
     "remark": "52",
-    "due": 0
+    "due": null,
+    "last_correct_time":null,
+    "isEnabled":true
   }
 ]

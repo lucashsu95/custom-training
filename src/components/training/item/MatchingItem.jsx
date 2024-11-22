@@ -16,7 +16,7 @@ export default function MatchingItem({ i, problem, mod }) {
 
   return (
     <>
-      <h2 className="text-lg">{i + 1} 配對題. 請把對應的代號填入正確的輸入框內</h2>
+      <h2 className="text-lg">{i + 1}. 配對題. 請把對應的代號填入正確的輸入框內</h2>
       <div
         style={{ backgroundColor: `hsl(var(--background))` }}
         className="sticky top-0 my-2 flex flex-wrap justify-center gap-3 rounded-sm border p-3 text-sm shadow"

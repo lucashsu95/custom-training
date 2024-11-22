@@ -12,14 +12,16 @@ import ManageQuestions from '@/pages/ManageQuestions'
 import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
 
-// components
-import TheNavbar from '@/components/Navbar'
-import { Toaster } from '@/components/ui/sonner'
-
 // assets
 import JsonFile2 from '@/assets/unit4&5.json'
 import { createQuestion } from './lib/functions'
 import { useCallback } from 'react'
+
+// components
+import TheNavbar from '@/components/Navbar'
+import { Toaster } from '@/components/ui/sonner'
+import AutoTraining from './components/training/AutoTraining'
+import { TooltipProvider } from './components/ui/tooltip'
 
 function App() {
   const { addItem, getAllItem, clearItem } = useIndexedDB('questions')
@@ -27,8 +29,6 @@ function App() {
   const [problems, setProblems] = useState([])
 
   const seeder = useCallback(() => {
-    // console.log('seeder')
-
     const seederData = [...JsonFile2]
     seederData.forEach((question) => (question.id = uuidv4()))
     addItem(seederData)
@@ -38,12 +38,12 @@ function App() {
   useEffect(() => {
     getAllItem((allItems) => {
       const isVisited = localStorage.getItem('visited')
-      if (isVisited !== '2024-11-19') {
+      if (isVisited !== '2024-11-20') {
         clearItem()
         allItems.length = 0
       }
-      if (allItems.length === 0 && isVisited !== '2024-11-19') {
-        localStorage.setItem('visited', '2024-11-19')
+      if (allItems.length === 0 && isVisited !== '2024-11-20') {
+        localStorage.setItem('visited', '2024-11-20')
         seeder()
       } else {
         setQuestions(allItems.map((question) => createQuestion(question)))
@@ -53,18 +53,21 @@ function App() {
 
   return (
     <DataContext.Provider value={{ questions, setQuestions, problems, setProblems }}>
-      <ThemeProvider>
-        <Router>
-          <TheNavbar />
-          <Routes>
-            <Route path="/" element={<HomeView />} />
-            <Route path="/upload" element={<ManageQuestions />} />
-            <Route path="/training/setting" element={<TrainingSettings />} />
-            <Route path="/training/in-progress" element={<TrainingInProgress />} />
-          </Routes>
-        </Router>
-        <Toaster />
-      </ThemeProvider>
+      <TooltipProvider>
+        <ThemeProvider>
+          <Router>
+            <TheNavbar />
+            <Routes>
+              <Route path="/" element={<HomeView />} />
+              <Route path="/training/auto" element={<AutoTraining />} />
+              <Route path="/upload" element={<ManageQuestions />} />
+              <Route path="/training/setting" element={<TrainingSettings />} />
+              <Route path="/training/in-progress" element={<TrainingInProgress />} />
+            </Routes>
+          </Router>
+          <Toaster />
+        </ThemeProvider>
+      </TooltipProvider>
     </DataContext.Provider>
   )
 }

@@ -71,16 +71,5 @@ export function useIndexedDB(storeName) {
     [api]
   )
 
-  // const getItem = (id, callback) => {
-  //   if (!api) {
-  //     console.error('API is not initialized')
-  //     return
-  //   }
-  //   api.get().then((items) => {
-  //     const item = items.find((item) => item.id === id)
-  //     callback(item)
-  //   })
-  // }
-
   return { addItem, getAllItem, clearItem, updateItem }
 }

@@ -6,7 +6,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "riddle",
@@ -15,7 +16,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "device",
@@ -24,7 +26,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "insight",
@@ -33,7 +36,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "gap",
@@ -42,7 +46,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "vertical",
@@ -51,7 +56,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "military",
@@ -60,7 +66,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "reproduce",
@@ -69,7 +76,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "nonetheless",
@@ -78,7 +86,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "gradually",
@@ -87,7 +96,8 @@
     "tag": "Unit4-4A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "suspend",
@@ -96,7 +106,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "fantasy",
@@ -105,7 +116,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "reality",
@@ -114,7 +126,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "forthcoming",
@@ -123,7 +136,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "thereby",
@@ -132,7 +146,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "portable",
@@ -141,7 +156,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "fraction",
@@ -150,7 +166,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "rigid",
@@ -159,7 +176,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "gravity",
@@ -168,7 +186,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "foresee",
@@ -177,7 +196,8 @@
     "tag": "Unit4-4B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "descendant",
@@ -186,7 +206,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "conquest",
@@ -195,7 +216,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "proof",
@@ -204,7 +226,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "scatter",
@@ -213,7 +236,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "identical",
@@ -222,7 +246,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "bulk",
@@ -231,7 +256,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "trace",
@@ -240,7 +266,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "roughly",
@@ -249,7 +276,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "immense",
@@ -258,7 +286,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "mainland",
@@ -267,7 +296,8 @@
     "tag": "Unit5-5A",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "revered",
@@ -276,7 +306,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "navigation",
@@ -285,7 +316,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "stretch",
@@ -294,7 +326,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "interval",
@@ -303,7 +336,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "outdo",
@@ -312,7 +346,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "stubborn",
@@ -321,7 +356,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "analogous",
@@ -330,7 +366,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "intact",
@@ -339,7 +376,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "conceivable",
@@ -348,7 +386,8 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   },
   {
     "name": "disrupt",
@@ -357,6 +396,7 @@
     "tag": "Unit5-5B",
     "remark": "",
     "due": null,
-    "last_correct_time":null
+    "last_correct_time": null,
+    "isEnabled": true
   }
 ]

@@ -1,24 +1,27 @@
 // ui component
-import { Button } from '@/components/ui/button'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
-
-// question component
-import { DataContext } from '@/context/DataContext'
-import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
 import StateBoard from '@/components/training/StateBoard'
-import MultipleChoiceItem from '@/components/training/MultipleChoiceItem'
-import FillInTheBlankItem from '@/components/training/FillInTheBlankItem'
-import MatchingItem from '@/components/training/MatchingItem'
-import VocabularyItem from '@/components/training/VocabularyItem'
-import { useIndexedDB } from '@/hooks/useIndexedDB'
 import PreventRefresh from '@/components/PreventRefresh'
 
+// question component
+import MultipleChoiceItem from '@/components/training/item/MultipleChoiceItem'
+import FillInTheBlankItem from '@/components/training/item/FillInTheBlankItem'
+import MatchingItem from '@/components/training/item/MatchingItem'
+import VocabularyItem from '@/components/training/item/VocabularyItem'
+
+// react
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from '@/components/ui/button'
+import { DataContext } from '@/context/DataContext'
+import { getProblemLength } from '@/lib/functions'
+import { useQuestion } from '@/hooks/useQuestion'
+
 function TrainingInProgress() {
-  const { problems, setQuestions } = useContext(DataContext)
+  const { problems } = useContext(DataContext)
   const [mod, setMod] = useState('progress')
-  const { updateItem } = useIndexedDB('questions')
+  const { updateState } = useQuestion()
 
   const [result, setResult] = useState({
     score: -1,
@@ -43,34 +46,16 @@ function TrainingInProgress() {
     }
   }
 
-  const getProblemLength = (problem) => {
-    if (Array.isArray(problem?.options)) {
-      return problem.options.length
-    }
-    return 1
-  }
-
-  const updateState = (id, due) => {
-    const second = new Date().getTime()
-    updateItem(id, { due,last_answered_time: second })
-    setQuestions((prev) => {
-      for (const p of prev) {
-        if (p.id === id) {
-          p.due = due
-          p.last_answered_time = second
-        }
-      }
-      return prev
-    })
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
     let problemsLength = 0
     let correctCount = 0
 
     // 計算題目數量 & 更新 due
-    problems.forEach((problem) => {
+    for (const problem of problems) {
+      if (problem.type2 === '教學') {
+        continue
+      }
       const count = problem.getCorrectCount()
       const len = getProblemLength(problem)
       problem.due = problem.due === null ? 0 : problem.due
@@ -78,7 +63,7 @@ function TrainingInProgress() {
       updateState(problem.id, problem.due)
       correctCount += count
       problemsLength += len
-    })
+    }
 
     // 計算分數
     const score = Math.round((correctCount / problemsLength) * 100)
@@ -131,6 +116,7 @@ function TrainingInProgress() {
         )}
 
         {/* 題目作答 */}
+
         <form className="my-5 space-y-6 md:space-y-12 md:p-6 md:shadow-lg" onSubmit={handleSubmit}>
           {problems.map((problem, i) => (
             <section key={i}>
@@ -153,5 +139,4 @@ function TrainingInProgress() {
     </section>
   )
 }
-
 export default TrainingInProgress
