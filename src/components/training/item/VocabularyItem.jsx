@@ -54,7 +54,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                     const problem2 = VocabularyQuestion.create({ ...problem })
                     setProblems((prev) => [...prev, problem2])
                   }
-                  updateState(problem.id, problem.due + (isCorrect ? 1 : -1))
+                  updateState(problem.id, problem.due + (isCorrect ? 1 : -2))
                 }
                 setHasSelected(true)
                 if (isCorrect) {

@@ -76,7 +76,7 @@ export default function FileUploader() {
         <TooltipTrigger>
           <Dialog asChild open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" size="icon">
+              <Button variant="outline" className="p-2" asChild size="icon">
                 <RiAddCircleFill />
               </Button>
             </DialogTrigger>

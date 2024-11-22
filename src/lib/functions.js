@@ -139,6 +139,7 @@ export const formatDate = (seconds) => {
 
 export const productTech = (problems) => {
   const newProblems = [...problems]
+  let j = 0
   for (let i = 0; i < problems.length; i++) {
     const problem = problems[i]
     if (problem.due !== null || problem.isRotate === true) {
@@ -146,15 +147,32 @@ export const productTech = (problems) => {
     }
 
     const techProblem = createQuestion({ ...problem, type2: '教學' })
-    const index = newProblems.indexOf(problem)
     if (['選擇題', '單字題'].includes(problem.type)) {
-      if (index === 0) {
-        newProblems.unshift(techProblem)
-      } else {
-        newProblems.splice(index, 0, techProblem)
+      if (i % 2 == 0 && i > 0) {
+        j = newProblems.indexOf(problem)
       }
+      newProblems.splice(j, 0, techProblem)
     }
   }
+  return newProblems
+}
+
+export const getRandomInt = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+export const sortByTech = (problems) => {
+  const newProblems = shuffleAry(problems)
+  newProblems.forEach((p, i) => {
+    if (p.type2 === '教學') return
+    const techProblem = newProblems.find(
+      (x) => x.type2 === '教學' && x.name === (p.isRotate ? p.answer : p.name)
+    )
+    const techIndex = newProblems.indexOf(techProblem)
+    if (techIndex > i) {
+      ;[newProblems[i], newProblems[techIndex]] = [newProblems[techIndex], newProblems[i]]
+    }
+  })
   return newProblems
 }
 

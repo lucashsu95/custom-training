@@ -38,12 +38,12 @@ function App() {
   useEffect(() => {
     getAllItem((allItems) => {
       const isVisited = localStorage.getItem('visited')
-      if (isVisited !== '2024-11-20') {
+      if (isVisited !== '2024-11-22') {
         clearItem()
         allItems.length = 0
       }
-      if (allItems.length === 0 && isVisited !== '2024-11-20') {
-        localStorage.setItem('visited', '2024-11-20')
+      if (allItems.length === 0 && isVisited !== '2024-11-22') {
+        localStorage.setItem('visited', '2024-11-22')
         seeder()
       } else {
         setQuestions(allItems.map((question) => createQuestion(question)))

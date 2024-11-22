@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/table'
 import React, { useContext, useMemo } from 'react'
 import { DataContext } from '@/context/DataContext'
-import { formatDate } from '@/lib/functions'
 
 export function QuestionsTable() {
   const { questions } = useContext(DataContext)
@@ -26,7 +25,6 @@ export function QuestionsTable() {
             <TableHead>熟練度</TableHead>
             <TableHead>題目</TableHead>
             <TableHead>選項/答案</TableHead>
-            <TableHead>上次做答時間</TableHead>
             <TableHead>備註</TableHead>
           </TableRow>
         </TableHeader>
@@ -39,7 +37,7 @@ export function QuestionsTable() {
               return (
                 <React.Fragment key={index}>
                   <TableRow>
-                    <TableCell colSpan={6} className="bg-gray-200 dark:bg-gray-800">
+                    <TableCell colSpan={6} className="bg-gray-200 dark:bg-gray-800 font-bold text-lg">
                       {key}
                     </TableCell>
                   </TableRow>
@@ -79,11 +77,6 @@ export function QuestionsTable() {
                             : question.type === '單字題'
                               ? question.answer
                               : '未知題型'}
-                      </TableCell>
-                      <TableCell>
-                        {question.last_answered_time === null
-                          ? '無'
-                          : formatDate(question.last_answered_time)}
                       </TableCell>
                       <TableCell>{question.remark}</TableCell>
                     </TableRow>

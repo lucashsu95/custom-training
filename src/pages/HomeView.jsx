@@ -13,7 +13,8 @@ import {
   getLimitedQuestions,
   getVocabularyShuffled,
   productTech,
-  shuffleAryByDue
+  shuffleAryByDue,
+  sortByTech
 } from '@/lib/functions'
 import { DataContext } from '@/context/DataContext'
 import { useContext } from 'react'
@@ -30,7 +31,8 @@ export default function HomeView() {
     const correctProblems = getLimitedQuestions(shuffledQuestions, Math.min(10, questions.length))
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
     const problems = productTech(displayedProblems)
-    setProblems(problems)
+    const sortedTechProblems = sortByTech(problems)
+    setProblems(sortedTechProblems)
     navigate('/training/auto')
   }
   return (
