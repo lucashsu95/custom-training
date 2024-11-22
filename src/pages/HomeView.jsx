@@ -27,7 +27,7 @@ export default function HomeView() {
     const vocabulary = questions.filter((x) => x.type === '單字題')
     const filteredQuestions = filterByTime(vocabulary)
     const shuffledQuestions = shuffleAryByDue(filteredQuestions)
-    const correctProblems = getLimitedQuestions(shuffledQuestions, Math.min(5, questions.length))
+    const correctProblems = getLimitedQuestions(shuffledQuestions, Math.min(10, questions.length))
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
     const problems = productTech(displayedProblems)
     setProblems(problems)
