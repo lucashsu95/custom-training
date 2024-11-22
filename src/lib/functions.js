@@ -147,10 +147,12 @@ export const productTech = (problems) => {
 
     const techProblem = createQuestion({ ...problem, type2: '教學' })
     const index = newProblems.indexOf(problem)
-    if (index === 0) {
-      newProblems.unshift(techProblem)
-    } else {
-      newProblems.splice(index, 0, techProblem)
+    if (['選擇題', '單字題'].includes(problem.type)) {
+      if (index === 0) {
+        newProblems.unshift(techProblem)
+      } else {
+        newProblems.splice(index, 0, techProblem)
+      }
     }
   }
   return newProblems

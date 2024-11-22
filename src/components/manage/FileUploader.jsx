@@ -27,7 +27,6 @@ export default function FileUploader() {
   const { setQuestions } = useContext(DataContext)
 
   const [isOpen, setIsOpen] = useState(false)
-  const [file, setFile] = useState(null)
 
   const handleFileRead = useCallback(
     (event) => {
@@ -51,7 +50,6 @@ export default function FileUploader() {
     (acceptedFiles) => {
       const uploadedFile = acceptedFiles[0]
       if (uploadedFile && uploadedFile.name.endsWith('.json')) {
-        setFile(uploadedFile)
         const reader = new FileReader()
         reader.onload = handleFileRead
         reader.readAsText(uploadedFile)
@@ -107,7 +105,6 @@ export default function FileUploader() {
           <p>上傳.json檔以新增題目</p>
         </TooltipContent>
       </Tooltip>
-      {file && <p className="mt-4 text-green-600">File uploaded: {file.name}</p>}
     </div>
   )
 }
