@@ -8,7 +8,7 @@ import { useQuestion } from '@/hooks/useQuestion'
 export default function VocabularyItem({ i, problem, mod, setState, setResult }) {
   const { setProblems } = useContext(DataContext)
   const [hasSelected, setHasSelected] = useState(false)
-  const { updateState } = useQuestion()
+  const { updateDue } = useQuestion()
 
   return (
     <>
@@ -51,10 +51,12 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                     wrongCount: prev.wrongCount + (isCorrect ? 0 : 1)
                   }))
                   if (!isCorrect) {
-                    const problem2 = VocabularyQuestion.create({ ...problem })
+                    const problem2 = VocabularyQuestion.create({ ...problem, afterErr: true })
                     setProblems((prev) => [...prev, problem2])
                   }
-                  updateState(problem.id, problem.due + (isCorrect ? 1 : -2))
+                  if (!problem.afterErr) {
+                    updateDue(problem.id, problem.due + (isCorrect ? 1 : -1))
+                  }
                 }
                 setHasSelected(true)
                 if (isCorrect) {

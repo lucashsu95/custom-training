@@ -22,10 +22,10 @@ export function filterByTime(questions) {
     if (question.due > 4) {
       return false
     }
-    if (questions.last_answered_time === null || question.due === null) {
+    if (questions.lastAnsweredTime === null || question.due === null) {
       return true
     }
-    const prevDay = currentDate - question.last_answered_time
+    const prevDay = currentDate - question.lastAnsweredTime
     const nextDay = questions.due <= 0 ? 0 : dueLevel[question.due] * 86400
     return prevDay >= nextDay
   })
@@ -41,7 +41,7 @@ export function shuffleAryByDue(ary) {
       if (a.due !== b.due) {
         return a.due - b.due
       }
-      return a.last_answered_time - b.last_answered_time
+      return a.lastAnsweredTime - b.lastAnsweredTime
     })
     .reduce((acc, item, index, array) => {
       if (index === 0 || item.due !== array[index - 1].due) {

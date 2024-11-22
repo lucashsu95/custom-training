@@ -55,7 +55,7 @@ export default function HomeView() {
         <Alert className="custom-alert">
           <IoLibrarySharp className="h-5 w-5" />
           <AlertTitle className="text-base font-bold">自定題庫</AlertTitle>
-          <AlertDescription>自己覺定要練習什麼，在題庫頁面上傳題庫</AlertDescription>
+          <AlertDescription>在題庫頁面上傳題庫</AlertDescription>
         </Alert>
       </Link>
 

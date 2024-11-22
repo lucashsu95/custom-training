@@ -13,9 +13,7 @@ export default function MultipleChoiceItem({ i, problem, mod }) {
         {i + 1}. {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
-        <article className="ml-5">
-          {problem.answerStr}
-        </article>
+        <article className="ml-5">{problem.answerStr}</article>
       ) : (
         <article className="ml-3 flex w-full flex-col place-items-stretch gap-4">
           {problem.shuffledOptions.map((option, j) => {

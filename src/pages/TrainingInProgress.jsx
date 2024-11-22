@@ -21,7 +21,7 @@ import { useQuestion } from '@/hooks/useQuestion'
 function TrainingInProgress() {
   const { problems } = useContext(DataContext)
   const [mod, setMod] = useState('progress')
-  const { updateState } = useQuestion()
+  const { updateDue } = useQuestion()
 
   const [result, setResult] = useState({
     score: -1,
@@ -60,7 +60,7 @@ function TrainingInProgress() {
       const len = getProblemLength(problem)
       problem.due = problem.due === null ? 0 : problem.due
       problem.due += Math.max(count === len ? 1 : -1, -3)
-      updateState(problem.id, problem.due)
+      updateDue(problem.id, problem.due)
       correctCount += count
       problemsLength += len
     }

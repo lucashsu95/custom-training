@@ -70,5 +70,9 @@
 }
 
 .custom-row {
-  @apply grid grid-cols-5 rounded-md border px-4 py-2 font-mono text-sm shadow-sm;
+  @apply grid rounded-md border px-4 py-2 font-mono text-sm shadow-sm;
+}
+
+.questionKey {
+  @apply mb-3 flex items-center justify-between rounded-md px-3 py-2 text-lg font-bold shadow md:px-10;
 }
