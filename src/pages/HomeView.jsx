@@ -31,7 +31,6 @@ export default function HomeView() {
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
     const problems = productTech(displayedProblems)
     setProblems(problems)
-    console.log(problems)
     navigate('/training/auto')
   }
   return (
