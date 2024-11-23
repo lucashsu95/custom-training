@@ -30,7 +30,7 @@ function AutoTraining() {
 
   const score = useMemo(() => {
     const problemsLength = problems.filter((x) => x.type2 !== '教學' && x.afterErr === false).length
-    return Math.floor(result.correctCount * Math.floor(100 / problemsLength))
+    return Math.min(result.correctCount * Math.ceil(100 / problemsLength), 100)
   }, [problems, result.correctCount])
 
   const createComponent = (type, state) => {

@@ -13,7 +13,8 @@ import TrainingSettings from './pages/TrainingSettings'
 import TrainingInProgress from './pages/TrainingInProgress'
 
 // assets
-import JsonFile2 from '@/assets/unit4&5.json'
+import JsonFile from '@/assets/unit4&5-voc.json'
+import JsonFile2 from '@/assets/unit4&5-reading.json'
 import { createQuestion } from './lib/functions'
 import { useCallback } from 'react'
 
@@ -28,7 +29,7 @@ function App() {
   const [problems, setProblems] = useState([])
 
   const seeder = useCallback(() => {
-    const seederData = [...JsonFile2]
+    const seederData = [...JsonFile, ...JsonFile2]
     seederData.forEach((question) => (question.id = uuidv4()))
     addItem(seederData)
     setQuestions(seederData.map((question) => createQuestion(question)))
@@ -37,12 +38,12 @@ function App() {
   useEffect(() => {
     getAllItem((allItems) => {
       const isVisited = localStorage.getItem('visited')
-      if (isVisited !== '2024-11-24') {
+      if (isVisited !== '2024-11-25') {
         clearItem()
         allItems.length = 0
       }
-      if (allItems.length === 0 && isVisited !== '2024-11-24') {
-        localStorage.setItem('visited', '2024-11-24')
+      if (allItems.length === 0 && isVisited !== '2024-11-25') {
+        localStorage.setItem('visited', '2024-11-25')
         seeder()
       } else {
         setQuestions(allItems.map((question) => createQuestion(question)))

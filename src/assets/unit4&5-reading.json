@@ -1,0 +1,198 @@
+[
+    {
+        "type": "選擇題",
+        "name": "Another title for this reading could be _____.",
+        "options": {
+            "A": "The Life of the Thorny Devil",
+            "B": "Why Biomimetics Can’t Succeed",
+            "C": "Technology Inspired by Nature",
+            "D": "Andrew Parker’s Scientific Career"
+        },
+        "answer": "C",
+        "tag": "Unit4-reading",
+        "remark": "14-1",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "Why did Andrew Parker go to the Australian desert?",
+        "options": {
+            "A": "to capture and bring back a thorny devil",
+            "B": "to understand how the thorny devil collects water",
+            "C": "to provide water to thirsty thorny devils",
+            "D": "to discover water in the Australian desert"
+        },
+        "answer": "B",
+        "tag": "Unit4-reading",
+        "remark": "14-2",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "What has the study of termite nests inspired?",
+        "options": {
+            "A": "more comfortable buildings",
+            "B": "improved windmills",
+            "C": "a more efficient car design",
+            "D": "a painless needle"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": "14-3",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "In line 90, what does things refer to?",
+        "options": {
+            "A": "abilities",
+            "B": "robot flies",
+            "C": "copies",
+            "D": "rescue operations"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": "14-4",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "According to the article, which is a limitation of Stickybot?",
+        "options": {
+            "A": "It can’t climb up rough surfaces.",
+            "B": "It can move forward but not backward.",
+            "C": "It’s too heavy to stay on a wall for long.",
+            "D": "The military won’t let others use the technology."
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": "15-5",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "What is the main idea of paragraph 8 (starting line 124)?",
+        "options": {
+            "A": "Velcro is the greatest business success biomimetics has ever had.",
+            "B": "Biomimetics would be more successful if industry were less demanding.",
+            "C": "Nature’s complexity is why biomimetics has had few business successes.",
+            "D": "Today’s engineers are unable to copy nature as well as de Mestral could."
+        },
+        "answer": "C",
+        "tag": "Unit4-reading",
+        "remark": "15-6",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "Which of these statements about biomimetics is NOT true?",
+        "options": {
+            "A": "Parker hopes to create a water-collection device inspired by the thorny devil.",
+            "B": "Studying humpback whale fins may be useful for improving windmills.",
+            "C": "The body of a fish inspired a car design.",
+            "D": "Stickybot is perhaps the most famous biomimetic creation so far."
+        },
+        "answer": "D",
+        "tag": "Unit4-reading",
+        "remark": "15-7",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "What is the main purpose of the passage?",
+        "options": {
+            "A": "to provide a historical overview of innovative fashion styles",
+            "B": "to introduce the reader to developments in high-tech textiles",
+            "C": "to convince the reader to buy the latest synthetic fashions",
+            "D": "to explain how modern fashions are often inspired by nature"
+        },
+        "answer": "B",
+        "tag": "Unit4-reading",
+        "remark": "36-1",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "Why does Huges Vinchon mention a motorboat you can’t hear?",
+        "options": {
+            "A": "to evoke admiration for a fabric that can absorb vibrations",
+            "B": "to explain one of the properties of an oil-absorbing fabric",
+            "C": "to give an example of how quietly his textile factory runs",
+            "D": "to show that he is not afraid of having his ideas stolen"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": "36-2",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "Which person do you think would be most likely to design a coat made of paper with six sleeves that three people can wear together? ",
+        "options": {
+            "A": "Alex Soza",
+            "B": "Huges Vinchon",
+            "C": "Jeff Turner",
+            "D": "Ian Scott"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": "36-3",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "Which of these items has actually been sold in stores?",
+        "options": {
+            "A": "the Queen of Clubs outfit",
+            "B": "the intelligent bra",
+            "C": "the intelligent apron",
+            "D": "the ICD+ jacket"
+        },
+        "answer": "D",
+        "tag": "Unit4-reading",
+        "remark": "37-4",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "What does Clive van Heerden mean, when talking about the jacket, that “it’s not going to happen overnight”? (lines 104–105)",
+        "options": {
+            "A": "It’s not going to happen until tomorrow.",
+            "B": "It’s going to take a short time to happen.",
+            "C": "It’s going to take a long time to happen.",
+            "D": "It’s probably never going to happen."
+        },
+        "answer": "C",
+        "tag": "Unit4-reading",
+        "remark": "37-5",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "The word they in line 127 refers to _____.",
+        "options": {
+            "A": "heavy trucks",
+            "B": "air beams",
+            "C": "metal hangars",
+            "D": "airplanes"
+        },
+        "answer": "B",
+        "tag": "Unit4-reading",
+        "remark": "37-6",
+        "isEnabled": false
+    },
+    {
+        "type": "選擇題",
+        "name": "The following sentence would best be placed at the end of which paragraph? Thanks to them, the world of high-tech textiles is an exciting place to be these days.",
+        "options": {
+            "A": "paragraph 1 (starting line 1)",
+            "B": "paragraph 2 (starting line 12)",
+            "C": "paragraph 8 (starting line 106)",
+            "D": "paragraph 9 (starting line 117)"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": "37-7",
+        "isEnabled": false
+    }
+]
