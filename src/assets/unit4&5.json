@@ -307,7 +307,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "navigation",
@@ -317,7 +317,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "stretch",
@@ -327,7 +327,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "interval",
@@ -337,7 +337,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "outdo",
@@ -347,7 +347,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "stubborn",
@@ -357,7 +357,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "analogous",
@@ -367,7 +367,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "intact",
@@ -377,7 +377,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "conceivable",
@@ -387,7 +387,7 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   },
   {
     "name": "disrupt",
@@ -397,6 +397,6 @@
     "remark": "",
     "due": null,
     "last_correct_time": null,
-    "isEnabled": true
+    "isEnabled": false
   }
 ]
