@@ -60,7 +60,7 @@ function AutoTraining() {
           <BreadcrumbPage>練習中</BreadcrumbPage>
         </BreadcrumbItem>
       </TheBreadcrumb>
-      <div>
+      <section>
         {/* 顯示資訊 */}
         <StateBoard mod={state.currentProblem === problems.length ? 'completed' : 'progress'} />
         {/* 進度條 */}
@@ -87,17 +87,17 @@ function AutoTraining() {
             </div>
           </>
         )}
-      </div>
+      </section>
 
       {/* 顯示題目 */}
-      <div>
+      <section className='w-[220px] sm:w-[60%] mx-auto'>
         {problems.length > 0 &&
           problems.map((problem, i) => {
             return (
               state.currentProblem === i && (
                 <div
                   key={`${problem.id}-${i}`}
-                  className="mx-auto my-2 flex w-full flex-col items-center sm:items-start"
+                  className="mx-auto my-2 flex w-full flex-col items-center sm:items-start motion-preset-slide-left motion-duration-300"
                 >
                   {createComponent(problem.type, {
                     i,
@@ -124,7 +124,7 @@ function AutoTraining() {
               )
             )
           })}
-      </div>
+      </section>
     </section>
   )
 }

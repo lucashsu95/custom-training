@@ -13,7 +13,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
   return (
     <>
       {problem.type2 === '教學' && (
-        <div className="mt-3 text-gray-500/70 dark:text-green-300/60">New 新單字 !</div>
+        <div className="mt-3 text-green-500/70 dark:text-green-300/60 motion-preset-bounce">New 新單字 !</div>
       )}
       <h2 className="my-4 text-lg sm:my-3 md:my-2">
         {i + 1}. {problem.name}
@@ -30,9 +30,9 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
             const isWrong = problem.selected === option && !isCorrect
             const inWrongCorrect = problem.answer === option && !isCorrect
             const optionClass = isCorrect
-              ? 'bg-green-200 dark:bg-emerald-700'
+              ? 'bg-green-200 dark:bg-emerald-700 motion-preset-confetti'
               : isWrong
-                ? 'bg-red-200 dark:bg-red-500'
+                ? 'bg-red-200 dark:bg-red-500 motion-preset-shake'
                 : inWrongCorrect
                   ? 'bg-yellow-200 dark:bg-yellow-600'
                   : ''
@@ -60,7 +60,9 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                 }
                 setHasSelected(true)
                 if (isCorrect) {
-                  setState((prev) => ({ ...prev, currentProblem: prev.currentProblem + 1 }))
+                  setTimeout(() => {
+                    setState((prev) => ({ ...prev, currentProblem: prev.currentProblem + 1 }))
+                  }, 2000);
                 }
               }
             }
