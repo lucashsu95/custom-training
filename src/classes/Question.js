@@ -6,13 +6,13 @@ class Question {
     this.id = question.id
     this.name = question.name
     this.tag = question.tag
-    this.remark = question.remark
-    this.due = question.due
+    this.remark = question.remark ?? ''
+    this.due = question.due ?? null
     this.type = question.type
     this.type2 = question.type2 ?? null
     this.afterErr = question.afterErr ?? false
     this.lastAnsweredTime = question.lastAnsweredTime ?? null
-    this.isEnabled = question.isEnabled
+    this.isEnabled = question.isEnabled ?? true
     this.selected
   }
 
