@@ -31,7 +31,7 @@ export default function QuestionSection({ questions, questionKey }) {
           {questions.map((question, index) => (
             <section
               key={index}
-              className={`custom-row ${question.type === '填空題' || question.type === '配對題' ? 'grid-cols-[1fr_1fr_6fr_1fr_1fr_1fr] gap-3' : 'grid-cols-6'}`}
+              className={`custom-row ${['填空題', '配對題', '選擇題'].includes(question.type) ? 'grid-cols-[1fr_1fr_6fr_5fr_1fr_1fr] gap-3' : 'grid-cols-6'}`}
             >
               <div>{question.type}</div>
               <div>
@@ -49,7 +49,7 @@ export default function QuestionSection({ questions, questionKey }) {
                   ? question.name.map((part, j) => <li key={j}>{part}</li>)
                   : question.name}
               </div>
-              <div>
+              <div className='max-w-[500px]'>
                 {question.type === '選擇題'
                   ? Object.keys(question.options).map((optionKey) => (
                       <div

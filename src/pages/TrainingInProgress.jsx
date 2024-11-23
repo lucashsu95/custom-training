@@ -58,18 +58,15 @@ function TrainingInProgress() {
       }
       const count = problem.getCorrectCount()
       const len = getProblemLength(problem)
-      if (problem.due === null) {
-        problem.due = count === len ? 0 : -1
-      } else {
-        problem.due += Math.max(count === len ? 1 : -2, -3)
-      }
-      updateDue(problem.id, problem.due)
+      console.log(count, len, problem.name)
+
+      updateDue(problem.id, count === len)
       correctCount += count
       problemsLength += len
     }
 
     // 計算分數
-    const score = Math.round((correctCount / problemsLength) * 100)
+    const score = Math.ceil(100 / problemsLength) * correctCount
     setResult({
       score,
       correctCount,

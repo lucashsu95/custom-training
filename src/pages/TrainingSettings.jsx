@@ -28,7 +28,7 @@ function TrainingSettings() {
   const [state, setState] = useState({
     currentTags: new Set(),
     questionNumber: 0,
-    hasTech: true,
+    hasTech: false,
     hasName: true
   })
 

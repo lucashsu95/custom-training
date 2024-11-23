@@ -12,11 +12,16 @@ export function useQuestion() {
     (id, isCorrect) => {
       const second = new Date().getTime()
       const question = questions.find((q) => q.id === id)
-      const newDue = Math.max(question.due + (isCorrect ? (question.due === null ? 0 : 1) : -2), -3)
-      updateItem(id, { due: newDue, lastAnsweredTime: second })
+      question.due = question.due === null ? 0 : question.due
+      console.log('isCorrect:', isCorrect, 'id:', id)
+
+      question.due += isCorrect ? 1 : -2
+      question.due = Math.max(question.due, -3)
+
+      updateItem(id, { due: question.due, lastAnsweredTime: second })
       setQuestions((prev) => {
         const updatedQuestions = prev.map((p) =>
-          p.id === id ? createQuestion({ ...p, due: newDue, lastAnsweredTime: second }) : p
+          p.id === id ? createQuestion({ ...p, due: question.due, lastAnsweredTime: second }) : p
         )
         return updatedQuestions
       })
