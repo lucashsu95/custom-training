@@ -7,12 +7,12 @@ import { IoIosArrowDown } from 'react-icons/io'
 
 export default function QuestionSection({ questions, questionKey }) {
   const [open, setOpen] = useState(false)
-  const { updateEnabled } = useQuestion()
+  const { updateQuestion } = useQuestion()
 
   return (
     <Collapsible open={open}>
       <CollapsibleTrigger asChild onClick={() => setOpen(!open)}>
-        <h4 className="questionKey bg-sky-200 dark:bg-sky-900">
+        <h4 className="md:px-10; mb-3 flex items-center justify-between rounded-md bg-sky-200 px-3 py-2 text-lg font-bold shadow dark:bg-sky-900">
           {questionKey}
           <IoIosArrowDown className={`${open ? '-rotate-180' : 'rotate-0'} transition-transform`} />
         </h4>
@@ -69,7 +69,7 @@ export default function QuestionSection({ questions, questionKey }) {
               <div>
                 <Switch
                   checked={question.isEnabled}
-                  onClick={() => updateEnabled(question.id, !question.isEnabled)}
+                  onClick={() => updateQuestion(question.id, { isEnabled: !question.isEnabled })}
                 />
               </div>
             </section>

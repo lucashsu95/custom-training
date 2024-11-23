@@ -20,7 +20,7 @@ import { useCallback } from 'react'
 // components
 import TheNavbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
-import AutoTraining from './components/training/AutoTraining'
+import AutoTraining from '@/pages/AutoTraining'
 
 function App() {
   const { addItem, getAllItem, clearItem } = useIndexedDB('questions')

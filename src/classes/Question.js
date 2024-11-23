@@ -36,6 +36,19 @@ export class MultipleChoiceQuestion extends Question {
   getCorrectCount() {
     return this.selected === this.answerStr ? 1 : 0
   }
+  toPayload() {
+    return {
+      id: this.id,
+      tag: this.tag,
+      remark: this.remark,
+      due: this.due,
+      answer: this.answer,
+      name: this.name,
+      type: this.type,
+      lastAnsweredTime: this.lastAnsweredTime,
+      isEnabled: this.isEnabled
+    }
+  }
 }
 
 // 填空題
@@ -56,6 +69,19 @@ export class FillInTheBlankQuestion extends Question {
       (acc, option, j) => (this.selected.get(j) === option ? acc + 1 : acc),
       0
     )
+  }
+  toPayload() {
+    return {
+      id: this.id,
+      tag: this.tag,
+      remark: this.remark,
+      name: this.name,
+      due: this.due,
+      options: this.options,
+      type: this.type,
+      lastAnsweredTime: this.lastAnsweredTime,
+      isEnabled: this.isEnabled
+    }
   }
 }
 // 配對題
@@ -78,6 +104,19 @@ export class MatchingQuestion extends Question {
         this.selected.get(j) === this.options[this.name.indexOf(name)] ? acc + 1 : acc,
       0
     )
+  }
+  toPayload() {
+    return {
+      id: this.id,
+      tag: this.tag,
+      remark: this.remark,
+      name: this.name,
+      due: this.due,
+      options: this.options,
+      type: this.type,
+      lastAnsweredTime: this.lastAnsweredTime,
+      isEnabled: this.isEnabled
+    }
   }
 }
 
@@ -112,6 +151,21 @@ export class VocabularyQuestion extends Question {
 
   getCorrectCount() {
     return this.selected === this.answer ? 1 : 0
+  }
+
+  toPayload() {
+    return {
+      id: this.id,
+      tag: this.tag,
+      remark: this.remark,
+      due: this.due,
+      name: this.name,
+      type: this.type,
+      lastAnsweredTime: this.lastAnsweredTime,
+      isEnabled: this.isEnabled,
+      answer: this.answer,
+      optionsLength: this.optionsLength
+    }
   }
 }
 

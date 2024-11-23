@@ -58,8 +58,11 @@ function TrainingInProgress() {
       }
       const count = problem.getCorrectCount()
       const len = getProblemLength(problem)
-      problem.due = problem.due === null ? 0 : problem.due
-      problem.due += Math.max(count === len ? 1 : -1, -3)
+      if (problem.due === null) {
+        problem.due = count === len ? 0 : -1
+      } else {
+        problem.due += Math.max(count === len ? 1 : -2, -3)
+      }
       updateDue(problem.id, problem.due)
       correctCount += count
       problemsLength += len

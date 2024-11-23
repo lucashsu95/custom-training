@@ -66,7 +66,9 @@ export default function ManageQuestions() {
 
   const handleExportJsonFile = () => {
     const element = document.createElement('a')
-    const file = new Blob([JSON.stringify(questions)], { type: 'application/json' })
+    const file = new Blob([JSON.stringify(questions.map((x) => x.toPayload()))], {
+      type: 'application/json'
+    })
     element.href = URL.createObjectURL(file)
     element.download = 'questions.json'
     document.body.appendChild(element)

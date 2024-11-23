@@ -8,6 +8,8 @@ export function shuffleAry(ary) {
 
 // 題目等級 -> 時間
 const dueLevel = {
+  '-2': 0.01, // 30 分鐘
+  '-1': 0.05, // 2 小時
   0: 0.5, // 12 小時
   1: 1, // 1 天
   2: 3,
@@ -15,33 +17,59 @@ const dueLevel = {
   4: 7
 }
 
-// 過濾 練習時間還沒到的題目
-export function filterByTime(questions) {
+// 檢查是否到達練習時間
+const checkCorrectTime = (p) => {
   const currentDate = new Date().getTime()
+  if (p.lastAnsweredTime === null) {
+    return false
+  }
+  const prevDay = (currentDate - p.lastAnsweredTime) / 1000
+  const nextDay = p.due < 0 ? 0 : dueLevel[p.due] * 86400
+  return prevDay >= nextDay
+}
+
+// 過濾練習時間還沒到的題目
+export function filterByTime(questions) {
   return questions.filter((question) => {
-    if (question.due > 4) {
+    if (question.due > 5) {
       return false
     }
-    if (questions.lastAnsweredTime === null || question.due === null) {
+    if (question.lastAnsweredTime === null || question.due === null) {
       return true
     }
-    const prevDay = currentDate - question.lastAnsweredTime
-    const nextDay = questions.due <= 0 ? 0 : dueLevel[question.due] * 86400
-    return prevDay >= nextDay
+    return checkCorrectTime(question)
   })
 }
 
-// 依照 due 排序 並分組 打亂組內順序
+/*
+依照 due 排序 並分組 打亂組內順序
+
+  1. 到練習時間的題目
+    - lastAnsweredTime
+    - order by lastAnsweredTime ASC
+  2. 未作答的題目
+    - due === null
+  3. 隨機排序
+    - Math.random() - 0.5
+
+*/
 export function shuffleAryByDue(ary) {
   return [...ary]
     .sort((a, b) => {
-      if ((a.due === null || a.due === 0) && (b.due === null || b.due === 0)) {
-        return Math.random() - 0.5
+      const correctTimeA = checkCorrectTime(a)
+      const correctTimeB = checkCorrectTime(b)
+      if (correctTimeA && correctTimeB) {
+        return a.lastAnsweredTime - b.lastAnsweredTime
       }
-      if (a.due !== b.due) {
-        return a.due - b.due
+
+      if (correctTimeA || correctTimeB) {
+        return correctTimeA ? -1 : 1
       }
-      return a.lastAnsweredTime - b.lastAnsweredTime
+
+      if (a.due === null || b.due === null) {
+        return a.due === null ? -1 : 1
+      }
+      return Math.random() - 0.5
     })
     .reduce((acc, item, index, array) => {
       if (index === 0 || item.due !== array[index - 1].due) {
@@ -109,7 +137,8 @@ export const getVocabularyShuffled = (problems, hasName) => {
   // 如果有 hasName 將 name 也打亂
   const result = []
   const temp = []
-  for (const p of problems) {
+  for (const problem of problems) {
+    const p = createQuestion({ ...problem })
     if (p.type === '單字題') {
       p.getAnswerOptions(answers)
       if (hasName) {

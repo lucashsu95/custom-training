@@ -14,7 +14,7 @@ import VocabularyItem from '@/components/training/item/VocabularyItem'
 // react
 import { useContext, useState } from 'react'
 import { DataContext } from '@/context/DataContext'
-import { Progress } from '../ui/progress'
+import { Progress } from '@/components/ui/progress'
 import { useMemo } from 'react'
 
 function AutoTraining() {
@@ -28,12 +28,10 @@ function AutoTraining() {
     wrongCount: 0
   })
 
-  const problemsLength = problems.filter((x) => x.type2 !== '教學').length
   const score = useMemo(() => {
-    return Math.round(
-      ((result.correctCount - result.wrongCount) / (problemsLength - result.wrongCount)) * 100
-    )
-  }, [problemsLength, result.correctCount, result.wrongCount])
+    const problemsLength = problems.filter((x) => x.type2 !== '教學' && x.afterErr === false).length
+    return Math.floor(result.correctCount * Math.floor(100 / problemsLength))
+  }, [problems, result.correctCount])
 
   const createComponent = (type, state) => {
     // state = { i, problem ,mod,setState,setResult }
@@ -54,7 +52,6 @@ function AutoTraining() {
   return (
     <section className="p-6">
       <PreventRefresh />
-
       <TheBreadcrumb>
         <BreadcrumbItem>
           <BreadcrumbPage>練習中</BreadcrumbPage>
@@ -64,11 +61,9 @@ function AutoTraining() {
         {/* 顯示資訊 */}
         <StateBoard mod={state.currentProblem === problems.length ? 'completed' : 'progress'} />
         {/* 進度條 */}
-        <Progress
-          value={Math.floor(((result.correctCount + result.wrongCount) / problemsLength) * 100)}
-        />
+        <Progress value={Math.floor((state.currentProblem / problems.length) * 100)} />
         {/* 顯示成績 */}
-        {result.correctCount + result.wrongCount === problemsLength && (
+        {state.currentProblem === problems.length && (
           <>
             <div className="my-2 rounded-md bg-purple-200 p-3 dark:bg-purple-400">
               <div
@@ -90,14 +85,14 @@ function AutoTraining() {
       </section>
 
       {/* 顯示題目 */}
-      <section className='w-[220px] sm:w-[60%] mx-auto'>
+      <section className="mx-auto w-[220px] sm:w-[60%]">
         {problems.length > 0 &&
           problems.map((problem, i) => {
             return (
               state.currentProblem === i && (
                 <div
                   key={`${problem.id}-${i}`}
-                  className="mx-auto my-2 flex w-full flex-col items-center sm:items-start motion-preset-slide-left motion-duration-300"
+                  className="motion-preset-slide-left mx-auto my-2 flex w-full flex-col items-center motion-duration-300 sm:items-start"
                 >
                   {createComponent(problem.type, {
                     i,
@@ -106,7 +101,8 @@ function AutoTraining() {
                     setState,
                     setResult
                   })}
-                  {problem.type2 === '教學' && (
+                  {(problem.type2 === '教學' ||
+                    (problem.selected !== '' && problem.selected !== problem.answer)) && (
                     <Button
                       size="lg"
                       className="mt-5 w-full"

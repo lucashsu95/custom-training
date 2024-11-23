@@ -19,16 +19,27 @@ import {
 import { DataContext } from '@/context/DataContext'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'sonner'
 
 export default function HomeView() {
   const { questions, setProblems } = useContext(DataContext)
   const navigate = useNavigate()
 
   const startTraining = () => {
-    const vocabulary = questions.filter((x) => x.type === '單字題')
+    const vocabulary = questions.filter((x) => x.type === '單字題' && x.isEnabled)
     const filteredQuestions = filterByTime(vocabulary)
     const shuffledQuestions = shuffleAryByDue(filteredQuestions)
-    const correctProblems = getLimitedQuestions(shuffledQuestions, Math.min(10, questions.length))
+    if (shuffledQuestions.length < 3) {
+      toast('目前沒有要練習的題目', {
+        description: '休息一下之後再來練習吧!'
+      })
+      return
+    }
+    const correctProblems = getLimitedQuestions(
+      shuffledQuestions,
+      3
+      // shuffledQuestions.length >= 10 ? 10 : shuffledQuestions.length >= 5 ? 5 : 3
+    )
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
     const problems = productTech(displayedProblems)
     const sortedTechProblems = sortByTech(problems)

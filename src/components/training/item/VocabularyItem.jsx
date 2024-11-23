@@ -13,9 +13,21 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
   return (
     <>
       {problem.type2 === '教學' && (
-        <div className="mt-3 text-green-500/70 dark:text-green-300/60 motion-preset-bounce">New 新單字 !</div>
+        <div className="motion-preset-bounce mt-3 text-green-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-green-300/60">
+          New 新單字 !
+        </div>
       )}
-      <h2 className="my-4 text-lg sm:my-3 md:my-2">
+      {problem.due < -1 && (
+        <div className="motion-preset-bounce mt-3 text-red-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-red-400/60">
+          不熟練的單字 !
+        </div>
+      )}
+      {problem.afterErr && (
+        <div className="motion-preset-bounce mt-3 text-yellow-500/80 -motion-translate-y-in-150 motion-delay-300 dark:text-yellow-400/60">
+          再複習一下
+        </div>
+      )}
+      <h2 className="my-6 text-lg sm:my-3 md:my-2">
         {i + 1}. {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
@@ -23,7 +35,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
           {problem.answer}
         </article>
       ) : (
-        <article className="ml-3 flex w-full flex-col place-items-stretch gap-4">
+        <article className="flex w-full flex-col place-items-stretch gap-4">
           {problem.shuffledOptions.map((option, j) => {
             const id = `${i}-${j}`
             const isCorrect = problem.answer === option && problem.selected === option
@@ -36,6 +48,9 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                 : inWrongCorrect
                   ? 'bg-yellow-200 dark:bg-yellow-600'
                   : ''
+            const Isprogress =
+              mod === 'progress' && 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
+
             const handleChange = () => {
               setProblems((prev) => {
                 prev[i].selected = option
@@ -43,32 +58,29 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
               })
 
               if (mod === 'one-problem-mod') {
-                const isCorrect = problem.answer === problem.selected
                 if (hasSelected === false) {
-                  setResult((prev) => ({
-                    ...prev,
-                    correctCount: prev.correctCount + (isCorrect ? 1 : 0),
-                    wrongCount: prev.wrongCount + (isCorrect ? 0 : 1)
-                  }))
+                  const isCorrect = problem.selected === problem.answer
                   if (!isCorrect) {
                     const problem2 = VocabularyQuestion.create({ ...problem, afterErr: true })
                     setProblems((prev) => [...prev, problem2])
                   }
                   if (!problem.afterErr) {
-                    updateDue(problem.id, problem.due + (isCorrect ? 1 : -1))
+                    setResult((prev) => ({
+                      ...prev,
+                      correctCount: prev.correctCount + (isCorrect ? 1 : 0),
+                      wrongCount: prev.wrongCount + (isCorrect ? 0 : 1)
+                    }))
+                    updateDue(problem.id, isCorrect)
                   }
-                }
-                setHasSelected(true)
-                if (isCorrect) {
-                  setTimeout(() => {
-                    setState((prev) => ({ ...prev, currentProblem: prev.currentProblem + 1 }))
-                  }, 2000);
+                  setHasSelected(true)
+                  if (isCorrect) {
+                    setTimeout(() => {
+                      setState((prev) => ({ ...prev, currentProblem: prev.currentProblem + 1 }))
+                    }, 700)
+                  }
                 }
               }
             }
-
-            const Isprogress =
-              mod === 'progress' && 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
 
             return (
               <div
@@ -81,12 +93,12 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                   name={`problem-${i}`}
                   id={id}
                   value={id}
-                  className="from-radio h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+                  className="hidden"
                   required
                 />
                 <label
                   htmlFor={id}
-                  className={`ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300 ${Isprogress}`}
+                  className={`w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300 ${Isprogress}`}
                 >{`${String.fromCharCode(j + 65)}. ${option}`}</label>
               </div>
             )

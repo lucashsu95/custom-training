@@ -87,7 +87,8 @@ function TrainingSettings() {
       alert('請選擇標籤')
       return
     }
-    const selectedQuestions = getQuestionByTag(questions, state.currentTags)
+    const enabledQuestions = questions.filter((x) => x.isEnabled)
+    const selectedQuestions = getQuestionByTag(enabledQuestions, state.currentTags)
     const shuffledQuestions = shuffleAryByDue(selectedQuestions)
     const correctProblems = getLimitedQuestions(shuffledQuestions, state.questionNumber)
     const displayedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
