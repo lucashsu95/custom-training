@@ -27,7 +27,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
           再複習一下
         </div>
       )}
-      <h2 className="my-6 text-lg sm:my-3 md:my-2">
+      <h2 className={`text-lg sm:my-3 md:my-2 ${mod === 'one-problem-mod' ? 'my-6' : 'my-2'}`}>
         {i + 1}. {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
@@ -93,7 +93,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                   name={`problem-${i}`}
                   id={id}
                   value={id}
-                  className="from-radio h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 peer mr-2"
+                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} from-radio peer mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
                   required
                 />
                 <label

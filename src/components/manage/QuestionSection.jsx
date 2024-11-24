@@ -49,7 +49,7 @@ export default function QuestionSection({ questions, questionKey }) {
                   ? question.name.map((part, j) => <li key={j}>{part}</li>)
                   : question.name}
               </div>
-              <div className='max-w-[500px]'>
+              <div className="max-w-[500px]">
                 {question.type === '選擇題'
                   ? Object.keys(question.options).map((optionKey) => (
                       <div

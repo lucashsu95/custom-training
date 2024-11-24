@@ -35,10 +35,7 @@ export default function HomeView() {
       })
       return
     }
-    const correctProblems = getLimitedQuestions(
-      shuffledQuestions,
-      shuffledQuestions.length >= 10 ? 10 : shuffledQuestions.length >= 5 ? 5 : 3
-    )
+    const correctProblems = getLimitedQuestions(shuffledQuestions, 6)
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
     const problems = productTech(displayedProblems)
     const sortedTechProblems = sortByTech(problems)

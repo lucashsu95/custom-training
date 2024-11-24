@@ -85,7 +85,7 @@ function AutoTraining() {
       </section>
 
       {/* 顯示題目 */}
-      <section className="mx-auto w-[220px] sm:w-[60%]">
+      <section className="mx-auto w-full max-w-[320px] sm:max-w-[60%] md:max-w-[80%]">
         {problems.length > 0 &&
           problems.map((problem, i) => {
             return (
