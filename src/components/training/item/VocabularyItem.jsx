@@ -4,6 +4,8 @@ import { DataContext } from '@/context/DataContext'
 import { useContext } from 'react'
 import { useState } from 'react'
 import { useQuestion } from '@/hooks/useQuestion'
+import { IoIosWarning } from 'react-icons/io'
+import { AiOutlineFire } from 'react-icons/ai'
 
 export default function VocabularyItem({ i, problem, mod, setState, setResult }) {
   const { setProblems } = useContext(DataContext)
@@ -13,29 +15,31 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
   return (
     <>
       {problem.type2 === '教學' && (
-        <div className="motion-preset-bounce mt-3 text-green-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-green-300/60">
+        <div className="motion-preset-bounce mt-1 flex items-center gap-2 text-green-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-green-300/60">
+          <AiOutlineFire className="h-5 w-5" />
           New 新單字 !
         </div>
       )}
       {problem.due < -1 && (
-        <div className="motion-preset-bounce mt-3 text-red-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-red-400/60">
+        <div className="motion-preset-bounce mt-1 flex items-center gap-2 text-red-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-red-400/60">
+          <IoIosWarning className="h-5 w-5" />
           不熟練的單字 !
         </div>
       )}
       {problem.afterErr && (
-        <div className="motion-preset-bounce mt-3 text-yellow-500/80 -motion-translate-y-in-150 motion-delay-300 dark:text-yellow-400/60">
+        <div className="motion-preset-bounce mt-1 text-yellow-500/80 -motion-translate-y-in-150 motion-delay-300 dark:text-yellow-400/60">
           再複習一下
         </div>
       )}
-      <h2 className={`text-lg sm:my-3 md:my-2 ${mod === 'one-problem-mod' ? 'mb-3 mt-5' : 'my-2'}`}>
+      <h2 className={`my-3 ${mod === 'one-problem-mod' ? 'text-2xl' : 'text-xl'}`}>
         {i + 1}. {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
-        <article className="flex flex-col place-items-stretch gap-4 sm:ml-5">
+        <article className="flex flex-col place-items-stretch gap-4 text-lg sm:ml-5">
           {problem.answer}
         </article>
       ) : (
-        <article className="flex w-full flex-col place-items-stretch gap-4">
+        <article className="mt-2 flex w-full flex-col place-items-stretch gap-4 md:mt-0">
           {problem.shuffledOptions.map((option, j) => {
             const id = `${i}-${j}`
             const isCorrect = problem.answer === option && problem.selected === option

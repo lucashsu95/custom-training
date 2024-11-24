@@ -104,7 +104,9 @@ export function getLimitedQuestions(questions, number) {
 export function getTags(questions) {
   const tags = new Set()
   questions.forEach((question) => {
-    tags.add(question.tag)
+    if (question.isEnabled) {
+      tags.add(question.tag)
+    }
   })
   return Array.from(tags)
 }

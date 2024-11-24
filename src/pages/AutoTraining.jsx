@@ -10,6 +10,7 @@ import MultipleChoiceItem from '@/components/training/item/MultipleChoiceItem'
 import FillInTheBlankItem from '@/components/training/item/FillInTheBlankItem'
 import MatchingItem from '@/components/training/item/MatchingItem'
 import VocabularyItem from '@/components/training/item/VocabularyItem'
+import { IoCheckbox } from 'react-icons/io5'
 
 // react
 import { useContext, useState } from 'react'
@@ -62,7 +63,10 @@ function AutoTraining() {
         {/* 顯示資訊 */}
         <StateBoard mod={state.currentProblem === problems.length ? 'completed' : 'progress'} />
         {/* 進度條 */}
-        <Progress value={Math.floor((state.currentProblem / problems.length) * 100)} />
+        <div className="my-2 flex items-center gap-2 px-2 sm:gap-4 md:gap-6">
+          <Progress value={Math.floor((state.currentProblem / problems.length) * 100)} />
+          <IoCheckbox className="h-5 w-5" />
+        </div>
         {/* 顯示成績 */}
         {state.currentProblem === problems.length && (
           <>
@@ -86,7 +90,7 @@ function AutoTraining() {
       </section>
 
       {/* 顯示題目 */}
-      <section className="mx-auto w-full max-w-[320px] sm:max-w-[60%] md:max-w-[80%]">
+      <section className="mx-auto w-full max-w-[380px] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%]">
         {problems.length > 0 &&
           problems.map(
             (problem, i) =>

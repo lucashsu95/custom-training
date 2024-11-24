@@ -45,17 +45,17 @@ export default function StateBoard({ mod }) {
   }, [mod])
 
   return (
-    <section className="my-2 space-y-3 rounded-lg border p-4 shadow">
-      <h1 className="text-xl font-bold">練習中</h1>
+    <section className="my-2 space-y-3 rounded-lg border p-3 shadow">
       <ul className="ml-5 list-outside list-disc leading-7">
-        <li>共有 {problems.length} 題</li>
-        <li className="flex flex-wrap items-center gap-1">
-          標籤：
-          {tags.map((tag, index) => (
-            <Toggle size="sm" variant="outline" key={index} disabled>
-              {tag}
-            </Toggle>
-          ))}
+        <li className="gap-1">
+          <div className="flex flex-wrap items-center gap-1">
+            標籤：
+            {tags.map((tag, index) => (
+              <Toggle size="sm" variant="outline" key={index} disabled>
+                {tag}
+              </Toggle>
+            ))}
+          </div>
         </li>
         <li>
           時間：

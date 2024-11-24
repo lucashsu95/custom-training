@@ -166,7 +166,7 @@ function TrainingSettings() {
             </div>
           </section>
 
-          <section className="flex flex-col gap-2 md:flex-row">
+          <section className="flex flex-col gap-3 md:flex-row">
             <Button>開始練習</Button>
             <Button type="button" onClick={handleSelectAll} variant="outline">
               全選
