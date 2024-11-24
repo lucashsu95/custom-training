@@ -10,7 +10,7 @@ import MultipleChoiceItem from '@/components/training/item/MultipleChoiceItem'
 import FillInTheBlankItem from '@/components/training/item/FillInTheBlankItem'
 import MatchingItem from '@/components/training/item/MatchingItem'
 import VocabularyItem from '@/components/training/item/VocabularyItem'
-import { IoCheckbox } from 'react-icons/io5'
+import { RiCheckboxCircleFill } from "react-icons/ri";
 
 // react
 import { useContext, useState } from 'react'
@@ -65,7 +65,7 @@ function AutoTraining() {
         {/* 進度條 */}
         <div className="my-2 flex items-center gap-2 px-2 sm:gap-4 md:gap-6">
           <Progress value={Math.floor((state.currentProblem / problems.length) * 100)} />
-          <IoCheckbox className="h-5 w-5" />
+          <RiCheckboxCircleFill className="h-5 w-5" />
         </div>
         {/* 顯示成績 */}
         {state.currentProblem === problems.length && (

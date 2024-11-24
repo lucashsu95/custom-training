@@ -46,7 +46,7 @@ export default function HomeView() {
   return (
     <section className="w-100 grid gap-5 p-6 md:grid-cols-2 lg:grid-cols-3">
       <Alert
-        className="custom-alert cursor-pointer bg-sky-200 dark:bg-sky-900"
+        className="custom-alert cursor-pointer bg-blue-200 dark:bg-[#6574bda4]"
         onClick={startTraining}
       >
         <MdNotStarted className="h-5 w-5" />
