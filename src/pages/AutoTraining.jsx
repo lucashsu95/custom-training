@@ -16,6 +16,7 @@ import { useContext, useState } from 'react'
 import { DataContext } from '@/context/DataContext'
 import { Progress } from '@/components/ui/progress'
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 
 function AutoTraining() {
   const { problems } = useContext(DataContext)
@@ -50,7 +51,7 @@ function AutoTraining() {
   }
 
   return (
-    <section className="p-6">
+    <section className="overflow-hidden p-6">
       <PreventRefresh />
       <TheBreadcrumb>
         <BreadcrumbItem>
@@ -87,9 +88,12 @@ function AutoTraining() {
       {/* 顯示題目 */}
       <section className="mx-auto w-full max-w-[320px] sm:max-w-[60%] md:max-w-[80%]">
         {problems.length > 0 &&
-          problems.map((problem, i) => {
-            return (
-              state.currentProblem === i && (
+          problems.map(
+            (problem, i) =>
+              (state.currentProblem === i ||
+                (state.currentProblem === problems.length &&
+                  !problem.afterErr &&
+                  problem.type2 != '教學')) && (
                 <div
                   key={`${problem.id}-${i}`}
                   className="motion-preset-slide-left mx-auto my-2 flex w-full flex-col items-center motion-duration-300 sm:items-start"
@@ -102,7 +106,9 @@ function AutoTraining() {
                     setResult
                   })}
                   {(problem.type2 === '教學' ||
-                    (problem.selected !== '' && problem.selected !== problem.answer)) && (
+                    (problem.selected !== '' &&
+                      problem.selected !== problem.answer &&
+                      state.currentProblem !== problems.length)) && (
                     <Button
                       size="lg"
                       className="mt-5 w-full"
@@ -118,9 +124,14 @@ function AutoTraining() {
                   )}
                 </div>
               )
-            )
-          })}
+          )}
       </section>
+
+      {state.currentProblem === problems.length && (
+        <Link to="/">
+          <Button className="mt-3 w-full">回首頁</Button>
+        </Link>
+      )}
     </section>
   )
 }

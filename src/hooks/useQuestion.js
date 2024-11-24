@@ -13,8 +13,6 @@ export function useQuestion() {
       const second = new Date().getTime()
       const question = questions.find((q) => q.id === id)
       question.due = question.due === null ? 0 : question.due
-      console.log('isCorrect:', isCorrect, 'id:', id)
-
       question.due += isCorrect ? 1 : -2
       question.due = Math.max(question.due, -3)
 

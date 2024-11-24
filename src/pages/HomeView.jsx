@@ -35,6 +35,7 @@ export default function HomeView() {
       })
       return
     }
+    // const correctProblems = getLimitedQuestions(shuffledQuestions, 3)
     const correctProblems = getLimitedQuestions(shuffledQuestions, 6)
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
     const problems = productTech(displayedProblems)

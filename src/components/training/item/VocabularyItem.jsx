@@ -7,7 +7,7 @@ import { useQuestion } from '@/hooks/useQuestion'
 
 export default function VocabularyItem({ i, problem, mod, setState, setResult }) {
   const { setProblems } = useContext(DataContext)
-  const [hasSelected, setHasSelected] = useState(false)
+  const [hasSelected, setHasSelected] = useState(problem.selected !== '')
   const { updateDue } = useQuestion()
 
   return (
@@ -27,7 +27,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
           再複習一下
         </div>
       )}
-      <h2 className={`text-lg sm:my-3 md:my-2 ${mod === 'one-problem-mod' ? 'my-6' : 'my-2'}`}>
+      <h2 className={`text-lg sm:my-3 md:my-2 ${mod === 'one-problem-mod' ? 'mb-3 mt-5' : 'my-2'}`}>
         {i + 1}. {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
