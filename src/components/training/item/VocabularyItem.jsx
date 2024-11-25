@@ -32,7 +32,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
         </div>
       )}
       <h2 className={`my-3 ${mod === 'one-problem-mod' ? 'text-2xl' : 'text-xl'}`}>
-        {i + 1}. {problem.name}
+        {mod === 'one-problem-mod' ? '' : i + 1 + '.'} {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
         <article className="flex flex-col place-items-stretch gap-4 text-lg sm:ml-5">
@@ -89,7 +89,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
             return (
               <div
                 key={id}
-                className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${Isprogress} ${(mod === 'completed' || hasSelected) && optionClass}`}
+                className={`flex items-center rounded border border-gray-200 dark:border-gray-700 sm:pl-5 ${Isprogress} ${(mod === 'completed' || hasSelected) && optionClass}`}
                 onClick={handleChange}
               >
                 <input
@@ -97,13 +97,12 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                   name={`problem-${i}`}
                   id={id}
                   value={id}
-                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} from-radio peer mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
+                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} ml-5 sm:ml-0 from-radio peer mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
                   required
                 />
-                <label
-                  htmlFor={id}
-                  className={`w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300`}
-                >{`${String.fromCharCode(j + 65)}. ${option}`}</label>
+                <label htmlFor={id} className={`w-full ${mod === 'one-problem-mod' ? 'text-center sm:text-left' : ''} py-4 text-gray-900 dark:text-gray-300`}>
+                  {option}
+                </label>
               </div>
             )
           })}
