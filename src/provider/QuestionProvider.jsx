@@ -95,10 +95,10 @@ export function QuestionProvider({ children }) {
       return
     }
 
-    const correctProblems = getLimitedQuestions(shuffledQuestions, 3)
-    // const correctProblems = getLimitedQuestions(shuffledQuestions, 5)
-    // const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
-    const displayedProblems = getVocabularyShuffled(correctProblems, false) // 顯示單字題
+    // const correctProblems = getLimitedQuestions(shuffledQuestions, 3)
+    const correctProblems = getLimitedQuestions(shuffledQuestions, 5)
+    const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
+    // const displayedProblems = getVocabularyShuffled(correctProblems, false) // 顯示單字題
     const problems = productTech(displayedProblems)
     const sortedTechProblems = sortByTech(problems)
     setProblems(sortedTechProblems)
