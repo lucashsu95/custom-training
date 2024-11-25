@@ -3,11 +3,11 @@ import { Toggle } from '@/components/ui/toggle'
 import PropTypes from 'prop-types'
 
 import { formatTime, getTags } from '@/lib/functions'
-import { useEffect, useState, useContext } from 'react'
-import { DataContext } from '@/context/DataContext'
+import { useEffect, useState } from 'react'
+import { useQuestion } from '@/provider/QuestionProvider'
 
 export default function StateBoard({ mod }) {
-  const { problems } = useContext(DataContext)
+  const { problems } = useQuestion()
   const tags = getTags(problems)
 
   const [isActive, setIsActive] = useState(true)

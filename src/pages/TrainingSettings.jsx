@@ -7,22 +7,16 @@ import { Label } from '@/components/ui/label'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { Switch } from '@/components/ui/switch'
 
-import { DataContext } from '@/context/DataContext'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import {
-  getQuestionByTag,
-  getTags,
-  getLimitedQuestions,
-  getVocabularyShuffled,
-  shuffleAryByDue,
-  productTech
-} from '@/lib/functions'
-import PreventRefresh from '@/components/PreventRefresh'
+import { getQuestionByTag, getTags } from '@/lib/functions'
+
+// provider
+import { useQuestion } from '@/provider/QuestionProvider'
 
 function TrainingSettings() {
   // init state
-  const { questions, setProblems } = useContext(DataContext)
+  const { questions, customStartTraining } = useQuestion()
   const navigate = useNavigate()
 
   const [state, setState] = useState({
@@ -33,6 +27,7 @@ function TrainingSettings() {
   })
 
   const questionsLength = getQuestionByTag(questions, state.currentTags).length
+  const tags = getTags(questions)
 
   // handle Start
   const handleTagChange = (value) => {
@@ -77,29 +72,16 @@ function TrainingSettings() {
     })
   }
 
-  // handle End
-
-  const tags = getTags(questions)
-
-  const startTraining = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    if (state.currentTags.length < 1) {
-      alert('請選擇標籤')
-      return
-    }
-    const enabledQuestions = questions.filter((x) => x.isEnabled)
-    const selectedQuestions = getQuestionByTag(enabledQuestions, state.currentTags)
-    const shuffledQuestions = shuffleAryByDue(selectedQuestions)
-    const correctProblems = getLimitedQuestions(shuffledQuestions, state.questionNumber)
-    const displayedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
-    const problems = state.hasTech ? productTech(displayedProblems) : displayedProblems
-    setProblems(problems)
+    customStartTraining(state)
     navigate('/training/in-progress')
   }
 
+  // handle End
+
   return (
     <section className="p-6">
-      <PreventRefresh />
       <TheBreadcrumb>
         <BreadcrumbItem>
           <BreadcrumbPage>練習設定頁面</BreadcrumbPage>
@@ -107,7 +89,7 @@ function TrainingSettings() {
       </TheBreadcrumb>
       <article className="mx-auto mt-3 max-w-96 rounded-md border p-5">
         <h1 className="my-2 text-xl font-bold">練習設定頁面</h1>
-        <form onSubmit={startTraining} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
           {/* 選擇標籤 */}
           <section>
             <Label className="text-base" htmlFor="current-tag">

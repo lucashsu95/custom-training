@@ -2,49 +2,26 @@
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 import StateBoard from '@/components/training/StateBoard'
-import PreventRefresh from '@/components/PreventRefresh'
-
-// question component
-import MultipleChoiceItem from '@/components/training/item/MultipleChoiceItem'
-import FillInTheBlankItem from '@/components/training/item/FillInTheBlankItem'
-import MatchingItem from '@/components/training/item/MatchingItem'
-import VocabularyItem from '@/components/training/item/VocabularyItem'
 
 // react
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { DataContext } from '@/context/DataContext'
 import { getProblemLength } from '@/lib/functions'
-import { useQuestion } from '@/hooks/useQuestion'
+
+// provider
+import { useQuestion } from '@/provider/QuestionProvider'
+import { createComponent } from '@/utils/componentFactory'
 
 function TrainingInProgress() {
-  const { problems } = useContext(DataContext)
+  const { problems, updateDue } = useQuestion()
   const [mod, setMod] = useState('progress')
-  const { updateDue } = useQuestion()
 
   const [result, setResult] = useState({
     score: -1,
     correctCount: 0,
     wrongCount: 0
   })
-
-  const createComponent = (type, state) => {
-    state.mod = mod
-    // state = { i, problem ,mod }
-    switch (type) {
-      case '選擇題':
-        return <MultipleChoiceItem {...state} />
-      case '填空題':
-        return <FillInTheBlankItem {...state} />
-      case '配對題':
-        return <MatchingItem {...state} />
-      case '單字題':
-        return <VocabularyItem {...state} />
-      default:
-        return null
-    }
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -79,8 +56,6 @@ function TrainingInProgress() {
 
   return (
     <section className="p-6">
-      <PreventRefresh />
-
       <TheBreadcrumb>
         <BreadcrumbItem>
           <Link to="/training/setting">練習設定頁面</Link>

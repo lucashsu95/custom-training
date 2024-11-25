@@ -16,14 +16,14 @@ import { toast } from 'sonner'
 // react
 import { useDropzone } from 'react-dropzone'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
-import { DataContext } from '@/context/DataContext'
+import { useQuestion } from '@/provider/QuestionProvider'
 import { v4 as uuidv4 } from 'uuid'
 import { createQuestion } from '@/lib/functions'
-import { useState, useCallback, useContext } from 'react'
+import { useState, useCallback } from 'react'
 
 export default function FileUploader() {
   const { addItem } = useIndexedDB('questions')
-  const { setQuestions } = useContext(DataContext)
+  const { setQuestions } = useQuestion()
 
   const [isOpen, setIsOpen] = useState(false)
 

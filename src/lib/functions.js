@@ -7,14 +7,19 @@ export function shuffleAry(ary) {
 }
 
 // 題目等級 -> 時間
-const dueLevel = {
-  '-2': 0.01, // 30 分鐘
-  '-1': 0.05, // 2 小時
-  0: 0.5, // 12 小時
-  1: 1, // 1 天
-  2: 3,
-  3: 5,
-  4: 7
+/*
+1小時 = 3600秒
+24小時 = 86400秒
+*/
+const practiceIntervalByLevel = {
+  '-2': 60, // 1分鐘
+  '-1': 120, // 2分鐘
+  0: 3600 * 6, // 6 小時
+  1: 86400 / 2, // 1 小時 * 6
+  2: 86400, // 1 天
+  3: 86400 + 86400 / 2, // 1 天半
+  4: 86400 * 2, // 2 天
+  5: 86400 * 4 // 4 天
 }
 
 // 檢查是否到達練習時間
@@ -24,7 +29,7 @@ const checkCorrectTime = (p) => {
     return false
   }
   const prevDay = (currentDate - p.lastAnsweredTime) / 1000
-  const nextDay = p.due < 0 ? 0 : dueLevel[p.due] * 86400
+  const nextDay = p.due < 0 ? 0 : practiceIntervalByLevel[p.due]
   return prevDay >= nextDay
 }
 

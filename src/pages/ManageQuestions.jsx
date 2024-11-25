@@ -15,18 +15,17 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { QuestionsTable } from '@/components/manage/QuestionsTable'
-import PreventRefresh from '@/components/PreventRefresh'
 import { FaDownload, FaTrashAlt } from 'react-icons/fa'
 
 // react
-import { useState, useContext } from 'react'
-import { DataContext } from '@/context/DataContext'
+import { useState } from 'react'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 import QuestiopnJsonFile from '@/assets/example.json'
 import { toast } from 'sonner'
+import { useQuestion } from '@/provider/QuestionProvider'
 
 export default function ManageQuestions() {
-  const { questions, setQuestions } = useContext(DataContext)
+  const { questions, setQuestions } = useQuestion()
   const { clearItem, addItem } = useIndexedDB('questions')
   const [open, setOpen] = useState(false)
 
@@ -78,7 +77,6 @@ export default function ManageQuestions() {
 
   return (
     <div>
-      <PreventRefresh />
       <section className="p-6">
         <TheBreadcrumb>
           <BreadcrumbItem>

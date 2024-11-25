@@ -1,11 +1,14 @@
 // ui component
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { Button } from './ui/button'
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '@/components/ui/dialog'
+import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import { Moon, Sun } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 
@@ -13,15 +16,21 @@ import { FaGithub } from 'react-icons/fa'
 import Logo from '/52-local-logo.jpg'
 
 // react
-import { useTheme } from './theme-provider'
 import { Link } from 'react-router-dom'
+import { Switch } from './ui/switch'
+import { formatDate } from '@/lib/functions'
+
+// provider
+import { useTheme } from '@/provider/ThemeProvider'
+import { useSetting } from '@/provider/SettingProvider'
 
 export default function TheNavbar() {
-  const { setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
+  const { enableTraining, handleSetEnableTraining } = useSetting()
 
   return (
-    <header className="flex h-20 w-full shrink-0 items-center px-4 shadow-md md:px-6">
-      <span className="text-2xl font-bold">
+    <header className="sm:h-18 flex h-14 w-full shrink-0 items-center px-4 shadow-md md:h-20 md:px-6">
+      <span className="text-lg font-bold sm:text-xl md:text-2xl">
         <Link
           to="/"
           className="flex items-center gap-3 text-foreground/70 transition-colors hover:text-foreground"
@@ -31,25 +40,51 @@ export default function TheNavbar() {
         </Link>
       </span>
 
-      <nav className="ml-auto flex items-center space-x-5 text-sm font-medium">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon">
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme('light')}>淺色 Light</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme('dark')}>深色 Dark</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme('system')}>系統 System</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-
-        <a href="https://github.com/lucashsu95/custom-training">
-          <FaGithub className="h-6 w-6" />
-        </a>
+      <nav className="ml-auto flex items-center gap-4 text-sm font-medium">
+        <Dialog>
+          <DialogTrigger>
+            <HiOutlineMenuAlt3 className="h-6 w-6" />
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle className="text-xl">設定</DialogTitle>
+              <DialogDescription></DialogDescription>
+              <section className="flex items-center justify-between">
+                <div>每日答題量限制 2 題</div>
+                <div className="flex items-center justify-center gap-2">
+                  <Switch
+                    checked={enableTraining != 'false'}
+                    className="mr-7"
+                    onClick={() =>
+                      handleSetEnableTraining(
+                        enableTraining == 'false' ? formatDate(new Date().getTime()) : 'false'
+                      )
+                    }
+                  />
+                </div>
+              </section>
+              <section className="flex items-center justify-between">
+                <div className="my-2">選擇主題</div>
+                <div className="flex items-center space-x-2">
+                  <Sun className="h-5 w-5" />
+                  <Switch
+                    checked={theme === 'dark'}
+                    onCheckedChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                    aria-label="Toggle theme"
+                  />
+                  <Moon className="h-5 w-5" />
+                </div>
+              </section>
+              <DialogFooter>
+                <section className="mt-2 flex w-full justify-center">
+                  <a href="https://github.com/lucashsu95/custom-training">
+                    <FaGithub className="h-6 w-6" />
+                  </a>
+                </section>
+              </DialogFooter>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </nav>
     </header>
   )

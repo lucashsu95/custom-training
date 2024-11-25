@@ -1,16 +1,13 @@
 import PropTypes from 'prop-types'
 import { VocabularyQuestion } from '@/classes/Question'
-import { DataContext } from '@/context/DataContext'
-import { useContext } from 'react'
+import { useQuestion } from '@/provider/QuestionProvider'
 import { useState } from 'react'
-import { useQuestion } from '@/hooks/useQuestion'
 import { IoIosWarning } from 'react-icons/io'
 import { AiOutlineFire } from 'react-icons/ai'
 
 export default function VocabularyItem({ i, problem, mod, setState, setResult }) {
-  const { setProblems } = useContext(DataContext)
   const [hasSelected, setHasSelected] = useState(problem.selected !== '')
-  const { updateDue } = useQuestion()
+  const { setProblems, updateDue } = useQuestion()
 
   return (
     <>
@@ -20,7 +17,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
           New 新單字 !
         </div>
       )}
-      {problem.due < -1 && (
+      {problem.due <= -1 && (
         <div className="motion-preset-bounce mt-1 flex items-center gap-2 text-red-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-red-400/60">
           <IoIosWarning className="h-5 w-5" />
           不熟練的單字 !
@@ -31,7 +28,7 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
           再複習一下
         </div>
       )}
-      <h2 className={`my-3 ${mod === 'one-problem-mod' ? 'text-2xl' : 'text-xl'}`}>
+      <h2 className={`my-3 font-bold ${mod === 'one-problem-mod' ? 'text-2xl' : 'text-xl'}`}>
         {mod === 'one-problem-mod' ? '' : i + 1 + '.'} {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
@@ -97,10 +94,13 @@ export default function VocabularyItem({ i, problem, mod, setState, setResult })
                   name={`problem-${i}`}
                   id={id}
                   value={id}
-                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} ml-5 sm:ml-0 from-radio peer mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
+                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} from-radio peer ml-5 mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 sm:ml-0`}
                   required
                 />
-                <label htmlFor={id} className={`w-full ${mod === 'one-problem-mod' ? 'text-center sm:text-left' : ''} py-4 text-gray-900 dark:text-gray-300`}>
+                <label
+                  htmlFor={id}
+                  className={`w-full ${mod === 'one-problem-mod' ? 'text-center sm:text-left' : ''} py-4 text-gray-900 dark:text-gray-300`}
+                >
                   {option}
                 </label>
               </div>

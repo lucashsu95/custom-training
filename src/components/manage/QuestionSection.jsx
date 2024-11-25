@@ -1,9 +1,9 @@
 import { Switch } from '@/components/ui/switch'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { useState } from 'react'
-import { useQuestion } from '@/hooks/useQuestion'
 import PropTypes from 'prop-types'
 import { IoIosArrowDown } from 'react-icons/io'
+import { useQuestion } from '@/provider/QuestionProvider'
 
 export default function QuestionSection({ questions, questionKey }) {
   const [open, setOpen] = useState(false)
@@ -12,7 +12,7 @@ export default function QuestionSection({ questions, questionKey }) {
   return (
     <Collapsible open={open}>
       <CollapsibleTrigger asChild onClick={() => setOpen(!open)}>
-        <h4 className="md:px-10; mb-3 flex items-center justify-between rounded-md bg-sky-200 px-3 py-2 text-lg font-bold shadow dark:bg-sky-900">
+        <h4 className="md:px-10; mb-3 flex cursor-pointer items-center justify-between rounded-md bg-sky-200 px-3 py-2 text-lg font-bold shadow dark:bg-sky-900">
           {questionKey}
           <IoIosArrowDown className={`${open ? '-rotate-180' : 'rotate-0'} transition-transform`} />
         </h4>
@@ -35,12 +35,13 @@ export default function QuestionSection({ questions, questionKey }) {
             >
               <div>{question.type}</div>
               <div>
-                {question.due > 2 && <span className="text-green-500">熟練</span>}
-                {question.due < 3 && question.due >= 0 && question.due !== null && (
+                {question.due >= 5 ? (
+                  <span className="text-green-500">熟練</span>
+                ) : question.due >= 0 ? (
                   <span>普通</span>
-                )}
-                {question.due < 0 && <span className="text-red-400">不熟練</span>}
-                {question.due === null && (
+                ) : question.due !== null ? (
+                  <span className="text-red-400">不熟練</span>
+                ) : (
                   <span className="text-gray-500/70 dark:text-gray-300/70">未作答</span>
                 )}
               </div>

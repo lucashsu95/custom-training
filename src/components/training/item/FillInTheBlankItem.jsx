@@ -1,11 +1,10 @@
 import { FillInTheBlankQuestion } from '@/classes/Question'
 import PropTypes from 'prop-types'
 import { Input } from '@/components/ui/input'
-import { DataContext } from '@/context/DataContext'
-import { useContext } from 'react'
+import { useQuestion } from '@/provider/QuestionProvider'
 
 export default function FillInTheBlankItem({ i, problem, mod }) {
-  const { setProblems } = useContext(DataContext)
+  const { setProblems } = useQuestion()
 
   const options = new Map()
   problem.shuffledOptions.forEach((option, j) => {

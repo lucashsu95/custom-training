@@ -2,58 +2,51 @@
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import StateBoard from '@/components/training/StateBoard'
-import PreventRefresh from '@/components/PreventRefresh'
 import { Button } from '@/components/ui/button'
-
-// question component
-import MultipleChoiceItem from '@/components/training/item/MultipleChoiceItem'
-import FillInTheBlankItem from '@/components/training/item/FillInTheBlankItem'
-import MatchingItem from '@/components/training/item/MatchingItem'
-import VocabularyItem from '@/components/training/item/VocabularyItem'
-import { RiCheckboxCircleFill } from "react-icons/ri";
+import { RiCheckboxCircleFill } from 'react-icons/ri'
 
 // react
-import { useContext, useState } from 'react'
-import { DataContext } from '@/context/DataContext'
+import { useState } from 'react'
 import { Progress } from '@/components/ui/progress'
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+
+// provider
+import { useQuestion } from '@/provider/QuestionProvider'
+import { useSetting } from '@/provider/SettingProvider'
+import { createComponent } from '@/utils/componentFactory'
 
 function AutoTraining() {
-  const { problems } = useContext(DataContext)
+  const { problems } = useQuestion()
+  const { addTrainingCount } = useSetting()
   const [state, setState] = useState({
     currentProblem: 0
   })
-
   const [result, setResult] = useState({
     correctCount: 0,
     wrongCount: 0
   })
+
+  const trainingFinish = useMemo(() => {
+    console.log(state.currentProblem, problems.length)
+
+    return state.currentProblem === problems.length
+  }, [state.currentProblem, problems.length])
 
   const score = useMemo(() => {
     const problemsLength = problems.filter((x) => x.type2 !== '教學' && x.afterErr === false).length
     return Math.min(result.correctCount * Math.ceil(100 / problemsLength), 100)
   }, [problems, result.correctCount])
 
-  const createComponent = (type, state) => {
-    // state = { i, problem ,mod,setState,setResult }
-    switch (type) {
-      case '選擇題':
-        return <MultipleChoiceItem {...state} />
-      case '填空題':
-        return <FillInTheBlankItem {...state} />
-      case '配對題':
-        return <MatchingItem {...state} />
-      case '單字題':
-        return <VocabularyItem {...state} />
-      default:
-        return null
+  useEffect(() => {
+    if (trainingFinish) {
+      addTrainingCount()
     }
-  }
+  }, [addTrainingCount, trainingFinish])
 
   return (
     <section className="overflow-hidden p-6">
-      <PreventRefresh />
       <TheBreadcrumb>
         <BreadcrumbItem>
           <BreadcrumbPage>練習中</BreadcrumbPage>
@@ -61,14 +54,16 @@ function AutoTraining() {
       </TheBreadcrumb>
       <section>
         {/* 顯示資訊 */}
-        <StateBoard mod={state.currentProblem === problems.length ? 'completed' : 'progress'} />
+        <StateBoard mod={trainingFinish ? 'completed' : 'progress'} />
+
         {/* 進度條 */}
         <div className="my-2 flex items-center gap-2 px-2 sm:gap-4 md:gap-6">
           <Progress value={Math.floor((state.currentProblem / problems.length) * 100)} />
           <RiCheckboxCircleFill className="h-5 w-5" />
         </div>
+
         {/* 顯示成績 */}
-        {state.currentProblem === problems.length && (
+        {trainingFinish && (
           <>
             <div className="my-2 rounded-md bg-purple-200 p-3 dark:bg-purple-400">
               <div
@@ -95,9 +90,7 @@ function AutoTraining() {
           problems.map(
             (problem, i) =>
               (state.currentProblem === i ||
-                (state.currentProblem === problems.length &&
-                  !problem.afterErr &&
-                  problem.type2 != '教學')) && (
+                (trainingFinish && !problem.afterErr && problem.type2 != '教學')) && (
                 <div
                   key={`${problem.id}-${i}`}
                   className="motion-preset-slide-left mx-auto my-2 flex w-full flex-col items-center motion-duration-300 sm:items-start"
@@ -131,7 +124,7 @@ function AutoTraining() {
           )}
       </section>
 
-      {state.currentProblem === problems.length && (
+      {trainingFinish && (
         <Link to="/">
           <Button className="mt-3 w-full">回首頁</Button>
         </Link>
