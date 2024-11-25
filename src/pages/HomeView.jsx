@@ -14,23 +14,25 @@ import { useQuestion } from '@/provider/QuestionProvider'
 import { useSetting } from '@/provider/SettingProvider'
 
 // hook
-// import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
+import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
 
 export default function HomeView() {
   const { autoStartTraining } = useQuestion()
   const { initTrainingCount } = useSetting()
+
   const navigate = useNavigate()
-  // const initializeQuestions = useInitializeQuestions()
+  const initializeQuestions = useInitializeQuestions()
 
   // 初始化
   useEffect(() => {
-    // initializeQuestions()
+    initializeQuestions()
     initTrainingCount()
-  }, [initTrainingCount])
+  }, [initTrainingCount, initializeQuestions])
 
   const startTraining = () => {
-    autoStartTraining()
-    navigate('/training/auto')
+    if (autoStartTraining()) {
+      navigate('/training/auto')
+    }
   }
 
   return (

@@ -18,6 +18,8 @@ export function SettingProvider({ children }) {
     if (enableTraining !== formatDate(new Date().getTime()) && enableTraining != 'false') {
       localStorage.setItem('enableTraining', formatDate(new Date().getTime()))
       setEnableTraining(formatDate(new Date().getTime()))
+      setTrainingCount(0)
+      localStorage.setItem('trainingCount', 0)
     }
     if (!trainingCount && trainingCount !== 0) {
       localStorage.setItem('trainingCount', 0)
@@ -25,19 +27,17 @@ export function SettingProvider({ children }) {
     }
   }, [enableTraining, trainingCount])
 
-  const addTrainingCount = useCallback(() => {
+  const addTrainingCount = () => {
     setTrainingCount((prev) => {
-      console.log('p:', prev)
-      // TODO: fix this
-      const amount = parseInt(prev ?? 0)
-      localStorage.setItem('trainingCount', amount + 1)
-      return amount
+      const newCount = parseInt(prev) + 1
+      localStorage.setItem('trainingCount', newCount)
+      return newCount
     })
-  }, [setTrainingCount])
+  }
 
   const checkTrainingCount = useCallback(() => {
     if (enableTraining == 'false') return false
-    return parseInt(trainingCount) >= 2
+    return parseInt(trainingCount ?? 0) >= 2
   }, [enableTraining, trainingCount])
 
   return (

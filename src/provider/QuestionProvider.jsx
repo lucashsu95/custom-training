@@ -63,7 +63,7 @@ export function QuestionProvider({ children }) {
   const customStartTraining = (state) => {
     if (state.currentTags.length < 1) {
       alert('請選擇標籤')
-      return
+      return false
     }
     const enabledQuestions = questions.filter((x) => x.isEnabled)
     const selectedQuestions = getQuestionByTag(enabledQuestions, state.currentTags)
@@ -72,6 +72,7 @@ export function QuestionProvider({ children }) {
     const displayedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
     const problems = state.hasTech ? productTech(displayedProblems) : displayedProblems
     setProblems(problems)
+    return true
   }
 
   const autoStartTraining = () => {
@@ -85,14 +86,14 @@ export function QuestionProvider({ children }) {
       toast('已達每日答題量限制', {
         description: '明天再來練習吧!'
       })
-      return
+      return false
     }
 
     if (shuffledQuestions.length < 3) {
       toast('目前沒有要練習的題目', {
         description: '休息一下之後再來練習吧!'
       })
-      return
+      return false
     }
 
     // const correctProblems = getLimitedQuestions(shuffledQuestions, 3)
@@ -102,14 +103,15 @@ export function QuestionProvider({ children }) {
     const problems = productTech(displayedProblems)
     const sortedTechProblems = sortByTech(problems)
     setProblems(sortedTechProblems)
+    return true
   }
 
   return (
     <QuestionContext.Provider
       value={{
         questions,
-        setQuestions,
         problems,
+        setQuestions,
         setProblems,
         updateDue,
         updateQuestion,

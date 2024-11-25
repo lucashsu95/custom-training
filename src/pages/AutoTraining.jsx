@@ -28,22 +28,30 @@ function AutoTraining() {
     wrongCount: 0
   })
 
-  const trainingFinish = useMemo(() => {
-    console.log(state.currentProblem, problems.length)
-
-    return state.currentProblem === problems.length
-  }, [state.currentProblem, problems.length])
+  const trainingFinish = useMemo(
+    () => state.currentProblem === problems.length,
+    [state.currentProblem, problems.length]
+  )
 
   const score = useMemo(() => {
     const problemsLength = problems.filter((x) => x.type2 !== '教學' && x.afterErr === false).length
     return Math.min(result.correctCount * Math.ceil(100 / problemsLength), 100)
   }, [problems, result.correctCount])
 
+  const id = problems
+    .filter((x) => x.type2 !== '教學' && x.afterErr === false)
+    .map((x) => x.id)
+    .join('-')
+
   useEffect(() => {
-    if (trainingFinish) {
-      addTrainingCount()
+    const hasAddTrainingCount = localStorage.getItem('hasAddTrainingCount')
+    if (!hasAddTrainingCount || hasAddTrainingCount !== id) {
+      if (trainingFinish && problems.length > 0) {
+        addTrainingCount()
+        localStorage.setItem('hasAddTrainingCount', id)
+      }
     }
-  }, [addTrainingCount, trainingFinish])
+  }, [addTrainingCount, id, problems, trainingFinish])
 
   return (
     <section className="overflow-hidden p-6">

@@ -74,8 +74,9 @@ function TrainingSettings() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    customStartTraining(state)
-    navigate('/training/in-progress')
+    if (customStartTraining(state)) {
+      navigate('/training/in-progress')
+    }
   }
 
   // handle End
