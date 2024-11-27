@@ -4,15 +4,24 @@ import { FaBook } from 'react-icons/fa'
 import { IoLibrarySharp } from 'react-icons/io5'
 import { MdNotStarted, MdDashboardCustomize } from 'react-icons/md'
 
+// hook
+import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
+
 // react
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 // provider
+import { useSetting } from '@/provider/SettingProvider'
 import { useQuestion } from '@/provider/QuestionProvider'
 
 export default function HomeView() {
   const { autoStartTraining } = useQuestion()
+
+  const { initTrainingCount } = useSetting()
+
+  const initializeQuestions = useInitializeQuestions()
 
   const navigate = useNavigate()
 
@@ -21,6 +30,12 @@ export default function HomeView() {
       navigate('/training/auto')
     }
   }
+  
+  // 初始化
+  useEffect(() => {
+    initializeQuestions()
+    initTrainingCount()
+  }, [initTrainingCount, initializeQuestions])
 
   return (
     <section className="w-100 grid gap-5 p-6 md:grid-cols-2 lg:grid-cols-3">
