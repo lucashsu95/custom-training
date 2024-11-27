@@ -5,29 +5,16 @@ import { IoLibrarySharp } from 'react-icons/io5'
 import { MdNotStarted, MdDashboardCustomize } from 'react-icons/md'
 
 // react
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 // provider
 import { useQuestion } from '@/provider/QuestionProvider'
-import { useSetting } from '@/provider/SettingProvider'
-
-// hook
-import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
 
 export default function HomeView() {
   const { autoStartTraining } = useQuestion()
-  const { initTrainingCount } = useSetting()
 
   const navigate = useNavigate()
-  const initializeQuestions = useInitializeQuestions()
-
-  // 初始化
-  useEffect(() => {
-    initializeQuestions()
-    initTrainingCount()
-  }, [initTrainingCount, initializeQuestions])
 
   const startTraining = () => {
     if (autoStartTraining()) {

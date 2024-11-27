@@ -45,6 +45,7 @@ export class MultipleChoiceQuestion extends Question {
       answer: this.answer,
       name: this.name,
       type: this.type,
+      this: this.options,
       lastAnsweredTime: this.lastAnsweredTime,
       isEnabled: this.isEnabled
     }

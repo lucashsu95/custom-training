@@ -102,6 +102,7 @@ export function getLimitedQuestions(questions, number) {
     toast('⚠️題目數量不足!', {
       description: '請回到首頁重新操作或反饋問題給我們'
     })
+    return false
   }
   return questions.slice(0, number)
 }

@@ -14,8 +14,21 @@ import AutoTraining from '@/pages/AutoTraining'
 import { SettingProvider } from './provider/SettingProvider'
 import { QuestionProvider } from '@/provider/QuestionProvider'
 import { ThemeProvider } from './provider/ThemeProvider'
+import { useEffect } from 'react'
+import { useSetting } from '@/provider/SettingProvider'
+import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
 
 export default function App() {
+  const { initTrainingCount } = useSetting()
+
+  const initializeQuestions = useInitializeQuestions()
+
+  // 初始化
+  useEffect(() => {
+    initializeQuestions()
+    initTrainingCount()
+  }, [initTrainingCount, initializeQuestions])
+
   return (
     <SettingProvider>
       <QuestionProvider>

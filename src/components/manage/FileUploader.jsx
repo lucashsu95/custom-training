@@ -31,9 +31,8 @@ export default function FileUploader() {
     (event) => {
       try {
         const questions = JSON.parse(event.target.result)
-        questions.forEach((question) => (question.id = uuidv4()))
+        questions.forEach((question) => (question.id = question.id ? question.id : uuidv4()))
         addItem(questions)
-
         setQuestions((prev) => [...prev, ...questions.map((question) => createQuestion(question))])
         toast('✅新增成功！', {
           description: '已成功上傳檔案'
