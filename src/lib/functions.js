@@ -1,5 +1,4 @@
 import { getQuestionClassByType } from '@/classes/Question'
-import { toast } from 'sonner'
 
 // 打亂陣列
 export function shuffleAry(ary) {
@@ -99,9 +98,6 @@ export function getQuestionByTag(questions, tag) {
 // 根據數量取得題目
 export function getLimitedQuestions(questions, number) {
   if (questions.length < number) {
-    toast('⚠️題目數量不足!', {
-      description: '請回到首頁重新操作或反饋問題給我們'
-    })
     return false
   }
   return questions.slice(0, number)

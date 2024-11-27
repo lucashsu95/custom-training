@@ -70,7 +70,10 @@ export function QuestionProvider({ children }) {
     const shuffledQuestions = shuffleAryByDue(selectedQuestions)
     const correctProblems = getLimitedQuestions(shuffledQuestions, state.questionNumber)
     if (!correctProblems) {
-      return
+      toast('⚠️題目數量不足!', {
+        description: '請回到首頁重新操作或反饋問題給我們'
+      })
+      return false
     }
     const displayedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
     const problems = state.hasTech ? productTech(displayedProblems) : displayedProblems
@@ -102,7 +105,10 @@ export function QuestionProvider({ children }) {
     // const correctProblems = getLimitedQuestions(shuffledQuestions, 3)
     const correctProblems = getLimitedQuestions(shuffledQuestions, 5)
     if (!correctProblems) {
-      return
+      toast('⚠️題目數量不足!', {
+        description: '請回到首頁重新操作或反饋問題給我們'
+      })
+      return false
     }
     const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
     // const displayedProblems = getVocabularyShuffled(correctProblems, false) // 顯示單字題

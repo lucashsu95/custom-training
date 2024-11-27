@@ -35,15 +35,13 @@ function TrainingInProgress() {
       }
       const count = problem.getCorrectCount()
       const len = getProblemLength(problem)
-      console.log(count, len, problem.name)
-
       updateDue(problem.id, count === len)
       correctCount += count
       problemsLength += len
     }
 
     // 計算分數
-    const score = Math.ceil(100 / problemsLength) * correctCount
+    const score = Math.min(Math.ceil(100 / problemsLength) * correctCount, 100)
     setResult({
       score,
       correctCount,
@@ -97,7 +95,8 @@ function TrainingInProgress() {
             <section key={i}>
               {createComponent(problem.type, {
                 i,
-                problem
+                problem,
+                mod
               })}
             </section>
           ))}
