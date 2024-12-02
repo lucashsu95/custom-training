@@ -31,7 +31,20 @@ export default function FileUploader() {
     (event) => {
       try {
         const questions = JSON.parse(event.target.result)
-        questions.forEach((question) => (question.id = question.id ? question.id : uuidv4()))
+        questions.forEach((question) => {
+          if (!Object.keys(question).includes('id')) {
+            question.id = question.id ? question.id : uuidv4()
+          }
+          if (!Object.keys(question).includes('due')) {
+            question.due = 0
+          }
+          if (!Object.keys(question).includes('lastAnsweredTime')) {
+            question.lastAnsweredTime = null
+          }
+          if (!Object.keys(question).includes('isEnabled')) {
+            question.isEnabled = true
+          }
+        })
         addItem(questions)
         setQuestions((prev) => [...prev, ...questions.map((question) => createQuestion(question))])
         toast('✅新增成功！', {

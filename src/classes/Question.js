@@ -9,8 +9,8 @@ class Question {
     this.remark = question.remark ?? ''
     this.due = question.due ?? null
     this.type = question.type
-    this.type2 = question.type2 ?? null
-    this.afterErr = question.afterErr ?? false
+    this.type2 = question.type2 ?? null // 是否為教學題
+    this.afterErr = question.afterErr ?? false // 答錯後產生的題目
     this.lastAnsweredTime = question.lastAnsweredTime ?? null
     this.isEnabled = question.isEnabled ?? true
     this.selected
