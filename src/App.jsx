@@ -16,7 +16,6 @@ import { QuestionProvider } from '@/provider/QuestionProvider'
 import { ThemeProvider } from './provider/ThemeProvider'
 
 export default function App() {
-
   return (
     <SettingProvider>
       <QuestionProvider>
