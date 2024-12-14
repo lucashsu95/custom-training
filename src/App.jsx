@@ -1,6 +1,10 @@
 // react
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
+// App.js
+import { useEffect } from 'react'
+// import { app, analytics } from './firebase';
+
 // pages & components
 import HomeView from '@/pages/HomeView'
 import ManageQuestions from '@/pages/ManageQuestions'
@@ -16,6 +20,10 @@ import { QuestionProvider } from '@/provider/QuestionProvider'
 import { ThemeProvider } from './provider/ThemeProvider'
 
 export default function App() {
+  useEffect(() => {
+    // console.log(app);
+    // console.log(analytics);
+  }, [])
 
   return (
     <SettingProvider>
