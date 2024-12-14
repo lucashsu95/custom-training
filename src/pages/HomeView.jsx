@@ -30,7 +30,7 @@ export default function HomeView() {
       navigate('/training/auto')
     }
   }
-  
+
   // 初始化
   useEffect(() => {
     initializeQuestions()

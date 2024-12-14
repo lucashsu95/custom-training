@@ -53,6 +53,7 @@ ThemeProvider.propTypes = {
   storageKey: PropTypes.string
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext)
 

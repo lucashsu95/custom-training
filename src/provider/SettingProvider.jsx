@@ -60,6 +60,7 @@ SettingProvider.propTypes = {
   children: PropTypes.node.isRequired
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useSetting = () => {
   const context = useContext(SettingContext)
 
