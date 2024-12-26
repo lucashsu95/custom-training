@@ -110,8 +110,8 @@ export function QuestionProvider({ children }) {
       })
       return false
     }
-    const displayedProblems = getVocabularyShuffled(correctProblems, true) // 顯示單字題
-    // const displayedProblems = getVocabularyShuffled(correctProblems, false) // 顯示單字題
+    const displayedProblems = getVocabularyShuffled(correctProblems, true) // 打亂
+    // const displayedProblems = getVocabularyShuffled(correctProblems, false) // 打亂
     const problems = productTech(displayedProblems)
     const sortedTechProblems = sortByTech(problems)
     setProblems(sortedTechProblems)

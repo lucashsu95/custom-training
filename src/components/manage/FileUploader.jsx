@@ -36,7 +36,7 @@ export default function FileUploader() {
             question.id = question.id ? question.id : uuidv4()
           }
           if (!Object.keys(question).includes('due')) {
-            question.due = 0
+            question.due = null
           }
           if (!Object.keys(question).includes('lastAnsweredTime')) {
             question.lastAnsweredTime = null

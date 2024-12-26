@@ -3,12 +3,32 @@ import { MultipleChoiceQuestion } from '@/classes/Question'
 import { useQuestion } from '@/provider/QuestionProvider'
 import { useState } from 'react'
 
+import { AiOutlineFire } from 'react-icons/ai'
+import { IoIosWarning } from 'react-icons/io'
+
 export default function MultipleChoiceItem({ i, problem, mod, setResult, setState }) {
   const [hasSelected, setHasSelected] = useState(problem.selected !== '')
   const { setProblems, updateDue } = useQuestion()
 
   return (
     <>
+      {problem.type2 === '教學' && (
+        <div className="motion-preset-bounce mt-1 flex items-center gap-2 text-green-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-green-300/60">
+          <AiOutlineFire className="h-5 w-5" />
+          New 新題目 !
+        </div>
+      )}
+      {problem.due <= -1 && (
+        <div className="motion-preset-bounce mt-1 flex items-center gap-2 text-red-500/70 -motion-translate-y-in-150 motion-delay-300 dark:text-red-400/60">
+          <IoIosWarning className="h-5 w-5" />
+          不熟練的題目 !
+        </div>
+      )}
+      {problem.afterErr && (
+        <div className="motion-preset-bounce mt-1 text-yellow-500/80 -motion-translate-y-in-150 motion-delay-300 dark:text-yellow-400/60">
+          再複習一下
+        </div>
+      )}
       <h2 className="my-2 text-lg">
         {mod === 'one-problem-mod' ? '' : i + 1 + '.'} {problem.name}
       </h2>
@@ -64,7 +84,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
             return (
               <div
                 key={id}
-                className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${Isprogress} ${mod === 'completed' && optionClass}`}
+                className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${Isprogress} ${(mod === 'completed' || hasSelected) && optionClass}`}
                 onClick={handleChange}
               >
                 <input
