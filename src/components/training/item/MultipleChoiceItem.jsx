@@ -57,13 +57,14 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
                 }
               }
             }
+
             const Isprogress =
-              mod === 'progress' && 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
+              mod === 'progress' ? 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500' : ''
 
             return (
               <div
                 key={id}
-                className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${mod === 'completed' || (hasSelected && optionClass)}`}
+                className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${Isprogress} ${mod === 'completed' && optionClass}`}
                 onClick={handleChange}
               >
                 <input
@@ -76,7 +77,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
                 />
                 <label
                   htmlFor={id}
-                  className={`ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300 ${Isprogress}`}
+                  className={`ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300`}
                 >
                   {mod === 'one-problem-mod' ? '' : String.fromCharCode(j + 65) + '.'} {option}
                 </label>
