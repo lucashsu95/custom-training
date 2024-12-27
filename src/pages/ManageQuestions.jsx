@@ -148,6 +148,8 @@ export default function ManageQuestions() {
     setOpen4(false)
   }
 
+  const hasChecked = questions.some((question) => question.isChecked)
+
   return (
     <div>
       <section className="p-6">
@@ -168,24 +170,25 @@ export default function ManageQuestions() {
 
         <div className="my-2 flex gap-2">
           <FileUploader />
-
-          <AlertDialog asChild open={open1} onOpenChange={setOpen1}>
-            <AlertDialogTrigger asChild>
-              <Button variant="outline" size="icon">
-                <IoIosRemoveCircle />
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>確定要刪除勾選的題目嗎？</AlertDialogTitle>
-                <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>取消</AlertDialogCancel>
-                <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+          {hasChecked && (
+            <AlertDialog asChild open={open1} onOpenChange={setOpen1}>
+              <AlertDialogTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <IoIosRemoveCircle />
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>確定要刪除勾選的題目嗎？</AlertDialogTitle>
+                  <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>取消</AlertDialogCancel>
+                  <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          )}
 
           <Button size="icon" variant="outline" onClick={handleExportJsonFile}>
             <FaDownload />
@@ -208,38 +211,41 @@ export default function ManageQuestions() {
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
+          {hasChecked && (
+            <>
+              <AlertDialog asChild open={open3} onOpenChange={setOpen3}>
+                <AlertDialogTrigger asChild>
+                  <Button variant="outline">生效</Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>確定要讓勾選的題目生效嗎？</AlertDialogTitle>
+                    <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>取消</AlertDialogCancel>
+                    <AlertDialogAction onClick={handeEnableItem}>確認</AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
 
-          <AlertDialog asChild open={open3} onOpenChange={setOpen3}>
-            <AlertDialogTrigger asChild>
-              <Button variant="outline">生效</Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>確定要讓勾選的題目生效嗎？</AlertDialogTitle>
-                <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>取消</AlertDialogCancel>
-                <AlertDialogAction onClick={handeEnableItem}>確認</AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
-
-          <AlertDialog asChild open={open4} onOpenChange={setOpen4}>
-            <AlertDialogTrigger asChild>
-              <Button variant="outline">失效</Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>確定要讓勾選的題目失效嗎？</AlertDialogTitle>
-                <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>取消</AlertDialogCancel>
-                <AlertDialogAction onClick={handeDisableItem}>確認</AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+              <AlertDialog asChild open={open4} onOpenChange={setOpen4}>
+                <AlertDialogTrigger asChild>
+                  <Button variant="outline">失效</Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>確定要讓勾選的題目失效嗎？</AlertDialogTitle>
+                    <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>取消</AlertDialogCancel>
+                    <AlertDialogAction onClick={handeDisableItem}>確認</AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+            </>
+          )}
         </div>
       </section>
 
