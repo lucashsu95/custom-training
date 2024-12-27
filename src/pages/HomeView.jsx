@@ -19,10 +19,6 @@ import { useQuestion } from '@/provider/QuestionProvider'
 export default function HomeView() {
   const { autoStartTraining } = useQuestion()
 
-  const { initTrainingCount } = useSetting()
-
-  const initializeQuestions = useInitializeQuestions()
-
   const navigate = useNavigate()
 
   const startTraining = () => {
@@ -31,11 +27,17 @@ export default function HomeView() {
     }
   }
 
-  // 初始化
+  // 初始化Question Start
+  
+  const { initTrainingCount } = useSetting()
+  const initializeQuestions = useInitializeQuestions()
+
   useEffect(() => {
     initializeQuestions()
     initTrainingCount()
   }, [initTrainingCount, initializeQuestions])
+
+  // 初始化Question End
 
   return (
     <section className="w-100 grid gap-5 p-6 md:grid-cols-2 lg:grid-cols-3">

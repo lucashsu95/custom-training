@@ -13,12 +13,14 @@ export function shuffleAry(ary) {
 const practiceIntervalByLevel = {
   '-2': 60, // 1分鐘
   '-1': 120, // 2分鐘
-  0: 3600 * 6, // 6 小時
-  1: 86400 / 2, // 1 小時 * 6
-  2: 86400, // 1 天
-  3: 86400 + 86400 / 2, // 1 天半
-  4: 86400 * 2, // 2 天
-  5: 86400 * 4 // 4 天
+  0: 21600, // 6 小時
+  1: 43200, // 12 小時
+  2: 57600, // 16 小時
+  3: 86400, // 1 天
+  4: 108000, // 1 天 6 小時
+  5: 129600, // 1 天半
+  6: 172800, // 2 天
+  7: 345600 // 4 天
 }
 
 // 檢查是否到達練習時間
@@ -35,7 +37,7 @@ const checkCorrectTime = (p) => {
 // 過濾練習時間還沒到的題目
 export function filterByTime(questions) {
   return questions.filter((question) => {
-    if (question.due > 5) {
+    if (question.due > Math.max(Object.keys(practiceIntervalByLevel))) {
       return false
     }
     if (question.lastAnsweredTime === null || question.due === null) {

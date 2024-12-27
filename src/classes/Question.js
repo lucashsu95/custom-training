@@ -13,6 +13,7 @@ class Question {
     this.afterErr = question.afterErr ?? false // 答錯後產生的題目
     this.lastAnsweredTime = question.lastAnsweredTime ?? null
     this.isEnabled = question.isEnabled ?? true
+    this.isChecked = question.isChecked ?? false
     this.selected
   }
 

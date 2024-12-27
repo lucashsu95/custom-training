@@ -7,17 +7,36 @@ import { Label } from '@/components/ui/label'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { Switch } from '@/components/ui/switch'
 
-import { useState } from 'react'
+// lib
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getQuestionByTag, getTags } from '@/lib/functions'
 
+// hook
+import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
+
 // provider
 import { useQuestion } from '@/provider/QuestionProvider'
+import { useSetting } from '@/provider/SettingProvider'
 
 function TrainingSettings() {
   // init state
   const { questions, customStartTraining } = useQuestion()
   const navigate = useNavigate()
+
+  // 初始化Question Start
+
+  const { initTrainingCount } = useSetting()
+  const initializeQuestions = useInitializeQuestions()
+
+  useEffect(() => {
+    if (questions.length === 0) {
+      initializeQuestions()
+      initTrainingCount()
+    }
+  }, [initTrainingCount, initializeQuestions, questions.length])
+
+  // 初始化Question End
 
   const [state, setState] = useState({
     currentTags: new Set(),

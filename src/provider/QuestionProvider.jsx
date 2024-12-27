@@ -89,15 +89,15 @@ export function QuestionProvider({ children }) {
     const shuffledQuestions = shuffleAryByDue(filteredQuestions)
 
     if (checkTrainingCount()) {
-      toast('已達每日答題量限制', {
-        description: '明天再來練習吧!'
+      toast('你好棒! 但已經做很多次題目了 讓自己休息一下吧!', {
+        description: '如果想繼續練習，可以點擊右上角的設定按鈕'
       })
       return false
     }
 
-    if (shuffledQuestions.length < 3) {
-      toast('目前沒有要練習的題目', {
-        description: '休息一下之後再來練習吧!'
+    if (shuffledQuestions.length < 5 && vocabulary.length >= 5) {
+      toast('題目都被你練完了 目前沒有要練習的題目', {
+        description: '休息一下之後再來練習吧! 如果想繼續練習，可以選擇【自定練習】'
       })
       return false
     }

@@ -46,13 +46,29 @@ export function useIndexedDB(storeName) {
     [api]
   )
 
-  const clearItem = useCallback(() => {
+  const clearAll = useCallback(() => {
     if (!api) {
       console.error('API is not initialized')
       return
     }
     api.clear()
   }, [api])
+
+  const clearItem = useCallback(
+    (recordQuestionsId) => {
+      if (!api) {
+        console.error('API is not initialized')
+        return
+      }
+
+      if (recordQuestionsId && recordQuestionsId.length > 0) {
+        for (const id of recordQuestionsId) {
+          api.del(id)
+        }
+      }
+    },
+    [api]
+  )
 
   const updateItem = useCallback(
     (id, newItem) => {
@@ -71,5 +87,5 @@ export function useIndexedDB(storeName) {
     [api]
   )
 
-  return { addItem, getAllItem, clearItem, updateItem }
+  return { addItem, getAllItem, clearAll, clearItem, updateItem }
 }

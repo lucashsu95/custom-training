@@ -16,41 +16,85 @@ import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { QuestionsTable } from '@/components/manage/QuestionsTable'
 import { FaDownload, FaTrashAlt } from 'react-icons/fa'
+import { IoIosRemoveCircle } from 'react-icons/io'
 
 // react
-import { useState } from 'react'
-import { useIndexedDB } from '@/hooks/useIndexedDB'
+import { useEffect, useState } from 'react'
 import QuestiopnJsonFile from '@/assets/example.json'
+
+// lib
 import { toast } from 'sonner'
+import { useIndexedDB } from '@/hooks/useIndexedDB'
+import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
+
+// provider
 import { useQuestion } from '@/provider/QuestionProvider'
+import { useSetting } from '@/provider/SettingProvider'
 
 export default function ManageQuestions() {
-  const { questions, setQuestions } = useQuestion()
-  const { clearItem, addItem } = useIndexedDB('questions')
-  const [open, setOpen] = useState(false)
+  const { questions, setQuestions, updateQuestion } = useQuestion()
+  const { clearAll, clearItem, addItem } = useIndexedDB('questions')
+  const [open1, setOpen1] = useState(false)
+  const [open2, setOpen2] = useState(false)
+  const [open3, setOpen3] = useState(false)
+  const [open4, setOpen4] = useState(false)
 
-  const handeClearItem = () => {
-    clearItem()
+  // 初始化Question Start
 
-    toast('已清空題庫', {
-      description: '已成功清空所有題目',
-      action: {
-        label: '復原',
-        onClick: () => undoClear(questions)
-      }
-    })
-    setOpen(false)
-    setQuestions([])
-  }
+  const { initTrainingCount } = useSetting()
+  const initializeQuestions = useInitializeQuestions()
+
+  useEffect(() => {
+    if (questions.length === 0) {
+      initializeQuestions()
+      initTrainingCount()
+    }
+  }, [initTrainingCount, initializeQuestions, questions.length])
+
+  // 初始化Question End
 
   const undoClear = (recordQuestions) => {
-    setQuestions(recordQuestions)
+    setQuestions((prev) => [...prev, ...recordQuestions])
     addItem(recordQuestions)
 
     toast('已取消清空', {
       description: '已取消清空所有題目'
     })
-    setOpen(false)
+  }
+
+  const handeClearAll = () => {
+    clearAll()
+
+    toast('✅已清空題庫', {
+      description: '已成功刪除所有題目',
+      action: {
+        label: '復原',
+        onClick: () => undoClear(questions)
+      }
+    })
+    setOpen1(false)
+    setQuestions([])
+  }
+
+  const handeClearItem = () => {
+    const recordQuestions = questions.filter((question) => question.isChecked)
+    const recordQuestionsId = recordQuestions.map((question) => question.id)
+
+    clearItem(recordQuestionsId)
+
+    toast('✅刪除成功', {
+      description: '已成功刪除勾選的題目',
+      action: {
+        label: '復原',
+        onClick: () => undoClear(recordQuestions)
+      }
+    })
+    setOpen2(false)
+    setQuestions((prev) =>
+      prev
+        .filter((question) => !question.isChecked)
+        .map((question) => ({ ...question, isChecked: false }))
+    )
   }
 
   const handleDownloadFile = () => {
@@ -61,6 +105,9 @@ export default function ManageQuestions() {
     document.body.appendChild(element)
     element.click()
     document.body.removeChild(element)
+    toast('✅下載成功', {
+      description: '已成功讓勾選的題目失效'
+    })
   }
 
   const handleExportJsonFile = () => {
@@ -73,6 +120,32 @@ export default function ManageQuestions() {
     document.body.appendChild(element)
     element.click()
     document.body.removeChild(element)
+    toast('✅下載成功', {
+      description: '已成功讓勾選的題目失效'
+    })
+  }
+
+  const handeEnableItem = () => {
+    const recordQuestions = questions.filter((question) => question.isChecked)
+    for (const question of recordQuestions) {
+      updateQuestion(question.id, { isEnabled: true })
+    }
+
+    toast('✅操作成功', {
+      description: '已成功讓勾選的題目生效'
+    })
+    setOpen3(false)
+  }
+  const handeDisableItem = () => {
+    const recordQuestions = questions.filter((question) => question.isChecked)
+    for (const question of recordQuestions) {
+      updateQuestion(question.id, { isEnabled: false })
+    }
+
+    toast('✅操作成功', {
+      description: '已成功讓勾選的題目失效'
+    })
+    setOpen4(false)
   }
 
   return (
@@ -96,11 +169,29 @@ export default function ManageQuestions() {
         <div className="my-2 flex gap-2">
           <FileUploader />
 
+          <AlertDialog asChild open={open1} onOpenChange={setOpen1}>
+            <AlertDialogTrigger asChild>
+              <Button variant="outline" size="icon">
+                <IoIosRemoveCircle />
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>確定要刪除勾選的題目嗎？</AlertDialogTitle>
+                <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>取消</AlertDialogCancel>
+                <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
           <Button size="icon" variant="outline" onClick={handleExportJsonFile}>
             <FaDownload />
           </Button>
 
-          <AlertDialog asChild open={open} onOpenChange={setOpen}>
+          <AlertDialog asChild open={open2} onOpenChange={setOpen2}>
             <AlertDialogTrigger asChild>
               <Button variant="outline" size="icon">
                 <FaTrashAlt />
@@ -108,12 +199,44 @@ export default function ManageQuestions() {
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
-                <AlertDialogTitle>確定要清空所有題目嗎？</AlertDialogTitle>
-                <AlertDialogDescription>刪除後將無法復原，請謹慎操作。</AlertDialogDescription>
+                <AlertDialogTitle>確定要刪除全部的題目嗎？</AlertDialogTitle>
+                <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel>取消</AlertDialogCancel>
-                <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
+                <AlertDialogAction onClick={handeClearAll}>確認</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
+          <AlertDialog asChild open={open3} onOpenChange={setOpen3}>
+            <AlertDialogTrigger asChild>
+              <Button variant="outline">生效</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>確定要讓勾選的題目生效嗎？</AlertDialogTitle>
+                <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>取消</AlertDialogCancel>
+                <AlertDialogAction onClick={handeEnableItem}>確認</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
+          <AlertDialog asChild open={open4} onOpenChange={setOpen4}>
+            <AlertDialogTrigger asChild>
+              <Button variant="outline">失效</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>確定要讓勾選的題目失效嗎？</AlertDialogTitle>
+                <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>取消</AlertDialogCancel>
+                <AlertDialogAction onClick={handeDisableItem}>確認</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>

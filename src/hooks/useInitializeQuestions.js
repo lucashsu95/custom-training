@@ -1,11 +1,12 @@
-// Desc: useInitializeQuestions hook
-// react
+// lib
 import { useCallback } from 'react'
 import { createQuestion } from '@/lib/functions'
 import { v4 as uuidv4 } from 'uuid'
 
-// provider & hook
+// provider
 import { useQuestion } from '@/provider/QuestionProvider'
+
+// hook
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 
 import JsonFile from '@/assets/unit4&5-voc.json'
@@ -17,7 +18,7 @@ export function useInitializeQuestions() {
   const { addItem, getAllItem, clearItem } = useIndexedDB('questions')
 
   const seeder = useCallback(() => {
-    const seederData = [...JsonFile, ...JsonFile2,...JsonFile3]
+    const seederData = [...JsonFile, ...JsonFile2, ...JsonFile3]
     seederData.forEach((question) => (question.id = uuidv4()))
     addItem(seederData)
     setQuestions(seederData.map((question) => createQuestion(question)))
@@ -34,7 +35,14 @@ export function useInitializeQuestions() {
         localStorage.setItem('visited', '2024-12-26-v4')
         seeder()
       } else {
-        setQuestions(allItems.map((question) => createQuestion(question)))
+        setQuestions(
+          allItems.map((question) => {
+            if (question?.options?.D === '找出完成計畫的最短路徑，此路徑稱為要') {
+              question.options.D = '找出完成計畫的最短路徑，此路徑稱為要徑'
+            }
+            return createQuestion(question)
+          })
+        )
       }
     })
   }, [clearItem, getAllItem, seeder, setQuestions])
