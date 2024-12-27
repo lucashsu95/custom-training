@@ -112,7 +112,8 @@ function AutoTraining() {
                   })}
                   {(problem.type2 === '教學' ||
                     (problem.selected !== '' &&
-                      problem.selected !== problem.answer &&
+                      ((problem.type === '單字題' && problem.selected !== problem?.answer) ||
+                        (problem.type === '選擇題' && problem.selected !== problem?.answerStr)) &&
                       state.currentProblem !== problems.length)) && (
                     <Button
                       size="lg"
