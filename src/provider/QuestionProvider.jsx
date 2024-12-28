@@ -26,8 +26,8 @@ export function QuestionProvider({ children }) {
     (id, isCorrect) => {
       const second = new Date().getTime()
       const question = questions.find((q) => q.id === id)
-      question.due = question.due === null ? 0 : question.due
-      question.due += isCorrect ? 1 : -2
+      question.due = question.due === null ? -1 : question.due
+      question.due += isCorrect ? 1 : -1
       question.due = Math.max(question.due, -3)
 
       updateItem(id, { due: question.due, lastAnsweredTime: second })
