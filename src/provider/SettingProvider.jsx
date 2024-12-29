@@ -37,7 +37,7 @@ export function SettingProvider({ children }) {
 
   const checkTrainingCount = useCallback(() => {
     if (enableTraining == 'false') return false
-    return parseInt(trainingCount ?? 0) >= 2
+    return parseInt(trainingCount ?? 0) >= 3
   }, [enableTraining, trainingCount])
 
   return (

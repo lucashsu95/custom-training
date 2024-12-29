@@ -61,11 +61,11 @@ export default function QuestionSection({ questions, questionKey }) {
                 <div>{question.type}</div>
                 <div>
                   {question.due > 7 ? (
-                    <span className="text-green-500">熟練/{question.due}</span>
+                    <span className="text-green-500">熟練/{question.due + 1}</span>
                   ) : question.due >= 0 && question.due !== null ? (
-                    <span>普通/{question.due}</span>
+                    <span>普通/{question.due + 1}</span>
                   ) : question.due !== null ? (
-                    <span className="text-red-400">不熟練/{question.due}</span>
+                    <span className="text-red-400">不熟練/{question.due + 1}</span>
                   ) : (
                     <span className="text-gray-500/70 dark:text-gray-300/70">未作答</span>
                   )}
