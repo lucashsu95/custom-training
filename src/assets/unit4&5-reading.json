@@ -1,226 +1,314 @@
 [
     {
         "type": "選擇題",
-        "name": "Another title for this reading could be _____.",
+        "name": "成真咖啡的咖啡色樹幹代表什麼?",
         "options": {
-            "A": "The Life of the Thorny Devil",
-            "B": "Why Biomimetics Can’t Succeed",
-            "C": "Technology Inspired by Nature",
+            "A": "咖啡色代表咖啡的起源地，讓潔淨水灌溉咖啡的發源地",
+            "B": "咖啡色能吸引顧客目光，提高品牌辨識度",
+            "C": "咖啡色代表現代科技，象徵未來與創新",
+            "D": "咖啡色與水藍色形成強烈對比，使品牌更具時尚感"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": "成真咖啡如何兼顧企業戶獲利與員工福利?",
+        "options": {
+            "A": "每年提供員工平均10%的薪資成長",
+            "B": "減少福利支出，將資源投入市場行銷",
+            "C": "讓員工自行決定薪資增長幅度",
+            "D": "降低員工薪資以提高公司利潤"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " B型企業的核心理念是什麼?",
+        "options": {
+            "A": "兼顧企業獲利與社會與環境責任",
+            "B": "以獲取最高利潤為唯一目標",
+            "C": "只專注於環境保護，而不考慮獲利",
+            "D": "主要依靠政府補助來經營"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 工業電腦的耐用性滿足哪個?",
+        "options": {
+            "A": "安全需求",
+            "B": "生理需求",
+            "C": "社交需求",
+            "D": "自我實現需求"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 哪個階段最強調顧客需求?",
+        "options": {
+            "A": "行銷導向",
+            "B": "銷售導向",
+            "C": "產品導向",
+            "D": "生產導向"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 4Ps中的價格策略主要影響?",
+        "options": {
+            "A": "顧客購買決策",
+            "B": "產品品質",
+            "C": "產品成本",
+            "D": "公司形象"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 為了防止水貨與盗版，Superdry採取了哪項策略?",
+        "options": {
+            "A": "全球統一售價",
+            "B": "設立反盜版專門機構",
+            "C": "削減非核心產品",
+            "D": "撤出中國、歐盟市場"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 為何Superdry的品牌定位曾變得模糊?",
+        "options": {
+            "A": "快時尚與精品潮牌的崛起，使它難以在市場中找到優勢",
+            "B": "品牌名稱改變，導致消費者認知混淆",
+            "C": "主要銷售通路改變，影響品牌形象",
+            "D": "過度依賴童裝與鞋類產品"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " Superdry在 2021年重返台灣市場後，以下哪項改變是正確?",
+        "options": {
+            "A": "取消部分產品線，專注於服飾",
+            "B": "保留了原來的「極度乾燥」標語",
+            "C": "進一步擴展非服飾類產品，如水壺、鉛筆盒",
+            "D": "在台灣市場推出比英國更低的折扣價"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 下列何者不是六角推出NFT的動機?",
+        "options": {
+            "A": "提升生產效率",
+            "B": "拓展新市場",
+            "C": "市場競爭",
+            "D": "降低成本"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " NFT是利用何種技術?",
+        "options": {
+            "A": "區塊鏈",
+            "B": "人工智慧",
+            "C": "雲端運算",
+            "D": "大數據分析"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 下列何者是六角推出的NFT型態?",
+        "options": {
+            "A": "以上皆是",
+            "B": "虛擬商品",
+            "C": "虛擬門市",
+            "D": "以上皆非"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 為什麽紫南宮的行銷模式不只是單純的宗教活動，而是一種成功的經濟策略?",
+        "options": {
+            "A": "讓信眾在消費過程中產生「信仰驅動的經濟行為」，無形中增加當地消费",
+            "B": "透過宗教品牌化，使紫南宮成為旅遊與消費熱點",
+            "C": "廟方投資周邊產業，形成宗教與商業並行的經濟體系",
+            "D": "與政府合作，推動宗教經濟政策，吸引外來投資"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 與一般宗教物品相比，錢母如何強化信眾的心理認同?",
+        "options": {
+            "A": "讓信眾相信「持有錢母即能帶來財運」，建立財富象徵意義",
+            "B": "透過限量購買，讓人產生稀缺感，提升收藏價值",
+            "C": "將錢母與特定企業合作，使其成為可交易的金融商品",
+            "D": "設計成個人化專屬錢母，提高歸屬感"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 紫南宮的發財金模式能夠長期運作的關鍵，在於它建立了什麽樣的經濟循環?",
+        "options": {
+            "A": "讓信眾相信歸還發財金能持續帶來財運，促使資金回流",
+            "B": "透過借貸利息累積資本，確保資金來源穩定",
+            "C": "廟方每年募款，補充發財金池",
+            "D": "政府提供財政支持，確保資金不短缺"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 企業該怎麽避免供應商問題?",
+        "options": {
+            "A": "定期查核、監管供應商",
+            "B": "不用管他",
+            "C": "靠運氣",
+            "D": ""
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 不良供應商會帶來什麼風險?",
+        "options": {
+            "A": "顧客失去信任",
+            "B": "提高企業形象",
+            "C": "成本變高",
+            "D": ""
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 老壇酸菜問題的關鍵是?",
+        "options": {
+            "A": "供應商不良",
+            "B": "包装不好",
+            "C": "廣告不夠",
+            "D": ""
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 遠東新如何克服美國回收率低落的挑戰，成功建立再生聚酯供應鏈?",
+        "options": {
+            "A": "聯合非營利組織推動立法、建立溯源管理，加強社區教育",
+            "B": "專注於提升自身技術，不參與政策推動",
+            "C": "依靠政府自行推助回收政策，企業被動配合",
+            "D": "放棄美國市場，專注於回收率較高的台灣和日本"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 遠東新在美國如何提高獲利並成功建立再生聚酯供應鏈?",
+        "options": {
+            "A": "採取一條龍生産模式，整合原生聚酯與再生聚酯產線，分攤成放本並提高獲利",
+            "B": "依靠政府補助，降低投資成本",
+            "C": "只專注於原生聚酯生產，避免再生聚酯的技術挑戰",
+            "D": "主要生產低價地毯和玩具填充材料，而非食品級再生聚酯"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 美國與歐盟針對塑膠包材的環保政策規定了哪些要求?",
+        "options": {
+            "A": "歐盟、英國部分州政府規定2025年塑膠包材需含25%回收材質，2030年後部分州提高至50%，未達標者將開罰",
+            "B": "依靠政府補助，降低投資成本",
+            "C": "2030年後美國所有州都要求塑膠包材含有100%回收材質",
+            "D": "國際品牌可自由決定塑膠包材的回收材質含量，沒有強制規定"
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 為什麼全家開始推出「家庭號」的餐點?",
+        "options": {
+            "A": "因為人們更常在家吃飯，不再只買個人份的餐點",
+            "B": "因為全家老闆喜歡吃大份量的食物",
+            "C": "因為全家的店變得更大了",
+            "D": ""
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 晶華酒店為什麼讓員工學習不同的技能?",
+        "options": {
+            "A": "因為疫情期間人手不足，需要員工能幫助不同部門",
+            "B": "因為老闆覺得員工應該多讀書",
+            "C": "因為員工覺得學習新技能很好玩",
+            "D": ""
+        },
+        "answer": "A",
+        "tag": "Unit4-reading",
+        "remark": ""
+    },
+    {
+        "type": "選擇題",
+        "name": " 晶華酒店的員工除了本來的工作，還學了什麼新技能?",
+        "options": {
+            "A": "學習不同餐廳的工作、客房服務、行銷等",
+            "B": "只有學習怎麼煮飯",
+            "C": "只學習怎麼接電話",
             "D": "Andrew Parker’s Scientific Career"
         },
-        "answer": "C",
-        "tag": "Unit4-reading",
-        "remark": "14-1",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "Why did Andrew Parker go to the Australian desert?",
-        "options": {
-            "A": "to capture and bring back a thorny devil",
-            "B": "to understand how the thorny devil collects water",
-            "C": "to provide water to thirsty thorny devils",
-            "D": "to discover water in the Australian desert"
-        },
-        "answer": "B",
-        "tag": "Unit4-reading",
-        "remark": "14-2",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "What has the study of termite nests inspired?",
-        "options": {
-            "A": "more comfortable buildings",
-            "B": "improved windmills",
-            "C": "a more efficient car design",
-            "D": "a painless needle"
-        },
         "answer": "A",
         "tag": "Unit4-reading",
-        "remark": "14-3",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "In line 90, what does things refer to?",
-        "options": {
-            "A": "abilities",
-            "B": "robot flies",
-            "C": "copies",
-            "D": "rescue operations"
-        },
-        "answer": "A",
-        "tag": "Unit4-reading",
-        "remark": "14-4",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "According to the article, which is a limitation of Stickybot?",
-        "options": {
-            "A": "It can’t climb up rough surfaces.",
-            "B": "It can move forward but not backward.",
-            "C": "It’s too heavy to stay on a wall for long.",
-            "D": "The military won’t let others use the technology."
-        },
-        "answer": "A",
-        "tag": "Unit4-reading",
-        "remark": "15-5",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "What is the main idea of paragraph 8 (starting line 124)?",
-        "options": {
-            "A": "Velcro is the greatest business success biomimetics has ever had.",
-            "B": "Biomimetics would be more successful if industry were less demanding.",
-            "C": "Nature’s complexity is why biomimetics has had few business successes.",
-            "D": "Today’s engineers are unable to copy nature as well as de Mestral could."
-        },
-        "answer": "C",
-        "tag": "Unit4-reading",
-        "remark": "15-6",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "Which of these statements about biomimetics is NOT true?",
-        "options": {
-            "A": "Parker hopes to create a water-collection device inspired by the thorny devil.",
-            "B": "Studying humpback whale fins may be useful for improving windmills.",
-            "C": "The body of a fish inspired a car design.",
-            "D": "Stickybot is perhaps the most famous biomimetic creation so far."
-        },
-        "answer": "D",
-        "tag": "Unit4-reading",
-        "remark": "15-7",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "What is the main purpose of the passage?",
-        "options": {
-            "A": "to provide a historical overview of innovative fashion styles",
-            "B": "to introduce the reader to developments in high-tech textiles",
-            "C": "to convince the reader to buy the latest synthetic fashions",
-            "D": "to explain how modern fashions are often inspired by nature"
-        },
-        "answer": "B",
-        "tag": "Unit4-reading",
-        "remark": "36-1",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "Why does Huges Vinchon mention a motorboat you can’t hear?",
-        "options": {
-            "A": "to evoke admiration for a fabric that can absorb vibrations",
-            "B": "to explain one of the properties of an oil-absorbing fabric",
-            "C": "to give an example of how quietly his textile factory runs",
-            "D": "to show that he is not afraid of having his ideas stolen"
-        },
-        "answer": "A",
-        "tag": "Unit4-reading",
-        "remark": "36-2",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "Which person do you think would be most likely to design a coat made of paper with six sleeves that three people can wear together? ",
-        "options": {
-            "A": "Alex Soza",
-            "B": "Huges Vinchon",
-            "C": "Jeff Turner",
-            "D": "Ian Scott"
-        },
-        "answer": "A",
-        "tag": "Unit4-reading",
-        "remark": "36-3",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "Which of these items has actually been sold in stores?",
-        "options": {
-            "A": "the Queen of Clubs outfit",
-            "B": "the intelligent bra",
-            "C": "the intelligent apron",
-            "D": "the ICD+ jacket"
-        },
-        "answer": "D",
-        "tag": "Unit4-reading",
-        "remark": "37-4",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "What does Clive van Heerden mean, when talking about the jacket, that “it’s not going to happen overnight”? (lines 104–105)",
-        "options": {
-            "A": "It’s not going to happen until tomorrow.",
-            "B": "It’s going to take a short time to happen.",
-            "C": "It’s going to take a long time to happen.",
-            "D": "It’s probably never going to happen."
-        },
-        "answer": "C",
-        "tag": "Unit4-reading",
-        "remark": "37-5",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "The word they in line 127 refers to _____.",
-        "options": {
-            "A": "heavy trucks",
-            "B": "air beams",
-            "C": "metal hangars",
-            "D": "airplanes"
-        },
-        "answer": "B",
-        "tag": "Unit4-reading",
-        "remark": "37-6",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
-    },
-    {
-        "type": "選擇題",
-        "name": "The following sentence would best be placed at the end of which paragraph? Thanks to them, the world of high-tech textiles is an exciting place to be these days.",
-        "options": {
-            "A": "paragraph 1 (starting line 1)",
-            "B": "paragraph 2 (starting line 12)",
-            "C": "paragraph 8 (starting line 106)",
-            "D": "paragraph 9 (starting line 117)"
-        },
-        "answer": "A",
-        "tag": "Unit4-reading",
-        "remark": "37-7",
-        "due":null,
-        "lastAnsweredTime":null,
-        "isEnabled": false
+        "remark": ""
     }
 ]

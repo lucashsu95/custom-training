@@ -26,13 +26,14 @@ export function useInitializeQuestions() {
 
   return useCallback(() => {
     getAllItem((allItems) => {
+      const visitedDate = '2025-04-05'
       const isVisited = localStorage.getItem('visited')
-      if (isVisited !== '2024-12-26-v4') {
+      if (isVisited !== visitedDate) {
         clearItem()
         allItems.length = 0
       }
-      if (allItems.length === 0 && isVisited !== '2024-12-26-v4') {
-        localStorage.setItem('visited', '2024-12-26-v4')
+      if (allItems.length === 0 && isVisited !== visitedDate) {
+        localStorage.setItem('visited', visitedDate)
         seeder()
       } else {
         setQuestions(
