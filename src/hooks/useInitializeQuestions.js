@@ -13,7 +13,7 @@ import JsonFile2 from '@/assets/unit4&5-reading.json'
 
 export function useInitializeQuestions() {
   const { setQuestions } = useQuestion()
-  const { addItem, getAllItem, clearItem } = useIndexedDB('questions')
+  const { addItem, getAllItem, clearAll } = useIndexedDB('questions')
 
   const seeder = useCallback(() => {
     const seederData = [...JsonFile2]
@@ -27,7 +27,7 @@ export function useInitializeQuestions() {
       const visitedDate = '2025-04-05'
       const isVisited = localStorage.getItem('visited')
       if (isVisited !== visitedDate) {
-        clearItem()
+        clearAll()
         allItems.length = 0
       }
       if (allItems.length === 0 && isVisited !== visitedDate) {
@@ -37,5 +37,5 @@ export function useInitializeQuestions() {
         setQuestions(allItems.map((question) => createQuestion(question)))
       }
     })
-  }, [clearItem, getAllItem, seeder, setQuestions])
+  }, [clearAll, getAllItem, seeder, setQuestions])
 }
