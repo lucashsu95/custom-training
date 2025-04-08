@@ -95,7 +95,7 @@ export function QuestionProvider({ children }) {
       return false
     }
 
-    if (shuffledQuestions.length < 5 && vocabulary.length >= 5) {
+    if (shuffledQuestions.length < 1 && vocabulary.length >= 5) {
       toast('題目都被你練完了 目前沒有要練習的題目', {
         description: '休息一下之後再來練習吧! 如果想繼續練習，可以選擇【自定練習】'
       })
@@ -103,7 +103,7 @@ export function QuestionProvider({ children }) {
     }
 
     // const correctProblems = getLimitedQuestions(shuffledQuestions, 3)
-    const correctProblems = getLimitedQuestions(shuffledQuestions, 5)
+    const correctProblems = getLimitedQuestions(shuffledQuestions, Math.min(5, shuffledQuestions.length))
     if (!correctProblems) {
       toast('⚠️題目數量不足!', {
         description: '請回到首頁重新操作或反饋問題給我們'
