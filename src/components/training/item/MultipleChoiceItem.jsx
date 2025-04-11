@@ -33,7 +33,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
         {mod === 'one-problem-mod' ? '' : i + 1 + '.'} {problem.name}
       </h2>
       {problem?.type2 === '教學' ? (
-        <article className="ml-5">{problem.answerStr}</article>
+        <article className="sm:ml-5">{problem.answerStr}</article>
       ) : (
         <article className="flex w-full flex-col place-items-stretch gap-4">
           {problem.shuffledOptions.map((option, j) => {
@@ -84,7 +84,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
             return (
               <div
                 key={id}
-                className={`flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700 ${Isprogress} ${(mod === 'completed' || hasSelected) && optionClass}`}
+                className={`flex items-center rounded border border-gray-200 px-4 sm:px-0 sm:ps-4 dark:border-gray-700 ${Isprogress} ${(mod === 'completed' || hasSelected) && optionClass}`}
                 onClick={handleChange}
               >
                 <input
@@ -97,7 +97,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
                 />
                 <label
                   htmlFor={id}
-                  className={`ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300`}
+                  className={`sm:ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300`}
                 >
                   {mod === 'one-problem-mod' ? '' : String.fromCharCode(j + 65) + '.'} {option}
                 </label>
