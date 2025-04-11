@@ -1,5 +1,13 @@
 [
   {
+    "type": "單字題",
+    "name": "insight",
+    "answer": "洞察力",
+    "tag": "Unit4-4A",
+    "optionsLength": 3,
+    "remark": ""
+  },
+  {
     "type": "選擇題",
     "name": "招募",
     "options": {
@@ -10,10 +18,7 @@
     },
     "answer": "B",
     "tag": "Unit2-單字",
-    "remark": "",
-    "due": null,
-    "lastAnsweredTime": null,
-    "isEnabled": true
+    "remark": ""
   },
   {
     "type": "填空題",
@@ -26,10 +31,7 @@
       "harsh"
     ],
     "tag": "Unit2-填空題",
-    "remark": "",
-    "due": null,
-    "lastAnsweredTime": null,
-    "isEnabled": true
+    "remark": ""
   },
   {
     "type": "配對題",
@@ -58,9 +60,6 @@
       "trigger"
     ],
     "tag": "Unit2-2A",
-    "remark": "52",
-    "due": null,
-    "lastAnsweredTime": null,
-    "isEnabled": true
+    "remark": "52"
   }
 ]

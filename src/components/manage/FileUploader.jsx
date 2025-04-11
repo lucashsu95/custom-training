@@ -44,6 +44,9 @@ export default function FileUploader() {
           if (!Object.keys(question).includes('isEnabled')) {
             question.isEnabled = true
           }
+          if (!Object.keys(question).includes('remark')) {
+            question.remark = ""
+          }
         })
         addItem(questions)
         setQuestions((prev) => [...prev, ...questions.map((question) => createQuestion(question))])
