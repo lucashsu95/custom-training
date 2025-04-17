@@ -84,7 +84,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
             return (
               <div
                 key={id}
-                className={`flex items-center rounded border border-gray-200 px-4 sm:px-0 sm:ps-4 dark:border-gray-700 ${Isprogress} ${(mod === 'completed' || hasSelected) && optionClass}`}
+                className={`flex items-center rounded border border-gray-200 px-4 dark:border-gray-700 ${Isprogress} ${(mod === 'completed' || hasSelected) && optionClass}`}
                 onClick={handleChange}
               >
                 <input
@@ -92,7 +92,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
                   name={`problem-${i}`}
                   id={id}
                   value={id}
-                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} from-radio h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
+                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} from-radio h-4 w-4 mr-2 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
                   required
                 />
                 <label
