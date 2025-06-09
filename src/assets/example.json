@@ -5,6 +5,7 @@
     "answer": "洞察力",
     "tag": "example",
     "optionsLength": 3,
+    "isEnabled": false,
     "remark": ""
   },
   {
@@ -17,6 +18,7 @@
       "D": "undergone"
     },
     "answer": "B",
+    "isEnabled": false,
     "tag": "example",
     "remark": ""
   },
@@ -31,6 +33,7 @@
       "harsh"
     ],
     "tag": "example",
+    "isEnabled": false,
     "remark": ""
   },
   {
@@ -60,6 +63,7 @@
       "trigger"
     ],
     "tag": "example",
-    "remark": "52"
+    "isEnabled": false,
+    "remark": ""
   }
 ]
