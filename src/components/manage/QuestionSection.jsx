@@ -56,7 +56,7 @@ export default function QuestionSection({ questions, questionKey }) {
             return (
               <section
                 key={index}
-                className={`custom-row ${['填空題', '配對題', '選擇題'].includes(question.type) ? 'grid-cols-[1fr_1fr_6fr_5fr_1fr_1fr_1fr] gap-3' : 'grid-cols-7'}`}
+                className={`custom-row ${['填空題', '配對題', '單選題', '多選題'].includes(question.type) ? 'grid-cols-[1fr_1fr_6fr_5fr_1fr_1fr_1fr] gap-3' : 'grid-cols-7'}`}
               >
                 <div>{question.type}</div>
                 <div>
@@ -76,20 +76,31 @@ export default function QuestionSection({ questions, questionKey }) {
                     : question.name}
                 </div>
                 <div className="max-w-[500px]">
-                  {question.type === '選擇題'
-                    ? Object.keys(question.options).map((optionKey) => (
-                        <div
-                          key={`${index}-${optionKey}`}
-                          className={`rounded px-2 py-0.5 ${question.answer === optionKey && 'bg-sky-200 dark:bg-sky-600'}`}
-                        >
-                          {optionKey}. {question.options[optionKey]}
-                        </div>
-                      ))
-                    : question.type === '填空題' || question.type === '配對題'
-                      ? question.options.map((option) => <div key={option}>{option}</div>)
-                      : question.type === '單字題'
-                        ? question.answer
-                        : '未知題型'}
+                  {question.type === '單選題' ? (
+                    Object.keys(question.options).map((optionKey) => (
+                      <div
+                        key={`${index}-${optionKey}`}
+                        className={`rounded px-2 py-0.5 ${question.answer === optionKey && 'bg-sky-200 dark:bg-sky-600'}`}
+                      >
+                        {optionKey}. {question.options[optionKey]}
+                      </div>
+                    ))
+                  ) : question.type === '多選題' ? (
+                    <div className='space-y-1'>
+                      {question.options.map((option) => (
+                        <div key={option}>{option}</div>
+                      ))}
+                      {question.answers.map((answer) => (
+                        <div key={answer} className='bg-sky-200 dark:bg-sky-600 rounded px-2 py-0.5'>{answer}</div>
+                      ))}
+                    </div>
+                  ) : question.type === '填空題' || question.type === '配對題' ? (
+                    question.options.map((option) => <div key={option}>{option}</div>)
+                  ) : question.type === '單字題' ? (
+                    question.answer
+                  ) : (
+                    '未知題型'
+                  )}
                 </div>
                 <div>
                   {second > 0

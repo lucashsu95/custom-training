@@ -1,3 +1,4 @@
+import SingleChoiceItem from '@/components/training/item/SingleChoiceItem'
 import MultipleChoiceItem from '@/components/training/item/MultipleChoiceItem'
 import FillInTheBlankItem from '@/components/training/item/FillInTheBlankItem'
 import MatchingItem from '@/components/training/item/MatchingItem'
@@ -7,7 +8,9 @@ import React from 'react'
 export const createComponent = (type, state) => {
   // state = { i, problem, mod, setState, setResult }
   switch (type) {
-    case '選擇題':
+    case '單選題':
+      return React.createElement(SingleChoiceItem, state)
+    case '多選題':
       return React.createElement(MultipleChoiceItem, state)
     case '填空題':
       return React.createElement(FillInTheBlankItem, state)

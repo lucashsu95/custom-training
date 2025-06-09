@@ -132,7 +132,7 @@ function TrainingSettings() {
             </ToggleGroup>
           </section>
 
-          {/* 選擇題數 */}
+          {/* 題數 */}
           <section>
             <Label className="text-base" htmlFor="question-number">
               2. 題數：

@@ -83,7 +83,7 @@ export function QuestionProvider({ children }) {
 
   const autoStartTraining = () => {
     const vocabulary = questions.filter(
-      (x) => (x.type === '單字題' || x.type === '選擇題') && x.isEnabled
+      (x) => (['單字題', '單選題', '多選題'].includes(x.type)) && x.isEnabled
     )
     const filteredQuestions = filterByTime(vocabulary)
     const shuffledQuestions = shuffleAryByDue(filteredQuestions)
@@ -103,7 +103,10 @@ export function QuestionProvider({ children }) {
     }
 
     // const correctProblems = getLimitedQuestions(shuffledQuestions, 3)
-    const correctProblems = getLimitedQuestions(shuffledQuestions, Math.min(5, shuffledQuestions.length))
+    const correctProblems = getLimitedQuestions(
+      shuffledQuestions,
+      Math.min(5, shuffledQuestions.length)
+    )
     if (!correctProblems) {
       toast('⚠️題目數量不足!', {
         description: '請回到首頁重新操作或反饋問題給我們'
