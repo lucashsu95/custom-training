@@ -3,7 +3,7 @@
     "type": "單字題",
     "name": "insight",
     "answer": "洞察力",
-    "tag": "Unit4-4A",
+    "tag": "example",
     "optionsLength": 3,
     "remark": ""
   },
@@ -17,7 +17,7 @@
       "D": "undergone"
     },
     "answer": "B",
-    "tag": "Unit2-單字",
+    "tag": "example",
     "remark": ""
   },
   {
@@ -30,7 +30,7 @@
       "absurd",
       "harsh"
     ],
-    "tag": "Unit2-填空題",
+    "tag": "example",
     "remark": ""
   },
   {
@@ -59,7 +59,7 @@
       "abundant",
       "trigger"
     ],
-    "tag": "Unit2-2A",
+    "tag": "example",
     "remark": "52"
   }
 ]
