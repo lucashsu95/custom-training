@@ -1,39 +1,41 @@
 import PropTypes from 'prop-types'
 import { MultipleChoiceQuestion } from '@/classes/Question'
 import { useQuestion } from '@/provider/QuestionProvider'
-import { useState } from 'react'
 
 import { AiOutlineFire } from 'react-icons/ai'
 import { IoIosWarning } from 'react-icons/io'
 import { Button } from '@/components/ui/button'
 
 export default function MultipleChoiceItem({ i, problem, mod, setResult, setState }) {
-  const [hasSubmit, setHasSubmit] = useState(problem.selected.length > 0)
   const { setProblems, updateDue } = useQuestion()
-
+  const hasSubmit = problem.hasSubmit
   const handleSubmit = () => {
-    if (mod === 'one-problem-mod') {
-      if (hasSubmit === false) {
-        const isCorrect = problem.isCorrect()
-        if (!isCorrect) {
-          const problem2 = MultipleChoiceQuestion.create({ ...problem, afterErr: true })
-          setProblems((prev) => [...prev, problem2])
-        }
-        if (!problem.afterErr) {
-          setResult((prev) => ({
-            ...prev,
-            correctCount: prev.correctCount + (isCorrect ? 1 : 0),
-            wrongCount: prev.wrongCount + (isCorrect ? 0 : 1)
-          }))
-          updateDue(problem.id, isCorrect)
-        }
-        setHasSubmit(true)
-        if (isCorrect) {
-          setTimeout(() => {
-            setState((prev) => ({ ...prev, currentProblem: prev.currentProblem + 1 }))
-          }, 700)
-        }
-      }
+    if (mod !== 'one-problem-mod') return
+    if (hasSubmit) return
+    const isCorrect = problem.isCorrect()
+    if (!isCorrect) {
+      const problem2 = MultipleChoiceQuestion.create({
+        ...problem,
+        shuffledOptions: null,
+        selected: null,
+        hasSubmit: null,
+        afterErr: true
+      })
+      setProblems((prev) => [...prev, problem2])
+    }
+    if (!problem.afterErr) {
+      setResult((prev) => ({
+        ...prev,
+        correctCount: prev.correctCount + (isCorrect ? 1 : 0),
+        wrongCount: prev.wrongCount + (isCorrect ? 0 : 1)
+      }))
+      updateDue(problem.id, isCorrect)
+    }
+    problem.hasSubmit = true
+    if (isCorrect) {
+      setTimeout(() => {
+        setState((prev) => ({ ...prev, currentProblem: prev.currentProblem + 1 }))
+      }, 700)
     }
   }
 
@@ -72,10 +74,12 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
       ) : (
         <article className="flex w-full flex-col place-items-stretch gap-4">
           {problem.shuffledOptions.map((option, j) => {
-            const id = `${i}-${j}`
-            const isCorrect = problem.answerStr === option && problem.selected === option
-            const isWrong = problem.selected === option && !isCorrect
-            const inWrongCorrect = problem.answerStr === option && !isCorrect
+            const hasSelected = problem.selected.includes(option)
+
+            const id = `${i}-${j}-${hasSelected}`
+            const isCorrect = problem.answers.includes(option) && problem.selected.includes(option)
+            const isWrong = problem.options.includes(option) && hasSelected
+            const inWrongCorrect = problem.answers.includes(option) && !isCorrect
             const optionClass = isCorrect
               ? 'bg-green-200 dark:bg-emerald-700 motion-preset-confetti'
               : isWrong
@@ -84,40 +88,43 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
                   ? 'bg-yellow-200 dark:bg-yellow-600'
                   : ''
 
-            const Isprogress =
-              mod === 'progress' ? 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500' : ''
-
-            const hasChecked = problem.selected.includes(option)
-              ? 'bg-blue-100 dark:bg-blue-600'
-              : ''
+            const Isprogress = hasSubmit
+              ? ''
+              : 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
 
             const handleClick = () => {
               setProblems((prev) => {
-                console.log(option,prev[i].selected);
-                if (prev[i].selected.includes(option)) {
-                  prev[i].selected = prev[i].selected.filter((item) => item !== option)
+                const newProblems = [...prev]
+
+                if (newProblems[i].selected.includes(option)) {
+                  newProblems[i] = MultipleChoiceQuestion.create({
+                    ...newProblems[i],
+                    selected: newProblems[i].selected.filter((item) => item !== option)
+                  })
                 } else {
-                  prev[i].selected.push(option)
+                  newProblems[i] = MultipleChoiceQuestion.create({
+                    ...newProblems[i],
+                    selected: [...newProblems[i].selected, option]
+                  })
                 }
-                return prev
+                return newProblems
               })
             }
 
             return (
               <div
                 key={id}
-                className={`flex items-center rounded border border-gray-200 px-4 dark:border-gray-700 ${Isprogress} ${mod === 'completed' || hasSubmit ? optionClass : hasChecked}`}
-                onClick={() => handleClick()}
+                className={`flex items-center rounded border border-gray-200 px-4 dark:border-gray-700 ${Isprogress} ${(mod === 'completed' || hasSubmit) && optionClass}`}
+                onClick={handleClick}
               >
                 <input
                   type="checkbox"
                   name={`problem-${i}`}
                   id={id}
                   value={id}
-                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} from-checkbox mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
-                  required
+                  className={`from-checkbox mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
                   checked={problem.selected.includes(option)}
-                  disabled={hasSubmit}
+                  disabled={hasSubmit || mod === 'one-problem-mod'}
                   onChange={() => {}}
                 />
                 <label
@@ -129,9 +136,11 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
               </div>
             )
           })}
-          <Button onClick={handleSubmit} disabled={hasSubmit} className="mt-3 w-full">
-            送出答案
-          </Button>
+          {mod === 'one-problem-mod' && !hasSubmit && (
+            <Button onClick={handleSubmit} disabled={hasSubmit} className="mt-3 w-full">
+              送出答案
+            </Button>
+          )}
         </article>
       )}
     </>

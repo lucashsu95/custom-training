@@ -213,6 +213,9 @@ export const sortByTech = (problems) => {
 }
 
 export const getProblemLength = (problem) => {
+  if( problem.type === '多選題') {
+    return 1
+  }
   if (Array.isArray(problem?.options)) {
     return problem.options.length
   }

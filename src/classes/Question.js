@@ -58,15 +58,16 @@ export class MultipleChoiceQuestion extends Question {
     super(question)
     this.options = question.options
     this.answers = question.answers
-    this.shuffledOptions = shuffleAry([...question.options, ...question.answers])
-    this.selected = []
+    this.shuffledOptions = question.shuffledOptions ?? shuffleAry([...question.options, ...question.answers])
+    this.selected = question?.selected ?? []
+    this.hasSubmit = question?.hasSubmit ?? false
   }
   static create(question) {
     return new MultipleChoiceQuestion(question)
   }
   isCorrect() {
     return (
-      this.selected.length > 0 && this.answers.every((answer) => this.selected.includes(answer))
+      this.selected.length > 0 && this.answers.every((answer) => this.selected.includes(answer)) && this.options.every((option) => !this.selected.includes(option))
     )
   }
   getCorrectCount() {
