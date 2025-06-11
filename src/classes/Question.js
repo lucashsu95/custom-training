@@ -17,8 +17,14 @@ class Question {
     this.selected
   }
 
+  isCorrect() {}
+  getCorrectCount() {
+    return this.isCorrect() ? 1 : 0
+  }
+  getProblemLength() {
+    return 1
+  }
   toPayload() {}
-  getCorrectCount() {}
 }
 
 // 單選題
@@ -34,9 +40,11 @@ export class SignleChoiceQuestion extends Question {
   static create(question) {
     return new SignleChoiceQuestion(question)
   }
-  getCorrectCount() {
-    return this.selected === this.answerStr ? 1 : 0
+
+  isCorrect() {
+    return this.selected === this.answerStr
   }
+
   toPayload() {
     return {
       id: this.id,
@@ -58,7 +66,8 @@ export class MultipleChoiceQuestion extends Question {
     super(question)
     this.options = question.options
     this.answers = question.answers
-    this.shuffledOptions = question.shuffledOptions ?? shuffleAry([...question.options, ...question.answers])
+    this.shuffledOptions =
+      question.shuffledOptions ?? shuffleAry([...question.options, ...question.answers])
     this.selected = question?.selected ?? []
     this.hasSubmit = question?.hasSubmit ?? false
   }
@@ -67,11 +76,10 @@ export class MultipleChoiceQuestion extends Question {
   }
   isCorrect() {
     return (
-      this.selected.length > 0 && this.answers.every((answer) => this.selected.includes(answer)) && this.options.every((option) => !this.selected.includes(option))
+      this.selected.length > 0 &&
+      this.answers.every((answer) => this.selected.includes(answer)) &&
+      this.options.every((option) => !this.selected.includes(option))
     )
-  }
-  getCorrectCount() {
-    return this.isCorrect() ? 1 : 0
   }
   toPayload() {
     return {
@@ -102,12 +110,20 @@ export class FillInTheBlankQuestion extends Question {
     return new FillInTheBlankQuestion(question)
   }
 
+  isCorrect() {
+    return this.options.every((option, j) => this.selected.get(j) === option)
+  }
+
+  getProblemLength() {
+    return this.options.length
+  }
   getCorrectCount() {
     return this.options.reduce(
       (acc, option, j) => (this.selected.get(j) === option ? acc + 1 : acc),
       0
     )
   }
+
   toPayload() {
     return {
       id: this.id,
@@ -136,6 +152,12 @@ export class MatchingQuestion extends Question {
     return new MatchingQuestion(question)
   }
 
+  isCorrect() {
+    return this.shuffledName.every(
+      (name, j) => this.selected.get(j) === this.options[this.name.indexOf(name)]
+    )
+  }
+
   getCorrectCount() {
     return this.shuffledName.reduce(
       (acc, name, j) =>
@@ -143,6 +165,11 @@ export class MatchingQuestion extends Question {
       0
     )
   }
+
+  getProblemLength() {
+    return this.shuffledName.length
+  }
+
   toPayload() {
     return {
       id: this.id,
@@ -187,8 +214,8 @@ export class VocabularyQuestion extends Question {
     this.shuffledOptions = shuffleAry(options)
   }
 
-  getCorrectCount() {
-    return this.selected === this.answer ? 1 : 0
+  isCorrect() {
+    return this.selected === this.answer
   }
 
   toPayload() {

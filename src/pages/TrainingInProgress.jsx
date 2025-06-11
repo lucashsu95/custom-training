@@ -7,7 +7,6 @@ import StateBoard from '@/components/training/StateBoard'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { getProblemLength } from '@/lib/functions'
 
 // provider
 import { useQuestion } from '@/provider/QuestionProvider'
@@ -30,20 +29,17 @@ function TrainingInProgress() {
 
     // 計算題目數量 & 更新 due
     for (const problem of problems) {
-      if (problem.type2 === '教學') {
-        continue
-      }
+      if (problem.type2 === '教學') continue
       const count = problem.getCorrectCount()
-      const len = getProblemLength(problem)
-      updateDue(problem.id, count === len)
+      const len = problem.getProblemLength()
+      updateDue(problem.id, problem.isCorrect())
       correctCount += count
       problemsLength += len
     }
 
     // 計算分數
-    console.log(problemsLength, correctCount);
-    
-    const score = Math.min(Math.ceil(100 / problemsLength) * correctCount, 100)
+
+    const score = parseInt(100 / problemsLength * correctCount)
     setResult({
       score,
       correctCount,
@@ -72,14 +68,14 @@ function TrainingInProgress() {
         {/* 顯示成績 */}
         {result.score > -1 && (
           <>
-            <div className="my-2 rounded-md bg-purple-200 p-3 dark:bg-purple-400">
+            <div className="my-2 space-y-1 rounded-md bg-gray-200/25 px-5 py-3 text-gray-500 shadow dark:bg-gray-700/35 dark:text-gray-100/65">
               <div
                 className={`${
                   result.score >= 80
-                    ? 'font-bold text-green-500 dark:text-green-300'
+                    ? 'font-bold text-green-500 dark:text-green-400'
                     : result.score >= 60
                       ? ''
-                      : 'font-bold text-red-500 dark:text-red-300'
+                      : 'font-bold text-red-400 dark:text-red-400'
                 } text-lg`}
               >
                 {result.score}分
@@ -102,13 +98,17 @@ function TrainingInProgress() {
               })}
             </section>
           ))}
-          {result.score < 0 && (
+          {result.score < 0 ? (
             <>
               <Button>送出答案</Button>
               <Button type="reset" className="ml-2" variant="secondary">
                 重設
               </Button>
             </>
+          ) : (
+            <Link to="/">
+              <Button className="mt-3 w-full z-10">回首頁</Button>
+            </Link>
           )}
         </form>
       </div>

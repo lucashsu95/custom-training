@@ -73,14 +73,14 @@ function AutoTraining() {
         {/* 顯示成績 */}
         {trainingFinish && (
           <>
-            <div className="my-2 rounded-md bg-purple-200 p-3 dark:bg-purple-400">
+            <div className="my-2 space-y-1 rounded-md bg-gray-200/25 px-5 py-3 text-gray-500 shadow dark:bg-gray-700/35 dark:text-gray-100/65">
               <div
                 className={`${
                   score >= 80
-                    ? 'font-bold text-green-500 dark:text-green-300'
+                    ? 'font-bold text-green-500 dark:text-green-400'
                     : score >= 60
                       ? ''
-                      : 'font-bold text-red-500 dark:text-red-300'
+                      : 'font-bold text-red-500 dark:text-red-400'
                 } text-lg`}
               >
                 {score}分
@@ -118,7 +118,7 @@ function AutoTraining() {
                       state.currentProblem !== problems.length)) && (
                     <Button
                       size="lg"
-                      className="mt-5 w-full z-10"
+                      className="z-10 mt-5 w-full"
                       onClick={() => {
                         setState((prev) => ({
                           ...prev,
@@ -136,7 +136,7 @@ function AutoTraining() {
 
       {trainingFinish && (
         <Link to="/">
-          <Button className="mt-3 w-full">回首頁</Button>
+          <Button className="mt-3 w-full z-10">回首頁</Button>
         </Link>
       )}
     </section>

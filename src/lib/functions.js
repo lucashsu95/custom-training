@@ -211,13 +211,3 @@ export const sortByTech = (problems) => {
   })
   return newProblems
 }
-
-export const getProblemLength = (problem) => {
-  if( problem.type === '多選題') {
-    return 1
-  }
-  if (Array.isArray(problem?.options)) {
-    return problem.options.length
-  }
-  return 1
-}
