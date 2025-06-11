@@ -183,7 +183,7 @@ export const productTech = (problems) => {
     }
 
     const techProblem = createQuestion({ ...problem, type2: '教學' })
-    if (['選擇題', '單字題'].includes(problem.type)) {
+    if (['單選題', '單字題', '多選題'].includes(problem.type)) {
       if (i % 2 == 0 && i > 0) {
         j = newProblems.indexOf(problem)
       }
@@ -213,6 +213,9 @@ export const sortByTech = (problems) => {
 }
 
 export const getProblemLength = (problem) => {
+  if( problem.type === '多選題') {
+    return 1
+  }
   if (Array.isArray(problem?.options)) {
     return problem.options.length
   }

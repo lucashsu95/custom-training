@@ -42,10 +42,10 @@ export default function HomeView() {
   return (
     <section className="w-100 grid gap-5 p-6 md:grid-cols-2 lg:grid-cols-3">
       <Alert
-        className="custom-alert cursor-pointer bg-blue-200 dark:bg-[#6574bda4]"
+        className="custom-alert cursor-pointer bg-[hsl(var(--foreground))] text-[hsl(var(--background))]"
         onClick={startTraining}
       >
-        <MdNotStarted className="h-5 w-5" />
+        <MdNotStarted className="h-5 w-5 !text-[hsl(var(--background))]" />
         <AlertTitle className="text-base font-bold">直接練習</AlertTitle>
         <AlertDescription>一切由系統安排，只要會背即可!</AlertDescription>
       </Alert>
@@ -66,7 +66,7 @@ export default function HomeView() {
         </Alert>
       </Link>
 
-      <a target="_blank" href="https://github.com/lucashsu95/custom-training/blob/main/README.md">
+      <a target="_blank" href="https://github.com/lucashsu95/custom-training/blob/main/docs/how-to-use.md" rel="noreferrer">
         <Alert className="custom-alert">
           <FaBook className="h-5 w-5" />
           <AlertTitle className="text-base font-bold">教學-說明書</AlertTitle>

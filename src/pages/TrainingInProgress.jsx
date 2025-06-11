@@ -41,6 +41,8 @@ function TrainingInProgress() {
     }
 
     // 計算分數
+    console.log(problemsLength, correctCount);
+    
     const score = Math.min(Math.ceil(100 / problemsLength) * correctCount, 100)
     setResult({
       score,

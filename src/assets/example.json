@@ -9,7 +9,7 @@
     "remark": ""
   },
   {
-    "type": "選擇題",
+    "type": "單選題",
     "name": "招募",
     "options": {
       "A": "rituals",
@@ -18,6 +18,21 @@
       "D": "undergone"
     },
     "answer": "B",
+    "isEnabled": false,
+    "tag": "example",
+    "remark": ""
+  },
+  {
+    "type": "多選題",
+    "name": "this is a multiple choice question, answer is ?",
+    "answers": [
+      "i am Answer",
+      "i am also Answer"
+    ],
+    "options": [
+      "option C",
+      "option D"
+    ],
     "isEnabled": false,
     "tag": "example",
     "remark": ""

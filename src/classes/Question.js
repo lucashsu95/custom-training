@@ -21,8 +21,8 @@ class Question {
   getCorrectCount() {}
 }
 
-// 選擇題
-export class MultipleChoiceQuestion extends Question {
+// 單選題
+export class SignleChoiceQuestion extends Question {
   constructor(question) {
     super(question)
     this.options = question.options
@@ -32,7 +32,7 @@ export class MultipleChoiceQuestion extends Question {
     this.selected = ''
   }
   static create(question) {
-    return new MultipleChoiceQuestion(question)
+    return new SignleChoiceQuestion(question)
   }
   getCorrectCount() {
     return this.selected === this.answerStr ? 1 : 0
@@ -46,7 +46,43 @@ export class MultipleChoiceQuestion extends Question {
       answer: this.answer,
       name: this.name,
       type: this.type,
-      this: this.options,
+      options: this.options,
+      lastAnsweredTime: this.lastAnsweredTime,
+      isEnabled: this.isEnabled
+    }
+  }
+}
+// 多選題
+export class MultipleChoiceQuestion extends Question {
+  constructor(question) {
+    super(question)
+    this.options = question.options
+    this.answers = question.answers
+    this.shuffledOptions = question.shuffledOptions ?? shuffleAry([...question.options, ...question.answers])
+    this.selected = question?.selected ?? []
+    this.hasSubmit = question?.hasSubmit ?? false
+  }
+  static create(question) {
+    return new MultipleChoiceQuestion(question)
+  }
+  isCorrect() {
+    return (
+      this.selected.length > 0 && this.answers.every((answer) => this.selected.includes(answer)) && this.options.every((option) => !this.selected.includes(option))
+    )
+  }
+  getCorrectCount() {
+    return this.isCorrect() ? 1 : 0
+  }
+  toPayload() {
+    return {
+      id: this.id,
+      tag: this.tag,
+      remark: this.remark,
+      due: this.due,
+      answers: this.answers,
+      name: this.name,
+      type: this.type,
+      options: this.options,
       lastAnsweredTime: this.lastAnsweredTime,
       isEnabled: this.isEnabled
     }
@@ -172,7 +208,8 @@ export class VocabularyQuestion extends Question {
 }
 
 export const getQuestionClassByType = {
-  選擇題: MultipleChoiceQuestion,
+  單選題: SignleChoiceQuestion,
+  多選題: MultipleChoiceQuestion,
   填空題: FillInTheBlankQuestion,
   配對題: MatchingQuestion,
   單字題: VocabularyQuestion

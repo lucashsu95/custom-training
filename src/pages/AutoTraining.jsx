@@ -113,11 +113,12 @@ function AutoTraining() {
                   {(problem.type2 === '教學' ||
                     (problem.selected !== '' &&
                       ((problem.type === '單字題' && problem.selected !== problem?.answer) ||
-                        (problem.type === '選擇題' && problem.selected !== problem?.answerStr)) &&
+                        (problem.type === '多選題' && problem.hasSubmit && !problem.isCorrect()) ||
+                        (problem.type === '單選題' && problem.selected !== problem?.answerStr)) &&
                       state.currentProblem !== problems.length)) && (
                     <Button
                       size="lg"
-                      className="mt-5 w-full"
+                      className="mt-5 w-full z-10"
                       onClick={() => {
                         setState((prev) => ({
                           ...prev,
