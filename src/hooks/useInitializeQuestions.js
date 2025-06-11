@@ -18,7 +18,7 @@ export function useInitializeQuestions() {
   const { addItem, getAllItem, clearAll } = useIndexedDB('questions')
 
   const seeder = useCallback(() => {
-    const seederData = [...exampleQuestion,...JsonFile, ...JsonFile3]
+    const seederData = [...exampleQuestion, ...JsonFile, ...JsonFile3]
     seederData.forEach((question) => (question.id = uuidv4()))
     addItem(seederData)
     setQuestions(seederData.map((question) => createQuestion(question)))
@@ -26,7 +26,7 @@ export function useInitializeQuestions() {
 
   return useCallback(() => {
     getAllItem((allItems) => {
-      const visitedDate = '2025-06-11-v2'
+      const visitedDate = '2025-06-11-v3'
       const isVisited = localStorage.getItem('visited')
       if (allItems.length === 0 || isVisited !== visitedDate) {
         clearAll()

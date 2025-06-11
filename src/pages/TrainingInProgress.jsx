@@ -39,7 +39,7 @@ function TrainingInProgress() {
 
     // 計算分數
 
-    const score = parseInt(100 / problemsLength * correctCount)
+    const score = parseInt((100 / problemsLength) * correctCount)
     setResult({
       score,
       correctCount,
@@ -107,7 +107,7 @@ function TrainingInProgress() {
             </>
           ) : (
             <Link to="/">
-              <Button className="mt-3 w-full z-10">回首頁</Button>
+              <Button className="z-10 mt-3 w-full">回首頁</Button>
             </Link>
           )}
         </form>

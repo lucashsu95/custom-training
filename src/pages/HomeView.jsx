@@ -28,7 +28,7 @@ export default function HomeView() {
   }
 
   // 初始化Question Start
-  
+
   const { initTrainingCount } = useSetting()
   const initializeQuestions = useInitializeQuestions()
 
@@ -66,7 +66,11 @@ export default function HomeView() {
         </Alert>
       </Link>
 
-      <a target="_blank" href="https://github.com/lucashsu95/custom-training/blob/main/docs/how-to-use.md" rel="noreferrer">
+      <a
+        target="_blank"
+        href="https://github.com/lucashsu95/custom-training/blob/main/docs/how-to-use.md"
+        rel="noreferrer"
+      >
         <Alert className="custom-alert">
           <FaBook className="h-5 w-5" />
           <AlertTitle className="text-base font-bold">教學-說明書</AlertTitle>

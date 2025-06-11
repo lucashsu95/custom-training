@@ -88,12 +88,13 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
                   ? 'bg-yellow-200 dark:bg-yellow-600'
                   : ''
 
-            const Isprogress = hasSubmit || mod === 'completed'
-              ? ''
-              : 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
+            const Isprogress =
+              hasSubmit || mod === 'completed'
+                ? ''
+                : 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
 
             const handleClick = () => {
-              if((mod === 'one-problem-mod' && hasSubmit) || mod === 'completed') return
+              if ((mod === 'one-problem-mod' && hasSubmit) || mod === 'completed') return
               setProblems((prev) => {
                 const newProblems = [...prev]
 
@@ -123,7 +124,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
                   name={`problem-${i}`}
                   id={id}
                   value={id}
-                  className='from-checkbox mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600'
+                  className="from-checkbox mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
                   checked={problem.selected.includes(option)}
                   disabled={hasSubmit || mod === 'completed'}
                   onChange={() => {}}

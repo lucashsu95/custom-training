@@ -86,12 +86,17 @@ export default function QuestionSection({ questions, questionKey }) {
                       </div>
                     ))
                   ) : question.type === '多選題' ? (
-                    <div className='space-y-1'>
+                    <div className="space-y-1">
                       {question.options.map((option) => (
                         <div key={option}>{option}</div>
                       ))}
                       {question.answers.map((answer) => (
-                        <div key={answer} className='bg-sky-200 dark:bg-sky-600 rounded px-2 py-0.5'>{answer}</div>
+                        <div
+                          key={answer}
+                          className="rounded bg-sky-200 px-2 py-0.5 dark:bg-sky-600"
+                        >
+                          {answer}
+                        </div>
                       ))}
                     </div>
                   ) : question.type === '填空題' || question.type === '配對題' ? (

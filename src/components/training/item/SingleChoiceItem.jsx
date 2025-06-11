@@ -92,12 +92,12 @@ export default function SingleChoiceItem({ i, problem, mod, setResult, setState 
                   name={`problem-${i}`}
                   id={id}
                   value={id}
-                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} from-radio h-4 w-4 mr-2 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
+                  className={`${mod === 'one-problem-mod' ? 'hidden' : ''} from-radio mr-2 h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600`}
                   required
                 />
                 <label
                   htmlFor={id}
-                  className={`sm:ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300`}
+                  className={`w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300 sm:ms-2`}
                 >
                   {mod === 'one-problem-mod' ? '' : String.fromCharCode(j + 65) + '.'} {option}
                 </label>

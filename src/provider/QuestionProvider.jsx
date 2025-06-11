@@ -83,7 +83,7 @@ export function QuestionProvider({ children }) {
 
   const autoStartTraining = () => {
     const vocabulary = questions.filter(
-      (x) => (['單字題', '單選題', '多選題'].includes(x.type)) && x.isEnabled
+      (x) => ['單字題', '單選題', '多選題'].includes(x.type) && x.isEnabled
     )
     const filteredQuestions = filterByTime(vocabulary)
     const shuffledQuestions = shuffleAryByDue(filteredQuestions)

@@ -67,7 +67,7 @@ function TrainingSettings() {
       setState((prevstate) => ({
         ...prevstate,
         currentTags: updatedTags,
-        questionNumber: getQuestionByTag(questions, updatedTags).filter(x => x.isEnabled).length
+        questionNumber: getQuestionByTag(questions, updatedTags).filter((x) => x.isEnabled).length
       }))
     } else {
       setState((prevstate) => ({

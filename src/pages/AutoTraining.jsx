@@ -136,7 +136,7 @@ function AutoTraining() {
 
       {trainingFinish && (
         <Link to="/">
-          <Button className="mt-3 w-full z-10">回首頁</Button>
+          <Button className="z-10 mt-3 w-full">回首頁</Button>
         </Link>
       )}
     </section>

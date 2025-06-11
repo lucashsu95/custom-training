@@ -45,7 +45,7 @@ export default function FileUploader() {
             question.isEnabled = true
           }
           if (!Object.keys(question).includes('remark')) {
-            question.remark = ""
+            question.remark = ''
           }
         })
         addItem(questions)
