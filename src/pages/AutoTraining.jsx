@@ -118,7 +118,7 @@ function AutoTraining() {
                       state.currentProblem !== problems.length)) && (
                     <Button
                       size="lg"
-                      className="mt-5 w-full"
+                      className="mt-5 w-full z-10"
                       onClick={() => {
                         setState((prev) => ({
                           ...prev,

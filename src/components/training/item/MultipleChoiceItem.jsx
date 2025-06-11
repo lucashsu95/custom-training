@@ -93,6 +93,7 @@ export default function MultipleChoiceItem({ i, problem, mod, setResult, setStat
               : 'has-[:checked]:bg-sky-200 dark:has-[:checked]:bg-sky-500'
 
             const handleClick = () => {
+              if((mod === 'one-problem-mod' && hasSubmit) || mod === 'completed') return
               setProblems((prev) => {
                 const newProblems = [...prev]
 
