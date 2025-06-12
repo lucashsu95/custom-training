@@ -106,7 +106,7 @@ export default function ManageQuestions() {
     element.click()
     document.body.removeChild(element)
     toast('✅下載成功', {
-      description: '已成功讓勾選的題目失效'
+      description: '已成功讓勾選的題目下載'
     })
   }
 
@@ -121,7 +121,7 @@ export default function ManageQuestions() {
     element.click()
     document.body.removeChild(element)
     toast('✅下載成功', {
-      description: '已成功讓勾選的題目失效'
+      description: '已成功讓勾選的題目下載'
     })
   }
 
