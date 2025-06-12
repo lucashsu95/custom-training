@@ -10,7 +10,7 @@ import { useQuestion } from '@/provider/QuestionProvider'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
 
 import exampleQuestion from '@/assets/example.json'
-import JsonFile from '@/assets/marketing-1.json'
+import JsonFile from '@/assets/economy.json'
 import JsonFile3 from '@/assets/financial-management.json'
 
 export function useInitializeQuestions() {
@@ -26,7 +26,7 @@ export function useInitializeQuestions() {
 
   return useCallback(() => {
     getAllItem((allItems) => {
-      const visitedDate = '2025-06-11-v3'
+      const visitedDate = '2025-06-12-v1'
       const isVisited = localStorage.getItem('visited')
       if (allItems.length === 0 || isVisited !== visitedDate) {
         clearAll()
