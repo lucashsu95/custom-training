@@ -30,7 +30,9 @@ export default function SingleChoiceItem({ i, problem, mod, setResult, setState 
         </div>
       )}
       <h2 className="my-2 text-lg">
-        {mod === 'one-problem-mod' ? '' : i + 1 + '.'} {problem.name} {problem.tag === '經濟' ? <span className="text-emerald-500 dark:text-emerald-400">ch {problem.tag}</span> : ''}
+        {mod === 'one-problem-mod' ? '' : i + 1 + '.'} {problem.name}
+        <br />
+        {problem.tag === '經濟' && problem.remark ? <span className="text-sm text-gray-500 dark:text-gray-100/65">ch {problem.remark}</span> : ''}
       </h2>
       {problem?.type2 === '教學' ? (
         <article className="sm:ml-5">{problem.answerStr}</article>
