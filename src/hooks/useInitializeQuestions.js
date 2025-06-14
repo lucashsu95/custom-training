@@ -26,7 +26,7 @@ export function useInitializeQuestions() {
 
   return useCallback(() => {
     getAllItem((allItems) => {
-      const visitedDate = '2025-06-14-v2'
+      const visitedDate = '2025-06-14-v3'
       const isVisited = localStorage.getItem('visited')
       if (allItems.length === 0 || isVisited !== visitedDate) {
         clearAll()
