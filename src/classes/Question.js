@@ -64,10 +64,15 @@ export class SignleChoiceQuestion extends Question {
 export class MultipleChoiceQuestion extends Question {
   constructor(question) {
     super(question)
-    this.options = question.options
-    this.answers = question.answers
-    this.shuffledOptions =
-      question.shuffledOptions ?? shuffleAry([...question.options, ...question.answers])
+    const options = Array.isArray(question.options) ? question.options : []
+    const answers = Array.isArray(question.answers) ? question.answers : []
+    if (!Array.isArray(question.options) || !Array.isArray(question.answers)) {
+      console.warn('Invalid multiple choice payload', { id: question.id, options: question.options, answers: question.answers })
+    }
+
+    this.options = options
+    this.answers = answers
+    this.shuffledOptions = question.shuffledOptions ?? shuffleAry([...options, ...answers])
     this.selected = question?.selected ?? []
     this.hasSubmit = question?.hasSubmit ?? false
   }

@@ -1,0 +1,1384 @@
+[
+    {
+        "type": "單選題",
+        "name": "目前我國政府經濟部商業司主要推廣下列哪一種二維條碼?",
+        "options": {
+            "A": "PDF417",
+            "B": "Datamatrix",
+            "C": "Maxicode",
+            "D": "Code1"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種微處理器是同時將CPU、FlashROM、RAM、I/O、A/D、D/A等相關運算與記憶體及周邊界面整合在一起?",
+        "options": {
+            "A": "特殊應用積體電路(ASIC)",
+            "B": "數位訊號處理器(DSP)",
+            "C": "現場可程式化邏輯閘陣列(FPGA)",
+            "D": "微控制器(MCU)"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "為了縮短感測器的開發時程,並降低微處理器的重新設計成本,下列哪一種微處理器比較適合用於產品開發時可能不斷變更設計的電路系統?",
+        "options": {
+            "A": "特殊應用積體電路(ASIC)",
+            "B": "數位訊號處理器(DSP)",
+            "C": "現場可程式化邏輯閘陣列(FPGA)",
+            "D": "微控制器(MCU)"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種感測器可以感知磁場方向,故具有簡易辨別方向的能力?",
+        "options": {
+            "A": "電子羅盤",
+            "B": "陀螺儀",
+            "C": "移動偵測器",
+            "D": "震動感測器"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "智慧型感測器通常使用下列哪一種電源模組,因其擁有較高電容量,且具有較低記憶效應以及低環境污染等特性?",
+        "options": {
+            "A": "鎳氫電池",
+            "B": "水銀電池",
+            "C": "鉛酸電池",
+            "D": "太陽能電池"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "物聯網的感知層中除了感知、辨識的功用之外,下列哪些功用也包含在內?",
+        "answers": [
+            "定位",
+            "通訊"
+        ],
+        "options": [
+            "定位",
+            "通訊",
+            "服務",
+            "應用"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "歐洲商品條碼(EAN)為防止讀取資料錯誤情形發生,必須有一檢查碼,它位於歐洲商品條碼(EAN)中的哪一個位置?",
+        "options": {
+            "A": "最右邊",
+            "B": "最左邊",
+            "C": "中間",
+            "D": "上面"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "NFC 裝置依照角色不同而具備不同的基本溝通模式,下列哪些模式包含在內?",
+        "answers": [
+            "讀取/寫入模式(Reader/writermode)",
+            "卡片模擬模式(Cardemulationmode)",
+            "點對點模式(Peer-to-Peermode)"
+        ],
+        "options": [
+            "讀取/寫入模式(Reader/writermode)",
+            "卡片模擬模式(Cardemulationmode)",
+            "點對點模式(Peer-to-Peermode)",
+            "面對面模式(Face-to-Facemode)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "NFC 在主動模式下,最大資料傳輸量應為下列哪一項?",
+        "options": {
+            "A": "106Kbps",
+            "B": "212Kbps",
+            "C": "424Kbps",
+            "D": "846Kbps"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "關於NFC,下列敘述哪些正確?",
+        "answers": [
+            "短距離高頻無線通訊",
+            "短距離低頻寬"
+        ],
+        "options": [
+            "短距離高頻無線通訊",
+            "短距離低頻寬",
+            "短距離高頻寬",
+            "短距離低頻無線通訊"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種記憶體較適合存放感測器電路系統中,所探測到的數據?",
+        "options": {
+            "A": "RAM",
+            "B": "Flash",
+            "C": "ROM",
+            "D": "Disk"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "二維條碼依其結構可分為下列哪兩大類型?",
+        "answers": [
+            "堆疊式",
+            "矩陣式"
+        ],
+        "options": [
+            "堆疊式",
+            "矩陣式",
+            "點陣式",
+            "混合式"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是常見於智慧型感測器的電源模組?",
+        "answers": [
+            "鎳氫電池",
+            "鋰電池",
+            "太陽能電池"
+        ],
+        "options": [
+            "鎳氫電池",
+            "鋰電池",
+            "太陽能電池",
+            "鉛酸電池"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在台灣若有新書出版或新期刊創立應向下列哪一個機關申請 ISBN與ISSN代碼?",
+        "options": {
+            "A": "國家圖書館",
+            "B": "中央研究院",
+            "C": "台北市立圖書館",
+            "D": "中華民國商品條碼策進會"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "一般商品包裝上都印製有條碼,台灣的國家代碼為下列哪一項?",
+        "options": {
+            "A": "471",
+            "B": "886",
+            "C": "957",
+            "D": "977"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種記憶體較適合存放感測器電路系統中,所需要的程式或運算指令?",
+        "options": {
+            "A": "FlashROM",
+            "B": "DRAM",
+            "C": "SRAM",
+            "D": "Disk"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 NFC 無線通訊技術,下列敘述哪一項錯誤?",
+        "options": {
+            "A": "適合一對多的多點通訊模式",
+            "B": "適合手機行動支付",
+            "C": "適合電子錢包儲值",
+            "D": "安全性佳"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "NFC 設備可以在主動或被動模式下交換數據,下列哪一項通訊模式啟動查詢設備以提供整個射頻場域(RF-field)?",
+        "options": {
+            "A": "被動模式",
+            "B": "半被動模式",
+            "C": "主動模式",
+            "D": "半主動模式"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種微處理器為目前感測器暨嵌入式系統的主流?",
+        "options": {
+            "A": "特殊應用積體電路(ASIC)",
+            "B": "數位訊號處理器(DSP)",
+            "C": "現場可程式化邏輯閘陣列(FPGA)",
+            "D": "微控制器(MCU)"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種語言適合於開發無線感測電路之程式?",
+        "options": {
+            "A": "nesC",
+            "B": "Turbo-C",
+            "C": "VisualC++",
+            "D": "Dev-C++"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "感測器為整合不同的硬體模組,模組間必須透過傳輸介面才得以成功交換資料,下列哪些為常見的溝通介面?",
+        "answers": [
+            "UART",
+            "SPI",
+            "I2C"
+        ],
+        "options": [
+            "UART",
+            "SPI",
+            "I2C",
+            "JTAG"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些為條碼技術的優點?",
+        "answers": [
+            "可靠性高",
+            "成本低",
+            "自由度大"
+        ],
+        "options": [
+            "可靠性高",
+            "成本低",
+            "自由度大",
+            "容錯率高"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "應用於感測電路之微處理器種類中,除微控制器外尚有下列哪些?",
+        "answers": [
+            "特殊應用積體電路(ASIC)",
+            "數位訊號處理器(DSP)",
+            "現場可程式化邏輯閘陣列(FPGA)"
+        ],
+        "options": [
+            "特殊應用積體電路(ASIC)",
+            "數位訊號處理器(DSP)",
+            "現場可程式化邏輯閘陣列(FPGA)",
+            "中央處理器(CPU)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "NFC 近場通訊在主動模式下,傳輸距離應為下列哪一項?",
+        "options": {
+            "A": "10公分",
+            "B": "10英吋",
+            "C": "20公分",
+            "D": "20英吋"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "RFID的通訊原理是依據電場和磁場的變化來產生電能,可分為電磁感應以及下列哪一項?",
+        "options": {
+            "A": "微波共振",
+            "B": "核磁共振",
+            "C": "電子共振",
+            "D": "原子共振"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在NFC 的技術中,下列哪一項為主要的調變方式?",
+        "options": {
+            "A": "ASK",
+            "B": "BSK",
+            "C": "FSK",
+            "D": "CDMA"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "於感測電路系統中,常見的無線通訊模組除 IrDA 外尚有下列哪些?",
+        "answers": [
+            "ZigBee",
+            "Bluetooth",
+            "Wi-Fi"
+        ],
+        "options": [
+            "ZigBee",
+            "Bluetooth",
+            "Wi-Fi",
+            "UART"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種感測器是利用都卜勒效應(DopplerEffect)的原理而設計出來的?",
+        "options": {
+            "A": "電子羅盤",
+            "B": "陀螺儀",
+            "C": "移動偵測器",
+            "D": "震動感測器"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "為使智慧型感測器能長期穩定工作,電源模組必須具備下列哪些特性?",
+        "answers": [
+            "低自放電(Lowself-discharge)",
+            "高蓄電容量(Highcapacity/volume)",
+            "較短的充電時間(Shorterrechargetime)"
+        ],
+        "options": [
+            "低自放電(Lowself-discharge)",
+            "高蓄電容量(Highcapacity/volume)",
+            "較短的充電時間(Shorterrechargetime)",
+            "高電流下有效率地充電(Efficientrechargingathighcurrent)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項裝置能夠探測外界訊號及物理條件(光、熱、溼度),並將探測之資訊傳給其他裝置?",
+        "options": {
+            "A": "感測器",
+            "B": "微控制器",
+            "C": "數位訊號處理器",
+            "D": "特殊應用積體電路"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項專為無線感測電路所開發出來的嵌入式作業系統?",
+        "options": {
+            "A": "TinyOS",
+            "B": "Linux",
+            "C": "Unix",
+            "D": "OS2"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項不屬於RFID 讀取器內之主要元件?",
+        "options": {
+            "A": "收發器",
+            "B": "微控制器",
+            "C": "通訊介面",
+            "D": "電子標籤"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "NFC 的通訊原理與下列哪一項技術原理相似?",
+        "options": {
+            "A": "RFID",
+            "B": "BarCode",
+            "C": "QRCode",
+            "D": "Bluetooth"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "QRCode 最早被日本應用於下列哪一種產業?",
+        "options": {
+            "A": "汽車業",
+            "B": "食品業",
+            "C": "家電業",
+            "D": "電子業"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "大家常在各大百貨超級市場物品包裝上看到的條碼,最早成功應用於下列哪一種美國產業?",
+        "options": {
+            "A": "食品業",
+            "B": "家電業",
+            "C": "運輸業",
+            "D": "成衣業"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項不屬於近距離無線通訊技術傳輸?",
+        "options": {
+            "A": "LTE",
+            "B": "ZigBee",
+            "C": "NFC",
+            "D": "Bluetooth"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "NFC 設備為了能支援所有的系統,設備處於查詢狀態時,NFC設備應先發出請求訊號,試探目標設備是否符合NFC標準,其所探詢的NFC 標準應為下列哪些?",
+        "answers": [
+            "NFC-A",
+            "NFC-B",
+            "NFC-F"
+        ],
+        "options": [
+            "NFC-A",
+            "NFC-B",
+            "NFC-F",
+            "NFC-C"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種微處理器是指依特定用途而設計,它相當省電,因此適用於特殊需求的感測器電路系統中?",
+        "options": {
+            "A": "特殊應用積體電路(ASIC)",
+            "B": "數位訊號處理器(DSP)",
+            "C": "現場可程式化邏輯閘陣列(FPGA)",
+            "D": "微控制器(MCU)"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "RFID 系統主要是由電子標籤、天線、應用系統以及下列哪一項元件所組成?",
+        "options": {
+            "A": "讀取器",
+            "B": "應答器",
+            "C": "收發器",
+            "D": "感應器"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "根據 2004年 NFC 論壇所定義的 NFCIP-2 標準,其工作頻率應為下列哪一項?",
+        "options": {
+            "A": "13.56MHz",
+            "B": "125KHz",
+            "C": "2.4GHz",
+            "D": "5.8GHz"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "感測器的作用是將一種能量轉換成另一種能量形式,故有不少學者稱它為下列哪一種名稱?",
+        "options": {
+            "A": "Transducer",
+            "B": "Transmitter",
+            "C": "Receiver",
+            "D": "Converter"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "NFC的應用可以歸類成四種情境,下列哪一項較適合用於行動支付?",
+        "options": {
+            "A": "碰一下就好(Touchand Go)",
+            "B": "碰一下再確認(TouchandConfirm)",
+            "C": "碰一下再溝通(TouchandConnect)",
+            "D": "碰一下就上網(Touchand Explore)"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "主動式 RFID 標籤由下列哪些元件所組成?",
+        "answers": [
+            "天線",
+            "晶片",
+            "電池"
+        ],
+        "options": [
+            "天線",
+            "晶片",
+            "電池",
+            "讀取器"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "關於 NFC 與藍芽(Bluetooth)的特性,下列敘述哪些正確?",
+        "answers": [
+            "NFC的傳輸距離比藍芽近",
+            "NFC的傳輸速率比藍芽慢"
+        ],
+        "options": [
+            "NFC的傳輸距離比藍芽近",
+            "NFC的傳輸速率比藍芽慢",
+            "NFC 的程式初始化時間比藍芽慢",
+            "NFC 的傳輸距離比藍芽遠"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "NFC 的訊息封包格式包含有Header 與 Payload,而Header 的內容又可分為下列哪三個部分?",
+        "answers": [
+            "Record 狀態",
+            "長度",
+            "型態"
+        ],
+        "options": [
+            "Record 狀態",
+            "長度",
+            "型態",
+            "起始"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "當使用NFC 技術傳遞資料訊息時,除了NFC 裝置之間需先建立通訊連線外,還需要將資料訊息轉為下列哪一種格式傳送?",
+        "options": {
+            "A": "NDEF (NFCdata ExchangeFormate)",
+            "B": "PCD (ProximityCoupling DeviceMode)",
+            "C": "VCD (Vicinity Coupling DeviceMode)",
+            "D": "NRZ-L (NotReturntoZero-Low)"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項不屬於RFID 晶片內之元件?",
+        "options": {
+            "A": "天線",
+            "B": "記憶體",
+            "C": "邏輯單元",
+            "D": "電源控制器"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種電源模組體積小、放電穩定且可長時間保存,但缺點是含有重金屬汞且價格高?",
+        "options": {
+            "A": "水銀電池",
+            "B": "鎳氫電池",
+            "C": "鋰電池",
+            "D": "鉛酸電池"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "欲完成一件完整之感測工作,除感測元件及電源供應外,尚需下列哪些模組?",
+        "answers": [
+            "記憶體",
+            "通訊模組",
+            "微處理器"
+        ],
+        "options": [
+            "記憶體",
+            "通訊模組",
+            "微處理器",
+            "網路模組"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "目前國際商品條碼 GS1 主要由下列哪兩大系統整合而成?",
+        "answers": [
+            "歐洲商品條碼(EAN)",
+            "美國統一編碼協會(UCC)"
+        ],
+        "options": [
+            "通用產品代碼(UPC)",
+            "歐洲商品條碼(EAN)",
+            "美國統一編碼協會(UCC)",
+            "食品工業統一碼(UGPIC)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項軟體的存在,是為了解決物聯網中多重異構的問題,包括硬體和網路、作業系統和編譯語言的異構等?",
+        "options": {
+            "A": "應用軟體",
+            "B": "編譯軟體",
+            "C": "系統軟體",
+            "D": "中介軟體"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於物聯網中的異質性網路整合,下列敘述哪一項錯誤?",
+        "options": {
+            "A": "可以透過閘道器來解決異質性網路整合的問題",
+            "B": "異質性網路整合最大的問題為不同的網路使用不同的通訊協定",
+            "C": "閘道器可以處理不同網路或不同業者物聯網設備之溝通,但無法扮演使用者與物聯網設備的溝通橋梁",
+            "D": "兩個不同電信業者間的設備可以透過閘道器來溝通"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項為第四代行動通訊技術標準(4GLTE)才有的功能?",
+        "options": {
+            "A": "處理類比訊號,僅限語音的傳送",
+            "B": "提供更高速及更低延遲的行動通訊系統",
+            "C": "語音服務與現有網際網路的服務整合",
+            "D": "處理數位訊號,僅可傳送語音及SMS文字簡訊"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "關於藍芽(Bluetooth),下列敘述哪些正確?",
+        "answers": [
+            "Bluetooth 裝置可以同時扮演 Master 和 Slave 的角色",
+            "一個 Scatternet 最多可由256個Piconet組合"
+        ],
+        "options": [
+            "階層式的架構",
+            "Bluetooth 裝置可以同時扮演 Master 和 Slave 的角色",
+            "一個 Piconet 最多有8個 Slave",
+            "一個 Scatternet 最多可由256個Piconet組合"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 6LoWPAN 架構的特性,下列敘述哪一項錯誤?",
+        "options": {
+            "A": "在IEEE802.15.4網路上運行6LoWPAN,使所有裝置都採用IPv6的方式連結網路",
+            "B": "具有短距離、低速率、低耗電、低記憶體使用量等特性",
+            "C": "適合讓低電量、低寬頻需求的裝置運行IPv6的標準",
+            "D": "6LoWPAN 可以被視為複雜版的IPv6"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項是IPv6的位址長度?",
+        "options": {
+            "A": "32位元",
+            "B": "64位元",
+            "C": "128 位元",
+            "D": "256位元"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是物聯網中使用網頁服務(WebService)的優點?",
+        "answers": [
+            "降低成本",
+            "使用簡單"
+        ],
+        "options": [
+            "集中式的運算技術",
+            "降低成本",
+            "使用簡單",
+            "提供多樣的介面"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "近身網路(BAN)的傳輸距離約為下列哪一項?",
+        "options": {
+            "A": "約為1公尺",
+            "B": "約為10公尺",
+            "C": "約為10-100公尺",
+            "D": "約為100公尺"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "OSImodel 中用來進行異質性網路整合的閘道器,屬於下列哪一個物聯網層級?",
+        "options": {
+            "A": "應用層",
+            "B": "表現層",
+            "C": "傳輸層",
+            "D": "網路層"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些為ZigBee 網路層支援的三種網路拓樸?",
+        "answers": [
+            "星狀拓樸",
+            "樹狀拓樸",
+            "網狀拓樸"
+        ],
+        "options": [
+            "星狀拓樸",
+            "樹狀拓樸",
+            "環狀拓樸",
+            "網狀拓樸"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在無線區域網路中的隨建即連模式(AdHocMode)中,傳輸的方式為下列哪一種?",
+        "options": {
+            "A": "免競爭週期",
+            "B": "競爭週期",
+            "C": "免競爭週期與競爭週期",
+            "D": "公平分配週期"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "為了解決多重異構的問題,需透過中介軟體來進行整合,關於中介軟體,下列敘述哪些錯誤?",
+        "answers": [
+            "中介軟體的布署方式主要分為五種,包括私有雲(PrivateCloud)、社群雲(CommunityCloud)、公有雲(PublicCloud)、混合雲(HybridCloud)與虛擬私有雲(Virtual Private Cloud)",
+            "中介軟體的架構環境可分為四層,為硬體/數據中心層、基礎層、平台層和應用層"
+        ],
+        "options": [
+            "中介軟體通常由多種服務組成,用來進行不同應用軟體間的溝通或資料串接",
+            "中介軟體對外提供統一的介面,用以減少開發人員在網頁服務所花的時間",
+            "中介軟體的布署方式主要分為五種,包括私有雲(PrivateCloud)、社群雲(CommunityCloud)、公有雲(PublicCloud)、混合雲(HybridCloud)與虛擬私有雲(Virtual Private Cloud)",
+            "中介軟體的架構環境可分為四層,為硬體/數據中心層、基礎層、平台層和應用層"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種射頻接收技術,用於第四代行動通訊技術標準(4GLTE)上面?",
+        "options": {
+            "A": "TDM (Time Division Multiplexing)",
+            "B": "FDM (Frequency Division Multiplexing)",
+            "C": "OFDM (Orthogonal Frequency Division Multiplexing)",
+            "D": "OTDM (OrthogonalTime Division Multiplexing)"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在物聯網中,下列哪一種設備的功用是負責轉換不同網路中,不同的通訊協定?",
+        "options": {
+            "A": "Router",
+            "B": "Switch",
+            "C": "Gateway",
+            "D": "Firewall"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 ZigBee的特色,下列敘述哪一項錯誤?",
+        "options": {
+            "A": "安全性高",
+            "B": "低耗電",
+            "C": "能擴充大量的網路節點",
+            "D": "與設備的相容性高"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "服務導向架構(Service-Oriented Architecture, SOA),是指針對應用服務的資料需求組合而成的一組資訊提供的元件,其組合的元素不包含下列哪一項?",
+        "options": {
+            "A": "智慧物件",
+            "B": "雲端運算",
+            "C": "中介軟體",
+            "D": "應用服務"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在物聯網的環境中,因為大量的智慧物件經常持續上傳資料,因此需要使用強大可動態調配運算資源以及容易擴充的技術,來處理海量的資料,可以使用下列哪一項技術來達成?",
+        "options": {
+            "A": "雲端運算",
+            "B": "語意網",
+            "C": "服務導向架構",
+            "D": "網頁服務"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是無線區域網路的連結架構?",
+        "answers": [
+            "基礎建設模式(InfrastructureMode)",
+            "隨建即連模式(AdHocMode)"
+        ],
+        "options": [
+            "基礎建設模式(InfrastructureMode)",
+            "點對點模式(Point-to-PointMode)",
+            "隨建即連模式(AdHocMode)",
+            "集中式模式(CentralMode)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是藍芽(Bluetooth)的特性?",
+        "answers": [
+            "成本低",
+            "效益高",
+            "隨意無線連接"
+        ],
+        "options": [
+            "成本低",
+            "長距離",
+            "效益高",
+            "隨意無線連接"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種網路架構是以IPv6 通訊協定為基礎,針對IEEE802.15.4的低功率、低可靠度網路裝置的互通網際網路協定?",
+        "options": {
+            "A": "Wi-Fi",
+            "B": "Bluetooth",
+            "C": "NFC",
+            "D": "6LoWPAN"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "物聯網發展面臨的問題之一是資料產生後,無法保證系統或是使用者能否分辨其資料的內容而善加運用,下列哪一項技術的作用是為了解決這樣的問題?",
+        "options": {
+            "A": "中介軟體",
+            "B": "網頁服務",
+            "C": "語意網",
+            "D": "雲端運算"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是LTE-A的關鍵技術?",
+        "answers": [
+            "載波聚合",
+            "中繼技術",
+            "協同多點傳輸",
+            "多天線增強"
+        ],
+        "options": [
+            "載波聚合",
+            "中繼技術",
+            "協同多點傳輸",
+            "多天線增強"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於語意網,下列敘述哪一項錯誤?",
+        "options": {
+            "A": "語意網的目標是希望讓機器與機器之間能夠溝通",
+            "B": "語意網單獨透過XML來表達資料",
+            "C": "語意網透過SPARQL 協定與RDF查詢資料",
+            "D": "語意網是一個高度強調開放式的標準"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項是XML跨平台的描述規範,可以讓開發者在Internet上發布所提供的服務?",
+        "options": {
+            "A": "REST",
+            "B": "SOAP",
+            "C": "WSDL",
+            "D": "UDDI"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "物聯網系統開發時需整合多重異構問題,包括硬體和網路、作業系統和編譯語言的異構等,為了整合這些異構,需透過下列哪一項媒介?",
+        "options": {
+            "A": "整合軟體",
+            "B": "中介軟體",
+            "C": "應用軟體",
+            "D": "系統軟體"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是語意網的特色?",
+        "answers": [
+            "機器與機器的溝通",
+            "具有推理能力"
+        ],
+        "options": [
+            "機器與機器的溝通",
+            "人與人之間的溝通",
+            "具有推理能力",
+            "使用網際網路搜尋引擎"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在無線區域網路中的基礎建設模式(InfrastructureMode)中,傳輸的方式應為下列哪一種?",
+        "options": {
+            "A": "免競爭週期",
+            "B": "競爭週期",
+            "C": "免競爭週期與競爭週期",
+            "D": "公平分配週期"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項通訊技術不屬於個人區域網路(PAN)技術?",
+        "options": {
+            "A": "Wi-Fi",
+            "B": "ZigBee",
+            "C": "Bluetooth",
+            "D": "紅外線"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於服務導向架構 (Service-OrientedArchitecture, SOA)技術所提到的特性,下列敘述哪一項錯誤?",
+        "options": {
+            "A": "以物件為中心(Objectcentric)",
+            "B": "為一種開放的標準(Openstandard)",
+            "C": "鬆散的關係(Looselycoupled)",
+            "D": "為一種分散式架構(Distributed)"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於藍芽(Bluetooth)裝置形成的Piconet,下列敘述哪一項錯誤?",
+        "options": {
+            "A": "一個藍芽裝置不可以是多個 Piconet 中的成員",
+            "B": "多個 Piconet 形成 Scatternet",
+            "C": "一個藍芽裝置扮演主人(Master)的角色,而其他的藍芽裝置則扮演僕人(Slave)的角色",
+            "D": "由2至8個藍芽裝置所組成的主僕式(Master-Slave)架構"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "若在無線區域網路中使用傳統的CSMA/CD,所有可以通訊的鄰居間不一定可以互相聽到彼此,是因為會產生下列哪一種問題?",
+        "options": {
+            "A": "暴露節點問題",
+            "B": "控制節點問題",
+            "C": "隱藏節點問題",
+            "D": "隨意節點問題"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在語意網中,下列哪一項技術負責篩選出需由應用程式而不是由人來判斷的資訊?",
+        "options": {
+            "A": "SPARQL",
+            "B": "RIF",
+            "C": "RDFS",
+            "D": "OWL"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是物聯網中使用服務導向架構(Service-Oriented Architecture, SOA)的特性?",
+        "answers": [
+            "分散式架構",
+            "開放的標準"
+        ],
+        "options": [
+            "分散式架構",
+            "緊密的關係",
+            "開放的標準",
+            "以資料為中心"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項不屬於中介軟體之一?",
+        "options": {
+            "A": "服務組合",
+            "B": "服務管理",
+            "C": "物件抽象化",
+            "D": "系統標準化"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "語意網中表達資訊的核心協定,主要利用主體(Subject)、調詞與屬性(Predicate)、客觀或屬性值所組成來描述資訊,屬於下列哪一項技術?",
+        "options": {
+            "A": "Unicode",
+            "B": "XML",
+            "C": "RDF",
+            "D": "OWL"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種 ZigBee 網路裝置的角色負責整個網路的啟動、結合及地址表等功能?",
+        "options": {
+            "A": "Router",
+            "B": "PANCoordinator",
+            "C": "EndDevice",
+            "D": "Switch"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種標準的媒體存取控制層包含在 ZigBee 的全功能裝置中?",
+        "options": {
+            "A": "IEEE802.3",
+            "B": "IEEE802.11n",
+            "C": "IEEE802.15.4",
+            "D": "IEEE802.20"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "藍芽(Bluetooth)網路內的裝置是主僕(Master-Slave)架構,一個Master 最多可以連結的 Slave個數,應為下列哪一項?",
+        "options": {
+            "A": "5",
+            "B": "6",
+            "C": "7",
+            "D": "8"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項為Wi-Fi所採用的標準?",
+        "options": {
+            "A": "IEEE802.3",
+            "B": "IEEE802.11",
+            "C": "IEEE802.15",
+            "D": "IEEE802.20"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項非 ZigBee 網路層可支援的網路拓樸?",
+        "options": {
+            "A": "星狀拓樸",
+            "B": "散狀拓樸",
+            "C": "樹狀拓樸",
+            "D": "網狀拓樸"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於第四代行動通訊技術標準(4GLTE),下列敘述哪一項錯誤?",
+        "options": {
+            "A": "在高速移動狀態下傳輸速率可達到200Mbps",
+            "B": "靜態傳輸速率可達到1Gbps",
+            "C": "主要推動力為用戶需求從無線語音服務轉變為無線多媒體服務",
+            "D": "目前第四代行動通訊技術標準(4GLTE)主要技術為 LTE-A"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是 020(Onlineto Offline)營銷模式對於商家的特色?",
+        "answers": [
+            "通過線上有效預訂等方式,合理安排經營節約成本",
+            "商家可以掌握用戶的數據,增加營銷效果",
+            "商家有更多的廣告機會,吸引新的客戶"
+        ],
+        "options": [
+            "通過線上有效預訂等方式,合理安排經營節約成本",
+            "商家可以掌握用戶的數據,增加營銷效果",
+            "商家可以減少運送貨物的成本",
+            "商家有更多的廣告機會,吸引新的客戶"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    }
+]

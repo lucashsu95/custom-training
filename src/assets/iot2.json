@@ -1,0 +1,1663 @@
+[
+    {
+        "type": "單選題",
+        "name": "下列哪一項是悠遊卡所使用的感測技術?",
+        "options": {
+            "A": "ZigBee",
+            "B": "Wi-Fi",
+            "C": "RFID",
+            "D": "NFC"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項並非現今智慧型手機中常見的感測器?",
+        "options": {
+            "A": "電子羅盤",
+            "B": "光感測器",
+            "C": "三軸加速度計",
+            "D": "超音波感測器"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項服務不屬於雲端運算中的軟體即服務(SaaS)之一?",
+        "options": {
+            "A": "Saleforce.com",
+            "B": "GoogleApps",
+            "C": "GoogleAppEngine",
+            "D": "MicrosoftOffice365"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "將物聯網技術應用於倉儲管理,實現倉庫的存貨、盤點、取貨的自動化操作,從而提高作業效率,是屬於下列哪一種技術?",
+        "options": {
+            "A": "CRC",
+            "B": "HC",
+            "C": "EPC",
+            "D": "ECC"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 O2O、(OnlinetoOffline),下列敘述哪一項錯誤?",
+        "options": {
+            "A": "又稱離線商務模式,透過線上行銷或線上購買帶動線下經營和線下消費",
+            "B": "O2O 行銷模式在 2014 年才出現",
+            "C": "O2O 是整合 Online 與 Offline 兩種不同平台的一種行銷模式",
+            "D": "智慧型手機、行動上網、社群網路,三者的結合是推動 O2O 的重大要素"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "NFC 技術已經普遍應用於生活當中,下列哪一項不是 NFC 可支援的非接觸式RFID 標籤?",
+        "options": {
+            "A": "ISO18092",
+            "B": "MIFARE14443A 和 14443B",
+            "C": "FeliCa",
+            "D": "ISO15693"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "EPCglobal 是歐洲盛行的物流標準,關於EPCglobal 的說明,下列敘述哪一項錯誤?",
+        "options": {
+            "A": "在 EPCglobal 裡,最重要的概念是結構框架,內容包括軟體、硬體、資料標準以及核心服務",
+            "B": "目標是希望經由 EPC 碼之使用,強化商業流和電腦應用的共同目標,達成有效供應鏈管理",
+            "C": "共分為三層:網路層、實體層以及硬體層",
+            "D": "產品主要以 EPC 碼為主"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項不是雲端運算的相關技術?",
+        "options": {
+            "A": "集中式計算",
+            "B": "虛擬化技術",
+            "C": "網際網路技術",
+            "D": "自主運算"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在雲端運算的服務模式中，下列哪一項是將開發平台作為服務提供給用戶，讓用戶可以在此平台上開發、測試及部署應用程式？",
+        "options": {
+            "A": "IaaS (Infrastructure as a Service)",
+            "B": "PaaS (Platform as a Service)",
+            "C": "SaaS (Software as a Service)",
+            "D": "DaaS (Data as a Service)"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項雲端服務模式，是讓使用者透過網際網路直接使用提供者建置好的應用軟體，而不需自行安裝或維護？",
+        "options": {
+            "A": "IaaS",
+            "B": "PaaS",
+            "C": "SaaS",
+            "D": "HaaS"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於大數據 (Big Data) 的特徵，通常以 4V 來描述，下列哪一項是指數據產生的速度非常快？",
+        "options": {
+            "A": "Volume (容量)",
+            "B": "Velocity (速度)",
+            "C": "Variety (多樣性)",
+            "D": "Veracity (真實性)"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "大數據 (Big Data) 的來源包含了結構化數據、半結構化數據與非結構化數據，這體現了 4V 中的哪一個特徵？",
+        "options": {
+            "A": "Volume",
+            "B": "Velocity",
+            "C": "Variety",
+            "D": "Value"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是資料探勘 (Data Mining) 常用的技術？",
+        "answers": [
+            "分類 (Classification)",
+            "分群 (Clustering)",
+            "關聯規則 (Association Rule)"
+        ],
+        "options": [
+            "分類 (Classification)",
+            "分群 (Clustering)",
+            "關聯規則 (Association Rule)",
+            "虛擬化 (Virtualization)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "資訊安全的三大核心要素 (CIA Triad) 不包含下列哪一項？",
+        "options": {
+            "A": "機密性 (Confidentiality)",
+            "B": "完整性 (Integrity)",
+            "C": "可用性 (Availability)",
+            "D": "多樣性 (Diversity)"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "為了防止資料在傳輸過程中被未經授權的人員竊取或偷看，應採取哪種資訊安全措施？",
+        "options": {
+            "A": "資料加密",
+            "B": "資料備份",
+            "C": "流量監控",
+            "D": "負載平衡"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種攻擊手法是攻擊者透過發送大量的無效請求，耗盡目標系統的資源，導致正常使用者無法存取服務？",
+        "options": {
+            "A": "網路釣魚 (Phishing)",
+            "B": "阻斷服務攻擊 (DoS/DDoS)",
+            "C": "SQL 注入攻擊 (SQL Injection)",
+            "D": "中間人攻擊 (Man-in-the-Middle)"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些屬於社交工程 (Social Engineering) 的攻擊手法？",
+        "answers": [
+            "網路釣魚郵件",
+            "假冒身分詐騙電話"
+        ],
+        "options": [
+            "網路釣魚郵件",
+            "假冒身分詐騙電話",
+            "暴力破解密碼",
+            "資料庫注入"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在加密技術中，使用同一把金鑰進行加密與解密的演算法稱為？",
+        "options": {
+            "A": "對稱式加密",
+            "B": "非對稱式加密",
+            "C": "雜湊函數",
+            "D": "數位簽章"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種物聯網通訊協定是基於發布/訂閱 (Publish/Subscribe) 模式，且特別適合用於網路頻寬有限的環境？",
+        "options": {
+            "A": "HTTP",
+            "B": "MQTT",
+            "C": "FTP",
+            "D": "SMTP"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "CoAP (Constrained Application Protocol) 是專為資源受限的物聯網裝置所設計的協定，它是基於哪一種傳輸層協定？",
+        "options": {
+            "A": "TCP",
+            "B": "UDP",
+            "C": "SCTP",
+            "D": "ICMP"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "MQTT 協定定義了三種服務品質 (QoS) 等級，下列哪些包含在內？",
+        "answers": [
+            "QoS 0 (At most once)",
+            "QoS 1 (At least once)",
+            "QoS 2 (Exactly once)"
+        ],
+        "options": [
+            "QoS 0 (At most once)",
+            "QoS 1 (At least once)",
+            "QoS 2 (Exactly once)",
+            "QoS 3 (Reserved)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項技術通常被稱為「霧運算」(Fog Computing)，強調將運算資源延伸到網路邊緣，以減少延遲？",
+        "options": {
+            "A": "集中式運算",
+            "B": "邊緣運算 (Edge Computing)",
+            "C": "量子運算",
+            "D": "網格運算"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "工業 4.0 (Industry 4.0) 的核心概念是透過物聯網與哪項技術的結合，實現智慧製造？",
+        "options": {
+            "A": "虛實整合系統 (CPS)",
+            "B": "社群網路",
+            "C": "電子商務",
+            "D": "辦公室自動化"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "智慧電網 (Smart Grid) 利用哪種技術來實現電力供應端與使用端的雙向溝通與即時監控？",
+        "options": {
+            "A": "智慧電表 (AMI)",
+            "B": "傳統電表",
+            "C": "發電機",
+            "D": "變壓器"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是智慧家庭 (Smart Home) 常見的應用情境？",
+        "answers": [
+            "遠端家電控制",
+            "居家安全監控",
+            "能源管理"
+        ],
+        "options": [
+            "遠端家電控制",
+            "居家安全監控",
+            "能源管理",
+            "高速公路收費"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種無線通訊技術具有長距離、低功耗 (LPWAN) 的特性，適合用於廣域的物聯網應用？",
+        "options": {
+            "A": "Wi-Fi",
+            "B": "Bluetooth",
+            "C": "LoRa",
+            "D": "NFC"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在非對稱式加密中，如果A要傳送加密訊息給B，A應該使用哪一把金鑰進行加密？",
+        "options": {
+            "A": "A 的私鑰",
+            "B": "A 的公鑰",
+            "C": "B 的私鑰",
+            "D": "B 的公鑰"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "數位簽章 (Digital Signature) 的主要功能是用來驗證訊息的來源以及什麼？",
+        "options": {
+            "A": "訊息的機密性",
+            "B": "訊息的完整性",
+            "C": "訊息的大小",
+            "D": "訊息的格式"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是物聯網感知層常見的資訊安全威脅？",
+        "answers": [
+            "節點被實體破壞",
+            "假冒節點攻擊",
+            "旁路攻擊 (Side Channel Attack)"
+        ],
+        "options": [
+            "節點被實體破壞",
+            "假冒節點攻擊",
+            "旁路攻擊 (Side Channel Attack)",
+            "資料庫 SQL 注入"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項不是 MQTT 協定中 Broker (代理人) 的主要職責？",
+        "options": {
+            "A": "接收發布者的訊息",
+            "B": "過濾訊息",
+            "C": "產生原始感測數據",
+            "D": "將訊息轉發給訂閱者"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "XMPP (Extensible Messaging and Presence Protocol) 是基於哪種標記語言的即時通訊協定？",
+        "options": {
+            "A": "HTML",
+            "B": "XML",
+            "C": "JSON",
+            "D": "YAML"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 RESTful 架構，下列敘述何者正確？",
+        "options": {
+            "A": "通常使用 HTTP 方法 (GET, POST, PUT, DELETE) 進行操作",
+            "B": "必須保持連線狀態 (Stateful)",
+            "C": "只能傳輸 XML 格式資料",
+            "D": "專為即時通訊設計"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "NB-IoT (Narrowband IoT) 是建構在下列哪一種網路基礎建設之上的技術？",
+        "options": {
+            "A": "蜂巢式行動通訊網路 (Cellular Network)",
+            "B": "有線電視網路",
+            "C": "衛星網路",
+            "D": "固網寬頻"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些屬於生物辨識技術 (Biometrics) 的應用？",
+        "answers": [
+            "指紋辨識",
+            "人臉辨識",
+            "虹膜辨識"
+        ],
+        "options": [
+            "指紋辨識",
+            "人臉辨識",
+            "虹膜辨識",
+            "RFID 辨識"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "區塊鏈 (Blockchain) 技術具有去中心化、不可竄改的特性，適合應用於物聯網的哪個領域？",
+        "options": {
+            "A": "增加資料傳輸速度",
+            "B": "提升資料可信度與追溯性",
+            "C": "降低硬體成本",
+            "D": "簡化使用者介面"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種惡意程式會偽裝成合法的軟體，誘騙使用者安裝執行？",
+        "options": {
+            "A": "木馬程式 (Trojan Horse)",
+            "B": "蠕蟲 (Worm)",
+            "C": "邏輯炸彈",
+            "D": "病毒"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在大數據分析流程中，將原始資料清理、填補缺失值、去除雜訊的步驟稱為？",
+        "options": {
+            "A": "資料擷取",
+            "B": "資料預處理 (Data Preprocessing)",
+            "C": "資料視覺化",
+            "D": "資料儲存"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項不是智慧交通系統 (ITS) 的主要功能？",
+        "options": {
+            "A": "即時路況監控",
+            "B": "電子收費 (ETC)",
+            "C": "車輛導航",
+            "D": "食品安全追蹤"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "關於穿戴式裝置 (Wearable Devices)，下列敘述哪些正確？",
+        "answers": [
+            "通常需要低功耗設計",
+            "可透過感測器收集生理資訊",
+            "常需搭配智慧型手機使用"
+        ],
+        "options": [
+            "通常需要低功耗設計",
+            "可透過感測器收集生理資訊",
+            "常需搭配智慧型手機使用",
+            "體積通常很大且笨重"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種技術可以將虛擬資訊疊加在現實環境的影像中？",
+        "options": {
+            "A": "虛擬實境 (VR)",
+            "B": "擴增實境 (AR)",
+            "C": "混合實境 (MR)",
+            "D": "3D 列印"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "ZigBee 協定在網路層支援多種拓樸結構，其中哪一種結構具有最高的可靠度與自我修復能力？",
+        "options": {
+            "A": "星狀拓樸 (Star)",
+            "B": "網狀拓樸 (Mesh)",
+            "C": "樹狀拓樸 (Tree)",
+            "D": "匯流排拓樸"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種攻擊是駭客利用軟體或系統中尚未被發現或修補的漏洞進行攻擊？",
+        "options": {
+            "A": "零時差攻擊 (Zero-day Attack)",
+            "B": "字典攻擊",
+            "C": "重播攻擊",
+            "D": "洪水攻擊"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "VPN (Virtual Private Network) 主要利用哪種技術在公用網路上建立安全的傳輸通道？",
+        "options": {
+            "A": "隧道技術 (Tunneling)",
+            "B": "廣播技術",
+            "C": "多播技術",
+            "D": "頻譜擴散"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項是機器學習 (Machine Learning) 中，需要事先提供標籤資料 (Labeled Data) 讓電腦學習的訓練方式？",
+        "options": {
+            "A": "監督式學習 (Supervised Learning)",
+            "B": "非監督式學習 (Unsupervised Learning)",
+            "C": "強化學習 (Reinforcement Learning)",
+            "D": "叢集分析"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是物聯網在智慧農業的應用？",
+        "answers": [
+            "環境溫濕度監控",
+            "自動灌溉系統",
+            "病蟲害預警"
+        ],
+        "options": [
+            "環境溫濕度監控",
+            "自動灌溉系統",
+            "病蟲害預警",
+            "高頻交易"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 HTTPS 協定，它是 HTTP 協定加上哪一種安全層的組合？",
+        "options": {
+            "A": "SSL/TLS",
+            "B": "SSH",
+            "C": "IPsec",
+            "D": "WEP"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種雜湊演算法 (Hash Algorithm) 常用於驗證資料的完整性？",
+        "options": {
+            "A": "RSA",
+            "B": "AES",
+            "C": "SHA-256",
+            "D": "DES"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在物聯網架構中，負責將感測數據初步處理並傳輸至後端平台的層級稱為？",
+        "options": {
+            "A": "感知層",
+            "B": "網路層",
+            "C": "應用層",
+            "D": "業務層"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項不是智慧物流的主要效益？",
+        "options": {
+            "A": "即時追蹤貨物位置",
+            "B": "最佳化配送路徑",
+            "C": "降低庫存成本",
+            "D": "增加商品重量"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種技術是透過模擬人類神經系統的運作方式來進行學習與判斷？",
+        "options": {
+            "A": "類神經網路 (Neural Networks)",
+            "B": "決策樹",
+            "C": "支持向量機",
+            "D": "線性迴歸"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是邊緣運算 (Edge Computing) 的優點？",
+        "answers": [
+            "降低網路延遲",
+            "減少頻寬消耗",
+            "提高數據安全性 (資料不需全部上傳)"
+        ],
+        "options": [
+            "降低網路延遲",
+            "減少頻寬消耗",
+            "提高數據安全性 (資料不需全部上傳)",
+            "完全取代雲端運算"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項是歐盟制定，對於個人資料保護有嚴格規範的法規？",
+        "options": {
+            "A": "GDPR (一般資料保護規則)",
+            "B": "ISO 27001",
+            "C": "HIPAA",
+            "D": "PCI DSS"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在無線感測網路 (WSN) 中，匯集所有感測節點資料並傳送至外部網路的裝置稱為？",
+        "options": {
+            "A": "感測節點 (Sensor Node)",
+            "B": "閘道器 (Gateway) 或 協調器 (Coordinator)",
+            "C": "致動器 (Actuator)",
+            "D": "中繼器 (Repeater)"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種條碼是呈現矩陣式排列，且具有三個定位點，可快速讀取？",
+        "options": {
+            "A": "QR Code",
+            "B": "Code 39",
+            "C": "EAN-13",
+            "D": "PDF417"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 IPv6 位址的敘述，下列何者正確？",
+        "options": {
+            "A": "長度為 128 bits，以冒號分隔的十六進位表示",
+            "B": "長度為 32 bits，以點分隔的十進位表示",
+            "C": "長度為 48 bits，即 MAC Address",
+            "D": "不支援自動組態 (Auto-configuration)"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些屬於物聯網在醫療照護 (Smart Healthcare) 的應用？",
+        "answers": [
+            "遠距醫療監控",
+            "電子病歷",
+            "穿戴式生理量測"
+        ],
+        "options": [
+            "遠距醫療監控",
+            "電子病歷",
+            "穿戴式生理量測",
+            "自動駕駛汽車"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種攻擊是攔截通訊雙方的訊息並進行竄改，讓雙方誤以為是與對方直接通訊？",
+        "options": {
+            "A": "中間人攻擊 (Man-in-the-Middle Attack)",
+            "B": "字典攻擊",
+            "C": "側錄攻擊",
+            "D": "緩衝區溢位攻擊"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "為了確保物聯網裝置的韌體 (Firmware) 安全，下列哪一種做法是正確的？",
+        "options": {
+            "A": "定期更新修補漏洞",
+            "B": "使用預設密碼",
+            "C": "關閉所有安全防護",
+            "D": "開放所有通訊埠"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在無線感測網路中，節點的電源能量通常有限，因此路由協定 (Routing Protocol) 的設計重點通常為何？",
+        "options": {
+            "A": "最大化傳輸速率",
+            "B": "節省能源消耗，延長網路壽命",
+            "C": "最小化延遲",
+            "D": "最大化記憶體使用"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種網路攻擊是針對 ARP 協定的弱點，導致區域網路內的封包被導向攻擊者的電腦？",
+        "options": {
+            "A": "ARP 詐騙 (ARP Spoofing)",
+            "B": "DNS 劫持",
+            "C": "SYN 洪水攻擊",
+            "D": "緩衝區溢位"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 Docker 容器技術，下列敘述何者錯誤？",
+        "options": {
+            "A": "輕量級的虛擬化技術",
+            "B": "啟動速度比傳統虛擬機快",
+            "C": "每個容器都需要安裝完整的作業系統",
+            "D": "具有良好的移植性"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項是 Hadoop 生態系中，負責分散式檔案儲存的核心組件？",
+        "options": {
+            "A": "HDFS (Hadoop Distributed File System)",
+            "B": "MapReduce",
+            "C": "YARN",
+            "D": "Hive"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是人工智慧 (AI) 在智慧監控系統中的應用？",
+        "answers": [
+            "異常行為偵測",
+            "人流計數",
+            "車牌辨識"
+        ],
+        "options": [
+            "異常行為偵測",
+            "人流計數",
+            "車牌辨識",
+            "網路封包加密"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種通訊技術通常使用於 ETC (電子收費系統)？",
+        "options": {
+            "A": "DSRC (專用短程通訊)",
+            "B": "ZigBee",
+            "C": "Z-Wave",
+            "D": "AM 廣播"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在資料庫管理系統中，ACID 原則中的 'A' 代表什麼？",
+        "options": {
+            "A": "原子性 (Atomicity)",
+            "B": "一致性 (Consistency)",
+            "C": "隔離性 (Isolation)",
+            "D": "持久性 (Durability)"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種 NoSQL 資料庫類型最適合儲存社群網路的關聯資料？",
+        "options": {
+            "A": "鍵值對資料庫 (Key-Value)",
+            "B": "文件資料庫 (Document)",
+            "C": "圖形資料庫 (Graph)",
+            "D": "欄位資料庫 (Column)"
+        },
+        "answer": "C",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "為了保護隱私，將資料中的敏感資訊 (如身分證字號) 進行替換或遮蔽的技術稱為？",
+        "options": {
+            "A": "資料去識別化 (Data De-identification)",
+            "B": "資料加密",
+            "C": "資料壓縮",
+            "D": "資料探勘"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些屬於 LPWAN (低功耗廣域網路) 技術？",
+        "answers": [
+            "LoRaWAN",
+            "Sigfox",
+            "NB-IoT"
+        ],
+        "options": [
+            "LoRaWAN",
+            "Sigfox",
+            "NB-IoT",
+            "Wi-Fi"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 API (應用程式介面)，下列敘述何者最準確？",
+        "options": {
+            "A": "它是使用者直接操作的圖形介面",
+            "B": "它是軟體系統之間交換資訊與功能的介面",
+            "C": "它是硬體裝置的連接埠",
+            "D": "它是一種防毒軟體"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種感測器可以用來偵測物體的加速度與傾斜角度？",
+        "options": {
+            "A": "陀螺儀",
+            "B": "加速度計 (G-sensor)",
+            "C": "磁力計",
+            "D": "氣壓計"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在 Python 程式語言中，常用於數據分析與處理的函式庫是？",
+        "options": {
+            "A": "Pandas",
+            "B": "Flask",
+            "C": "Django",
+            "D": "PyGame"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種通訊協定常用於智慧家庭中，且強調低功耗與網狀網路功能，主要運作在 Sub-1GHz 頻段？",
+        "options": {
+            "A": "Z-Wave",
+            "B": "Wi-Fi",
+            "C": "Bluetooth",
+            "D": "NFC"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是建構智慧城市 (Smart City) 的關鍵基礎設施？",
+        "answers": [
+            "普及的寬頻網路",
+            "大量的感測器部署",
+            "大數據分析平台"
+        ],
+        "options": [
+            "普及的寬頻網路",
+            "大量的感測器部署",
+            "大數據分析平台",
+            "傳統紙本作業"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 Beacons 技術，通常是基於哪一種無線通訊標準來實現室內定位與推播服務？",
+        "options": {
+            "A": "Bluetooth Low Energy (BLE)",
+            "B": "Wi-Fi",
+            "C": "GPS",
+            "D": "RFID"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在網路安全中，防火牆 (Firewall) 的主要功能為何？",
+        "options": {
+            "A": "殺死病毒",
+            "B": "依照設定的規則過濾進出的網路流量",
+            "C": "備份資料庫",
+            "D": "加速網路連線"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種技術可以讓多個虛擬機器 (VM) 共享同一台實體伺服器的硬體資源？",
+        "options": {
+            "A": "虛擬化技術 (Virtualization)",
+            "B": "加密技術",
+            "C": "壓縮技術",
+            "D": "串流技術"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "JSON (JavaScript Object Notation) 是一種輕量級的資料交換格式，其資料結構主要由什麼組成？",
+        "options": {
+            "A": "鍵值對 (Key-Value Pairs)",
+            "B": "標籤 (Tags)",
+            "C": "表格 (Tables)",
+            "D": "指標 (Pointers)"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是物聯網平台常見的功能模組？",
+        "answers": [
+            "裝置管理 (Device Management)",
+            "資料連接與收集",
+            "應用程式開發介面"
+        ],
+        "options": [
+            "裝置管理 (Device Management)",
+            "資料連接與收集",
+            "應用程式開發介面",
+            "文書處理"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 LoRaWAN 的網路架構，終端節點 (End Node) 與閘道器 (Gateway) 之間的傳輸通常採用什麼拓樸？",
+        "options": {
+            "A": "星狀拓樸 (Star-of-Stars)",
+            "B": "網狀拓樸",
+            "C": "環狀拓樸",
+            "D": "匯流排拓樸"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種感測器是利用電阻值隨溫度變化的特性來測量溫度？",
+        "options": {
+            "A": "熱敏電阻 (Thermistor)",
+            "B": "熱電偶",
+            "C": "紅外線感測器",
+            "D": "光敏電阻"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在網路層中，負責將資料封包從來源端路由傳送至目的端的設備是？",
+        "options": {
+            "A": "路由器 (Router)",
+            "B": "集線器 (Hub)",
+            "C": "中繼器 (Repeater)",
+            "D": "網路卡"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種協定用於動態分配 IP 位址給網路上的裝置？",
+        "options": {
+            "A": "DHCP (Dynamic Host Configuration Protocol)",
+            "B": "DNS",
+            "C": "ARP",
+            "D": "ICMP"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪些因素會影響無線訊號的傳輸品質？",
+        "options": {
+            "A": "障礙物遮蔽",
+            "B": "同頻干擾",
+            "C": "傳輸距離",
+            "D": "所有選項皆是"
+        },
+        "answer": "D",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": "此題原始格式為單選題但詢問'哪些因素'且包含'所有選項皆是'，在此轉換為單選形式，若需多選形式請告知。"
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種雲端部署模型是由單一組織獨占使用，安全性較高？",
+        "options": {
+            "A": "私有雲 (Private Cloud)",
+            "B": "公有雲 (Public Cloud)",
+            "C": "混合雲 (Hybrid Cloud)",
+            "D": "社群雲 (Community Cloud)"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於深度學習 (Deep Learning)，它是屬於哪一個領域的子集合？",
+        "options": {
+            "A": "機器學習 (Machine Learning)",
+            "B": "物聯網",
+            "C": "區塊鏈",
+            "D": "雲端運算"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種技術常用於車聯網 (V2X) 通訊，以提升行車安全？",
+        "options": {
+            "A": "DSRC 與 C-V2X",
+            "B": "紅外線",
+            "C": "藍牙",
+            "D": "NFC"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在開發物聯網裝置時，若需要進行類比訊號轉數位訊號，需要使用哪種功能模組？",
+        "options": {
+            "A": "ADC (Analog-to-Digital Converter)",
+            "B": "DAC (Digital-to-Analog Converter)",
+            "C": "PWM",
+            "D": "GPIO"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是 Arduino 開發板常見的特色？",
+        "answers": [
+            "開源硬體與軟體",
+            "易於上手的開發環境",
+            "豐富的周邊模組支援"
+        ],
+        "options": [
+            "開源硬體與軟體",
+            "易於上手的開發環境",
+            "豐富的周邊模組支援",
+            "內建強大的作業系統 (如 Windows)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種記憶體在斷電後，資料會消失？",
+        "options": {
+            "A": "RAM (隨機存取記憶體)",
+            "B": "ROM",
+            "C": "Flash",
+            "D": "硬碟"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 GitHub 平台的主要用途，下列何者正確？",
+        "options": {
+            "A": "版本控制與程式碼託管",
+            "B": "即時通訊軟體",
+            "C": "繪圖軟體",
+            "D": "防毒軟體"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種網路拓樸，若中心節點故障，整個網路就會癱瘓？",
+        "options": {
+            "A": "星狀拓樸 (Star)",
+            "B": "匯流排拓樸",
+            "C": "網狀拓樸",
+            "D": "環狀拓樸"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在 Python 中，若要匯入一個模組 (Module)，應使用哪個關鍵字？",
+        "options": {
+            "A": "import",
+            "B": "include",
+            "C": "using",
+            "D": "require"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些屬於常見的網路傳輸介質？",
+        "answers": [
+            "雙絞線",
+            "光纖",
+            "同軸電纜"
+        ],
+        "options": [
+            "雙絞線",
+            "光纖",
+            "同軸電纜",
+            "空氣 (無線傳輸)"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": "包含有線介質"
+    },
+    {
+        "type": "單選題",
+        "name": "關於 SQL (Structured Query Language)，它的主要用途為何？",
+        "options": {
+            "A": "管理與查詢關聯式資料庫",
+            "B": "開發網頁前端介面",
+            "C": "編寫作業系統驅動程式",
+            "D": "設計 3D 圖形"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種無線通訊技術的傳輸速率最快？",
+        "options": {
+            "A": "Wi-Fi (IEEE 802.11ac/ax)",
+            "B": "Bluetooth 4.0",
+            "C": "ZigBee",
+            "D": "LoRa"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在 Raspberry Pi (樹莓派) 上，通常運行的作業系統是基於哪一種核心？",
+        "options": {
+            "A": "Linux",
+            "B": "Windows NT",
+            "C": "iOS",
+            "D": "DOS"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種通訊介面是全雙工、同步的序列通訊？",
+        "options": {
+            "A": "SPI (Serial Peripheral Interface)",
+            "B": "I2C",
+            "C": "UART",
+            "D": "One-Wire"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是 MQTT 協定的特點？",
+        "answers": [
+            "輕量級",
+            "基於發布/訂閱模式",
+            "適合不穩定的網路環境"
+        ],
+        "options": [
+            "輕量級",
+            "基於發布/訂閱模式",
+            "適合不穩定的網路環境",
+            "封包標頭很大"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種機制是用來確認發送端的身分，防止不可否認性？",
+        "options": {
+            "A": "數位簽章",
+            "B": "對稱式加密",
+            "C": "防火牆",
+            "D": "入侵偵測系統"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在 C 語言中，主程式的進入點函式名稱為何？",
+        "options": {
+            "A": "main",
+            "B": "start",
+            "C": "init",
+            "D": "setup"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種技術是透過軟體定義網路，將控制層與資料層分離？",
+        "options": {
+            "A": "SDN (Software Defined Networking)",
+            "B": "CDN",
+            "C": "VPN",
+            "D": "VLAN"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 OGC (Open Geospatial Consortium) 標準，主要應用於哪個領域？",
+        "options": {
+            "A": "地理資訊系統 (GIS) 與空間資料互通",
+            "B": "電子商務交易",
+            "C": "影音串流",
+            "D": "生物辨識"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是常見的 Python IDE (整合開發環境)？",
+        "answers": [
+            "PyCharm",
+            "VS Code",
+            "Jupyter Notebook"
+        ],
+        "options": [
+            "PyCharm",
+            "VS Code",
+            "Jupyter Notebook",
+            "Photoshop"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種協定用於網頁瀏覽器與伺服器之間的資料傳輸？",
+        "options": {
+            "A": "HTTP/HTTPS",
+            "B": "FTP",
+            "C": "SMTP",
+            "D": "Telnet"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在 I2C 通訊協定中，只需要幾條訊號線即可進行通訊 (不含電源與地線)？",
+        "options": {
+            "A": "2條 (SDA, SCL)",
+            "B": "3條",
+            "C": "4條",
+            "D": "8條"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一種技術可以將實體物品連接上網，賦予其智慧化的功能？",
+        "options": {
+            "A": "物聯網 (IoT)",
+            "B": "3D 列印",
+            "C": "奈米技術",
+            "D": "基因工程"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 PWM (脈衝寬度調變) 的應用，下列何者正確？",
+        "options": {
+            "A": "控制 LED 亮度或馬達轉速",
+            "B": "增加記憶體容量",
+            "C": "加速網路傳輸",
+            "D": "加密資料"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是智慧農業監控系統常需收集的環境參數？",
+        "answers": [
+            "空氣溫濕度",
+            "土壤濕度",
+            "光照強度"
+        ],
+        "options": [
+            "空氣溫濕度",
+            "土壤濕度",
+            "光照強度",
+            "股票指數"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在智慧家庭 (Smart Home) 系統中，下列哪一種裝置通常扮演核心角色，負責連接各種感測器與外部網路？",
+        "options": {
+            "A": "智慧插座",
+            "B": "家庭閘道器 (Home Gateway)",
+            "C": "智慧燈泡",
+            "D": "紅外線遙控器"
+        },
+        "answer": "B",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "下列哪一項技術常應用於智慧冰箱，用以自動識別冰箱內的食物種類與數量？",
+        "options": {
+            "A": "RFID",
+            "B": "GPS",
+            "C": "GPRS",
+            "D": "PWM"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "關於 HEMS (Home Energy Management System) 家庭能源管理系統的主要功能，下列敘述何者正確？",
+        "options": {
+            "A": "監控與最佳化家庭用電量",
+            "B": "增加家庭用水量",
+            "C": "提升網路下載速度",
+            "D": "自動訂購外送食物"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "單選題",
+        "name": "在智慧交通系統 (ITS) 中，ATIS 指的是下列哪一項服務？",
+        "options": {
+            "A": "先進交通資訊服務 (Advanced Traveler Information Systems)",
+            "B": "先進車輛控制系統",
+            "C": "商用車輛營運系統",
+            "D": "電子收費系統"
+        },
+        "answer": "A",
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    },
+    {
+        "type": "多選題",
+        "name": "下列哪些是車載資通訊系統 (Telematics) 的常見應用？",
+        "answers": [
+            "即時導航",
+            "車輛診斷",
+            "緊急救援呼叫 (eCall)"
+        ],
+        "options": [
+            "即時導航",
+            "車輛診斷",
+            "緊急救援呼叫 (eCall)",
+            "家庭自動化"
+        ],
+        "isEnabled": true,
+        "tag": "物聯網",
+        "remark": ""
+    }
+]
