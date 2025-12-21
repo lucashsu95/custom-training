@@ -30,12 +30,14 @@ export default function HomeView() {
   // 初始化Question Start
 
   const { initTrainingCount } = useSetting()
-  const initializeQuestions = useInitializeQuestions()
+  const { initialize, ready } = useInitializeQuestions()
 
   useEffect(() => {
-    initializeQuestions()
-    initTrainingCount()
-  }, [initTrainingCount, initializeQuestions])
+    if (ready) {
+      initialize()
+      initTrainingCount()
+    }
+  }, [initialize, initTrainingCount, ready])
 
   // 初始化Question End
 

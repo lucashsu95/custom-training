@@ -42,14 +42,14 @@ export default function ManageQuestions() {
   // 初始化Question Start
 
   const { initTrainingCount } = useSetting()
-  const initializeQuestions = useInitializeQuestions()
+  const { initialize, ready } = useInitializeQuestions()
 
   useEffect(() => {
-    if (questions.length === 0) {
-      initializeQuestions()
+    if (ready && questions.length === 0) {
+      initialize()
       initTrainingCount()
     }
-  }, [initTrainingCount, initializeQuestions, questions.length])
+  }, [initialize, initTrainingCount, questions.length, ready])
 
   // 初始化Question End
 

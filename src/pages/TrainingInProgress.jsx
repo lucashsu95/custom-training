@@ -7,6 +7,7 @@ import StateBoard from '@/components/training/StateBoard'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
 
 // provider
 import { useQuestion } from '@/provider/QuestionProvider'
@@ -24,6 +25,12 @@ function TrainingInProgress() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!problems || problems.length === 0) {
+      toast('目前沒有可作答的題目', {
+        description: '請返回設定頁面重新選擇或稍後再試'
+      })
+      return
+    }
     let problemsLength = 0
     let correctCount = 0
 
@@ -38,6 +45,13 @@ function TrainingInProgress() {
     }
 
     // 計算分數
+
+    if (problemsLength === 0) {
+      toast('目前沒有可計分的題目', {
+        description: '請返回設定頁面重新選擇或稍後再試'
+      })
+      return
+    }
 
     const score = parseInt((100 / problemsLength) * correctCount)
     setResult({

@@ -1,20 +1,58 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import { toast } from 'sonner'
 import API from '../classes/API'
-import { useCallback } from 'react'
 
 export function useIndexedDB(storeName) {
   const [api, setApi] = useState(null)
+  const [ready, setReady] = useState(false)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const apiInstance = new API(storeName)
-    apiInstance.init().then(() => {
-      setApi(apiInstance)
-    })
+    let active = true
+    apiInstance
+      .init()
+      .then(() => {
+        if (!active) return
+        setApi(apiInstance)
+        setReady(true)
+      })
+      .catch((err) => {
+        if (!active) return
+        setError(err)
+        toast('IndexedDB 初始化失敗', {
+          description: err?.message || '請稍後再試'
+        })
+        console.error('IndexedDB init failed', err)
+      })
+    return () => {
+      active = false
+    }
   }, [storeName])
+
+  const ensureReady = useCallback(
+    (action = '') => {
+      if (api) return true
+      if (error) {
+        toast('IndexedDB 尚未可用', {
+          description: error?.message || '請稍後再試'
+        })
+        console.error('IndexedDB not ready because of previous error', error)
+      } else if (!ready) {
+        console.warn(`IndexedDB not ready yet${action ? `: ${action}` : ''}`)
+        toast('資料庫尚未就緒', {
+          description: '請稍候片刻後再試'
+        })
+      }
+      return false
+    },
+    [api, error, ready]
+  )
 
   const getAllItem = useCallback(
     (callback, tag = false) => {
-      if (!api) {
+      if (!ensureReady('getAllItem')) {
+        callback([])
         return
       }
       api.get().then((allItems) => {
@@ -26,15 +64,12 @@ export function useIndexedDB(storeName) {
         callback(filteredItems)
       })
     },
-    [api]
+    [api, ensureReady]
   )
 
   const addItem = useCallback(
     (questions) => {
-      if (!api) {
-        console.error('API is not initialized')
-        return
-      }
+      if (!ensureReady('addItem')) return
       if (Array.isArray(questions)) {
         questions.forEach((question) => {
           api.add(question)
@@ -43,23 +78,17 @@ export function useIndexedDB(storeName) {
         console.error('questions is not an array')
       }
     },
-    [api]
+    [api, ensureReady]
   )
 
   const clearAll = useCallback(() => {
-    if (!api) {
-      console.error('API is not initialized')
-      return
-    }
+    if (!ensureReady('clearAll')) return
     api.clear()
-  }, [api])
+  }, [api, ensureReady])
 
   const clearItem = useCallback(
     (recordQuestionsId) => {
-      if (!api) {
-        console.error('API is not initialized')
-        return
-      }
+      if (!ensureReady('clearItem')) return
 
       if (recordQuestionsId && recordQuestionsId.length > 0) {
         for (const id of recordQuestionsId) {
@@ -67,15 +96,12 @@ export function useIndexedDB(storeName) {
         }
       }
     },
-    [api]
+    [api, ensureReady]
   )
 
   const updateItem = useCallback(
     (id, newItem) => {
-      if (!api) {
-        console.error('API is not initialized')
-        return
-      }
+      if (!ensureReady('updateItem')) return
       api.get().then((items) => {
         const item = items.find((item) => item.id === id)
         if (item) {
@@ -84,8 +110,8 @@ export function useIndexedDB(storeName) {
         }
       })
     },
-    [api]
+    [api, ensureReady]
   )
 
-  return { addItem, getAllItem, clearAll, clearItem, updateItem }
+  return { addItem, getAllItem, clearAll, clearItem, updateItem, ready, error }
 }
