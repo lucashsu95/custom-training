@@ -105,7 +105,7 @@ export function QuestionProvider({ children }) {
     // const correctProblems = getLimitedQuestions(shuffledQuestions, 3)
     const correctProblems = getLimitedQuestions(
       shuffledQuestions,
-      Math.min(5, shuffledQuestions.length)
+      Math.min(10, shuffledQuestions.length)
     )
     if (!correctProblems) {
       toast('⚠️題目數量不足!', {
