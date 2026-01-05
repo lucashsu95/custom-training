@@ -68,15 +68,19 @@ export function useIndexedDB(storeName) {
   )
 
   const addItem = useCallback(
-    (questions) => {
+    (entries) => {
       if (!ensureReady('addItem')) return
-      if (Array.isArray(questions)) {
-        questions.forEach((question) => {
-          api.add(question)
+      if (Array.isArray(entries)) {
+        entries.forEach((entry) => {
+          api.add(entry)
         })
-      } else {
-        console.error('questions is not an array')
+        return
       }
+      if (entries && typeof entries === 'object') {
+        api.add(entries)
+        return
+      }
+      console.error('addItem expects an object or array of objects')
     },
     [api, ensureReady]
   )
@@ -113,5 +117,13 @@ export function useIndexedDB(storeName) {
     [api, ensureReady]
   )
 
-  return { addItem, getAllItem, clearAll, clearItem, updateItem, ready, error }
+  const putItem = useCallback(
+    (item) => {
+      if (!ensureReady('putItem')) return
+      api.put(item)
+    },
+    [api, ensureReady]
+  )
+
+  return { addItem, getAllItem, clearAll, clearItem, updateItem, putItem, ready, error }
 }

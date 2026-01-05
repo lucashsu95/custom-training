@@ -2,46 +2,23 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+const DEFAULT_VERSION = 1
 
-const readJson = (filePath) => {
-  const content = fs.readFileSync(filePath, 'utf-8')
-  return JSON.parse(content)
-}
-
-const writeJson = (filePath, data) => {
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2))
-}
+const readJson = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+const writeJson = (filePath, data) => fs.writeFileSync(filePath, JSON.stringify(data, null, 2))
 
 const isQuestionStart = (line) => /^[A-D](?:,[A-D])*\s+\d+\./.test(line.trim())
 
-const parseTxtChunk = (chunk, idx) => {
-  const normalized = chunk
-    .replace(/（\d+,\d+ 則）/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
+const removeCounters = (text) => text.replace(/（\d+,\d+ 則）/g, '').trim()
 
-  const match = normalized.match(/^([A-D](?:,[A-D])*)\s+\d+\.\s*(.+)$/)
-  if (!match) {
-    throw new Error(`無法解析題目（index: ${idx}）：${chunk.slice(0, 80)}...`)
-  }
-
-  const answerLetters = match[1].split(',').map((s) => s.trim())
-  const remainder = match[2]
-
-  const [namePart, ...optionParts] = remainder.split('(A)')
-  if (optionParts.length === 0) {
-    throw new Error(`缺少選項（index: ${idx}）`)
-  }
-
-  const name = namePart.trim()
-  const optionString = `(A)${optionParts.join('(A)')}`
-
+const buildOptionMap = (optionString, idx) => {
   const optionRegex = /\(([A-D])\)\s*([\s\S]*?)(?=\s*\([A-D]\)|$)/g
   const optionsMap = {}
-  let matchOpt
-  while ((matchOpt = optionRegex.exec(optionString)) !== null) {
-    const label = matchOpt[1]
-    const text = matchOpt[2].replace(/（\d+,\d+ 則）/g, '').trim()
+  let match
+
+  while ((match = optionRegex.exec(optionString)) !== null) {
+    const label = match[1]
+    const text = removeCounters(match[2])
     if (text) {
       optionsMap[label] = text
     }
@@ -51,23 +28,28 @@ const parseTxtChunk = (chunk, idx) => {
     throw new Error(`無法解析選項（index: ${idx}）`)
   }
 
+  return optionsMap
+}
+
+const assertAnswersExist = (answerLetters, optionsMap, idx) => {
   const missing = answerLetters.filter((a) => !optionsMap[a])
   if (missing.length) {
     throw new Error(`找不到答案對應選項：${missing.join(', ')}（index: ${idx}）`)
   }
+}
 
-  if (answerLetters.length === 1) {
-    return {
-      type: '單選題',
-      name,
-      options: optionsMap,
-      answer: answerLetters[0],
-      isEnabled: true,
-      tag: 'iot',
-      remark: ''
-    }
-  }
+const buildSingleChoice = ({ name, optionsMap, answerLetters }) => ({
+  type: '單選題',
+  name,
+  options: optionsMap,
+  answer: answerLetters[0],
+  isEnabled: true,
+  tag: 'iot',
+  remark: '',
+  version: DEFAULT_VERSION
+})
 
+const buildMultipleChoice = ({ name, optionsMap, answerLetters }) => {
   const answers = [...new Set(answerLetters.map((a) => optionsMap[a]))]
   const answerSet = new Set(answers)
   const incorrectOptions = [...new Set(
@@ -84,8 +66,35 @@ const parseTxtChunk = (chunk, idx) => {
     options: incorrectOptions,
     isEnabled: true,
     tag: 'iot',
-    remark: ''
+    remark: '',
+    version: DEFAULT_VERSION
   }
+}
+
+const parseTxtChunk = (chunk, idx) => {
+  const normalized = chunk.replace(/\s+/g, ' ').trim()
+  const match = normalized.match(/^([A-D](?:,[A-D])*)\s+\d+\.\s*(.+)$/)
+
+  if (!match) {
+    throw new Error(`無法解析題目（index: ${idx}）：${chunk.slice(0, 80)}...`)
+  }
+
+  const answerLetters = match[1].split(',').map((s) => s.trim())
+  const remainder = match[2]
+  const [namePart, ...optionParts] = remainder.split('(A)')
+
+  if (optionParts.length === 0) {
+    throw new Error(`缺少選項（index: ${idx}）`)
+  }
+
+  const name = removeCounters(namePart)
+  const optionString = `(A)${optionParts.join('(A)')}`
+  const optionsMap = buildOptionMap(optionString, idx)
+  assertAnswersExist(answerLetters, optionsMap, idx)
+
+  return answerLetters.length === 1
+    ? buildSingleChoice({ name, optionsMap, answerLetters })
+    : buildMultipleChoice({ name, optionsMap, answerLetters })
 }
 
 const parseTxtFile = (filePath) => {
@@ -155,7 +164,8 @@ const normalizeSingleChoice = (question, idx) => {
     options: optionMap,
     answer: answerKey,
     isEnabled: clone.isEnabled ?? false,
-    remark: clone.remark ?? ''
+    remark: clone.remark ?? '',
+    version: clone.version ?? DEFAULT_VERSION
   }
 }
 
@@ -197,7 +207,8 @@ const normalizeMultipleChoice = (question, idx) => {
     answers: Array.from(answerSet),
     options: incorrectOptions,
     isEnabled: clone.isEnabled ?? false,
-    remark: clone.remark ?? ''
+    remark: clone.remark ?? '',
+    version: clone.version ?? DEFAULT_VERSION
   }
 }
 
@@ -215,7 +226,8 @@ const convert = (questions) => {
     return {
       ...q,
       isEnabled: q.isEnabled ?? false,
-      remark: q.remark ?? ''
+      remark: q.remark ?? '',
+      version: q.version ?? DEFAULT_VERSION
     }
   })
 }

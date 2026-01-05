@@ -4,6 +4,7 @@ import { shuffleAry } from '@/lib/functions'
 class Question {
   constructor(question) {
     this.id = question.id
+    this.version = question.version ?? 1
     this.name = question.name
     this.tag = question.tag
     this.remark = question.remark ?? ''
@@ -48,6 +49,7 @@ export class SignleChoiceQuestion extends Question {
   toPayload() {
     return {
       id: this.id,
+      version: this.version,
       tag: this.tag,
       remark: this.remark,
       due: this.due,
@@ -84,6 +86,7 @@ export class MultipleChoiceQuestion extends Question {
   toPayload() {
     return {
       id: this.id,
+      version: this.version,
       tag: this.tag,
       remark: this.remark,
       due: this.due,
@@ -127,6 +130,7 @@ export class FillInTheBlankQuestion extends Question {
   toPayload() {
     return {
       id: this.id,
+      version: this.version,
       tag: this.tag,
       remark: this.remark,
       name: this.name,
@@ -173,6 +177,7 @@ export class MatchingQuestion extends Question {
   toPayload() {
     return {
       id: this.id,
+      version: this.version,
       tag: this.tag,
       remark: this.remark,
       name: this.name,
@@ -221,6 +226,7 @@ export class VocabularyQuestion extends Question {
   toPayload() {
     return {
       id: this.id,
+      version: this.version,
       tag: this.tag,
       remark: this.remark,
       due: this.due,

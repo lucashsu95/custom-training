@@ -51,10 +51,8 @@ export function QuestionProvider({ children }) {
         return updatedQuestions
       })
       setProblems((prev) => {
-        const updatedQuestions = prev.map((p) =>
-          p.id === id ? createQuestion({ ...p, ...question }) : p
-        )
-        return updatedQuestions
+        const updated = prev.map((p) => (p.id === id ? createQuestion({ ...p, ...question }) : p))
+        return updated
       })
     },
     [setQuestions, setProblems, updateItem]

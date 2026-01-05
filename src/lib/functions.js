@@ -117,7 +117,8 @@ export function getTags(questions) {
 }
 
 export const createQuestion = (question) => {
-  return getQuestionClassByType[question.type].create(question)
+  const withVersion = { ...question, version: question.version ?? 1 }
+  return getQuestionClassByType[withVersion.type].create(withVersion)
 }
 
 export const getQuestionByType = (questions, type) => {

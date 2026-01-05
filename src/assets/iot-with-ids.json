@@ -11,7 +11,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "81be3305-d7f8-463e-9092-66252496b722",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -25,7 +27,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "122bf4e1-3d55-4bb1-94f9-f12d39b169e6",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -39,7 +43,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "809b3850-054b-42a8-9c17-c56c69a39de9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -53,7 +59,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3dee6792-1506-4290-9972-b67e12067b70",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -67,7 +75,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "438da1ef-33f9-41b8-ac87-f7a8b31e55b6",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -82,7 +92,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e8e196ca-035d-4055-8a00-76ce82405cd7",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -96,7 +108,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2375f6da-6e20-45b7-8d2d-ebf2ecdba435",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -111,7 +125,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "15a3254e-7d4d-42ac-9c4e-31be77950c3a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -125,7 +141,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "fc1aca3e-9d87-418e-857c-c5adc1407224",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -140,7 +158,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "812e82a1-08f0-45fe-a016-6db3db4a36e8",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -154,7 +174,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3d8f3d39-928d-4109-87a4-4e266255effd",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -169,7 +191,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c0a2f1ef-a154-4c03-95b3-30c44b164d3b",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -184,7 +208,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c72a9fc1-01d1-4a9e-887b-19c0f750be81",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -198,7 +224,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "76795a74-64e5-4028-9a8b-99afcbe6f78b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -212,7 +240,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8266f17f-94d4-44b7-b310-5c40c3dbe9cf",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -226,7 +256,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f59d7b32-7078-4b4e-8ebb-d369e839ee66",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -240,7 +272,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0aaa4705-03a5-47cc-8866-8b88a550424c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -254,7 +288,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8126055b-de3b-4f7c-bbc7-bf6f2a4ea3b6",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -268,7 +304,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "42217a7d-33e8-4d92-8378-d0ff68312172",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -282,7 +320,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ded59bf5-7de4-4a4c-8e29-86aea6fdcc3c",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -297,7 +337,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ed1e0d41-cf3d-4804-a284-fb78d34427ac",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -312,7 +354,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0fe41ad9-da75-42b2-8b31-b1ec3f4f485b",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -327,7 +371,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "98c3db46-035f-4d25-aef4-b0a295998923",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -341,7 +387,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "bcc87bf8-3d74-4ebe-8397-4da3ca122a6a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -355,7 +403,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2b763326-5b21-44e8-b195-bbd6a4a136c0",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -369,7 +419,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "5e3f29d5-45bf-47be-acb5-81134eb3b756",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -384,7 +436,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "336488be-58d1-4f60-ac8b-752df14260c8",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -398,7 +452,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "206c6522-29b1-4f9c-89b6-115b6e3e1e1f",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -413,7 +469,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "dc8fd8cb-768b-4128-a561-ee7489dc6bd8",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -427,7 +485,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "53fc0340-5dda-43e6-b04f-bc952533b3f6",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -441,7 +501,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ba6c30bb-7e8b-4625-a66e-0d7b079f183f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -455,7 +517,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "dcfbc7d5-ef9f-4d1b-988f-fb54c674444e",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -469,7 +533,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1dd65185-7de9-4694-9af2-cee79fc28ebb",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -483,7 +549,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b31414b8-cd0d-471d-88b2-5988a7d59220",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -497,7 +565,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4da50ea6-37c9-4994-b1e3-4d7fe5b3649c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -511,7 +581,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "dcbb51b3-1094-4660-b11e-caece5a9d46a",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -526,7 +598,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a81fff47-04fc-4a90-91e4-dcad608303b5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -540,7 +614,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ffcf5cb9-82d7-48c2-92fb-a406735750e2",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -554,7 +630,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3d81ea75-11a2-4aa7-8590-287a8a9278bf",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -568,7 +646,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "5b1c0e3a-5e13-4aac-b080-e02d6dee86cd",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -582,7 +662,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "62786248-3d13-486a-8f74-90f10160ee6b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -596,7 +678,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2b05e0e6-1dcb-4763-a57f-e01902cbaa13",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -611,7 +695,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "782eba00-9fb6-4e7d-8157-ae648139cd14",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -626,7 +712,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "73bfd9ca-cebb-42a6-b089-473ce5f83b2a",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -641,7 +729,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "08857423-b9f7-4df4-b700-89bf23e039d3",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -655,7 +745,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "92b9daee-00d0-4fcc-aef2-199923568971",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -669,7 +761,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e24f4480-63f6-488d-a6a7-40fef89c1952",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -683,7 +777,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "028814ff-f96e-4349-b02e-77f14b9a10e0",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -698,7 +794,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8c1b2fb1-6434-4ef6-b684-c66dee6feb83",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -713,7 +811,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0c938612-26d9-47d1-ac0a-1536d9acda6a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -727,7 +827,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "6edfb65e-a01a-4b49-810a-b3e7ee90e312",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -741,7 +843,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "111b1676-b8ac-41b6-89af-75bfd7bcdb55",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -750,12 +854,14 @@
       "A": "處理類比訊號，僅限語音的傳送",
       "B": "提供更高速及更低延遲的行動通訊系統",
       "C": "語音服務與現有網際網路的服務整合",
-      "D": "處理數位訊號，僅可傳送語音及 SMS 文字簡訊（2087888,1 則,有詳解）"
+      "D": "處理數位訊號，僅可傳送語音及 SMS 文字簡訊"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "fd210a8e-6b94-4c40-b213-3426c70a7a23",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -770,7 +876,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "97a5978f-296a-4b3a-ba85-bb176cfc0320",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -779,12 +887,14 @@
       "A": "在 IEEE802.15.4 網路上運行 6LoWPAN，使所有裝置都採用 IPv6 的方式連結網路",
       "B": "具有短距離、低速率、低耗電、低記憶體使用量等特性",
       "C": "適合讓低電量、低寬頻需求的裝置運行 IPv6 的標準",
-      "D": "6LoWPAN 可以被視為複雜版的 IPv6 （2087890,1 則,有詳解）"
+      "D": "6LoWPAN 可以被視為複雜版的 IPv6"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "cd0c605e-cadc-4ef1-9ec4-16c337d8010d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -793,12 +903,14 @@
       "A": "32 位元",
       "B": "64 位元",
       "C": "128 位元",
-      "D": "256 位元（2087891,1 則,有詳解）"
+      "D": "256 位元"
     },
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "72452ab1-f689-46ca-9b72-12f2b3d23d3d",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -813,7 +925,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ea141280-cdd1-4736-a783-0e8fed432b41",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -827,7 +941,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c37a2290-2a8a-4629-aabd-89ea6b10062d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -841,7 +957,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9faa82ed-ae7c-4980-b5c3-6d996ca0f4c0",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -856,7 +974,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f0d974fd-edc9-4b79-a778-1957e633bf81",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -870,7 +990,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "94315e8d-9d9e-4860-9ea3-5c5c0b13fd95",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -885,7 +1007,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "056a693d-e52c-4d49-955a-59e138f67b71",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -899,7 +1023,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f5f05afe-c01c-4e4f-a2f7-367279f5957a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -913,7 +1039,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d23a0bb5-f3e9-4081-be63-76fb2fa67c63",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -927,7 +1055,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b2365916-7a40-421f-a931-a4c1cdc3eee8",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -941,7 +1071,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e50501e1-8ee0-43dd-ae3e-d0c39ae1bc19",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -955,7 +1087,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d78108be-5d2b-4c3f-85bb-ce5c617d7655",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -970,7 +1104,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ab13d412-114a-4d27-8277-98e6b51ee98b",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -985,7 +1121,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "89b83ce7-c73e-4654-b11e-0812406f6f4d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -999,7 +1137,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1bcf595d-5aba-4f74-9449-6e958fdba8ff",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1013,7 +1153,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "706d4617-c772-4d5a-9bb3-b6030c1febee",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1027,7 +1169,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "142b243e-f6e9-493d-8c98-13f4647d3a85",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1041,7 +1185,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f3a4e9f9-a3b8-4a7e-86d6-9e0bc152f82b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1055,7 +1201,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e70ab630-5d72-43e7-9447-e19bba640777",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1069,7 +1217,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "27e7a12c-591c-4d0f-af95-ff5f67f7669e",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1084,7 +1234,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "aacfe548-bbdc-4c47-99ca-497664d645a9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1098,7 +1250,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "15b33f49-8ad2-4ad8-95dd-9ab00ba1a1dc",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1112,7 +1266,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a617243f-96b6-4b8a-b528-a6e44a285dc0",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1121,12 +1277,14 @@
       "A": "以物件為中心（Objectcentric）",
       "B": "為一種開放的標準（Openstandard）",
       "C": "鬆散的關係（Looselycoupled）",
-      "D": "為一種分散式架構（Distributed） （2087914,1 則,有詳解）"
+      "D": "為一種分散式架構（Distributed）"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "032b149f-331b-45c9-beff-26d9f2c67dff",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1140,7 +1298,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "7ab50342-ac7e-40b4-81b3-d2854bea7423",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1154,7 +1314,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "80c8ac68-4a2d-4c10-89e5-4e1493543023",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1168,7 +1330,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3d8e2b5e-f02f-4890-8b8d-39b088895dd9",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1183,7 +1347,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "78f40cbd-f511-4d77-ae1c-080cdf05cbd9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1197,21 +1363,25 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2a686cf8-b7a4-4ec9-b661-306991f14f39",
+    "version": 1
   },
   {
     "type": "單選題",
-    "name": "語意網中表達資訊的核心協定，主要利用 主 體 （ Subject ）、 謂 詞 與 屬 性（Predicate）、客觀或屬性值所組成來描",
+    "name": "語意網中表達資訊的核心協定，主要利用 主 體 （ Subject ）、 謂 詞 與 屬 性（Predicate）、客觀或屬性值所組成來描述資訊，屬於下列哪一項技術？",
     "options": {
       "A": "Unicode",
       "B": "XML（ExtensibleMarkupLanguage）",
-      "C": "RDF（ResourceDescriptionFramework） 述資訊，屬於下列哪一項技術？",
+      "C": "RDF（ResourceDescriptionFramework） ",
       "D": "OWL（OntologyWebLanguage）"
     },
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f267ce6a-5bc3-42be-a479-a33828cde13e",
+    "version": 2
   },
   {
     "type": "單選題",
@@ -1225,7 +1395,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "7e2fe568-9f6c-4343-bbe6-e301537cb57d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1239,7 +1411,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "fb944cd0-3544-4260-ab3e-99793bf99e46",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1253,7 +1427,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2e1a6dc6-9207-410c-9b96-8426188f25a5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1267,7 +1443,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8e9c54d7-95ad-4901-8c63-53f1fa15acde",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1281,7 +1459,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "674cb535-cbf0-4af8-818a-05b26ce415f3",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1295,7 +1475,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3ad0b443-37a7-4bd3-a747-ebcafe624b6d",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1310,7 +1492,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "5e6998cc-ae11-45a5-b181-7338c3f26667",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1319,26 +1503,30 @@
       "A": "ZigBee",
       "B": "Wi-Fi",
       "C": "RFID",
-      "D": "NFC（2087828,1 則,有詳解）"
+      "D": "NFC"
     },
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "87507e13-eb72-4b41-a6a8-452bf86cc679",
+    "version": 1
   },
   {
     "type": "單選題",
-    "name": "下列哪一項並非現今智慧型手機中常見的感測器？",
+    "name": "項並非現今智慧型手機中常見的感測器？",
     "options": {
-      "A": "電子羅盤",
-      "B": "光感測器",
-      "C": "三軸加速度計",
-      "D": "超音波感測器"
+      "A": "子羅盤",
+      "B": "感測器",
+      "C": "軸加速度計",
+      "D": "音波感測器"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0032ce1a-1062-4bec-9be5-35de19440670",
+    "version": 3
   },
   {
     "type": "單選題",
@@ -1352,7 +1540,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "057ea58d-c0c6-47ef-b09a-f4769820f03a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1366,7 +1556,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f8133a8e-6c04-4c95-8388-5781ca22011f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1380,7 +1572,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "eb448ec1-5455-4a28-a5ba-675b31cdf9b3",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1394,7 +1588,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3b4dcd05-a191-4f99-ba35-836a79e24dd4",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1408,7 +1604,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "34ac0727-70cc-4f75-a0de-b87ad5e48c2b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1422,7 +1620,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f27ba36f-b1ce-4e96-8f30-aac23f790f45",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1437,7 +1637,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "fac16c4a-9dec-40c6-b37a-4555e42457a4",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1452,7 +1654,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d457222c-d927-4eb6-b028-9250536f139f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1466,7 +1670,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c5f3d8fa-1a41-47b4-bf7c-d40695ebaa05",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1480,7 +1686,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "6907a617-947d-4650-a84a-c0d776c178f5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1494,7 +1702,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2d14a067-e24e-430a-8032-54cdac10a22f",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1509,7 +1719,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f95b95e4-ffb8-40df-b36e-5a9d8554174c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1523,7 +1735,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "dbb1e3fb-1f3e-4272-a478-d1ba9034da8d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1537,7 +1751,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "94455b80-ec8a-49ed-a0da-1f6ce8e06c58",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1552,7 +1768,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4e3c3248-9d57-41e4-a682-8ed4e0c9c67e",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1566,7 +1784,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "46849840-01da-4e6e-918c-15f49ad7e7b5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1580,7 +1800,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "854d91b4-c57f-4f98-b1a1-f1dcb83335c5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1594,7 +1816,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d61c6908-83e8-4318-b6d6-1e6e65d66517",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1608,7 +1832,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "6e202c51-d5cb-4478-be6e-88bceea39458",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1623,7 +1849,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "42d7c5fd-cc14-4c45-b60e-607dc207dca6",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1638,7 +1866,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d611fef3-f9d0-47c2-bc24-66b88a6c9abd",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1652,7 +1882,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b596172b-68ca-4704-9b89-d21e63d04248",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1666,7 +1898,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "22c68829-8d3f-4ec6-91c6-26b1927af04d",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1680,7 +1914,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b456306a-4a1c-4814-ba4c-69add9c673d0",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1694,7 +1930,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "578d0303-4309-46e4-b5bb-3e79f8992b77",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1708,7 +1946,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3dcaf22b-c329-4ce7-af6a-2e298b3cd0cc",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1722,7 +1962,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "fe2cebad-48fb-41dd-bd74-8af5dac9682b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1736,7 +1978,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "7ad4051d-9e9b-4ff8-8265-f79fcacf0329",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1751,7 +1995,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "98a43aa5-d5bd-4921-8f7b-401702dfd043",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1765,7 +2011,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4eb9f98b-a574-4f45-a029-0bf5d9b28274",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1780,7 +2028,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "55190a39-63bd-4b0e-bcd0-d5af6c039ac3",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1789,12 +2039,14 @@
       "A": "在手機上購買物品，物品自動送至家裡",
       "B": "在手機上收到餐廳的促銷的廣告，然後到餐廳消費",
       "C": "在餐廳消費後，在手機上填寫問卷",
-      "D": "在超市消費，使用手機付款（2087861,1 則,有詳解）"
+      "D": "在超市消費，使用手機付款"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "02d8c192-2487-4768-9f5a-b07b56912237",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1808,7 +2060,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d7358b83-db1a-4471-81cf-8c8deba6931b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1822,7 +2076,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0912353e-4f4e-4594-b7ad-932a8d52664c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1836,7 +2092,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b422e159-cbc6-41a4-b4de-8732b975bfdc",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1850,7 +2108,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1a3b3e00-6ed6-4393-94d2-40cb28f9e02b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1864,7 +2124,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "5a0a6bea-db47-4c26-a20b-9abc9551af2e",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1872,14 +2134,16 @@
     "answers": [
       "無線射頻辨識技術 才能夠充分發揮其應用價值，下列哪些為智慧物流的主要核心技術？",
       "無線網路傳輸技術",
-      "全球定位技術（2087867,2 則,有詳解）"
+      "全球定位技術"
     ],
     "options": [
       "虛擬化技術"
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "fc85dbf3-2917-4c01-95e5-6718e007c6bc",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1893,7 +2157,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1f38fd1c-ead2-4b57-b6b7-82f79b062b6e",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1907,7 +2173,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9407e6e4-14b4-44ab-99ca-f39a23f916ad",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1921,7 +2189,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2901fd94-9c4c-4021-8006-1adadd7bf70c",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1936,7 +2206,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "59e5434b-155b-487e-87b0-5755eb4bfcee",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1950,7 +2222,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f9d52f41-8cb7-44d5-98b0-21beee4ad5ea",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1964,7 +2238,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ff9b57f8-f18f-46d5-a7ea-9f44f5b84c0a",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -1979,7 +2255,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9794c886-8761-499c-9ebb-30168a569051",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -1993,7 +2271,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "90dc252d-43cb-4984-9330-b8c832c0ad1f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2007,7 +2287,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ef3d8402-d5f9-4c40-b2c6-e63369a3081d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2021,7 +2303,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "10fa18b2-65af-4c0f-b80a-b804fffe23bf",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2035,7 +2319,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "171603ae-5bb3-45e3-adff-44e28b3dfc2e",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2050,7 +2336,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "bcb746ca-cb2f-42b9-bce9-59f00a507660",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2064,7 +2352,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4e7e3bef-2f8c-4a9d-8865-6e42106d14b8",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2078,7 +2368,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "bb019686-f929-478c-b54c-3b6256735d46",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2093,7 +2385,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e225433e-99df-4303-9ecb-302a68f90229",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2107,7 +2401,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "87964c6f-2362-4fbb-9123-80e993af3b06",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2121,7 +2417,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e24c9c21-c269-404f-b810-67dde0ea6681",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2135,7 +2433,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a2c9e4dc-ab50-4ed7-a0b2-86473c7b7473",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2149,7 +2449,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3e595420-8484-4ce0-8c58-fb72eda70936",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2163,7 +2465,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b2a9dba1-d3ec-4c72-9830-6b3cb3843549",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2177,7 +2481,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "26e89b68-8112-4681-a882-e099586d66c2",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2186,12 +2492,14 @@
       "A": "EMR（ElectronicMedicalRecords）",
       "B": "RFID（RadioFrequencyIDentification）",
       "C": "HIS（HospitalInformationSystem）",
-      "D": "GIS（GeographicInformationSystem） （2087759,1 則,有詳解）"
+      "D": "GIS（GeographicInformationSystem）"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d9a10744-2412-4f61-b0b1-2f9b054f7239",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2205,7 +2513,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4787a396-d0f9-4a8c-b0c1-27ee52db6a5e",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2219,7 +2529,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8ad6dfa0-78f6-4447-a43b-e119aeec9a36",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2233,7 +2545,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "103b68a3-0dec-4bcb-b594-b08763aa5c84",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2247,7 +2561,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9b3d9323-3efb-47f8-900b-d0655165e57e",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2256,12 +2572,14 @@
       "A": "主要包含兩個硬體架構，主控制板與智慧藥盒",
       "B": "當病患需要吃藥時，智慧藥盒將提醒病人應該拿取哪一格藥物",
       "C": "主控制板主要負責對藥盒資訊的同步以及控制命令的下達",
-      "D": "智慧藥盒具備紅外線無線傳輸協定與微控制器、LED 燈與語音提醒，由於使用紅外線協 定，所以藥盒可以隨身攜帶，隨時提醒 （2087764,1 則,有詳解）"
+      "D": "智慧藥盒具備紅外線無線傳輸協定與微控制器、LED 燈與語音提醒，由於使用紅外線協 定，所以藥盒可以隨身攜帶，隨時提醒"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a858e4c2-4d84-4310-876e-834c371b60a0",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2275,7 +2593,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "27cfacc6-1edd-44f7-91a1-2a1a60af8ab6",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2289,7 +2609,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8e88811e-066f-4b2b-a334-fbc3c7e156f5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2303,7 +2625,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a23220bf-0969-4e03-bbbc-5ba37c38e8ef",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2317,7 +2641,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "afb1c8fc-34ab-4efb-a651-eb3ab70084ec",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2328,11 +2654,13 @@
       "三軸加速度"
     ],
     "options": [
-      "車門防盜開關（2087769,1 則,有詳解）"
+      "車門防盜開關"
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "917a3cc7-94cf-4cef-8c49-58e836c1cba0",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2346,7 +2674,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2f46274f-fc77-481d-965e-361c962be3af",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2355,12 +2685,14 @@
       "衛星定位系統行動保全",
       "自動施肥、農作物營養素及噴藥殘留量之檢測",
       "門禁辨識系統與入侵連網通報",
-      "高溫及煙霧偵測暨自動灑水器（2087771,4 則,有詳解）"
+      "高溫及煙霧偵測暨自動灑水器"
     ],
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ac593373-32ba-4485-8830-9222536a12ae",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2369,12 +2701,14 @@
       "A": "透過鏡片中壓力感測裝置的紀錄，可以紀錄到角膜壓力和眼球液壓的變化",
       "B": "必須透過有線裝置，連接到眼鏡上面，因此需要配戴專用眼鏡",
       "C": "除了檢測青光眼外，還可以調整視力，和修正老花眼",
-      "D": "需要常常拔下來充電（2087772,1 則,有詳解）"
+      "D": "需要常常拔下來充電"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8ad9a6f0-ed9a-4f41-8b2b-9500d3a658a1",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2383,12 +2717,14 @@
       "A": "在社區大門上利用 RFID 技術辨別住戶 帶來便利與安全並提升生活品質，下列哪一項不屬於物聯網門禁管理應用？",
       "B": "住戶由房間進入客廳，房間將自動關閉電燈與電腦，客廳也將自動開啟電視與空調，並根據客廳亮度自動調整窗簾的閉合程度",
       "C": "為了預防小偷闖入，在住家四周裝置監視器，並利用紅外線感測器進行監控",
-      "D": "大門前安裝臉部辨識系統，比對此人是否為該住戶（2087773,1 則,有詳解）"
+      "D": "大門前安裝臉部辨識系統，比對此人是否為該住戶"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1d7de1fe-8854-4cce-a6e6-88531290b713",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2402,7 +2738,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2cd3d73d-9deb-41d6-b50e-2d9266660dd0",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2416,7 +2754,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "464d75d7-420e-4d00-817f-f265e9c802b1",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2430,7 +2770,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ca1926ad-6883-42bc-9ddc-1cd57f30857b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2444,7 +2786,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "003d1f73-aad2-4950-9f98-894a14196361",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2459,7 +2803,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a878eddb-ebd8-4e2a-9fad-13544a4c058d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2473,7 +2819,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "78513fb0-422f-4ec1-8383-ee142be12f34",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2487,7 +2835,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "812db982-7965-4d87-82bf-6a7d30bdf585",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2501,7 +2851,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "5c9bdbff-b6dc-4f1e-bb2b-f72e0f663a3c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2515,7 +2867,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "cdc84fad-4f26-4b1d-b458-e7fafed75dad",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2529,7 +2883,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "87d34707-43b2-41c0-be2b-1c981ce8c024",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2538,12 +2894,14 @@
       "A": "眼壓感測隱形眼鏡",
       "B": "血壓感測器",
       "C": "心跳感測器",
-      "D": "三軸加速度計（2087784,1 則,有詳解）"
+      "D": "三軸加速度計"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d3c022ee-f877-45ca-8e02-4b73c7ca757a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2557,7 +2915,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "7535f292-0597-4b8a-bcd3-9ada95b35ac5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2571,7 +2931,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ef27d9a3-b6c6-4c5f-8719-e181bf6f015b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2585,7 +2947,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0f0d5e59-b9a8-400f-bb69-bfeb04bb6eb3",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2599,7 +2963,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d03256d2-2909-4c0c-a086-8c1760279192",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2613,7 +2979,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3eed632c-6ea7-415f-a0b1-87035269c2cb",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2627,7 +2995,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d764f62c-25cf-4be1-8921-7b8014e6337a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2641,7 +3011,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d2025daf-4017-49bd-a81e-9db327c75164",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2655,7 +3027,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8b39e1b0-f097-4fed-8b73-2ae8ba0ca49c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2669,7 +3043,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "cbe2516a-e3a1-427c-9a53-eb00b650ee64",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2684,7 +3060,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a086d0db-e6f0-4863-b89f-7726a5da80cb",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2698,7 +3076,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "87bb7be8-cb8f-476f-ba29-1b27a95f0087",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2712,7 +3092,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "382958e4-1d00-4107-9e27-6296ed4a62dd",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2727,7 +3109,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9ce584b7-f78e-4ec1-9994-a93ae09ba935",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2741,7 +3125,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "04c8ca6a-c701-4ad4-8c2d-fbc29065ae0c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2755,7 +3141,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "41ccc57e-1bc8-49b1-9016-d1e11fc483bb",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2769,7 +3157,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1b08f320-eeb8-4be0-b5ec-5bfdf7dcef26",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2783,7 +3173,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "166b48b9-0445-47f7-8f84-76625e88d953",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2797,7 +3189,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f9e01c01-e680-4a0c-a6e7-0a99b9502de1",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2811,7 +3205,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "02741e7a-edb4-4de9-ac24-684975f45d21",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2825,7 +3221,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "52b5db75-c22e-483b-b730-f034c2947067",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2839,7 +3237,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "30fe0dff-f23b-4294-a344-db3364f298f1",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2853,7 +3253,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9c75027c-fb4a-41da-9331-00c555f77c6e",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2867,7 +3269,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a8354cad-5903-451f-a983-232a8f957517",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2881,7 +3285,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "aa0fd069-50ae-4fd0-9f92-6e67124ed42d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2895,7 +3301,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f65b65a6-0ec1-480b-932d-b347ef0cbd2a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2909,7 +3317,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "6d66ca7c-fffe-4f9b-818f-521942723318",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2923,7 +3333,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4141b94c-b2c4-41f1-b118-27228d5db6fa",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2937,7 +3349,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "40293fdc-3d3b-468c-af62-769a42c545f7",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -2951,7 +3365,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "246586a1-8ea0-4547-940c-48bec439b774",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2966,7 +3382,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c7abf5cd-d904-42ae-9073-5207552c50f9",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2981,7 +3399,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e5514721-7f58-4b72-9404-20f5cd6f80b8",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -2996,7 +3416,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "56c43e64-fa90-4d48-8e21-e021ef3a9380",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3010,7 +3432,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b35d2c4a-bd35-4138-b46e-7cc4ea5f9158",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3019,12 +3443,14 @@
       "A": "RFID",
       "B": "NFC",
       "C": "IrDA",
-      "D": "ZigBee（2087818,1 則,有詳解）"
+      "D": "ZigBee"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1d49a68e-ecc5-4649-92bd-73ea443f0445",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3038,7 +3464,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f74e5f4c-c3f8-4a71-a9d5-2e6c12908af0",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3052,7 +3480,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3f9df5b0-91cd-4ffa-813a-789addf65c53",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3066,13 +3496,15 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f2906612-02ed-4d72-b79c-8a5c4817e76b",
+    "version": 1
   },
   {
     "type": "單選題",
-    "name": "醫療管理是醫院最重要的管理項目之",
+    "name": "醫療管理是醫院最重要的管理項目之一，特別需要物聯網技術協助的原因為下列哪一項？",
     "options": {
-      "A": "因為需要管理藥品、血液以及消毒物品等項 一，特別需要物聯網技術協助的原因為下列哪一項？ 目，若有疏失，造成病人服錯藥物或是輸血錯誤，甚至手術器材與針筒未消毒而導致急性過 敏或敗血病等，都可能危及一個人的生命",
+      "A": "因為需要管理藥品、血液以及消毒物品等項目，若有疏失，造成病人服錯藥物或是輸血錯誤，甚至手術器材與針筒未消毒而導致急性過 敏或敗血病等，都可能危及一個人的生命",
       "B": "因為醫師不太喜歡管設備",
       "C": "因為流程太複雜，而且醫院的職員工作太多，造成效率不彰",
       "D": "因為醫院是封閉式系統，很難導入新的管理 資訊系統，用來協助器材等的管理"
@@ -3080,7 +3512,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "411cb66e-3762-41d1-a96c-31be711f35a9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3094,7 +3528,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "089a1eba-0c6c-4c04-8174-860ea5a91ade",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3108,7 +3544,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "cb1fc3f9-a266-4e1f-aa51-f61be8ad3651",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3122,7 +3560,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "bd5b26d3-e0dc-4e51-99f8-e18ceed35e66",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3131,12 +3571,14 @@
       "早上起床時，窗簾自動拉開讓陽光照進來",
       "家中溫度過高時，冷氣或電風扇會自動開啟調整環境的溫度",
       "洗衣機會根據省電時間自動洗衣",
-      "有人闖入屋內時，防盜系統 會響鈴並通知警方 （2087666,1 則,有詳解）"
+      "有人闖入屋內時，防盜系統 會響鈴並通知警方"
     ],
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8370e57a-aa60-4b43-b139-b4817186ce46",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3145,12 +3587,14 @@
       "A": "汽車間可以相互通訊、聊天發信息",
       "B": "可以在極短時間內掌控車輛由內至外的每個狀況並即時反應，提升智慧汽車時間與空間的行動力",
       "C": "倒車時，可以知道後方的物體",
-      "D": "自動導航、開車的系統 （2087667,1 則,有詳解）"
+      "D": "自動導航、開車的系統"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c7a0434a-7963-4046-afb0-4bfc727d071d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3159,12 +3603,14 @@
       "A": "社區網路配置",
       "B": "社區安全監控",
       "C": "社區能源管理",
-      "D": "社區事務管理（2087668,1 則,有詳解）"
+      "D": "社區事務管理"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "da3d86bc-8659-4ee8-9eda-467d03355068",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3178,7 +3624,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "5e6148f8-5489-477c-b2cf-45278a5aa044",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3192,7 +3640,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "03939425-30f7-4a4c-8a64-3e23172512d4",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3201,12 +3651,14 @@
       "A": "由光感測器所偵測的資訊，調整室內窗簾",
       "B": "透過太陽能板儲存電力，提供晚上回來時所需要的電力",
       "C": "根據溫溼度感測器的資訊，調整冷氣",
-      "D": "利用紅外線感測器和攝影裝 備監控是否有人進入 （2087671,1 則,有詳解）"
+      "D": "利用紅外線感測器和攝影裝 備監控是否有人進入"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4d5fdf24-f11f-4978-9432-7ed625a15390",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3220,21 +3672,25 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "79b07ab1-65c1-408d-bfe8-f7cdefed5a41",
+    "version": 1
   },
   {
     "type": "單選題",
-    "name": "假設要監控橋樑的即時安全性，並且建立預警系統，在 現有的感測器技術中，並非所有橋樑的損壞都可偵測，下",
+    "name": "假設要監控橋樑的即時安全性，並且建立預警系統，在 現有的感測器技術中，並非所有橋樑的損壞都可偵測，下列哪一種損壞無法被偵測到？",
     "options": {
       "A": "鋼纜脫落",
-      "B": "鋼索外皮扯裂 列哪一種損壞無法被偵測到？",
+      "B": "鋼索外皮扯裂",
       "C": "橋身傾斜度",
-      "D": "橋面道路破損（2087673,1 則,有詳解）"
+      "D": "橋面道路破損"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2bb0aeb9-3f0c-47b2-bc8f-9371dfb577c7",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3248,7 +3704,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e4849670-5e26-4757-b005-2da1049cae47",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3262,7 +3720,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a5a3ba94-d9c3-44fb-824d-3bfdcd52e23d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3271,12 +3731,14 @@
       "A": "使用者可以不用節省用電",
       "B": "有效掌握家電使用情況",
       "C": "對家電做有效的電力消耗管控",
-      "D": "可達到節省電力的目的 （2087676,1 則,有詳解）"
+      "D": "可達到節省電力的目的"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "41dc2312-c2a8-4d85-aa25-02342087b430",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3290,7 +3752,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c3cad548-a0ab-4610-8a48-059a7c1126d6",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3304,7 +3768,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "70dd3c15-ffb1-4648-b1fc-d708249c42c6",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3318,7 +3784,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3c94a098-ba4d-4386-acbb-0c767542efb2",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3332,7 +3800,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "564baa94-921d-4b4f-bff1-593ca6d3d8ad",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3346,7 +3816,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "44fba12f-8be5-4805-ba16-c42720be55e2",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3357,11 +3829,13 @@
       "分配電量"
     ],
     "options": [
-      "修正家中的電路 （2087682,1 則,有詳解）"
+      "修正家中的電路"
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e6dd4dfa-7c3e-43bc-a2b8-4462a6cfebcb",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3370,12 +3844,14 @@
       "A": "ZigBee",
       "B": "藍芽",
       "C": "紅外線",
-      "D": "超音波（2087683,1 則,有詳解）"
+      "D": "超音波"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c41f0729-a358-45b8-968b-4fdfc7339a6b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3384,12 +3860,14 @@
       "A": "預防",
       "B": "救災",
       "C": "效率",
-      "D": "疏散（2087684,1 則,有詳解）"
+      "D": "疏散"
     },
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "362ee0e9-14ac-4d61-92ac-695ab3e3ef70",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3398,12 +3876,14 @@
       "A": "隨時監控地下室的照明設備、通風設備、用水及用電等能源消耗，以達節能目的",
       "B": "監控緊急事件的發生，如瓦斯外洩、火災、漏電等事件，並可防範小偷闖入",
       "C": "交誼廳、健身房、三溫暖室、會議室及遊戲間等空間的使用，可透過身分辨識系統及預約系統而達到管理及自動收費的目的",
-      "D": "管理員通知住戶郵件包裹的領取（2087685,1 則,有詳解）"
+      "D": "管理員通知住戶郵件包裹的領取"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "67e5bd90-9fc9-467b-bf48-1213550074c9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3417,7 +3897,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d05797eb-8ad5-482d-be47-20a554464466",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3431,7 +3913,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e000170b-913d-41f0-b530-c54be25756d5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3445,13 +3929,15 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8da4b24b-d99f-48dc-a87b-d7a09d14d041",
+    "version": 1
   },
   {
     "type": "單選題",
     "name": "在物聯網所應用的智慧交通系統中，最常搭配的車輛系統是偵測駕駛人的生理狀況，避免駕駛人因身體問題產生行車危險，下列哪一項不是目前使用的生理偵測系統？",
     "options": {
-      "A": "建置於駕駛員前座的攝影鏡頭，用以擷取駕駛人眼睛狀 態，若閉眼超過一段時間，就會發出警示",
+      "A": "建置於駕駛員前座的攝影鏡頭，用以擷取駕駛人眼睛狀態，若閉眼超過一段時間，就會發出警示",
       "B": "將感測器裝置於安全帶上，用來偵測駕駛人的心跳等生理狀態",
       "C": "駕駛座上裝置酒精濃度測試系統，駕駛人必須通過測試才能開車",
       "D": "座椅姿勢系統，若坐姿不對則無法開車"
@@ -3459,7 +3945,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "944dc242-450e-4cfa-a423-073ca60b8524",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3473,7 +3961,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "5ae865dd-0361-411b-9554-98d7aed6aeac",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3481,14 +3971,16 @@
     "answers": [
       "紅外線感測器可以感測空間中是否有人經過",
       "RFID 可以應用於智慧書架，感測書本的所在位置",
-      "磁簧開關可以感測哪一道門被打開（2087691,1 則,有詳解）"
+      "磁簧開關可以感測哪一道門被打開"
     ],
     "options": [
       "裝設三軸加速度計於天花板上，可以感應人是否在屋內"
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "6c3a6979-4107-473e-81c3-d552f40aae2b",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3499,11 +3991,13 @@
       "用光感測器偵測亮度，自動調整房子內的燈光"
     ],
     "options": [
-      "用溼度感測器偵測火災，當火災發生，啟動自動灑水系統 （2087692,1 則,有詳解）"
+      "用溼度感測器偵測火災，當火災發生，啟動自動灑水系統"
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9b7dd632-715b-462e-8963-d63d0cf138b4",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3517,7 +4011,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ca96fc71-0722-4290-8844-63a03f8fcc10",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3532,7 +4028,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2e14982c-ba33-4c5b-8704-f435ba29ea57",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3541,12 +4039,14 @@
       "A": "智慧型感知行車紀錄器可以紀錄行車資訊",
       "B": "智慧型感知行車紀錄器也可透過網路傳播得知行駛路況",
       "C": "智慧型感知行車紀錄器可以方便得知周遭的環境資訊",
-      "D": "智慧型感知行車紀錄器不 需要連上網際網路，使用非常方便"
+      "D": "智慧型感知行車紀錄器不需要連上網際網路，使用非常方便"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1b2914b2-6dc9-4744-b0b8-60b26d09be7a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3555,12 +4055,14 @@
       "A": "智慧電網感知層可提供追蹤能源消耗的高峰和通知忘記關閉設備的服務",
       "B": "智慧電網網路層負責運送資料到整個網路的控制中心",
       "C": "智慧電網傳輸層負責將電量使用資訊透過網際網路傳至配電者的資料蒐集中心",
-      "D": "智慧電網應用層可以提供電量消耗視覺化的服務，將智慧電網所蒐集到之用電資訊， 透過圖表方式呈現 （2087696,1 則,有詳解）"
+      "D": "智慧電網應用層可以提供電量消耗視覺化的服務，將智慧電網所蒐集到之用電資訊， 透過圖表方式呈現"
     },
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "6d1f2afc-42cc-4d5f-96d4-708dc301bae6",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3574,21 +4076,25 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "75622472-e4cc-4005-9221-4a901e2ec75e",
+    "version": 1
   },
   {
     "type": "單選題",
     "name": "一般來說，物聯網中的智慧交通系統可分為車輛與道路兩個部分，這兩個部分分別有其對應的應用系統，關於這兩部分系統，下列敘述哪一項正確？",
     "options": {
       "A": "車輛部分是指車載物聯網電腦，道路部分則是指智慧交通系統",
-      "B": "車輛部分是指車牌辨識系 統，道路部分則是指路面顛簸偵測系統",
-      "C": "車輛部分是指車輛修護系 統，道路部分則是指路面修護系統",
-      "D": "車輛部分是指車輛銷售系 統，道路部分則是指方向標示系統"
+      "B": "車輛部分是指車牌辨識系統，道路部分則是指路面顛簸偵測系統",
+      "C": "車輛部分是指車輛修護系統，道路部分則是指路面修護系統",
+      "D": "車輛部分是指車輛銷售系統，道路部分則是指方向標示系統"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "87ced053-7082-402f-925c-d413599711ce",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3603,7 +4109,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "11bb9a0f-f2ab-4d24-8873-85627215c024",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3617,7 +4125,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "427c2d8e-24b4-4e3b-bb67-f1fcbe232860",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3631,7 +4141,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "83e8aea2-e47d-4dd5-bfe7-6674726aec91",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3645,7 +4157,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "468de299-1484-40a5-856e-e4a8af3a396c",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3660,7 +4174,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4bec1195-8fa4-44c4-a04b-b4ddf9185448",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3674,7 +4190,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "55f4f81c-5883-465c-9672-855ee5206f54",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3689,7 +4207,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d03c9d7b-69b6-401c-a1dd-b6cd37490cb7",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3703,7 +4223,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "42e87a85-7675-40cc-bec2-de5affea68d4",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3718,7 +4240,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1cb03157-b415-4296-ab93-bc026881df74",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3732,7 +4256,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "dcf60da6-c589-47f3-afd0-9a5d2f95c0a8",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3746,7 +4272,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0a28e985-1325-41df-8535-355175de5de9",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3760,7 +4288,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "80d1c390-bdde-4bbd-a688-f41de161fd80",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3774,7 +4304,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1c09df82-c7b8-4f21-8f06-1cd56e2dbd56",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3788,7 +4320,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "fe1b4c5a-1b5e-4de1-ad79-ce5ad2771c65",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3802,7 +4336,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "58cade21-fc0d-4333-b4ba-c9736b8747cf",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3816,7 +4352,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9dc86ac9-5717-48b2-89fb-fc5d00c219b9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3830,7 +4368,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "09d7c82b-f468-493a-96e0-635442a0c432",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3844,7 +4384,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "14776c9a-fefe-41cd-8eca-3a57cc9beb25",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3859,7 +4401,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ee978cd6-c135-49cf-80a0-49363bbdd074",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3867,14 +4411,16 @@
     "answers": [
       "可使車與車之間相互溝通，以減少交通事故發生",
       "可得知路段的交通狀況， 故可以使行車更為順暢",
-      "可以提供公車的到站資 訊，知道公車現在的位置與行進方向（2087718,1 則,有詳解）"
+      "可以提供公車的到站資 訊，知道公車現在的位置與行進方向"
     ],
     "options": [
       "可以節省行車通行費"
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "780c71c5-d1db-42ef-8439-62d54589e40e",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3888,7 +4434,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "6979d277-24ec-40d2-b2a1-46b65319d311",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3902,7 +4450,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "09080959-50d1-4e8e-ba17-e58e391213ae",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3916,7 +4466,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9cfe6729-b7e0-464b-af6d-8b047b9992d8",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3930,7 +4482,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "26fe5437-6500-466d-b7fb-54b732e1ffd3",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3944,7 +4498,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "18d02fc4-7b96-4b8e-957c-17b4dfee5c31",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3958,7 +4514,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a77c38c1-3d91-44cc-a22c-18e6ee926fe9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -3972,7 +4530,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "19f506f7-4d78-4a9b-a983-aa0c06c4a27b",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -3986,7 +4546,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0b49a3aa-445e-4b82-9fc0-5691583af697",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4000,7 +4562,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a9f09d4e-904d-433c-927e-6ad6821904de",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4014,7 +4578,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8444c23c-385c-4060-8907-8d63406d04fe",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4028,7 +4594,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "28049dfb-04c2-4cd7-acf6-7aab29f90322",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4037,12 +4605,14 @@
       "A": "於廁所門上裝設紅外線感測器",
       "B": "於天花板上裝設三軸加速度計",
       "C": "於地毯中嵌入壓力感測器",
-      "D": "手機 Wi-Fi 無線訊號 （2087730,1 則,有詳解）"
+      "D": "手機 Wi-Fi 無線訊號"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "ac322b82-80d0-4b30-a13d-524ef06b68e7",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4056,7 +4626,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9282c18d-69d8-42fb-bb88-6dbc665b13a4",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4070,7 +4642,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "28b6443b-77ac-4e6d-acb3-b0cffc9c5df2",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4084,7 +4658,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c9c37083-9bf3-4fc2-bdd4-64470a57c957",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4098,7 +4674,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8350a57b-d6d0-4e5a-82fd-71b20a7bcaf9",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -4112,7 +4690,9 @@
     "options": [],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c1a005c6-967a-4fbb-8f13-bde245462562",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4126,7 +4706,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "f811325d-2249-4b8f-bfa7-b0c6d8b75c45",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4140,7 +4722,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "84048071-0e7d-4eae-a2bc-bd49da0d0b5c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4154,7 +4738,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4e421d35-9088-43da-8543-d43aef4e60db",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4168,7 +4754,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "92a971c5-b56a-41c0-92a3-50b772bd8e0a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4182,7 +4770,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0ff8b4fc-278e-4661-83de-8f6c5ce2add9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4196,7 +4786,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "34fd92db-412f-4c69-b000-0acbe2dc3ac7",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -4211,7 +4803,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c46f4003-a7f6-4a93-920b-6f2c3255ebfa",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4225,7 +4819,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "18785bed-c0d9-4a0f-abae-698d3de75098",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4239,7 +4835,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "dfd27182-1996-4c50-827b-ec16fb30d961",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -4254,7 +4852,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "eb9bc6ec-4e5d-417f-9b5d-77e03aed4204",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4268,7 +4868,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "17e550ba-3223-4a80-aa1f-77caaeb026a5",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4282,7 +4884,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8774e38a-d5f9-47d9-a7f4-fe90e6862a62",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4296,7 +4900,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "dcc228f2-6dd1-406a-ba4b-92eaf73ee395",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4310,7 +4916,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "58f743ac-c67f-4e6d-8ca2-6e70d94f22b9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4324,7 +4932,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e9909f9a-1209-417a-a6a4-f6955b68b44f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4338,7 +4948,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3c4fa8b2-e1ae-408a-bc74-e77ebc9bffd9",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4352,7 +4964,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "99a03c07-7323-4ee9-9a4f-6249a2800181",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4366,7 +4980,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "067be5f6-1970-4fbd-9ef9-e4933ba94cf2",
+    "version": 1
   },
   {
     "type": "多選題",
@@ -4381,7 +4997,9 @@
     ],
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "2b449eea-335d-409e-86af-2f182442061f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4395,7 +5013,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "368150bb-65ba-436a-b40e-a560ce89fbfd",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4404,12 +5024,14 @@
       "A": "是一種結合運算、通訊和控制於一體的系統",
       "B": "該系統強調實體裝置和電腦運算網路的連結",
       "C": "該系統可以擔任網路世界和實體世界的橋樑",
-      "D": "主要目標是利用物聯網來 協助照顧人類的健康系統 （2087627,1 則,有詳解）"
+      "D": "主要目標是利用物聯網來 協助照顧人類的健康系統"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "24ba96e7-c0f3-4b8e-b694-36f62227ba95",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4423,7 +5045,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b970dbc4-e7ed-4364-a76b-07ee5a179ed2",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4437,7 +5061,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "7f744a4c-6d08-4fac-a6d2-3763d7ffad0c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4446,12 +5072,14 @@
       "A": "網路層的基礎是構築於大家所熟知的網路上",
       "B": "網路的結構又分為內網和外網，內網就是網際網路，外網則是一般說的區域網路",
       "C": "網路層對於物聯網來說就像是人體中的神經，負責將感知層所收到的資料傳輸到應用層",
-      "D": "網路層是建立在數據網路 或電信網路的基礎上 （2087630,1 則,有詳解）"
+      "D": "網路層是建立在數據網路 或電信網路的基礎上"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "8230a375-923f-4042-93b4-219d3960e466",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4460,12 +5088,14 @@
       "A": "智能冰箱感知到冰箱內食材不夠時，可以自動上網訂購",
       "B": "智能空調可以根據感知室內的人數，來調整冷氣的溫度",
       "C": "智能床墊可以感知躺在床上病人的姿勢，藉以通知護士該病人是否需要調整睡姿，以免產生不良影響",
-      "D": "執行智能搜尋，當使用者在 Google 網頁上下指令後， 便可以搜尋到網路的資料，再 轉發給使用者所有的資訊 （2087631,1 則,有詳解）"
+      "D": "執行智能搜尋，當使用者在 Google 網頁上下指令後， 便可以搜尋到網路的資料，再 轉發給使用者所有的資訊"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "bfa2f4f9-234e-454e-833a-dca04a6be770",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4479,7 +5109,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4d06514e-a995-45cc-a886-66716ea55d5d",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4488,12 +5120,14 @@
       "A": "設備的維護",
       "B": "異質網路的整合",
       "C": "使用者的接受程度",
-      "D": "傳輸的數據流量 （2087633,1 則,有詳解）"
+      "D": "傳輸的數據流量"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0a419536-3181-4fd6-9829-2cda13b316b2",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4502,12 +5136,14 @@
       "A": "雲端運算是一種基於網際網路的運算方式",
       "B": "依照使用者的需求，方便且快速地提供各式各樣的服務",
       "C": "常分成三層服務架構：雲 端設備、雲端網路和雲端資料庫",
-      "D": "使用者因為透過網路上 網，即可使用龐大的電腦及網 路資源，可以節省很多成本 （2087634,1 則,有詳解）"
+      "D": "使用者因為透過網路上 網，即可使用龐大的電腦及網 路資源，可以節省很多成本"
     },
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "0861524a-e6b2-485b-be3f-e006fe8afe21",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4516,12 +5152,14 @@
       "A": "RFID 標籤技術",
       "B": "汽車電子胎壓偵測",
       "C": "購物網站人數偵測",
-      "D": "汽車空氣污染偵測 （2087635,1 則,有詳解）"
+      "D": "汽車空氣污染偵測"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "35c936db-9624-45c7-bd44-c8829c0f694f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4530,12 +5168,14 @@
       "A": "IBM 提出了智慧地球的概念，可視為物聯網的雛型",
       "B": "物聯網就是把感測器裝備到各種真實物體上，並通過網際網路連接起來，進而運行特定的程序，以實現物與物的直接通信",
       "C": "物聯網可賦予智慧給物 件，並擁有與其他物件或人溝通的能力",
-      "D": "物聯網的英文名稱為 InterconnectionofThings （IoT）（2087636,2 則,有詳解）"
+      "D": "物聯網的英文名稱為 InterconnectionofThings （IoT）"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e930c70a-121c-44bc-adae-8aaed55d868f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4544,12 +5184,14 @@
       "A": "提供使用者基礎運算資源",
       "B": "包括應用程式的執行環境和數據儲存",
       "C": "能夠處理大量資料和數據",
-      "D": "主要為雲端運算的底層服務（2087637,1 則,有詳解）"
+      "D": "主要為雲端運算的底層服務"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b514807f-2b5e-4d91-83aa-3fcc71c01dbf",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4563,7 +5205,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e71fb780-9ca4-493b-bc97-8d512138c219",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4577,7 +5221,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "1ef12366-1239-4be0-83e6-cae85d79241a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4591,7 +5237,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "3e5083f8-03ae-410c-897e-cd86d2b9619a",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4605,7 +5253,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "39182de5-90ea-4fe5-a49a-910d825431f1",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4614,12 +5264,14 @@
       "A": "因為為了上網需要購買大量電腦，增加電腦公司的生意",
       "B": "因為顛覆了過去的商業行為，上網購物已經是大家習慣 的一種消費方式",
       "C": "因為可以上網打電動，學生開始不愛運動",
-      "D": "因為網際網路增加了更多 的就業機會（2087642,1 則,有詳解）"
+      "D": "因為網際網路增加了更多 的就業機會"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "24e4603d-a5b3-4067-89cf-1a8f3912f99c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4633,7 +5285,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c5440b67-8ed4-4604-ae4c-e506ceb04b60",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4647,7 +5301,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d29b1e54-27ab-43ef-9c95-bd408ab1403e",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4656,12 +5312,14 @@
       "A": "衛星定位系統（GPS）",
       "B": "網宇實體系統（CPS）",
       "C": "不斷電系統（UPS）",
-      "D": "防鎖死剎車系統（ABS） （2087645,1 則,有詳解）"
+      "D": "防鎖死剎車系統（ABS）"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "16be0deb-11a7-46b1-ab34-9827a75d5d36",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4670,12 +5328,14 @@
       "A": "嵌入式設備的高速發展以及對網際網路的強烈需求，進而催生了物聯網的興起",
       "B": "嵌入式設計綜合了微型電腦、感應器和電子電路等技術",
       "C": "主要是針對每樣物品的應用而設計出的專用系統",
-      "D": "嵌入式設備最常用的作業 系統是微軟的 Windows （2087646,3 則,有詳解）"
+      "D": "嵌入式設備最常用的作業 系統是微軟的 Windows"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9e4b8099-f19c-4f77-a822-226df2c5917e",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4684,12 +5344,14 @@
       "A": "將溫溼度感測器裝置到大片農田，以判定灑水的需要",
       "B": "將感測器裝置於小孩或老人身上，以得知受照護者的身 體狀況",
       "C": "將感測晶片裝置於汽車 上，以判定汽車是否有異常或胎壓不足等狀況發生",
-      "D": "將血管支架裝於心臟上， 以協助打通血管，保持血管暢通（2087647,1 則,有詳解）"
+      "D": "將血管支架裝於心臟上， 以協助打通血管，保持血管暢通"
     },
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "4193a220-6b80-453b-9aa4-ae9af1163a55",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4703,7 +5365,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "88ef7758-dcd5-4d51-8c5e-40aabf1f1c4c",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4717,7 +5381,9 @@
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "b8a71092-5ccd-4769-8611-81aebb24e7d3",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4731,7 +5397,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "27f87bd4-f3df-40e5-97df-00e5638a0bd2",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4745,7 +5413,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "72f9ac1d-053d-4037-8af3-ba79c61ab3f2",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4754,16 +5424,18 @@
       "A": "無線電信網路是由基地台和行動電話設備所組成",
       "B": "無線電信網路的 1G、2G 等指的是數據傳輸量，也就是根據數據的傳輸量來分類",
       "C": "使用者不僅可以使用手機進行語音通訊，亦能透過手機使用電子郵件、網頁瀏覽等功能",
-      "D": "基地台服務範圍內的手機 可以用無線的方式與基地台傳輸語音（2087652,1 則,有詳解）"
+      "D": "基地台服務範圍內的手機 可以用無線的方式與基地台傳輸語音"
     },
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "7f9f6d0b-3eef-4fe8-8254-c5fa6e09618c",
+    "version": 1
   },
   {
     "type": "單選題",
-    "name": ". 關 於 物 聯 網 和 無 線 感 測 器 網 路 中 的 網 路 機 制 6LoWPAN，下列敘述哪一項錯誤？",
+    "name": "關於物聯網和無線感測器網路中的網路機制6LoWPAN，下列敘述哪一項錯誤？",
     "options": {
       "A": "6LoWPAN 可以視為精簡版的 IPv6",
       "B": "具有短距離、低速率、低耗電和低記憶體使用的特性",
@@ -4773,7 +5445,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "e28ff312-4af9-41c3-838b-8c795b738161",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4787,7 +5461,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "9d2abc4c-e17a-4af0-9653-ba78ed6dbc93",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4801,7 +5477,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "fdd9422d-7a04-4481-87cc-af003c33118b",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4810,12 +5488,14 @@
       "A": "洗衣機於電費最低時段自動洗衣",
       "B": "醫生從醫院電腦中即時看到家中老人的生理資料",
       "C": "當車輛靠近車庫，車庫鐵捲門自動開啟",
-      "D": "停車場顯示空位並自動導 引車輛停車（2087656,1 則,有詳解）"
+      "D": "停車場顯示空位並自動導 引車輛停車"
     },
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "14cd3281-8002-498b-af8c-13a0227840ef",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4829,25 +5509,29 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "a54de88f-9e6e-4138-b85a-e85579c7b01f",
+    "version": 1
   },
   {
     "type": "單選題",
     "name": "在目前的工業及商業的需求中，下列哪一項不屬於 RFID 電子標籤的應用範圍？",
     "options": {
       "A": "將電子標籤應用到產品的生產線，監控生產線員工是否在工作時偷懶",
-      "B": "將電子標籤應用到產品的 流通上，得知貨物的各地庫存狀況",
-      "C": "將電子標籤應用到產品的 消費上，得知消費者的購物偏好",
-      "D": "將電子標籤應用到產品的 回收上，得知廢棄物是否被不當重製（2087658,1 則,有詳解）"
+      "B": "將電子標籤應用到產品的流通上，得知貨物的各地庫存狀況",
+      "C": "將電子標籤應用到產品的消費上，得知消費者的購物偏好",
+      "D": "將電子標籤應用到產品的回收上，得知廢棄物是否被不當重製"
     },
     "answer": "A",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "445042a4-2636-4878-9b60-aa297265b092",
+    "version": 1
   },
   {
     "type": "單選題",
-    "name": "歐 洲 電 信 標 準 協 會 （EuropeanTelecommunicationsStandardsInstitute,ETSI） 將物聯網劃分為三個階層，由下至上應為下列哪一項？",
+    "name": "歐洲電信標準協會（EuropeanTelecommunicationsStandardsInstitute,ETSI） 將物聯網劃分為三個階層，由下至上應為下列哪一項？",
     "options": {
       "A": "應用層、感知層、網路層",
       "B": "網路層、感知層、應用層",
@@ -4857,7 +5541,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "07cfe430-53df-4b7a-ac24-9963a32bc899",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4871,7 +5557,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "febf32c0-2b6b-46d4-9c43-d5545583e97f",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4885,7 +5573,9 @@
     "answer": "C",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "63a82d75-2fd4-4c35-8a79-453c8a7999ea",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4899,7 +5589,9 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "6ce4c496-515c-4285-9e9c-f6f342341ed0",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4913,7 +5605,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "30b6813c-d3e5-488a-8ddc-49df65918419",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4927,7 +5621,9 @@
     "answer": "D",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "c052219f-58f1-4576-a313-a83fa5025018",
+    "version": 1
   },
   {
     "type": "單選題",
@@ -4941,6 +5637,8 @@
     "answer": "B",
     "isEnabled": true,
     "tag": "iot",
-    "remark": ""
+    "remark": "",
+    "id": "d6dcdf6a-0cd2-4a2f-b8e4-166b2cb47abd",
+    "version": 1
   }
 ]

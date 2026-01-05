@@ -30,26 +30,19 @@ export default function FileUploader() {
   const handleFileRead = useCallback(
     (event) => {
       try {
-        const questions = JSON.parse(event.target.result)
-        questions.forEach((question) => {
-          if (!Object.keys(question).includes('id')) {
-            question.id = question.id ? question.id : uuidv4()
-          }
-          if (!Object.keys(question).includes('due')) {
-            question.due = null
-          }
-          if (!Object.keys(question).includes('lastAnsweredTime')) {
-            question.lastAnsweredTime = null
-          }
-          if (!Object.keys(question).includes('isEnabled')) {
-            question.isEnabled = true
-          }
-          if (!Object.keys(question).includes('remark')) {
-            question.remark = ''
-          }
-        })
-        addItem(questions)
-        setQuestions((prev) => [...prev, ...questions.map((question) => createQuestion(question))])
+        const parsed = JSON.parse(event.target.result)
+        const normalized = parsed.map((question) => ({
+          ...question,
+          id: question.id ?? uuidv4(),
+          version: question.version ?? 1,
+          due: question.due ?? null,
+          lastAnsweredTime: question.lastAnsweredTime ?? null,
+          isEnabled: question.isEnabled ?? true,
+          remark: question.remark ?? ''
+        }))
+
+        addItem(normalized)
+        setQuestions((prev) => [...prev, ...normalized.map((question) => createQuestion(question))])
         toast('✅新增成功！', {
           description: '已成功上傳檔案'
         })
