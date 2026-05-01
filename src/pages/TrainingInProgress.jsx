@@ -4,7 +4,7 @@ import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/component
 import StateBoard from '@/components/training/StateBoard'
 
 // react
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
@@ -12,9 +12,10 @@ import { toast } from 'sonner'
 // provider
 import { useQuestion } from '@/provider/QuestionProvider'
 import { createComponent } from '@/utils/componentFactory'
+import { createQuestion } from '@/lib/functions'
 
 function TrainingInProgress() {
-  const { problems, updateDue } = useQuestion()
+  const { problems, setProblems, updateDue } = useQuestion()
   const [mod, setMod] = useState('progress')
 
   const [result, setResult] = useState({
@@ -22,6 +23,54 @@ function TrainingInProgress() {
     correctCount: 0,
     wrongCount: 0
   })
+
+  const [time, setTime] = useState(0)
+  const [initialTime, setInitialTime] = useState(0)
+
+  // Restore state
+  useEffect(() => {
+    const saved = localStorage.getItem('trainingState')
+    if (saved) {
+      const state = JSON.parse(saved)
+      if (state.problems && state.problems.length > 0) {
+        setProblems(state.problems.map((p) => createQuestion(p)))
+      }
+      if (state.result) setResult(state.result)
+      if (state.mod) setMod(state.mod)
+      if (state.time) {
+        setTime(state.time)
+        setInitialTime(state.time)
+      }
+    }
+  }, [setProblems])
+
+  // Save state
+  useEffect(() => {
+    if (problems && problems.length > 0 && mod !== 'completed') {
+      const state = {
+        problems: problems.map((p) => p.toPayload()),
+        result,
+        mod,
+        time
+      }
+      localStorage.setItem('trainingState', JSON.stringify(state))
+    }
+  }, [problems, result, mod, time])
+
+  // Clear on unmount
+  useEffect(() => {
+    return () => {
+      // In a SPA, unmount happens when navigating away or reloading.
+      // To persist across reload but clear on "leaving", we can't easily distinguish them in useEffect cleanup.
+      // Usually "leaving the page" means navigating to another route.
+      // If we want to support reload, we should NOT clear in cleanup if we can't tell it's a reload.
+      // However, the requirement specifically asked for it.
+      // I will implement a check if the current path is NOT the training path.
+      if (window.location.pathname !== '/training/progress') {
+        localStorage.removeItem('trainingState')
+      }
+    }
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -60,6 +109,7 @@ function TrainingInProgress() {
       wrongCount: problemsLength - correctCount
     })
     setMod('completed')
+    localStorage.removeItem('trainingState')
     window.scrollTo(0, 0)
     window.document.body.style.height = '1px'
   }
@@ -77,7 +127,7 @@ function TrainingInProgress() {
       </TheBreadcrumb>
       <div>
         {/* 顯示資訊 */}
-        <StateBoard mod={mod} />
+        <StateBoard mod={mod} onTimeUpdate={setTime} initialTime={initialTime} />
 
         {/* 顯示成績 */}
         {result.score > -1 && (

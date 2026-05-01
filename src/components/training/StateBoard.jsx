@@ -6,25 +6,29 @@ import { formatTime, getTags } from '@/lib/functions'
 import { useEffect, useState } from 'react'
 import { useQuestion } from '@/provider/QuestionProvider'
 
-export default function StateBoard({ mod }) {
+export default function StateBoard({ mod, onTimeUpdate, initialTime = 0 }) {
   const { problems } = useQuestion()
   const tags = getTags(problems)
 
   const [isActive, setIsActive] = useState(true)
-  const [time, setTime] = useState(0)
+  const [time, setTime] = useState(initialTime)
 
   // Timer
   useEffect(() => {
     let interval = null
     if (isActive) {
       interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 1)
+        setTime((prevTime) => {
+          const newTime = prevTime + 1
+          if (onTimeUpdate) onTimeUpdate(newTime)
+          return newTime
+        })
       }, 1000)
-    } else if (!isActive && time !== 0) {
+    } else {
       clearInterval(interval)
     }
     return () => clearInterval(interval)
-  }, [isActive, time])
+  }, [isActive, onTimeUpdate])
 
   const startTimer = () => {
     setIsActive(true)
@@ -67,5 +71,7 @@ export default function StateBoard({ mod }) {
 }
 
 StateBoard.propTypes = {
-  mod: PropTypes.string
+  mod: PropTypes.string,
+  onTimeUpdate: PropTypes.func,
+  initialTime: PropTypes.number
 }
