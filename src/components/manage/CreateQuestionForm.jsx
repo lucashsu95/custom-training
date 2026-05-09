@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
+import { toast } from 'sonner'
 import {
   Dialog,
   DialogContent,
@@ -31,6 +32,17 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
     answer: '',
   })
 
+  const handleTypeChange = (newType) => {
+    setType(newType)
+    setFormData((prev) => ({
+      ...prev,
+      name: newType === '配對題' ? [] : '',
+      options: newType === '單選題' ? {} : [],
+      answers: [],
+      answer: ''
+    }))
+  }
+
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
@@ -38,23 +50,24 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
   const addOption = () => {
     if (type === '單選題') {
       const keys = ['A', 'B', 'C', 'D', 'E']
-      const nextKey = keys[Object.keys(formData.options).length]
+      const currentKeys = Object.keys(formData.options || {})
+      const nextKey = keys[currentKeys.length]
       if (nextKey) {
         setFormData((prev) => ({
           ...prev,
-          options: { ...prev.options, [nextKey]: '' },
+          options: { ...(prev.options || {}), [nextKey]: '' }
         }))
       }
     } else if (type === '多選題' || type === '填空題') {
       setFormData((prev) => ({
         ...prev,
-        options: [...prev.options, ''],
+        options: [...(Array.isArray(prev.options) ? prev.options : []), '']
       }))
     } else if (type === '配對題') {
       setFormData((prev) => ({
         ...prev,
-        name: [...(prev.name || []), ''],
-        options: [...(prev.options || []), ''],
+        name: [...(Array.isArray(prev.name) ? prev.name : []), ''],
+        options: [...(Array.isArray(prev.options) ? prev.options : []), '']
       }))
     }
   }
@@ -88,19 +101,19 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
 
   const removeOption = (index) => {
     if (type === '單選題') {
-      const newOptions = { ...formData.options }
+      const newOptions = { ...(formData.options || {}) }
       delete newOptions[index]
       setFormData((prev) => ({ ...prev, options: newOptions }))
     } else if (type === '多選題' || type === '填空題') {
       setFormData((prev) => ({
         ...prev,
-        options: prev.options.filter((_, i) => i !== index),
+        options: (Array.isArray(prev.options) ? prev.options : []).filter((_, i) => i !== index)
       }))
     } else if (type === '配對題') {
       setFormData((prev) => ({
         ...prev,
-        name: prev.name.filter((_, i) => i !== index),
-        options: prev.options.filter((_, i) => i !== index),
+        name: (Array.isArray(prev.name) ? prev.name : []).filter((_, i) => i !== index),
+        options: (Array.isArray(prev.options) ? prev.options : []).filter((_, i) => i !== index)
       }))
     }
   }
@@ -192,7 +205,7 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>題型</Label>
-              <Select value={type} onValueChange={setType}>
+              <Select value={type} onValueChange={handleTypeChange}>
                 <SelectTrigger>
                   <SelectValue placeholder="選擇題型" />
                 </SelectTrigger>
@@ -219,21 +232,26 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
             <Label>題目內容</Label>
             {type === '配對題' ? (
               <div className="space-y-2">
-                {formData.name?.map((val, i) => (
-                  <div key={`q-name-${i}`} className="flex gap-2">
-                    <Input
-                      value={val}
-                      onChange={(e) => updateAnswer(i, e.target.value)}
-                      placeholder={`題目 ${i + 1}`}
-                    />
-                    <Button variant="destructive" onClick={() => removeOption(i)}>刪除</Button>
-                  </div>
-                ))}
-                <Button variant="outline" onClick={addOption}>新增配對項</Button>
+                {Array.isArray(formData.name) &&
+                  formData.name.map((val, i) => (
+                    <div key={`q-name-${i}`} className="flex gap-2">
+                      <Input
+                        value={val}
+                        onChange={(e) => updateAnswer(i, e.target.value)}
+                        placeholder={`題目 ${i + 1}`}
+                      />
+                      <Button variant="destructive" onClick={() => removeOption(i)}>
+                        刪除
+                      </Button>
+                    </div>
+                  ))}
+                <Button variant="outline" onClick={addOption}>
+                  新增配對項
+                </Button>
               </div>
             ) : (
               <Input
-                value={formData.name}
+                value={formData.name || ''}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="輸入題目內容"
               />
@@ -244,7 +262,7 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
             <div className="space-y-4">
               <Label>選項與答案</Label>
               <div className="space-y-2">
-                {Object.entries(formData.options).map(([key, val]) => (
+                {Object.entries(formData.options || {}).map(([key, val]) => (
                   <div key={key} className="flex items-center gap-2">
                     <span className="font-bold w-4">{key}</span>
                     <Input
@@ -263,10 +281,14 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
                         <SelectItem value={key}>答案</SelectItem>
                       </SelectContent>
                     </Select>
-                    <Button variant="destructive" onClick={() => removeOption(key)}>刪除</Button>
+                    <Button variant="destructive" onClick={() => removeOption(key)}>
+                      刪除
+                    </Button>
                   </div>
                 ))}
-                <Button variant="outline" onClick={addOption}>新增選項</Button>
+                <Button variant="outline" onClick={addOption}>
+                  新增選項
+                </Button>
               </div>
             </div>
           )}
@@ -275,28 +297,47 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
             <div className="space-y-4">
               <Label>選項 (請輸入所有選項，包含正確答案)</Label>
               <div className="space-y-2">
-                {formData.options.map((val, i) => (
-                  <div key={`opt-mc-${i}`} className="flex gap-2">
-                    <Input
-                      value={val}
-                      onChange={(e) => updateOption(i, e.target.value)}
-                      placeholder={`選項 ${i + 1}`}
-                    />
-                    <Button
-                      variant={formData.answers.includes(val) ? 'default' : 'outline'}
-                      onClick={() => {
-                        const answers = formData.answers.includes(val)
-                          ? formData.answers.filter((a) => a !== val)
-                          : [...formData.answers, val]
-                        setFormData((prev) => ({ ...prev, answers }))
-                      }}
-                    >
-                      {formData.answers.includes(val) ? '已選' : '設為答案'}
-                    </Button>
-                    <Button variant="destructive" onClick={() => removeOption(i)}>刪除</Button>
-                  </div>
-                ))}
-                <Button variant="outline" onClick={addOption}>新增選項</Button>
+                {Array.isArray(formData.options) &&
+                  formData.options.map((val, i) => (
+                    <div key={`opt-mc-${i}`} className="flex gap-2">
+                      <Input
+                        value={val}
+                        onChange={(e) => updateOption(i, e.target.value)}
+                        placeholder={`選項 ${i + 1}`}
+                      />
+                      <Button
+                        variant={
+                          Array.isArray(formData.answers) &&
+                          formData.answers.includes(val) &&
+                          val !== ''
+                            ? 'default'
+                            : 'outline'
+                        }
+                        onClick={() => {
+                          if (val === '') {
+                            toast.error('請先輸入選項內容再設為答案')
+                            return
+                          }
+                          const answers = formData.answers.includes(val)
+                            ? formData.answers.filter((a) => a !== val)
+                            : [...formData.answers, val]
+                          setFormData((prev) => ({ ...prev, answers }))
+                        }}
+                      >
+                        {Array.isArray(formData.answers) &&
+                        formData.answers.includes(val) &&
+                        val !== ''
+                          ? '已選'
+                          : '設為答案'}
+                      </Button>
+                      <Button variant="destructive" onClick={() => removeOption(i)}>
+                        刪除
+                      </Button>
+                    </div>
+                  ))}
+                <Button variant="outline" onClick={addOption}>
+                  新增選項
+                </Button>
               </div>
             </div>
           )}
@@ -305,17 +346,22 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
             <div className="space-y-4">
               <Label>答案 (可新增多個填空項)</Label>
               <div className="space-y-2">
-                {formData.options.map((val, i) => (
-                  <div key={`opt-fill-${i}`} className="flex gap-2">
-                    <Input
-                      value={val}
-                      onChange={(e) => updateOption(i, e.target.value)}
-                      placeholder={`答案 ${i + 1}`}
-                    />
-                    <Button variant="destructive" onClick={() => removeOption(i)}>刪除</Button>
-                  </div>
-                ))}
-                <Button variant="outline" onClick={addOption}>新增填空項</Button>
+                {Array.isArray(formData.options) &&
+                  formData.options.map((val, i) => (
+                    <div key={`opt-fill-${i}`} className="flex gap-2">
+                      <Input
+                        value={val}
+                        onChange={(e) => updateOption(i, e.target.value)}
+                        placeholder={`答案 ${i + 1}`}
+                      />
+                      <Button variant="destructive" onClick={() => removeOption(i)}>
+                        刪除
+                      </Button>
+                    </div>
+                  ))}
+                <Button variant="outline" onClick={addOption}>
+                  新增填空項
+                </Button>
               </div>
             </div>
           )}
@@ -324,19 +370,22 @@ export default function CreateQuestionForm({ open, onOpenChange, onCreate }) {
             <div className="space-y-4">
               <Label>對應答案</Label>
               <div className="space-y-2">
-                {formData.options?.map((val, i) => (
-                  <div key={`opt-match-${i}`} className="flex gap-2">
-                    <span className="flex items-center text-sm text-muted-foreground">
-                      {formData.name?.[i] || `題目 ${i + 1}`}
-                    </span>
-                    <Input
-                      value={val}
-                      onChange={(e) => updateOption(i, e.target.value)}
-                      placeholder={`對應答案 ${i + 1}`}
-                    />
-                    <Button variant="destructive" onClick={() => removeOption(i)}>刪除</Button>
-                  </div>
-                ))}
+                {Array.isArray(formData.options) &&
+                  formData.options.map((val, i) => (
+                    <div key={`opt-match-${i}`} className="flex gap-2">
+                      <span className="flex items-center text-sm text-muted-foreground">
+                        {formData.name?.[i] || `題目 ${i + 1}`}
+                      </span>
+                      <Input
+                        value={val}
+                        onChange={(e) => updateOption(i, e.target.value)}
+                        placeholder={`對應答案 ${i + 1}`}
+                      />
+                      <Button variant="destructive" onClick={() => removeOption(i)}>
+                        刪除
+                      </Button>
+                    </div>
+                  ))}
               </div>
             </div>
           )}
