@@ -1,5 +1,3 @@
-'use client'
-
 // ui component
 import { Button } from '@/components/ui/button'
 import {

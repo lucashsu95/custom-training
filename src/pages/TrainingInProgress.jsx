@@ -13,9 +13,12 @@ import { toast } from 'sonner'
 import { useQuestion } from '@/provider/QuestionProvider'
 import { createComponent } from '@/utils/componentFactory'
 import { createQuestion } from '@/lib/functions'
+import { useHistory } from '@/hooks/useHistory'
+import { v4 as uuidv4 } from 'uuid'
 
 function TrainingInProgress() {
-  const { problems, setProblems, updateDue } = useQuestion()
+  const { problems, setProblems, updateDue, trainingConfig } = useQuestion()
+  const { addHistory } = useHistory()
   const [mod, setMod] = useState('progress')
 
   const [result, setResult] = useState({
@@ -108,6 +111,20 @@ function TrainingInProgress() {
       correctCount,
       wrongCount: problemsLength - correctCount
     })
+
+    // Save history
+    const historyEntry = {
+      id: uuidv4(),
+      timestamp: Date.now(),
+      mode: trainingConfig.mode,
+      tags: trainingConfig.tags,
+      score,
+      correctCount,
+      wrongCount: problemsLength - correctCount,
+      totalQuestions: problemsLength
+    }
+    addHistory(historyEntry)
+
     setMod('completed')
     localStorage.removeItem('trainingState')
     window.scrollTo(0, 0)
@@ -153,10 +170,10 @@ function TrainingInProgress() {
         {/* 題目作答 */}
 
         <form className="my-5 space-y-6 md:space-y-12 md:p-6 md:shadow-lg" onSubmit={handleSubmit}>
-          {problems.map((problem, i) => (
-            <section key={i}>
+          {problems.map((problem) => (
+            <section key={problem.id}>
               {createComponent(problem.type, {
-                i,
+                i: problems.indexOf(problem),
                 problem,
                 mod
               })}
@@ -171,7 +188,7 @@ function TrainingInProgress() {
             </>
           ) : (
             <Link to="/">
-              <Button className="z-10 mt-3 w-full">回首頁</Button>
+              <Button className="z-10 mt-[100px] w-full">回首頁</Button>
             </Link>
           )}
         </form>

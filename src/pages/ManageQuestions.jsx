@@ -17,6 +17,7 @@ import TheBreadcrumb from '@/components/TheBreadcrumb'
 import { QuestionsTable } from '@/components/manage/QuestionsTable'
 import { FaDownload, FaTrashAlt } from 'react-icons/fa'
 import { IoIosRemoveCircle } from 'react-icons/io'
+import CreateQuestionForm from '@/components/manage/CreateQuestionForm'
 
 // react
 import { useEffect, useState } from 'react'
@@ -38,6 +39,7 @@ export default function ManageQuestions() {
   const [open2, setOpen2] = useState(false)
   const [open3, setOpen3] = useState(false)
   const [open4, setOpen4] = useState(false)
+  const [open5, setOpen5] = useState(false)
 
   // 初始化Question Start
 
@@ -169,6 +171,16 @@ export default function ManageQuestions() {
         </button>
 
         <div className="my-2 flex gap-2">
+          <Button onClick={() => setOpen5(true)}>新增題目</Button>
+          <CreateQuestionForm
+            open={open5}
+            onOpenChange={setOpen5}
+            onCreate={(question) => {
+              addItem(question)
+              setQuestions((prev) => [...prev, question])
+              toast('✅ 新增成功', { description: '已成功新增題目' })
+            }}
+          />
           <FileUploader />
           {hasChecked && (
             <AlertDialog asChild open={open1} onOpenChange={setOpen1}>

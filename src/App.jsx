@@ -9,6 +9,7 @@ import TrainingInProgress from './pages/TrainingInProgress'
 import TheNavbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import AutoTraining from '@/pages/AutoTraining'
+import HistoryView from '@/pages/HistoryView'
 
 // providers
 import { SettingProvider } from './provider/SettingProvider'
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="/upload" element={<ManageQuestions />} />
               <Route path="/training/setting" element={<TrainingSettings />} />
               <Route path="/training/in-progress" element={<TrainingInProgress />} />
+              <Route path="/history" element={<HistoryView />} />
             </Routes>
           </Router>
           <Toaster />

@@ -2,7 +2,12 @@ import { getQuestionClassByType } from '@/classes/Question'
 
 // 打亂陣列
 export function shuffleAry(ary) {
-  return [...ary].sort(() => Math.random() - 0.5)
+  const result = [...ary]
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[result[i], result[j]] = [result[j], result[i]]
+  }
+  return result
 }
 
 // 題目等級 -> 時間

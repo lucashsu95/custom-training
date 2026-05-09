@@ -6,7 +6,7 @@ export default class API {
 
   init() {
     return new Promise((resolve) => {
-      const req = indexedDB.open('customTrainingDB', 1)
+      const req = indexedDB.open('customTrainingDB', 2)
       req.onsuccess = (e) => {
         this.db = e.target.result
         resolve()
@@ -14,7 +14,12 @@ export default class API {
 
       req.onupgradeneeded = (e) => {
         this.db = e.target.result
-        this.db.createObjectStore('questions', { keyPath: 'id', autoIncrement: true })
+        if (!this.db.objectStoreNames.contains('questions')) {
+          this.db.createObjectStore('questions', { keyPath: 'id', autoIncrement: true })
+        }
+        if (!this.db.objectStoreNames.contains('history')) {
+          this.db.createObjectStore('history', { keyPath: 'id' })
+        }
       }
     })
   }

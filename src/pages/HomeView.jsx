@@ -1,6 +1,6 @@
 // component & icon
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { FaBook } from 'react-icons/fa'
+import { FaBook, FaHistory } from 'react-icons/fa'
 import { IoLibrarySharp } from 'react-icons/io5'
 import { MdNotStarted, MdDashboardCustomize } from 'react-icons/md'
 
@@ -65,6 +65,14 @@ export default function HomeView() {
           <IoLibrarySharp className="h-5 w-5" />
           <AlertTitle className="text-base font-bold">自定題庫</AlertTitle>
           <AlertDescription>在題庫頁面上傳題庫</AlertDescription>
+        </Alert>
+      </Link>
+
+      <Link to="/history">
+        <Alert className="custom-alert">
+          <FaHistory className="h-5 w-5" />
+          <AlertTitle className="text-base font-bold">練習紀錄</AlertTitle>
+          <AlertDescription>查看過去的練習結果</AlertDescription>
         </Alert>
       </Link>
 

@@ -19,6 +19,10 @@ const QuestionContext = createContext()
 export function QuestionProvider({ children }) {
   const [questions, setQuestions] = useState([])
   const [problems, setProblems] = useState([])
+  const [trainingConfig, setTrainingConfig] = useState({
+    mode: 'custom',
+    tags: []
+  })
   const { checkTrainingCount } = useSetting()
   const { updateItem } = useIndexedDB('questions')
 
@@ -73,9 +77,13 @@ export function QuestionProvider({ children }) {
       })
       return false
     }
-    const displayedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
-    const problems = state.hasTech ? productTech(displayedProblems) : displayedProblems
-    setProblems(problems)
+    const processedProblems = getVocabularyShuffled(correctProblems, state.hasName) // 顯示單字題
+    const finalProblems = state.hasTech ? productTech(processedProblems) : processedProblems
+    setTrainingConfig({
+      mode: 'custom',
+      tags: state.currentTags
+    })
+    setProblems(finalProblems)
     return true
   }
 
@@ -111,10 +119,13 @@ export function QuestionProvider({ children }) {
       })
       return false
     }
-    const displayedProblems = getVocabularyShuffled(correctProblems, true) // 打亂
-    // const displayedProblems = getVocabularyShuffled(correctProblems, false) // 打亂
-    const problems = productTech(displayedProblems)
-    const sortedTechProblems = sortByTech(problems)
+    const processedVocabulary = getVocabularyShuffled(correctProblems, true) // 打亂
+    const technicalProblems = productTech(processedVocabulary)
+    const sortedTechProblems = sortByTech(technicalProblems)
+    setTrainingConfig({
+      mode: 'auto',
+      tags: ['系統判斷']
+    })
     setProblems(sortedTechProblems)
     return true
   }
@@ -129,7 +140,8 @@ export function QuestionProvider({ children }) {
         updateDue,
         updateQuestion,
         customStartTraining,
-        autoStartTraining
+        autoStartTraining,
+        trainingConfig
       }}
     >
       {children}
