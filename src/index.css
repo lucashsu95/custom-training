@@ -1,74 +1,148 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 18%;
-    --card: 0 0% 100%;
+    color-scheme: light;
+
+    --background: 240 20% 99%;
+    --foreground: 240 10% 12%;
+
+    --card: 240 25% 98%;           /* 比 background 暗一階，淺色下卡片可見 */
     --card-foreground: 240 10% 10%;
+
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 10%;
+
     --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 86%;
-    --secondary: 240 4.8% 95.9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 97%;     /* 內凹井 */
     --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
+
+    --muted: 240 4.8% 96%;         /* 頁面底層，比 secondary 暗 0.5% */
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
+
+    --accent: 240 5% 93%;          /* hover，比 secondary 深一階 */
     --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 86%;
+
+    --destructive: 0 72.2% 45.1%;  /* #dc2626 → 4.63:1 on #fafafa */
+    --destructive-foreground: 0 0% 98%;
+
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 10% 10%;
+
+    /* 語意：分數色（文字用，需通過 AA 4.5:1） */
+    --score-good: 142 72% 29%;     /* #15803d → 5.02:1 on white */
+    --score-warn: 25 95% 42%;      /* #c2410c → 5.18:1 on white */
+    --score-bad: 0 72% 45%;        /* #dc2626 → 4.83:1 on white */
+
+    /* 語意：答案回饋表面色（背景用，搭配深色文字） */
+    --ans-correct: 142 55% 93%;
+    --ans-wrong: 0 78% 95%;
+    --ans-missed: 45 92% 90%;
+
+    /* 陰影色 */
+    --shadow-color: 240 10% 10%;
+
+    /* 圖表色（保留原值） */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
     --radius: 0.5rem;
+    --header-h: 3.5rem;            /* 56px，供 sticky 偏移使用 */
   }
+
   .dark {
-    --background: 240 10% 15%;
-    --foreground: 0 0% 86%;
-    --card: 240 10% 10%;
-    --card-foreground: 0 0% 86%;
-    --popover: 240 10% 10%;
-    --popover-foreground: 0 0% 86%;
-    --primary: 0 0% 86%;
+    color-scheme: dark;
+
+    --background: 240 10% 9%;      /* 最深層 */
+    --foreground: 240 16% 93%;
+
+    --card: 240 10% 12%;           /* 比 background 亮 → 浮起感 ✓ */
+    --card-foreground: 240 16% 93%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 240 16% 93%;
+
+    --primary: 0 0% 93%;
     --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 86%;
-    --muted: 240 3.7% 15.9%;
+
+    --secondary: 240 3.7% 16%;
+    --secondary-foreground: 0 0% 93%;
+
+    --muted: 240 3.7% 14%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 86%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 86%;
-    --border: 0 0% 60%;
-    --input: 0 0% 60%;
+
+    --accent: 240 3.7% 20%;       /* hover，比 secondary 亮 */
+    --accent-foreground: 0 0% 93%;
+
+    --destructive: 0 62.8% 34%;    /* 深色下稍微調亮以維持可見度 */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 22%;        /* 修正：從 60% 降到 22%，不再發光 */
+    --input: 240 3.7% 26%;         /* 修正：輸入框可見但退後 */
     --ring: 240 4.9% 83.9%;
+
+    --score-good: 142 55% 55%;
+    --score-warn: 25 90% 60%;
+    --score-bad: 0 75% 62%;
+
+    --ans-correct: 160 60% 22%;
+    --ans-wrong: 0 55% 26%;
+    --ans-missed: 42 70% 24%;
+
+    --shadow-color: 0 0% 0%;
+
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
-@layer base {
+
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  /* 滾動行為 */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* reduced-motion 全域防護 */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-.custom-alert {
-  @apply cursor-pointer transition-transform hover:scale-105;
-}
+/* 共用元件類 — 移進 @layer 使其可被工具類覆蓋 */
+@layer components {
+  .custom-alert {
+    @apply cursor-pointer transition-shadow hover:ring-1 hover:ring-ring;
+  }
 
-.custom-row {
-  @apply grid rounded-md border px-4 py-2 font-mono text-sm shadow-sm;
+  .custom-row {
+    @apply grid rounded-md border px-4 py-2 text-sm shadow-sm;
+    /* 移除 font-mono：CJK 字形沒有等寬覆蓋，前進寬度是拉丁的兩倍，表頭對不上 */
+  }
 }
