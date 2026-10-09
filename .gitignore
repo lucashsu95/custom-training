@@ -39,3 +39,6 @@ docs/progress.md
 .opencode/
 scripts/harness/
 .sisyphus
+/.agents/skills
+/.omo/run-continuation
+/skills-lock.json
