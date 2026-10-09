@@ -217,3 +217,71 @@ export const sortByTech = (problems) => {
   })
   return newProblems
 }
+// ──────────────────────────────────────────────
+// P1 新增 helper — 語意階梯、格式化、分數色調
+// ──────────────────────────────────────────────
+
+
+/**
+ * 把 due 值轉成語意標籤與色調
+ * @param {number|null} due
+ * @returns {{ label: string, tone: 'good'|'warn'|'bad'|'neutral' }}
+ *
+ * 階梯對照（與 practiceIntervalByLevel 同步）：
+ *   due >= 5  → 熟練（good）
+ *   due >= 0  → 普通（warn）
+ *   due < 0   → 不熟練（bad）
+ *   due null  → 未作答（neutral）
+ */
+export function proficiencyLevel(due) {
+  if (due === null || due === undefined) {
+    return { label: '未作答', tone: 'neutral' }
+  }
+  if (due >= 5) return { label: `熟練/${due}`, tone: 'good' }
+  if (due >= 0) return { label: `普通/${due}`, tone: 'warn' }
+  return { label: `不熟練/${due}`, tone: 'bad' }
+}
+
+/**
+ * 格式化題目的「下次作答時間」
+ * 修正 QuestionSection.jsx:112 的 (h:m) 標籤錯誤
+ *
+ * @param {object} question — 需要 lastAnsweredTime, due
+ * @returns {string} 例如 '2 小時後' / '已到期' / '未作答'
+ */
+export function formatDueAt(question) {
+  if (question.due === null || question.lastAnsweredTime === null) {
+    return '未作答'
+  }
+
+  const intervalSec = question.due < 0 ? 0 : (practiceIntervalByLevel[question.due] ?? 0)
+  const nextTime = question.lastAnsweredTime + intervalSec * 1000
+  const remaining = nextTime - Date.now()
+
+  if (remaining <= 0) return '已到期'
+
+  const minutes = Math.floor(remaining / 60000)
+  if (minutes < 60) return `${minutes} 分鐘後`
+
+  const hours = Math.floor(minutes / 60)
+  if (hours < 24) return `${hours} 小時後`
+
+  const days = Math.floor(hours / 24)
+  return `${days} 天後`
+}
+
+/**
+ * 依分數回傳語意色調名
+ * 取代三份重複的 >= 80 / >= 60 / else 三元：
+ *   - AutoTraining.jsx:78-84
+ *   - TrainingInProgress.jsx:154-160
+ *   - HistoryView.jsx:123-125
+ *
+ * @param {number} score — 0~100
+ * @returns {'good'|'warn'|'bad'}
+ */
+export function scoreTone(score) {
+  if (score >= 80) return 'good'
+  if (score >= 60) return 'warn'
+  return 'bad'
+}
