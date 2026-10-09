@@ -1,12 +1,20 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 
-const initialState = {
+const ThemeProviderContext = createContext({
   theme: 'system',
-  setTheme: () => null
-}
+  resolvedTheme: 'light',
+  setTheme: () => null,
+})
 
-const ThemeProviderContext = createContext(initialState)
+/**
+ * 取得 OS 目前的色彩偏好
+ * @returns {'light' | 'dark'}
+ */
+function getSystemTheme() {
+  if (typeof window === 'undefined') return 'light'
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
 
 export function ThemeProvider({
   children,
@@ -14,32 +22,46 @@ export function ThemeProvider({
   storageKey = 'vite-ui-theme',
   ...props
 }) {
-  const [theme, setTheme] = useState(() => localStorage.getItem(storageKey) || defaultTheme)
+  const [theme, setThemeState] = useState(
+    () => localStorage.getItem(storageKey) || defaultTheme
+  )
 
+  // 追蹤 OS 色彩偏好，讓 'system' 模式能即時跟隨
+  const [systemTheme, setSystemTheme] = useState(getSystemTheme)
+
+  // 監聽 OS 色彩偏好變化
   useEffect(() => {
-    const root = window.document.documentElement
+    const mql = window.matchMedia('(prefers-color-scheme: dark)')
+    const handler = (e) => setSystemTheme(e.matches ? 'dark' : 'light')
+    mql.addEventListener('change', handler)
+    return () => mql.removeEventListener('change', handler)
+  }, [])
 
+  // 計算實際主題（永遠是 'light' 或 'dark'）
+  const resolvedTheme = useMemo(
+    () => (theme === 'system' ? systemTheme : theme),
+    [theme, systemTheme]
+  )
+
+  // 套用 class 到 <html>
+  useEffect(() => {
+    const root = document.documentElement
     root.classList.remove('light', 'dark')
+    root.classList.add(resolvedTheme)
+  }, [resolvedTheme])
 
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light'
+  const setTheme = useCallback(
+    (newTheme) => {
+      localStorage.setItem(storageKey, newTheme)
+      setThemeState(newTheme)
+    },
+    [storageKey]
+  )
 
-      root.classList.add(systemTheme)
-      return
-    }
-
-    root.classList.add(theme)
-  }, [theme])
-
-  const value = {
-    theme,
-    setTheme: (theme) => {
-      localStorage.setItem(storageKey, theme)
-      setTheme(theme)
-    }
-  }
+  const value = useMemo(
+    () => ({ theme, resolvedTheme, setTheme }),
+    [theme, resolvedTheme, setTheme]
+  )
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
@@ -47,17 +69,18 @@ export function ThemeProvider({
     </ThemeProviderContext.Provider>
   )
 }
+
 ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
   defaultTheme: PropTypes.string,
-  storageKey: PropTypes.string
+  storageKey: PropTypes.string,
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext)
-
-  if (context === undefined) throw new Error('useTheme must be used within a ThemeProvider')
-
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider')
+  }
   return context
 }

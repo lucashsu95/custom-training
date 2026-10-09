@@ -25,7 +25,7 @@ import { useTheme } from '@/provider/ThemeProvider'
 import { useSetting } from '@/provider/SettingProvider'
 
 export default function TheNavbar() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const { enableTraining, handleSetEnableTraining } = useSetting()
 
   return (
@@ -68,8 +68,8 @@ export default function TheNavbar() {
                 <div className="flex items-center space-x-2">
                   <Sun className="h-5 w-5" />
                   <Switch
-                    checked={theme === 'dark'}
-                    onCheckedChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                    checked={resolvedTheme === 'dark'}
+                    onCheckedChange={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
                     aria-label="Toggle theme"
                   />
                   <Moon className="h-5 w-5" />
