@@ -2,9 +2,58 @@ import { Switch } from '@/components/ui/switch'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import { IoIosArrowDown } from 'react-icons/io'
+import { ChevronDown } from 'lucide-react'
 import { useQuestion } from '@/provider/QuestionProvider'
-import { createQuestion, formatTime, practiceIntervalByLevel } from '@/lib/functions'
+import { createQuestion, formatDueAt, proficiencyLevel } from '@/lib/functions'
+import QuestionCard from '@/components/molecules/QuestionCard'
+
+function OptionsDetail({ question }) {
+  if (question.type === '單選題') {
+    return (
+      <div className="space-y-1">
+        {Object.keys(question.options ?? {}).map((optionKey) => (
+          <div
+            key={optionKey}
+            className={`rounded px-2 py-0.5 ${question.answer === optionKey ? 'bg-ans-correct' : ''}`}
+          >
+            {optionKey}. {question.options[optionKey]}
+          </div>
+        ))}
+      </div>
+    )
+  }
+  if (question.type === '多選題') {
+    return (
+      <div className="space-y-1">
+        {(question.options ?? []).map((option) => (
+          <div key={option}>{option}</div>
+        ))}
+        {(question.answers ?? []).map((answer) => (
+          <div key={answer} className="rounded bg-ans-correct px-2 py-0.5">
+            {answer}
+          </div>
+        ))}
+      </div>
+    )
+  }
+  if (question.type === '填空題' || question.type === '配對題') {
+    return (
+      <div className="space-y-1">
+        {(question.options ?? []).map((option) => (
+          <div key={option}>{option}</div>
+        ))}
+      </div>
+    )
+  }
+  if (question.type === '單字題') {
+    return <div>{question.answer}</div>
+  }
+  return <div>未知題型</div>
+}
+
+OptionsDetail.propTypes = {
+  question: PropTypes.object.isRequired
+}
 
 export default function QuestionSection({ questions, questionKey }) {
   const [open, setOpen] = useState(false)
@@ -13,11 +62,12 @@ export default function QuestionSection({ questions, questionKey }) {
   return (
     <Collapsible open={open}>
       <CollapsibleTrigger asChild onClick={() => setOpen(!open)}>
-        <h4 className="md:px-10; mb-3 flex cursor-pointer items-center justify-between rounded-md bg-sky-200 px-3 py-2 text-lg font-bold shadow dark:bg-sky-900">
+        <h4 className="mb-3 flex cursor-pointer items-center justify-between rounded-md bg-muted px-3 py-2 text-lg font-bold shadow">
           <span className="flex items-center gap-2">
             <input
               type="checkbox"
               className="rounded"
+              aria-label={`全選「${questionKey}」標籤的題目`}
               onClick={(e) => {
                 e.stopPropagation()
                 const isChecked = e.target.checked
@@ -32,96 +82,37 @@ export default function QuestionSection({ questions, questionKey }) {
             />
             <span>{questionKey}</span>
           </span>
-          <IoIosArrowDown className={`${open ? '-rotate-180' : 'rotate-0'} transition-transform`} />
+          <ChevronDown className={`${open ? '-rotate-180' : 'rotate-0'} transition-transform`} />
         </h4>
       </CollapsibleTrigger>
 
-      <CollapsibleContent className="overflow-x-auto">
-        <div className="min-w-max space-y-2">
-          <section className="custom-row grid-cols-7">
-            <div>類型</div>
-            <div>狀態/熟練度</div>
-            <div>題目</div>
-            <div>選項/答案</div>
-            <div>下次做答時間</div>
-            <div>備註</div>
-            <div>已啟用</div>
-          </section>
-          {questions.map((question, index) => {
-            const second =
-              question.lastAnsweredTime +
-              practiceIntervalByLevel[question.due] * 1000 -
-              new Date().getTime()
-
+      <CollapsibleContent>
+        <div className="space-y-2">
+          {questions.map((question) => {
+            const level = proficiencyLevel(question.due)
+            const stem = Array.isArray(question.name)
+              ? question.name.join('、')
+              : (question.name ?? '')
             return (
-              <section
-                key={index}
-                className={`custom-row ${['填空題', '配對題', '單選題', '多選題'].includes(question.type) ? 'grid-cols-[1fr_1fr_6fr_5fr_1fr_1fr_1fr] gap-3' : 'grid-cols-7'}`}
-              >
-                <div>{question.type}</div>
-                <div>
-                  {question.due > 7 ? (
-                    <span className="text-green-500">熟練/{question.due + 1}</span>
-                  ) : question.due >= 0 && question.due !== null ? (
-                    <span>普通/{question.due + 1}</span>
-                  ) : question.due !== null ? (
-                    <span className="text-red-400">不熟練/{question.due + 1}</span>
-                  ) : (
-                    <span className="text-gray-500/70 dark:text-gray-300/70">未作答</span>
-                  )}
+              <div key={question.id} className="space-y-2">
+                <QuestionCard
+                  question={{ ...question, name: stem }}
+                  actions={
+                    <Switch
+                      checked={question.isEnabled}
+                      onCheckedChange={() =>
+                        updateQuestion(question.id, { isEnabled: !question.isEnabled })
+                      }
+                      aria-label={`${stem}，目前${level.label}，切換啟用狀態`}
+                    />
+                  }
+                />
+                <div className="space-y-1 px-1 text-sm">
+                  <OptionsDetail question={question} />
+                  <p className="text-muted-foreground">下次練習：{formatDueAt(question)}</p>
+                  {question.remark && <p className="text-muted-foreground">{question.remark}</p>}
                 </div>
-                <div className="max-w-[500px]">
-                  {question.type === '配對題'
-                    ? question.name.map((part, j) => <li key={j}>{part}</li>)
-                    : question.name}
-                </div>
-                <div className="max-w-[500px]">
-                  {question.type === '單選題' ? (
-                    Object.keys(question.options).map((optionKey) => (
-                      <div
-                        key={`${index}-${optionKey}`}
-                        className={`rounded px-2 py-0.5 ${question.answer === optionKey && 'bg-sky-200 dark:bg-sky-600'}`}
-                      >
-                        {optionKey}. {question.options[optionKey]}
-                      </div>
-                    ))
-                  ) : question.type === '多選題' ? (
-                    <div className="space-y-1">
-                      {question.options.map((option) => (
-                        <div key={option}>{option}</div>
-                      ))}
-                      {question.answers.map((answer) => (
-                        <div
-                          key={answer}
-                          className="rounded bg-sky-200 px-2 py-0.5 dark:bg-sky-600"
-                        >
-                          {answer}
-                        </div>
-                      ))}
-                    </div>
-                  ) : question.type === '填空題' || question.type === '配對題' ? (
-                    question.options.map((option) => <div key={option}>{option}</div>)
-                  ) : question.type === '單字題' ? (
-                    question.answer
-                  ) : (
-                    '未知題型'
-                  )}
-                </div>
-                <div>
-                  {second > 0
-                    ? formatTime(Math.floor(second / 1000 / 60)) + ' (h:m)'
-                    : question.due === null
-                      ? '未做答'
-                      : '已到達練習時間'}
-                </div>
-                <div>{question.remark}</div>
-                <div>
-                  <Switch
-                    checked={question.isEnabled}
-                    onClick={() => updateQuestion(question.id, { isEnabled: !question.isEnabled })}
-                  />
-                </div>
-              </section>
+              </div>
             )
           })}
         </div>

@@ -1,59 +1,52 @@
 // ui component
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger
-} from '@/components/ui/alert-dialog'
 import FileUploader from '@/components/manage/FileUploader'
 import { Button } from '@/components/ui/button'
-import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
-import TheBreadcrumb from '@/components/TheBreadcrumb'
+import PageHeader from '@/components/layout/PageHeader'
+import ConfirmDialog from '@/components/common/ConfirmDialog'
+import EmptyState from '@/components/common/EmptyState'
 import { QuestionsTable } from '@/components/manage/QuestionsTable'
-import { FaDownload, FaTrashAlt } from 'react-icons/fa'
-import { IoIosRemoveCircle } from 'react-icons/io'
+import { Download, Trash2, CircleX, FileQuestion } from 'lucide-react'
 import CreateQuestionForm from '@/components/manage/CreateQuestionForm'
 
 // react
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import QuestiopnJsonFile from '@/assets/example.json'
 
 // lib
 import { toast } from 'sonner'
 import { useIndexedDB } from '@/hooks/useIndexedDB'
-import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
 
 // provider
 import { useQuestion } from '@/provider/QuestionProvider'
-import { useSetting } from '@/provider/SettingProvider'
+
+const CONFIRM_CONFIGS = {
+  clearChecked: {
+    kind: 'destructive',
+    title: '確定要刪除勾選的題目嗎？',
+    description: '請謹慎操作。'
+  },
+  clearAll: {
+    kind: 'destructive',
+    title: '確定要刪除全部的題目嗎？',
+    description: '請謹慎操作。'
+  },
+  enableChecked: {
+    kind: 'default',
+    title: '確定要讓勾選的題目生效嗎？',
+    description: '請謹慎操作。'
+  },
+  disableChecked: {
+    kind: 'default',
+    title: '確定要讓勾選的題目失效嗎？',
+    description: '請謹慎操作。'
+  }
+}
 
 export default function ManageQuestions() {
   const { questions, setQuestions, updateQuestion } = useQuestion()
   const { clearAll, clearItem, addItem } = useIndexedDB('questions')
-  const [open1, setOpen1] = useState(false)
-  const [open2, setOpen2] = useState(false)
-  const [open3, setOpen3] = useState(false)
-  const [open4, setOpen4] = useState(false)
-  const [open5, setOpen5] = useState(false)
-
-  // 初始化Question Start
-
-  const { initTrainingCount } = useSetting()
-  const { initialize, ready } = useInitializeQuestions()
-
-  useEffect(() => {
-    if (ready && questions.length === 0) {
-      initialize()
-      initTrainingCount()
-    }
-  }, [initialize, initTrainingCount, questions.length, ready])
-
-  // 初始化Question End
+  const [confirm, setConfirm] = useState(null)
+  const [createOpen, setCreateOpen] = useState(false)
 
   const undoClear = (recordQuestions) => {
     setQuestions((prev) => [...prev, ...recordQuestions])
@@ -74,7 +67,7 @@ export default function ManageQuestions() {
         onClick: () => undoClear(questions)
       }
     })
-    setOpen1(false)
+    setConfirm(null)
     setQuestions([])
   }
 
@@ -91,7 +84,7 @@ export default function ManageQuestions() {
         onClick: () => undoClear(recordQuestions)
       }
     })
-    setOpen2(false)
+    setConfirm(null)
     setQuestions((prev) =>
       prev
         .filter((question) => !question.isChecked)
@@ -136,7 +129,7 @@ export default function ManageQuestions() {
     toast('✅操作成功', {
       description: '已成功讓勾選的題目生效'
     })
-    setOpen3(false)
+    setConfirm(null)
   }
   const handeDisableItem = () => {
     const recordQuestions = questions.filter((question) => question.isChecked)
@@ -147,34 +140,41 @@ export default function ManageQuestions() {
     toast('✅操作成功', {
       description: '已成功讓勾選的題目失效'
     })
-    setOpen4(false)
+    setConfirm(null)
+  }
+
+  const handleConfirm = () => {
+    if (confirm === 'clearChecked') handeClearItem()
+    else if (confirm === 'clearAll') handeClearAll()
+    else if (confirm === 'enableChecked') handeEnableItem()
+    else if (confirm === 'disableChecked') handeDisableItem()
   }
 
   const hasChecked = questions.some((question) => question.isChecked)
+  const config = confirm ? CONFIRM_CONFIGS[confirm] : null
 
   return (
     <div>
-      <section className="p-6">
-        <TheBreadcrumb>
-          <BreadcrumbItem>
-            <BreadcrumbPage>題庫管理</BreadcrumbPage>
-          </BreadcrumbItem>
-        </TheBreadcrumb>
+      <PageHeader
+        title="題庫管理"
+        description={questions.length > 0 ? `共 ${questions.length} 題` : undefined}
+      />
 
+      <section aria-label="題庫操作">
         <h2 className="my-2 text-xl font-bold">題庫操作</h2>
-        <button className="text-sky-500 hover:underline" onClick={handleDownloadFile}>
+        <button className="text-primary hover:underline" onClick={handleDownloadFile}>
           沒有題庫嗎?從這下載一個範例
-          <span className="mx-1 rounded bg-gray-200 px-1 py-0.5 text-gray-600 dark:bg-gray-600 dark:text-gray-200">
+          <span className="mx-1 rounded bg-muted px-1 py-0.5 text-muted-foreground">
             .json
           </span>
           檔吧
         </button>
 
         <div className="my-2 flex gap-2">
-          <Button onClick={() => setOpen5(true)}>新增題目</Button>
+          <Button onClick={() => setCreateOpen(true)}>新增題目</Button>
           <CreateQuestionForm
-            open={open5}
-            onOpenChange={setOpen5}
+            open={createOpen}
+            onOpenChange={setCreateOpen}
             onCreate={(question) => {
               addItem(question)
               setQuestions((prev) => [...prev, question])
@@ -183,85 +183,74 @@ export default function ManageQuestions() {
           />
           <FileUploader />
           {hasChecked && (
-            <AlertDialog asChild open={open1} onOpenChange={setOpen1}>
-              <AlertDialogTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <IoIosRemoveCircle />
-                </Button>
-              </AlertDialogTrigger>
-              <AlertDialogContent>
-                <AlertDialogHeader>
-                  <AlertDialogTitle>確定要刪除勾選的題目嗎？</AlertDialogTitle>
-                  <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                  <AlertDialogCancel>取消</AlertDialogCancel>
-                  <AlertDialogAction onClick={handeClearItem}>確認</AlertDialogAction>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
+            <Button
+              variant="outline"
+              size="icon"
+              aria-label="刪除勾選的題目"
+              onClick={() => setConfirm('clearChecked')}
+            >
+              <CircleX />
+            </Button>
           )}
 
-          <Button size="icon" variant="outline" onClick={handleExportJsonFile}>
-            <FaDownload />
+          <Button
+            size="icon"
+            variant="outline"
+            aria-label="匯出題庫"
+            onClick={handleExportJsonFile}
+          >
+            <Download />
           </Button>
 
-          <AlertDialog asChild open={open2} onOpenChange={setOpen2}>
-            <AlertDialogTrigger asChild>
-              <Button variant="outline" size="icon">
-                <FaTrashAlt />
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>確定要刪除全部的題目嗎？</AlertDialogTitle>
-                <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>取消</AlertDialogCancel>
-                <AlertDialogAction onClick={handeClearAll}>確認</AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+          <Button
+            variant="outline"
+            size="icon"
+            aria-label="刪除全部題目"
+            onClick={() => setConfirm('clearAll')}
+          >
+            <Trash2 />
+          </Button>
           {hasChecked && (
             <>
-              <AlertDialog asChild open={open3} onOpenChange={setOpen3}>
-                <AlertDialogTrigger asChild>
-                  <Button variant="outline">生效</Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>確定要讓勾選的題目生效嗎？</AlertDialogTitle>
-                    <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>取消</AlertDialogCancel>
-                    <AlertDialogAction onClick={handeEnableItem}>確認</AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-
-              <AlertDialog asChild open={open4} onOpenChange={setOpen4}>
-                <AlertDialogTrigger asChild>
-                  <Button variant="outline">失效</Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>確定要讓勾選的題目失效嗎？</AlertDialogTitle>
-                    <AlertDialogDescription>請謹慎操作。</AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>取消</AlertDialogCancel>
-                    <AlertDialogAction onClick={handeDisableItem}>確認</AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
+              <Button variant="outline" onClick={() => setConfirm('enableChecked')}>
+                生效
+              </Button>
+              <Button variant="outline" onClick={() => setConfirm('disableChecked')}>
+                失效
+              </Button>
             </>
           )}
         </div>
       </section>
 
-      {questions.length > 0 ? <QuestionsTable /> : '目前沒有任何題目'}
+      {questions.length > 0 ? (
+        <QuestionsTable />
+      ) : (
+        <div data-testid="manage-empty">
+          <EmptyState
+            icon={<FileQuestion className="h-10 w-10" />}
+            title="目前沒有任何題目"
+            description="上傳 JSON 檔案或手動新增題目來開始建立題庫"
+            action={
+              <span className="inline-flex gap-2">
+                <Button onClick={() => setCreateOpen(true)}>新增題目</Button>
+                <FileUploader />
+              </span>
+            }
+          />
+        </div>
+      )}
+
+      <ConfirmDialog
+        open={!!confirm}
+        onOpenChange={(v) => {
+          if (!v) setConfirm(null)
+        }}
+        kind={config?.kind ?? 'default'}
+        title={config?.title ?? ''}
+        description={config?.description ?? ''}
+        onConfirm={handleConfirm}
+      />
     </div>
   )
 }
