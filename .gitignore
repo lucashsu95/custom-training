@@ -42,3 +42,4 @@ scripts/harness/
 /.agents/skills
 /.omo/run-continuation
 /skills-lock.json
+/.omo/plans
