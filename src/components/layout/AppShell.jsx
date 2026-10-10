@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import { Moon, Settings, Sun } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 import { Button } from '@/components/ui/button'
@@ -45,7 +45,7 @@ function NavLink({ to, label }) {
 }
 NavLink.propTypes = { to: PropTypes.string.isRequired, label: PropTypes.string.isRequired }
 
-export default function AppShell({ children, footer }) {
+export default function AppShell({ footer }) {
   const { resolvedTheme, setTheme } = useTheme()
   const { enableTraining, handleSetEnableTraining } = useSetting()
 
@@ -163,7 +163,7 @@ export default function AppShell({ children, footer }) {
 
       {/* 主內容區 */}
       <main id="content" className="mx-auto w-full max-w-app px-4 py-6 md:px-6">
-        {children}
+        <Outlet />
       </main>
 
       {/* Footer slot */}
@@ -172,6 +172,5 @@ export default function AppShell({ children, footer }) {
   )
 }
 AppShell.propTypes = {
-  children: PropTypes.node.isRequired,
   footer: PropTypes.node
 }

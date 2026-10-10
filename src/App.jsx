@@ -1,4 +1,5 @@
 // react
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 
 // pages
@@ -17,6 +18,8 @@ import { Toaster } from '@/components/ui/sonner'
 import { SettingProvider } from '@/provider/SettingProvider'
 import { QuestionProvider } from '@/provider/QuestionProvider'
 import { ThemeProvider } from '@/provider/ThemeProvider'
+import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
+import { useSetting } from '@/provider/SettingProvider'
 
 // 404 頁面（inline，內容簡單不需獨立檔案）
 function NotFound() {
@@ -31,26 +34,42 @@ function NotFound() {
   )
 }
 
+function AppInit({ children }) {
+  const { initTrainingCount } = useSetting()
+  const { initialize, ready } = useInitializeQuestions()
+
+  useEffect(() => {
+    if (ready) {
+      initialize()
+      initTrainingCount()
+    }
+  }, [initialize, initTrainingCount, ready])
+
+  return children
+}
+
 export default function App() {
   return (
     <SettingProvider>
       <QuestionProvider>
-        <ThemeProvider>
-          <Router>
-            <AppShell>
+        <AppInit>
+          <ThemeProvider>
+            <Router>
               <Routes>
-                <Route path="/" element={<HomeView />} />
-                <Route path="/training/auto" element={<AutoTraining />} />
-                <Route path="/upload" element={<ManageQuestions />} />
-                <Route path="/training/setting" element={<TrainingSettings />} />
-                <Route path="/training/in-progress" element={<TrainingInProgress />} />
-                <Route path="/history" element={<HistoryView />} />
-                <Route path="*" element={<NotFound />} />
+                <Route element={<AppShell />}>
+                  <Route path="/" element={<HomeView />} />
+                  <Route path="/training/auto" element={<AutoTraining />} />
+                  <Route path="/upload" element={<ManageQuestions />} />
+                  <Route path="/training/setting" element={<TrainingSettings />} />
+                  <Route path="/training/in-progress" element={<TrainingInProgress />} />
+                  <Route path="/history" element={<HistoryView />} />
+                  <Route path="*" element={<NotFound />} />
+                </Route>
               </Routes>
-            </AppShell>
-            <Toaster />
-          </Router>
-        </ThemeProvider>
+              <Toaster />
+            </Router>
+          </ThemeProvider>
+        </AppInit>
       </QuestionProvider>
     </SettingProvider>
   )
