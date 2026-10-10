@@ -1,20 +1,21 @@
-// ui component
-import TheBreadcrumb from '@/components/TheBreadcrumb'
-import { BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
-import StateBoard from '@/components/training/StateBoard'
-
-// react
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
-import { toast } from 'sonner'
-
 // provider
 import { useQuestion } from '@/provider/QuestionProvider'
 import { createComponent } from '@/utils/componentFactory'
 import { createQuestion } from '@/lib/functions'
 import { useHistory } from '@/hooks/useHistory'
 import { v4 as uuidv4 } from 'uuid'
+
+// react
+import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
+
+// components
+import PageHeader from '@/components/layout/PageHeader'
+import TrainingHUD from '@/components/training/TrainingHUD'
+import ScoreSummary from '@/components/molecules/ScoreSummary'
+import ConfirmDialog from '@/components/common/ConfirmDialog'
 
 function TrainingInProgress() {
   const { problems, setProblems, updateDue, trainingConfig } = useQuestion()
@@ -29,6 +30,8 @@ function TrainingInProgress() {
 
   const [time, setTime] = useState(0)
   const [initialTime, setInitialTime] = useState(0)
+  const [confirmReset, setConfirmReset] = useState(false)
+  const formRef = useRef(null)
 
   // Restore state
   useEffect(() => {
@@ -69,7 +72,7 @@ function TrainingInProgress() {
       // If we want to support reload, we should NOT clear in cleanup if we can't tell it's a reload.
       // However, the requirement specifically asked for it.
       // I will implement a check if the current path is NOT the training path.
-      if (window.location.pathname !== '/training/progress') {
+      if (window.location.pathname !== '/training/in-progress') {
         localStorage.removeItem('trainingState')
       }
     }
@@ -128,48 +131,28 @@ function TrainingInProgress() {
     setMod('completed')
     localStorage.removeItem('trainingState')
     window.scrollTo(0, 0)
-    window.document.body.style.height = '1px'
   }
 
   return (
-    <section className="p-6">
-      <TheBreadcrumb>
-        <BreadcrumbItem>
-          <Link to="/training/setting">練習設定頁面</Link>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>練習中</BreadcrumbPage>
-        </BreadcrumbItem>
-      </TheBreadcrumb>
+    <section>
+      <PageHeader title="練習中" description="作答完成後送出，系統會計算分數並記錄歷史" />
       <div>
         {/* 顯示資訊 */}
-        <StateBoard mod={mod} onTimeUpdate={setTime} initialTime={initialTime} />
+        <TrainingHUD mod={mod} onTimeUpdate={setTime} initialTime={initialTime} />
 
         {/* 顯示成績 */}
         {result.score > -1 && (
-          <>
-            <div className="my-2 space-y-1 rounded-md bg-gray-200/25 px-5 py-3 text-gray-500 shadow dark:bg-gray-700/35 dark:text-gray-100/65">
-              <div
-                className={`${
-                  result.score >= 80
-                    ? 'font-bold text-green-500 dark:text-green-400'
-                    : result.score >= 60
-                      ? ''
-                      : 'font-bold text-red-400 dark:text-red-400'
-                } text-lg`}
-              >
-                {result.score}分
-              </div>
-              <div className="text-xs">答對：{result.correctCount} </div>
-              <div className="text-xs">答錯：{result.wrongCount}</div>
-            </div>
-          </>
+          <ScoreSummary
+            score={result.score}
+            correct={result.correctCount}
+            wrong={result.wrongCount}
+            total={result.correctCount + result.wrongCount}
+          />
         )}
 
         {/* 題目作答 */}
 
-        <form className="my-5 space-y-6 md:space-y-12 md:p-6 md:shadow-lg" onSubmit={handleSubmit}>
+        <form ref={formRef} className="my-5 space-y-6 md:space-y-12 md:p-6 md:shadow-lg" onSubmit={handleSubmit}>
           {problems.map((problem) => (
             <section key={problem.id}>
               {createComponent(problem.type, {
@@ -182,17 +165,28 @@ function TrainingInProgress() {
           {result.score < 0 ? (
             <>
               <Button>送出答案</Button>
-              <Button type="reset" className="ml-2" variant="secondary">
+              <Button type="button" className="ml-2" variant="secondary" onClick={() => setConfirmReset(true)}>
                 重設
               </Button>
             </>
           ) : (
             <Link to="/">
-              <Button className="z-10 mt-[100px] w-full">回首頁</Button>
+              <Button className="z-10 w-full">回首頁</Button>
             </Link>
           )}
         </form>
       </div>
+      <ConfirmDialog
+        open={confirmReset}
+        onOpenChange={(v) => !v && setConfirmReset(false)}
+        title="重設作答"
+        description="確定要清除目前所有作答內容嗎？此動作無法復原。"
+        confirmLabel="重設"
+        onConfirm={() => {
+          formRef.current?.reset()
+          setConfirmReset(false)
+        }}
+      />
     </section>
   )
 }

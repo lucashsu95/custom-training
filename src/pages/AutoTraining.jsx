@@ -1,9 +1,8 @@
 // ui component
-import TheBreadcrumb from '@/components/TheBreadcrumb'
-import { BreadcrumbItem, BreadcrumbPage } from '@/components/ui/breadcrumb'
-import StateBoard from '@/components/training/StateBoard'
+import PageHeader from '@/components/layout/PageHeader'
+import TrainingHUD from '@/components/training/TrainingHUD'
+import ScoreSummary from '@/components/molecules/ScoreSummary'
 import { Button } from '@/components/ui/button'
-import { RiCheckboxCircleFill } from 'react-icons/ri'
 
 // react
 import { useState } from 'react'
@@ -27,6 +26,7 @@ function AutoTraining() {
     correctCount: 0,
     wrongCount: 0
   })
+  const [, setTime] = useState(0)
 
   const trainingFinish = useMemo(
     () => state.currentProblem === problems.length,
@@ -54,46 +54,35 @@ function AutoTraining() {
   }, [addTrainingCount, id, problems, trainingFinish])
 
   return (
-    <section className="overflow-hidden p-6">
-      <TheBreadcrumb>
-        <BreadcrumbItem>
-          <BreadcrumbPage>練習中</BreadcrumbPage>
-        </BreadcrumbItem>
-      </TheBreadcrumb>
+    <section className="overflow-hidden">
+      <PageHeader title="練習中" />
       <section>
         {/* 顯示資訊 */}
-        <StateBoard mod={trainingFinish ? 'completed' : 'progress'} />
+        <TrainingHUD
+          mod={trainingFinish ? 'completed' : 'progress'}
+          initialTime={0}
+          onTimeUpdate={setTime}
+          current={state.currentProblem}
+          total={problems.length}
+          score={trainingFinish ? score : undefined}
+        />
 
         {/* 進度條 */}
-        <div className="my-2 flex items-center gap-2 px-2 sm:gap-4 md:gap-6">
-          <Progress value={Math.floor((state.currentProblem / problems.length) * 100)} />
-          <RiCheckboxCircleFill className="h-5 w-5" />
-        </div>
+        <Progress value={Math.floor((state.currentProblem / problems.length) * 100)} className="my-2" />
 
         {/* 顯示成績 */}
         {trainingFinish && (
-          <>
-            <div className="my-2 space-y-1 rounded-md bg-gray-200/25 px-5 py-3 text-gray-500 shadow dark:bg-gray-700/35 dark:text-gray-100/65">
-              <div
-                className={`${
-                  score >= 80
-                    ? 'font-bold text-green-500 dark:text-green-400'
-                    : score >= 60
-                      ? ''
-                      : 'font-bold text-red-500 dark:text-red-400'
-                } text-lg`}
-              >
-                {score}分
-              </div>
-              <div className="text-xs">答對：{result.correctCount} </div>
-              <div className="text-xs">答錯：{result.wrongCount}</div>
-            </div>
-          </>
+          <ScoreSummary
+            score={score}
+            correct={result.correctCount}
+            wrong={result.wrongCount}
+            total={problems.length}
+          />
         )}
       </section>
 
       {/* 顯示題目 */}
-      <section className="mx-auto w-full max-w-[380px] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%]">
+      <section className="mx-auto w-full max-w-2xl">
         {problems.length > 0 &&
           problems.map(
             (problem, i) =>
@@ -118,7 +107,7 @@ function AutoTraining() {
                       state.currentProblem !== problems.length)) && (
                     <Button
                       size="lg"
-                      className="z-10 mt-5 w-full"
+                      className="mt-5 w-full"
                       onClick={() => {
                         setState((prev) => ({
                           ...prev,
@@ -136,7 +125,7 @@ function AutoTraining() {
 
       {trainingFinish && (
         <Link to="/">
-          <Button className="z-10 mt-3 w-full">回首頁</Button>
+          <Button className="mt-3 w-full">回首頁</Button>
         </Link>
       )}
     </section>
