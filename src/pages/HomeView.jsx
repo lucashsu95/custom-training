@@ -1,23 +1,24 @@
 // component & icon
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import PageHeader from '@/components/layout/PageHeader'
+import DueBadge from '@/components/molecules/DueBadge'
 import { FaBook, FaHistory } from 'react-icons/fa'
 import { IoLibrarySharp } from 'react-icons/io5'
 import { MdNotStarted, MdDashboardCustomize } from 'react-icons/md'
 
-// hook
-import { useInitializeQuestions } from '@/hooks/useInitializeQuestions'
-
 // react
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 // provider
-import { useSetting } from '@/provider/SettingProvider'
 import { useQuestion } from '@/provider/QuestionProvider'
+import { useSetting } from '@/provider/SettingProvider'
+
+const LADDER_SAMPLES = [-3, -1, 0, 3, 5, null]
 
 export default function HomeView() {
-  const { autoStartTraining } = useQuestion()
+  const { autoStartTraining, questions } = useQuestion()
+  const { trainingCount, checkTrainingCount } = useSetting()
 
   const navigate = useNavigate()
 
@@ -27,66 +28,112 @@ export default function HomeView() {
     }
   }
 
-  // 初始化Question Start
-
-  const { initTrainingCount } = useSetting()
-  const { initialize, ready } = useInitializeQuestions()
-
-  useEffect(() => {
-    if (ready) {
-      initialize()
-      initTrainingCount()
-    }
-  }, [initialize, initTrainingCount, ready])
-
-  // 初始化Question End
+  const doneCount = parseInt(trainingCount ?? 0, 10)
+  const reachedLimit = checkTrainingCount()
+  const statusText = reachedLimit ? '今日已達上限' : '可繼續練習'
 
   return (
-    <section className="w-100 grid gap-5 p-6 md:grid-cols-2 lg:grid-cols-3">
-      <Alert
-        className="custom-alert cursor-pointer bg-[hsl(var(--foreground))] text-[hsl(var(--background))]"
-        onClick={startTraining}
-      >
-        <MdNotStarted className="h-5 w-5 !text-[hsl(var(--background))]" />
-        <AlertTitle className="text-base font-bold">直接練習</AlertTitle>
-        <AlertDescription>一切由系統安排，只要會背即可!</AlertDescription>
-      </Alert>
+    <div className="grid gap-4">
+      <PageHeader title="首頁" description={`今日已練習 ${doneCount} 次，上限 3 次`} />
 
-      <Link to="/training/setting">
-        <Alert className="custom-alert">
-          <MdDashboardCustomize className="h-5 w-5" />
-          <AlertTitle className="text-base font-bold">自定練習</AlertTitle>
-          <AlertDescription>自定題目➡️自定題數➡️開始練習</AlertDescription>
-        </Alert>
-      </Link>
+      <div className="grid gap-4 md:grid-cols-3">
+        <Card>
+          <CardHeader>
+            <CardTitle>題庫題數</CardTitle>
+            <CardDescription className="text-2xl font-semibold tabular-nums text-foreground">
+              {questions.length}
+            </CardDescription>
+          </CardHeader>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>今日練習次數</CardTitle>
+            <CardDescription className="text-2xl font-semibold tabular-nums text-foreground">
+              {doneCount}
+            </CardDescription>
+          </CardHeader>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>練習狀態</CardTitle>
+            <CardDescription className="text-muted-foreground">{statusText}</CardDescription>
+          </CardHeader>
+        </Card>
+      </div>
 
-      <Link to="/upload">
-        <Alert className="custom-alert">
-          <IoLibrarySharp className="h-5 w-5" />
-          <AlertTitle className="text-base font-bold">自定題庫</AlertTitle>
-          <AlertDescription>在題庫頁面上傳題庫</AlertDescription>
-        </Alert>
-      </Link>
+      <Card>
+        <CardHeader>
+          <CardTitle>熟練度階梯</CardTitle>
+          <CardDescription>由不熟練到熟練的刻度對照</CardDescription>
+          <div className="flex flex-wrap gap-2 pt-2">
+            {LADDER_SAMPLES.map((due, index) => (
+              <DueBadge key={due === null ? 'none' : `due-${due}-${index}`} due={due} />
+            ))}
+          </div>
+        </CardHeader>
+      </Card>
 
-      <Link to="/history">
-        <Alert className="custom-alert">
-          <FaHistory className="h-5 w-5" />
-          <AlertTitle className="text-base font-bold">練習紀錄</AlertTitle>
-          <AlertDescription>查看過去的練習結果</AlertDescription>
-        </Alert>
-      </Link>
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3" aria-label="功能導覽">
+        <Card
+          className="cursor-pointer transition-colors hover:bg-muted"
+          onClick={startTraining}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') startTraining()
+          }}
+        >
+          <CardHeader>
+            <MdNotStarted className="h-5 w-5" aria-hidden="true" />
+            <CardTitle>直接練習</CardTitle>
+            <CardDescription>一切由系統安排，只要會背即可，每日上限 3 次</CardDescription>
+          </CardHeader>
+        </Card>
 
-      <a
-        target="_blank"
-        href="https://github.com/lucashsu95/custom-training/blob/main/docs/how-to-use.md"
-        rel="noreferrer"
-      >
-        <Alert className="custom-alert">
-          <FaBook className="h-5 w-5" />
-          <AlertTitle className="text-base font-bold">教學-說明書</AlertTitle>
-          <AlertDescription>查看使用說明書</AlertDescription>
-        </Alert>
-      </a>
-    </section>
+        <Link to="/training/setting">
+          <Card className="transition-colors hover:bg-muted">
+            <CardHeader>
+              <MdDashboardCustomize className="h-5 w-5" aria-hidden="true" />
+              <CardTitle>自定練習</CardTitle>
+              <CardDescription>自定題目➡️自定題數➡️開始練習</CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+
+        <Link to="/upload">
+          <Card className="transition-colors hover:bg-muted">
+            <CardHeader>
+              <IoLibrarySharp className="h-5 w-5" aria-hidden="true" />
+              <CardTitle>自定題庫</CardTitle>
+              <CardDescription>在題庫頁面上傳題庫</CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+
+        <Link to="/history">
+          <Card className="transition-colors hover:bg-muted">
+            <CardHeader>
+              <FaHistory className="h-5 w-5" aria-hidden="true" />
+              <CardTitle>練習紀錄</CardTitle>
+              <CardDescription>查看過去的練習結果</CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+
+        <a
+          target="_blank"
+          href="https://github.com/lucashsu95/custom-training/blob/main/docs/how-to-use.md"
+          rel="noreferrer"
+        >
+          <Card className="transition-colors hover:bg-muted">
+            <CardHeader>
+              <FaBook className="h-5 w-5" aria-hidden="true" />
+              <CardTitle>教學-說明書</CardTitle>
+              <CardDescription>查看使用說明書</CardDescription>
+            </CardHeader>
+          </Card>
+        </a>
+      </section>
+    </div>
   )
 }
